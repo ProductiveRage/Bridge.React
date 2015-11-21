@@ -187,10 +187,12 @@
         [Name("link")]
         public extern static ReactElement Link(LinkAttributes properties, params ReactElementOrText[] children);
 
-        [Name("main")]
-        public extern static ReactElement Main(Attributes properties, params ReactElementOrText[] children);
+#pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.ReactElementOrText[])' has the wrong signature to be an entry point
+		[Name("main")]
+		public extern static ReactElement Main(Attributes properties, params ReactElementOrText[] children);
+#pragma warning restore 28
 
-        [Name("map")]
+		[Name("map")]
         public extern static ReactElement Map(MapAttributes properties, params ReactElementOrText[] children);
 
         [Name("mark")]
