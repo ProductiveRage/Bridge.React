@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E50407C-DA7D-4D3D-B03D-87671C03F54E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bridge.React</RootNamespace>
+    <AssemblyName>Bridge.React</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>c73e4059</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\SandboxOptions.cs" />
+    <Compile Include="Attributes\RawHtml.cs" />
+    <Compile Include="Attributes\ReactDomElementAttributes.cs" />
+    <Compile Include="Attributes\DomElementWithEventsAttributes.cs" />
+    <Compile Include="Elements\ComponentHelpers.cs" />
+    <Compile Include="Events\ImageEvent.cs" />
+    <Compile Include="Events\MouseEvent.cs" />
+    <Compile Include="Events\MediaEvent.cs" />
+    <Compile Include="Events\SelectionEvent.cs" />
+    <Compile Include="Events\FormEvent.cs" />
+    <Compile Include="Events\FocusEvent.cs" />
+    <Compile Include="Events\KeyboardEvent.cs" />
+    <Compile Include="Events\Touch.cs" />
+    <Compile Include="Events\TouchEvent.cs" />
+    <Compile Include="Events\UIEvent.cs" />
+    <Compile Include="Events\WheelEvent.cs" />
+    <Compile Include="Events\CompositionEvent.cs" />
+    <Compile Include="Attributes\DomElementsAttributes.cs" />
+    <Compile Include="Events\SyntheticEvent.cs" />
+    <Compile Include="Attributes\DelAttributes.cs" />
+    <Compile Include="Attributes\ProgressAttributes.cs" />
+    <Compile Include="Attributes\ScriptAttributes.cs" />
+    <Compile Include="Attributes\SelectAttributes.cs" />
+    <Compile Include="Attributes\SourceAttributes.cs" />
+    <Compile Include="Attributes\StyleAttributes.cs" />
+    <Compile Include="Attributes\TableCellAttributes.cs" />
+    <Compile Include="Attributes\TextAreaAttributes.cs" />
+    <Compile Include="Attributes\TitleAttributes.cs" />
+    <Compile Include="Attributes\TrackAttributes.cs" />
+    <Compile Include="Attributes\OptGroupAttributes.cs" />
+    <Compile Include="Attributes\OptionAttributes.cs" />
+    <Compile Include="Attributes\OutputAttributes.cs" />
+    <Compile Include="Attributes\ParamAttributes.cs" />
+    <Compile Include="Attributes\LinkAttributes.cs" />
+    <Compile Include="Attributes\MapAttributes.cs" />
+    <Compile Include="Attributes\MetaAttributes.cs" />
+    <Compile Include="Attributes\MeterAttributes.cs" />
+    <Compile Include="Attributes\ObjectAttributes.cs" />
+    <Compile Include="Attributes\OListAttributes.cs" />
+    <Compile Include="Attributes\HRAttributes.cs" />
+    <Compile Include="Attributes\IFrameAttributes.cs" />
+    <Compile Include="Attributes\ImageAttributes.cs" />
+    <Compile Include="Attributes\KeyGenAttributes.cs" />
+    <Compile Include="Attributes\LabelAttributes.cs" />
+    <Compile Include="Attributes\LIAttributes.cs" />
+    <Compile Include="Attributes\InsAttributes.cs" />
+    <Compile Include="Attributes\DListAttributes.cs" />
+    <Compile Include="Attributes\EmbedAttributes.cs" />
+    <Compile Include="Attributes\FieldSetAttributes.cs" />
+    <Compile Include="Attributes\FormAttributes.cs" />
+    <Compile Include="Attributes\TableColAttributes.cs" />
+    <Compile Include="Attributes\CanvasAttributes.cs" />
+    <Compile Include="Attributes\ButtonAttributes.cs" />
+    <Compile Include="Attributes\BrAttributes.cs" />
+    <Compile Include="Attributes\BodyAttributes.cs" />
+    <Compile Include="Attributes\QuoteAttributes.cs" />
+    <Compile Include="Attributes\BaseAttributes.cs" />
+    <Compile Include="Attributes\Attributes.cs" />
+    <Compile Include="Attributes\AnchorAttributes.cs" />
+    <Compile Include="Attributes\AreaAttributes.cs" />
+    <Compile Include="Attributes\InputAttributes.cs" />
+    <Compile Include="Dispatcher\DispatcherMessageExtensions.cs" />
+    <Compile Include="Dispatcher\AppDispatcher.cs" />
+    <Compile Include="Dispatcher\DispatcherMessage.cs" />
+    <Compile Include="Dispatcher\MessageSourceOptions.cs" />
+    <Compile Include="Dispatcher\IDispatcherAction.cs" />
+    <Compile Include="React.cs" />
+    <Compile Include="Elements\ReactElementOrText.cs" />
+    <Compile Include="Elements\ReactElement.cs" />
+    <Compile Include="DOM.cs" />
+    <Compile Include="Components\StatelessComponent.cs" />
+    <Compile Include="Components\Component.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bridge\bridge.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Bridge, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Bridge.1.9.0\lib\net40\Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bridge.Html5, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Bridge.1.9.0\lib\net40\Bridge.Html5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Bridge.1.9.0\build\Bridge.targets" Condition="Exists('..\packages\Bridge.1.9.0\build\Bridge.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Bridge.1.9.0\build\Bridge.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bridge.1.9.0\build\Bridge.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
