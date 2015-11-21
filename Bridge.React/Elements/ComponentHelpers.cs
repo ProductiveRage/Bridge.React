@@ -12,7 +12,6 @@
     {
         internal static WrappedProps WrapProps(TProps propsIfAny)
         {
-            // TODO: Set children.. possibly
             // Try to extract a Key value from the props - it might be a simple "key" value or it might be a property with a "getKey" function or it
             // might be absent altogether
             Any<string, int> keyIfAny = null;
