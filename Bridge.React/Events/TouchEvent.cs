@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public sealed class TouchEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         private TouchEvent() { }
@@ -16,7 +16,7 @@ namespace Bridge.React
         public readonly Touch[] TargetTouches;
         public readonly Touch[] Touches;
 
-        [Ignore]
+        [External]
         public extern bool GetModifierState(int key);
     }
 }

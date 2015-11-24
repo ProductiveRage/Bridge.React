@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public sealed class FocusEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         private FocusEvent() { }

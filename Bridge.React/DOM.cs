@@ -1,7 +1,7 @@
 ﻿namespace Bridge.React
 {
     [Name("React.DOM")]
-    [Ignore]
+    [External]
     public static class DOM
     {
         [Name("a")]

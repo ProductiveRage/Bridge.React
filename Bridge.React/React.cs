@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [Name("ReactDOM")]
-    [Ignore]
+    [External]
     public static class React
     {
         [Name("render")]

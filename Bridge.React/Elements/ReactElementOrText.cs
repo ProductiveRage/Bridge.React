@@ -6,11 +6,11 @@
     /// the ReactElement type as a return type while any function that takes child components may use this class as its element type - it will then accept
     /// either of the required types.
     /// </summary>
-    [Ignore]
+    [External]
     public sealed class ReactElementOrText
     {
         private ReactElementOrText() { }
-        [Ignore] public extern static implicit operator ReactElementOrText(string text);
-        [Ignore] public extern static implicit operator ReactElementOrText(ReactElement element);
+        [External] public extern static implicit operator ReactElementOrText(string text);
+        [External] public extern static implicit operator ReactElementOrText(ReactElement element);
     }
 }

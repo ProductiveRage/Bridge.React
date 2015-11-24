@@ -1,7 +1,7 @@
 ﻿namespace Bridge.React
 {
     // Values taken from http://www.w3schools.com/tags/att_iframe_sandbox.asp
-    [Ignore]
+    [External]
     [Enum(Emit.StringNameLowerCase)]
     public enum SandboxOptions
     {

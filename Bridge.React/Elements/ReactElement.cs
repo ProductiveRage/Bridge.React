@@ -6,7 +6,7 @@
     /// not a class that needs to be included in the generated JavaScript, it is just to let the C# compiler keep track of how this internal element type passed
     /// through the system.
     /// </summary>
-    [Ignore]
+    [External]
     public sealed class ReactElement
     {
         private ReactElement() { }

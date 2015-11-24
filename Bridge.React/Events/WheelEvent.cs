@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public sealed class WheelEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         private WheelEvent() { }

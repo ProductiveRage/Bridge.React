@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public sealed class KeyboardEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         private KeyboardEvent() { }
@@ -19,7 +19,7 @@ namespace Bridge.React
         public readonly bool ShiftKey;
         public readonly int Which;
 
-        [Ignore]
+        [External]
         public extern bool GetModifierState(int key);
     }
 }

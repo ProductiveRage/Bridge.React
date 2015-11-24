@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public sealed class MouseEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         private MouseEvent() { }
@@ -21,7 +21,7 @@ namespace Bridge.React
         public readonly int ScreenY;
         public readonly bool ShiftKey;
         
-        [Ignore]
+        [External]
         public extern bool GetModifierState(int key);
     }
 }

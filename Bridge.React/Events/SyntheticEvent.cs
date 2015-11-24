@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-    [Ignore]
+    [External]
     public abstract class SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
     {
         protected SyntheticEvent() { }
@@ -18,16 +18,16 @@ namespace Bridge.React
         public readonly int TimeStamp;
         public readonly string Type;
 
-        [Ignore]
+        [External]
         public extern void PreventDefault();
-        [Ignore]
+        [External]
         public extern bool IsDefaultPrevented();
-        [Ignore]
+        [External]
         public extern void StopPropagation();
-        [Ignore]
+        [External]
         public extern bool IsPropagationStopped();
 
-        [Ignore]
+        [External]
         public extern void Persist();
     }
 }
