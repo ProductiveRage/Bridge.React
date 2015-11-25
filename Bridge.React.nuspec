@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Bridge.React.dll</id>
+    <version>1.0.0</version>
+    <authors>ProductiveRage</authors>
+    <owners>ProductiveRage</owners>
+    <licenseUrl>https://github.com/ProductiveRage/Bridge.React/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ProductiveRage/Bridge.React</projectUrl>
+    <iconUrl>https://secure.gravatar.com/avatar/6a1f781d4d5e2d50dcff04f8f049767a?s=200</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Bindings for Bridge.NET to work with React</description>
+    <copyright>Copyright 2015 ProductiveRage</copyright>
+    <tags>C# bridge bridge.net react react-js</tags>
+    <dependencies>
+      <dependency id="Bridge" version="1.10.1" />
+    </dependencies>
+  </metadata>
+</package>
