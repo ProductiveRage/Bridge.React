@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Bridge.React.dll</id>
+    <id>Bridge.React</id>
+    <title>Bridge.React</title>
     <version>1.0.0</version>
     <authors>ProductiveRage</authors>
     <owners>ProductiveRage</owners>
