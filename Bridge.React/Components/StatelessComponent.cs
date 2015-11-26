@@ -27,9 +27,13 @@ namespace Bridge.React
             // When we pass the props reference to React.createElement, React's internals will rip it apart and reform it - which will cause problems if TProps is a
             // class with property getters and setters (or any other function) defined on the prototype, since members from the class prototype are not maintained
             // in this process. Wrapping the props reference into a "value" property gets around this problem, we just have to remember to unwrap them again when
-            // we render. A similar technique is used in the stateful component.
-            Func<TProps, ComponentHelpers<TProps>.WrappedProps> wrapProps = ComponentHelpers<TProps>.WrapProps; // Grab an alias to this for calling from JavaScript below
-            _reactElement = Script.Write<ReactElement>("React.createElement(reactStatelessRenderFunction, wrapProps(props), children)");
+            // we render. In most cases where children are specified as a params array, we don't want the "children require unique keys" warning from React (you
+			// don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here either - to achieve this, we prepare an arguments
+			// array and pass that to React.createElement in an "apply" call. Similar techniques are used in the stateful component.
+			Array createElementArgs = new object[] { reactStatelessRenderFunction, ComponentHelpers<TProps>.WrapProps(props) };
+			if (children != null)
+				createElementArgs = createElementArgs.Concat(children);
+			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
         }
 
         private Func<TProps, ReactElement> CreateStatelessRenderFunction()
