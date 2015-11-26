@@ -16,7 +16,8 @@ namespace Bridge.React
             if (action == null)
                 throw new ArgumentNullException("action");
 
-            _dispatcher(new DispatcherMessage(MessageSourceOptions.View, action));
+			if (_dispatcher != null)
+				_dispatcher(new DispatcherMessage(MessageSourceOptions.View, action));
         }
 
         public void HandleServerAction(IDispatcherAction action)
@@ -24,7 +25,8 @@ namespace Bridge.React
             if (action == null)
                 throw new ArgumentNullException("action");
 
-            _dispatcher(new DispatcherMessage(MessageSourceOptions.Server, action));
+			if (_dispatcher != null)
+				_dispatcher(new DispatcherMessage(MessageSourceOptions.Server, action));
         }
     }
 }
