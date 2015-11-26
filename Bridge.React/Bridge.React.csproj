@@ -106,7 +106,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Bridge\bridge.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
