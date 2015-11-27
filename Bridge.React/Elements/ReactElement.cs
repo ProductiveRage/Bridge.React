@@ -9,6 +9,7 @@
     [External]
     public sealed class ReactElement
     {
+		// This represents the private React.element class, so this should not generate any JavaScript (hence the [External] attribute)
         private ReactElement() { }
     }
 }
