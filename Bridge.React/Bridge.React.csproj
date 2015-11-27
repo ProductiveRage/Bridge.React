@@ -98,7 +98,6 @@
     <Compile Include="Dispatcher\MessageSourceOptions.cs" />
     <Compile Include="Dispatcher\IDispatcherAction.cs" />
     <Compile Include="React.cs" />
-    <Compile Include="Elements\ReactElementOrText.cs" />
     <Compile Include="Elements\ReactElement.cs" />
     <Compile Include="DOM.cs" />
     <Compile Include="Components\StatelessComponent.cs" />

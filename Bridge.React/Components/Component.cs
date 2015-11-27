@@ -12,7 +12,7 @@ namespace Bridge.React
 	{
 		private static object _reactComponentClass = null;
 		private readonly ReactElement _reactElement;
-		protected Component(TProps props, params ReactElementOrText[] children)
+		protected Component(TProps props, params Any<ReactElement, string>[] children)
 		{
             if (children != null)
             {
@@ -128,9 +128,9 @@ namespace Bridge.React
         /// <summary>
         /// This will never be null nor contain any null references, though it may be empt if there are children to render
         /// </summary>
-        protected ReactElementOrText[] Children
+        protected Any<ReactElement, string>[] Children
         {
-            get { return Script.Write<ReactElementOrText[]>("this.props && this.props.children ? this.props.children : []"); }
+            get { return Script.Write<Any<ReactElement, string>[]>("this.props && this.props.children ? this.props.children : []"); }
         }
 
         public static implicit operator ReactElement(Component<TProps, TState> component)
@@ -141,7 +141,7 @@ namespace Bridge.React
 			return component._reactElement;
 		}
 
-		public static implicit operator ReactElementOrText(Component<TProps, TState> component)
+		public static implicit operator Any<ReactElement, string>(Component<TProps, TState> component)
 		{
 			if (component == null)
 				throw new ArgumentNullException("component");
