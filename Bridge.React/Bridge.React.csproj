@@ -35,7 +35,7 @@
     <Compile Include="Attributes\RawHtml.cs" />
     <Compile Include="Attributes\ReactDomElementAttributes.cs" />
     <Compile Include="Attributes\DomElementWithEventsAttributes.cs" />
-    <Compile Include="Elements\ComponentHelpers.cs" />
+    <Compile Include="Components\ComponentHelpers.cs" />
     <Compile Include="Events\ImageEvent.cs" />
     <Compile Include="Events\MouseEvent.cs" />
     <Compile Include="Events\MediaEvent.cs" />
