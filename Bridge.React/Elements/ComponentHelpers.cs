@@ -18,7 +18,7 @@
             if (propsIfAny != null)
             {
                 /*@
-                    if (propsIfAny.key) {
+                    if (propsIfAny.key || (propsIfAny.key === 0)) { // Ensure that a zero key is not considered "no-key-defined"
                         keyIfAny = propsIfAny.key;
                     }
                     else if (propsIfAny.getKey && (typeof(propsIfAny.getKey) == "function")) {
