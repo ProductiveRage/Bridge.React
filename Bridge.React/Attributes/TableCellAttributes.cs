@@ -5,10 +5,8 @@ namespace Bridge.React
     [ObjectLiteral]
     public sealed class TableCellAttributes : ReactDomElementAttributes<TableCellElement>
     {
-        [Name("colspan")]
         public int ColSpan { private get; set; }
-        [Name("rowspan")]
-        public string RowSpan { private get; set; }
+        public int RowSpan { private get; set; }
         public int CellIndex { private get; set; }
     }
 }
