@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class KeygenAttributes : DomElementWithEventsAttributes<KeygenElement>
+    public sealed class KeygenAttributes : ReactDomElementAttributes<KeygenElement>
     {
         [Name("autofocus")]
         public bool AutoFocus { private get; set; }

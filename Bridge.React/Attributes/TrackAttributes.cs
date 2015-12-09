@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class TrackAttributes : DomElementWithEventsAttributes<TrackElement>
+    public sealed class TrackAttributes : ReactDomElementAttributes<TrackElement>
     {
         public string Kind { private get; set; }
         public string Src { private get; set; }

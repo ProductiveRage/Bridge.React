@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class MeterAttributes : DomElementWithEventsAttributes<MeterElement>
+    public sealed class MeterAttributes : ReactDomElementAttributes<MeterElement>
     {
         public double High { private get; set; }
         public double Low { private get; set; }

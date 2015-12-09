@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class AnchorAttributes : DomElementWithEventsAttributes<AnchorElement>
+    public sealed class AnchorAttributes : ReactDomElementAttributes<AnchorElement>
     {
         public string Charset { private get; set; }
         public string Coords { private get; set; }

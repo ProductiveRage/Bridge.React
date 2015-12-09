@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class SelectAttributes : DomElementWithEventsAttributes<SelectElement>
+    public sealed class SelectAttributes : ReactDomElementAttributes<SelectElement>
     {
         [Name("autofocus")]
         public bool AutoFocus { private get; set; }

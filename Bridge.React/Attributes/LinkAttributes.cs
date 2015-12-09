@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class LinkAttributes : DomElementWithEventsAttributes<LinkElement>
+    public sealed class LinkAttributes : ReactDomElementAttributes<LinkElement>
     {
         public bool Disabled { private get; set; }
         public string Href { private get; set; }

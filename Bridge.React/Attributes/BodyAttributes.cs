@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class BodyAttributes : DomElementWithEventsAttributes<BodyElement>
+    public sealed class BodyAttributes : ReactDomElementAttributes<BodyElement>
     {
         public string ALink { private get; set; }
         public string Background { private get; set; }

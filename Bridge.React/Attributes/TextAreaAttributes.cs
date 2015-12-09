@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class TextAreaAttributes : DomElementWithEventsAttributes<TextAreaElement>
+    public sealed class TextAreaAttributes : ReactDomElementAttributes<TextAreaElement>
     {
         [Name("autofocus")]
         public bool AutoFocus { private get; set; }

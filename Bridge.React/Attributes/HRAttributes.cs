@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class HRAttributes : DomElementWithEventsAttributes<HRElement>
+    public sealed class HRAttributes : ReactDomElementAttributes<HRElement>
     {
         public string Color { private get; set; }
         [Name("noshade")]

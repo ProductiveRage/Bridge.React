@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class TableCellAttributes : DomElementWithEventsAttributes<TableCellElement>
+    public sealed class TableCellAttributes : ReactDomElementAttributes<TableCellElement>
     {
         [Name("colspan")]
         public int ColSpan { private get; set; }
