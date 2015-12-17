@@ -3,7 +3,7 @@
   <metadata>
     <id>Bridge.React</id>
     <title>Bridge.React</title>
-    <version>1.3.3</version>
+    <version>1.3.4</version>
     <authors>ProductiveRage</authors>
     <owners>ProductiveRage</owners>
     <licenseUrl>https://github.com/ProductiveRage/Bridge.React/blob/master/LICENSE</licenseUrl>
@@ -17,4 +17,8 @@
       <dependency id="Bridge" version="1.10.2" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="Bridge.React.dll" target="lib\net40" />
+    <file src="Bridge.React.xml" target="lib\net40" />
+  </files>
 </package>
