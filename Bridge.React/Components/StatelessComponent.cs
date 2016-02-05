@@ -77,7 +77,7 @@ namespace Bridge.React
 		}
 
 		/// <summary>
-		/// This will never be null nor contain any null references, though it may be empty if there are children to render
+		/// This will never be null nor contain any null references, though it may be empty if there are no children to render
 		/// </summary>
 		protected Any<ReactElement, string>[] Children
 		{

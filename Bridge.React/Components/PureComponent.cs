@@ -60,7 +60,7 @@ namespace Bridge.React
 				bridgeComponentInstance[i] = bridgeComponentInstance[i];
 			}
 
-			// .. then overwrite the ShouldComponentUpdate function, since that need special treatment
+			// .. then overwrite the ShouldComponentUpdate function, since that needs special treatment
 			var shouldComponentUpdate = bridgeComponentInstance.shouldComponentUpdate;
 			bridgeComponentInstance.shouldComponentUpdate = function (nextProps, nextState) {
 				return shouldComponentUpdate.apply(this, [ nextProps ? nextProps.value : nextProps, nextState ? nextState.value : nextState ]);
@@ -95,6 +95,9 @@ namespace Bridge.React
 					continue;
 				}
 				else if ((typeof(propValue1) === "function") && (typeof(propValue2) === "function")) {
+					// If they're Bridge-bound functions (which is what the presence of $scope and $method properties indicates), then check whether the underlying $method
+					// and $scope references match (if they do then this means that it's the same method bound to the same "this" scope, but the actual function references
+					// are not the same since they were the results from two different calls to Bridge.fn.bind)
 					if (propValue1.$scope && propValue1.$method && propValue2.$scope && propValue2.$method && (propValue1.$scope === propValue2.$scope) && (propValue1.$method === propValue2.$method)) {
 						continue;
 					}
@@ -115,7 +118,7 @@ namespace Bridge.React
 		}
 
 		/// <summary>
-		/// This will never be null nor contain any null references, though it may be empty if there are children	zto render
+		/// This will never be null nor contain any null references, though it may be empty if there are no children to render
 		/// </summary>
 		protected Any<ReactElement, string>[] Children
 		{
