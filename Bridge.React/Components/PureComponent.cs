@@ -92,7 +92,13 @@ namespace Bridge.React
 				if ((propValue1 === propValue2) 
 				|| ((propValue1 === null) && (propValue2 === null))
 				|| ((typeof(propValue1) === "undefined") && (typeof(propValue2) === "undefined"))) {
+					// Very simple cases where the properties match
 					continue;
+				}
+				else if ((propValue1 === null) || (propValue2 === null) || (typeof(propValue1) === "undefined") || (typeof(propValue2) === "undefined")) {
+					// Simple cases where one or both of the values are some sort of no-value (but either one of them has a value or they're inconsistent types of no-value,
+					// since we'd have caught them above otherwise)
+					return false;
 				}
 				else if ((typeof(propValue1) === "function") && (typeof(propValue2) === "function")) {
 					// If they're Bridge-bound functions (which is what the presence of $scope and $method properties indicates), then check whether the underlying $method
@@ -101,6 +107,10 @@ namespace Bridge.React
 					if (propValue1.$scope && propValue1.$method && propValue2.$scope && propValue2.$method && (propValue1.$scope === propValue2.$scope) && (propValue1.$method === propValue2.$method)) {
 						continue;
 					}
+				}
+				else if ((typeof(propValue1.equals) === "function") && (propValue1.equals(propValue2) === true)) {
+					// If propValue1 has an "equals" implementation then give that a go
+					continue;
 				}
 				return false;
 			}
