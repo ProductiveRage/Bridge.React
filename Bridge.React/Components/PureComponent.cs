@@ -3,6 +3,12 @@ using System.Linq;
 
 namespace Bridge.React
 {
+	// Note: There is code duplication between here and the Component class. One way to remove the duplication would have been for the PureComponent to be derived from Component, but I
+	// wanted to avoid doing that so that the implementations were not tied - in the future I might want to change how this works in such a way that it would no longer be derived from
+	// Component but this could break calling code that presumes that any PureComponent instance is also a Component instance. On top of that, I only want the PureComponent to expose
+	// the Render method - I don't want the other lifecycle methods to be overrideable (this potentially leaves things open for further optimisations in the future, by keeping derived
+	// classes as simple as possible).
+
 	/// <summary>
 	/// This provides a class that is like a combination of the StatelessComponent and the React "PureRenderMixin" - it has no State and will not update if given a new Props reference
 	/// whose individual properties are the same as the previous Props reference. Only a shallow equality check is performed, with simple referential equality tests performed - this
