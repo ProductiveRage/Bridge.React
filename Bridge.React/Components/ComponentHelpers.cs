@@ -35,13 +35,25 @@
 					}
 				*/
 			}
-			return new WrappedProps { Value = propsIfAny, Key = keyIfAny };
+
+			// With the changes in React 15.0.0 (vs 0.14.7), a null Key value will be interpreted AS a key (and will either be ".$null" or ".$undefined")
+			// when really we want a null Key to mean NO KEY. Possibly related to https://github.com/facebook/react/issues/2386, but I would have expected
+			// to have seen this issue in 0.14 if it was that. The workaround is to return a type of "wrapped props" that doesn't even have a Key property
+			// on it if there is no key value to use.
+			if (Script.Write<bool>("(typeof(keyIfAny) !== 'undefined')"))
+				return new WrappedPropsWithKey { Value = propsIfAny, Key = keyIfAny };
+			return new WrappedProps { Value = propsIfAny };
 		}
 
 		[ObjectLiteral]
 		internal class WrappedProps
 		{
 			public TProps Value { get; set; }
+		}
+
+		[ObjectLiteral]
+		internal class WrappedPropsWithKey : WrappedProps
+		{
 			public Any<string, int> Key { get; set; }
 		}
 	}
