@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Bridge.React")]
+[assembly: AssemblyTitle("Bridge.React.Analyser.Test.NonBridgeBuild")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bridge.React")]
+[assembly: AssemblyProduct("Bridge.React.Analyser.Test.NonBridgeBuild")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,4 +18,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f0d9d869-ef75-4f34-8f52-b18e7a6088c6")]
+[assembly: Guid("b38b0113-53ff-4f55-b480-6994eef96a3c")]
