@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class ScriptAttributes : ReactDomElementAttributes<ScriptElement>
+    public sealed class ScriptAttributes : ReactDomElementAttributes<HTMLScriptElement>
     {
         public bool Async { private get; set; }
         public string Charset { private get; set; }

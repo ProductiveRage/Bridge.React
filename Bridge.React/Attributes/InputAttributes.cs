@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class InputAttributes : ReactDomElementAttributes<InputElement>
+    public sealed class InputAttributes : ReactDomElementAttributes<HTMLInputElement>
     {
         public string Accept { private get; set; }
         public string Alt { private get; set; }

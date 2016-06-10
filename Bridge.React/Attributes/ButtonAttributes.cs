@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class ButtonAttributes : ReactDomElementAttributes<ButtonElement>
+    public sealed class ButtonAttributes : ReactDomElementAttributes<HTMLButtonElement>
     {
         [Name("autofocus")]
         public bool AutoFocus { private get; set; }

@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class IFrameAttributes : ReactDomElementAttributes<IFrameElement>
+    public sealed class IFrameAttributes : ReactDomElementAttributes<HTMLIFrameElement>
     {
         [Name("allowfullscreen")]
         public bool AllowFullScreen { private get; set; }
