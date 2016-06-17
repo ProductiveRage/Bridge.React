@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class AreaAttributes : ReactDomElementAttributes<AreaElement>
+    public sealed class AreaAttributes : ReactDomElementAttributes<HTMLAreaElement>
     {
         public string Alt { private get; set; }
         public string Coords { private get; set; }

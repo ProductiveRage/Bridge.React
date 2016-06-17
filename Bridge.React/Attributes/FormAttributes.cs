@@ -3,7 +3,7 @@ using Bridge.Html5;
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class FormAttributes : ReactDomElementAttributes<FormElement>
+    public sealed class FormAttributes : ReactDomElementAttributes<HTMLFormElement>
     {
         public string AcceptCharset { private get; set; }
         public string Action { private get; set; }

@@ -3,7 +3,7 @@
 namespace Bridge.React
 {
     [ObjectLiteral]
-    public sealed class ImageAttributes : ReactDomElementAttributes<ImageElement>
+    public sealed class ImageAttributes : ReactDomElementAttributes<HTMLImageElement>
     {
         public string CrossOrigin { private get; set; }
         public int Height { private get; set; }
