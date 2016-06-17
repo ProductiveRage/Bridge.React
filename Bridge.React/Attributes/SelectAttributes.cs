@@ -1,3 +1,5 @@
+using Bridge.Html5;
+
 namespace Bridge.React
 {
 	[ObjectLiteral]
