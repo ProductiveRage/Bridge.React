@@ -32,6 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Bridge.React\Attributes\DomElementsAttributes.cs">
+      <Link>Attributes\DomElementsAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\DomElementWithEventsAttributes.cs">
+      <Link>Attributes\DomElementWithEventsAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\RawHtml.cs">
+      <Link>Attributes\RawHtml.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ReactDomElementAttributes.cs">
+      <Link>Attributes\ReactDomElementAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\SelectAttributes.cs">
+      <Link>Attributes\SelectAttributes.cs</Link>
+    </Compile>
     <Compile Include="..\..\Bridge.React\Components\Component.cs">
       <Link>Components\Component.cs</Link>
     </Compile>

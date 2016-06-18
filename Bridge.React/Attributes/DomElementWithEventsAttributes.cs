@@ -3,8 +3,8 @@ using Bridge.Html5;
 
 namespace Bridge.React
 {
-    // Based on information from https://facebook.github.io/react/docs/events.html
-    public abstract class DomElementWithEventsAttributes<TCurrentTarget> : DomElementsAttributes where TCurrentTarget : Element
+	// Based on information from https://facebook.github.io/react/docs/events.html
+	public abstract class DomElementWithEventsAttributes<TCurrentTarget> : DomElementsAttributes where TCurrentTarget : Element
     {
         public Action<WheelEvent<TCurrentTarget>> OnCopy { private get; set; }
         public Action<WheelEvent<TCurrentTarget>> OnCut { private get; set; }

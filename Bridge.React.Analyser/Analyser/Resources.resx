@@ -123,4 +123,13 @@
   <data name="ComponentWithNonEmptyConstructorMessageFormat" xml:space="preserve">
     <value>Class {0} is derived from {1} and so must not have a constructor body as it will not be executed (due to the way that React initialise component classes)</value>
   </data>
+  <data name="SelectAttributesMisuse" xml:space="preserve">
+    <value>Be careful to use the appropriate "Value" or "Values" SelectAttributes property, depending upon the "Multiple" property's value</value>
+  </data>
+  <data name="SelectAttributesValuesButNonMultiple" xml:space="preserve">
+    <value>Do not try to set the SelectAttributes 'Values' property when 'Multiple' is false, use the 'Value' scalar property instead</value>
+  </data>
+  <data name="SelectAttributeValueWithMultiple" xml:space="preserve">
+    <value>Do not try to set the SelectAttributes 'Value' property when 'Multiple' is true, use the 'Values' array property instead</value>
+  </data>
 </root>

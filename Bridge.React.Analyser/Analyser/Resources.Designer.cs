@@ -78,5 +78,32 @@ namespace Bridge.React.Analyser {
                 return ResourceManager.GetString("ComponentWithNonEmptyConstructorMessageFormat", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Be careful to use the appropriate &quot;Value&quot; or &quot;Values&quot; SelectAttributes property, depending upon the &quot;Multiple&quot; property&apos;s value.
+        /// </summary>
+        internal static string SelectAttributesMisuse {
+            get {
+                return ResourceManager.GetString("SelectAttributesMisuse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not try to set the SelectAttributes &apos;Values&apos; property when &apos;Multiple&apos; is false, use the &apos;Value&apos; scalar property instead.
+        /// </summary>
+        internal static string SelectAttributesValuesButNonMultiple {
+            get {
+                return ResourceManager.GetString("SelectAttributesValuesButNonMultiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not try to set the SelectAttributes &apos;Value&apos; property when &apos;Multiple&apos; is true, use the &apos;Values&apos; array property instead.
+        /// </summary>
+        internal static string SelectAttributeValueWithMultiple {
+            get {
+                return ResourceManager.GetString("SelectAttributeValueWithMultiple", resourceCulture);
+            }
+        }
     }
 }

@@ -191,7 +191,7 @@ namespace Bridge.React.Analyser.Test
 
 				namespace TestCase
 				{
-					public class LabelComponent : Stateless<LabelComponent.Props>
+					public class LabelComponent : StatelessComponent<LabelComponent.Props>
 					{
 						private readonly int _otherValue;
 						public LabelComponent(Props props, int otherValue) : base(props)
