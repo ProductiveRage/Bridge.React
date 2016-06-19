@@ -132,4 +132,10 @@
   <data name="SelectAttributeValueWithMultiple" xml:space="preserve">
     <value>Do not try to set the SelectAttributes 'Value' property when 'Multiple' is true, use the 'Values' array property instead</value>
   </data>
+  <data name="InvalidReactElementInstantiation" xml:space="preserve">
+    <value>ReactElement may not be used as a type parameter for an object instantiation as it is an [External] type that will not be available at runtime (for creating sets of components, the ToChildComponentArray extension method may help)</value>
+  </data>
+  <data name="InvalidReactElementUsage" xml:space="preserve">
+    <value>ReactElement is an [External] type and may not be used anywhere that would require a reference to its type at runtime</value>
+  </data>
 </root>

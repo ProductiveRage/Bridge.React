@@ -123,8 +123,8 @@ namespace Bridge.React.Analyser
 			var typeToCreate = context.SemanticModel.GetTypeInfo(objectCreation);
 			return
 				(typeToCreate.Type != null) &&
-				(typeToCreate.Type.Name == "SelectAttributes") &&
-				(typeToCreate.Type.ContainingAssembly.Identity.Name == "Bridge.React");
+				typeToCreate.Type.IsPartOfBridgeReact() &&
+				(typeToCreate.Type.Name == "SelectAttributes");
 		}
 
 		private static LocalizableString GetLocalizableString(string nameOfLocalizableResource)

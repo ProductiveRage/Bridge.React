@@ -80,6 +80,24 @@ namespace Bridge.React.Analyser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ReactElement may not be used as a type parameter for an object instantiation as it is an [External] type that will not be available at runtime (for creating sets of components, the ToChildComponentArray extension method may help).
+        /// </summary>
+        internal static string InvalidReactElementInstantiation {
+            get {
+                return ResourceManager.GetString("InvalidReactElementInstantiation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReactElement is an [External] type and may not be used anywhere that would require a reference to its type at runtime.
+        /// </summary>
+        internal static string InvalidReactElementUsage {
+            get {
+                return ResourceManager.GetString("InvalidReactElementUsage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Be careful to use the appropriate &quot;Value&quot; or &quot;Values&quot; SelectAttributes property, depending upon the &quot;Multiple&quot; property&apos;s value.
         /// </summary>
         internal static string SelectAttributesMisuse {

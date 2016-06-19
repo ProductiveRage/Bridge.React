@@ -79,7 +79,7 @@ namespace Bridge.React.Analyser
 			if (classSymbol == null)
 				throw new ArgumentNullException(nameof(classSymbol));
 			if (string.IsNullOrWhiteSpace(fullNameOfClassToTestFor))
-				throw new ArgumentNullException($"No nameof(classToTestFor) specified");
+				throw new ArgumentNullException($"No {nameof(fullNameOfClassToTestFor)} specified");
 
 			if (fullNameOfClassToTestFor.Contains("`"))
 			{
