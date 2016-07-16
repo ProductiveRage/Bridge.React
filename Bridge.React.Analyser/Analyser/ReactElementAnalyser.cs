@@ -10,7 +10,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace Bridge.React.Analyser
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
-	public class ReactElementAnalyser : DiagnosticAnalyzer
+	public sealed class ReactElementAnalyser : DiagnosticAnalyzer
 	{
 		public const string DiagnosticId = "BridgeReact";
 		private const string Category = "Design";
