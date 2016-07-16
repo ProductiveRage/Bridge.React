@@ -52,11 +52,7 @@ namespace Bridge.React.Analyser
 			if (initializer == null)
 				return;
 
-			var parentObjectCreation = initializer.Parent as ObjectCreationExpressionSyntax;
-			if (parentObjectCreation == null)
-				return;
-
-			var propertyInitialisers = parentObjectCreation.Initializer.ChildNodes()
+			var propertyInitialisers = initializer.ChildNodes()
 				.OfType<AssignmentExpressionSyntax>()
 				.Select(propertyInitialiser => new
 				{
@@ -88,6 +84,10 @@ namespace Bridge.React.Analyser
 					return;
 				}
 			}
+
+			var parentObjectCreation = initializer.Parent as ObjectCreationExpressionSyntax;
+			if (parentObjectCreation == null)
+				return;
 
 			if (multiplePropertyValue && propertyInitialisers.Any(propertyInitialiser => propertyInitialiser.PropertyName == "Value"))
 			{
