@@ -188,5 +188,15 @@ namespace Bridge.React
 		{
 			Script.Write("this.setState({ value: state })");
 		}
+		
+		/// <summary>
+		/// This replaces the entire state for the component instance, and executes the callback delegate when the state has been
+		/// successfully mutated. See http://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
+		/// </summary>
+		[Name("setWrappedStateCallback")]
+		protected void SetState(TState state, Action action)
+		{
+			Script.Write("this.setState({ value: state }, action)");
+		}
 	}
 }
