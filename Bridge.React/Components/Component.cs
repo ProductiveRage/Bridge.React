@@ -206,7 +206,7 @@ namespace Bridge.React
 		[Name("setWrappedStateAsync")]
 		protected Task SetStateAsync(TState state)
 		{
-			TaskCompletionSource<object> tcs = new TaskCompletionSource<object>();
+			var tcs = new TaskCompletionSource<object>();
 			SetState(state, () => tcs.SetResult(null));
 			return tcs.Task;
 		}
