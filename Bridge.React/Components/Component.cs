@@ -198,5 +198,16 @@ namespace Bridge.React
 		{
 			Script.Write("this.setState({ value: state }, action)");
 		}
+		
+		/// <summary>
+		/// This replaces the entire state for the component instance asynchronously. Execution will continue when the state has been successfully mutated.
+		/// </summary>
+		[Name("setWrappedStateAsync")]
+		protected Task SetStateAsync(TState state)
+		{
+			TaskCompletionSource<object> tcs = new TaskCompletionSource<object>();
+			SetState(state, () => tcs.SetResult(null));
+			return tcs.Task;
+		}
 	}
 }
