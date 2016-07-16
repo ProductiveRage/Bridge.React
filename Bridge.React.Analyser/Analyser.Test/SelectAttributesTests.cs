@@ -107,6 +107,50 @@ namespace Bridge.React.Analyser.Test
 			VerifyCSharpDiagnostic(testContent, expected);
 		}
 
+		[TestMethod]
+		public void OnlyVerifyBridgeReactSelectAttributes()
+		{
+			var testContent = @"
+				namespace TestCase
+				{
+					public class Example
+					{
+						public void Go()
+						{
+							new SelectAttributes { Multiple = true, Value = ""1"" };
+						}
+					}
+
+					public class SelectAttributes
+					{
+						public bool Multiple { get; set; }
+						public string Value { get; set; }
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
+		[TestMethod]
+		public void IgnoreInvalidPropertySetting()
+		{
+			var testContent = @"
+				using Bridge.React;
+
+				namespace TestCase
+				{
+					public class Example
+					{
+						public void Go()
+						{
+							new SelectAttributes { Nested.Multiple = true };
+						}
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
 		protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
 		{
 			return new SelectAttributesAnalyzer();
