@@ -1,4 +1,6 @@
-﻿namespace Bridge.React
+﻿using System.Collections.Generic;
+
+namespace Bridge.React
 {
 	[Name("React.DOM")]
 	[External]
@@ -94,7 +96,28 @@
 		[Name("div")]
 		public extern static ReactElement Div(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("dl")]
+		[Template("React.DOM.div({ }, {0})")]
+		public extern static ReactElement Div(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.div({ }, {*children})")]
+        public extern static ReactElement Div(params ReactElement[] children);
+
+        [Template("React.DOM.div({ }, {*children})")]
+        public extern static ReactElement Div(params string[] children);
+
+        [Template("React.DOM.div({ }, {0}.toArray())")]
+        public extern static ReactElement Div(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.div({ }, {0}.toArray())")]
+        public extern static ReactElement Div(IEnumerable<string> children);
+
+        [Template("React.DOM.div({ }, {0})")]
+        public extern static ReactElement Div(ReactElement child);
+
+        [Template("React.DOM.div({ }, {0})")]
+        public extern static ReactElement Div(string child);
+
+        [Name("dl")]
 		public extern static ReactElement DL(DListAttributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("dt")]
@@ -184,7 +207,28 @@
 		[Name("li")]
 		public extern static ReactElement Li(LIAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("link")]
+        [Template("React.DOM.li({ }, {0})")]
+        public extern static ReactElement Li(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.li({ }, {*children})")]
+        public extern static ReactElement Li(params ReactElement[] children);
+
+        [Template("React.DOM.li({ }, {*children})")]
+        public extern static ReactElement Li(params string[] children);
+
+        [Template("React.DOM.li({ }, {0}.toArray())")]
+        public extern static ReactElement Li(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.li({ }, {0}.toArray())")]
+        public extern static ReactElement Li(IEnumerable<string> children);
+
+        [Template("React.DOM.li({ }, {0})")]
+        public extern static ReactElement Li(ReactElement child);
+
+        [Template("React.DOM.li({ }, {0})")]
+        public extern static ReactElement Li(string child);
+
+        [Name("link")] 
 		public extern static ReactElement Link(LinkAttributes properties, params Any<ReactElement, string>[] children);
 
 #pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.Any<ReactElement, string>[])' has the wrong signature to be an entry point
@@ -339,7 +383,28 @@
 		[Name("ul")]
 		public extern static ReactElement UL(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("Var")]
+        [Template("React.DOM.ul({ }, {0})")]
+        public extern static ReactElement UL(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.ul({ }, {*children})")]
+        public extern static ReactElement UL(params ReactElement[] children);
+
+        [Template("React.DOM.ul({ }, {*children})")]
+        public extern static ReactElement UL(params string[] children);
+
+        [Template("React.DOM.ul({ }, {0}.toArray())")]
+        public extern static ReactElement UL(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.ul({ }, {0}.toArray())")]
+        public extern static ReactElement UL(IEnumerable<string> children);
+
+        [Template("React.DOM.ul({ }, {0})")]
+        public extern static ReactElement UL(ReactElement child);
+
+        [Template("React.DOM.ul({ }, {0})")]
+        public extern static ReactElement UL(string child);
+
+        [Name("Var")]
 		public extern static ReactElement Var(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("video")]
