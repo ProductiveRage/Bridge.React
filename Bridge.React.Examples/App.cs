@@ -13,7 +13,7 @@ namespace Bridge.React.Examples
         public static void Main()
         {
             React.Render(
-                new MessageEntryForm("Name:"),
+                new TodoApp("C# React canonical todo app"),
                 Document.GetElementById("main")
             );
         }

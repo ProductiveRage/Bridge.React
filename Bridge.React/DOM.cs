@@ -153,7 +153,28 @@ namespace Bridge.React
 		[Name("h3")]
 		public extern static ReactElement H3(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("h4")]
+        [Template("React.DOM.h3({ }, {0})")]
+        public extern static ReactElement H3(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.h3({ }, {*children})")]
+        public extern static ReactElement H3(params ReactElement[] children);
+
+        [Template("React.DOM.h3({ }, {*children})")]
+        public extern static ReactElement H3(params string[] children);
+
+        [Template("React.DOM.h3({ }, {0}.toArray())")]
+        public extern static ReactElement H3(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.h3({ }, {0}.toArray())")]
+        public extern static ReactElement H3(IEnumerable<string> children);
+
+        [Template("React.DOM.h3({ }, {0})")]
+        public extern static ReactElement H3(ReactElement child);
+
+        [Template("React.DOM.h3({ }, {0})")]
+        public extern static ReactElement H3(string child);
+
+        [Name("h4")]
 		public extern static ReactElement H4(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("h5")]
@@ -201,7 +222,28 @@ namespace Bridge.React
 		[Name("label")]
 		public extern static ReactElement Label(LabelAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("legend")]
+        [Template("React.DOM.label({ }, {0})")]
+        public extern static ReactElement Label(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.label({ }, {*children})")]
+        public extern static ReactElement Label(params ReactElement[] children);
+
+        [Template("React.DOM.label({ }, {*children})")]
+        public extern static ReactElement Label(params string[] children);
+
+        [Template("React.DOM.label({ }, {0}.toArray())")]
+        public extern static ReactElement Label(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.label({ }, {0}.toArray())")]
+        public extern static ReactElement Label(IEnumerable<string> children);
+
+        [Template("React.DOM.label({ }, {0})")]
+        public extern static ReactElement Label(ReactElement child);
+
+        [Template("React.DOM.label({ }, {0})")]
+        public extern static ReactElement Label(string child);
+
+        [Name("legend")]
 		public extern static ReactElement Legend(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("li")]
@@ -344,16 +386,58 @@ namespace Bridge.React
 		[Name("table")]
 		public extern static ReactElement Table(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("tbody")]
+        [Template("React.DOM.table({ }, {0})")]
+        public extern static ReactElement Table(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.table({ }, {*children})")]
+        public extern static ReactElement Table(params ReactElement[] children);
+
+        [Template("React.DOM.table({ }, {*children})")]
+        public extern static ReactElement Table(params string[] children);
+
+        [Template("React.DOM.table({ }, {0}.toArray())")]
+        public extern static ReactElement Table(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.table({ }, {0}.toArray())")]
+        public extern static ReactElement Table(IEnumerable<string> children);
+
+        [Template("React.DOM.table({ }, {0})")]
+        public extern static ReactElement Table(ReactElement child);
+
+        [Template("React.DOM.table({ }, {0})")]
+        public extern static ReactElement Table(string child);
+
+        [Name("tbody")]
 		public extern static ReactElement TBody(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("td")]
 		public extern static ReactElement TD(TableCellAttributes properties, params Any<ReactElement, string>[] children);
 
-		/// <summary>
-		/// A TextArea's contents should be set using the Value property, rather than children (React includes a warning if TextArea contents are set using children and so this is not allowed with these bindings)
-		/// </summary>
-		[Name("textarea")]
+        [Template("React.DOM.td({ }, {0})")]
+        public extern static ReactElement TD(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.td({ }, {*children})")]
+        public extern static ReactElement TD(params ReactElement[] children);
+
+        [Template("React.DOM.td({ }, {*children})")]
+        public extern static ReactElement TD(params string[] children);
+
+        [Template("React.DOM.td({ }, {0}.toArray())")]
+        public extern static ReactElement TD(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.td({ }, {0}.toArray())")]
+        public extern static ReactElement TD(IEnumerable<string> children);
+
+        [Template("React.DOM.td({ }, {0})")]
+        public extern static ReactElement TD(ReactElement child);
+
+        [Template("React.DOM.td({ }, {0})")]
+        public extern static ReactElement TD(string child);
+
+        /// <summary>
+        /// A TextArea's contents should be set using the Value property, rather than children (React includes a warning if TextArea contents are set using children and so this is not allowed with these bindings)
+        /// </summary>
+        [Name("textarea")]
 		public extern static ReactElement TextArea(TextAreaAttributes properties);
 
 		[Name("tfoot")]
@@ -374,7 +458,28 @@ namespace Bridge.React
 		[Name("tr")]
 		public extern static ReactElement TR(TableCellAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("track")]
+        [Template("React.DOM.tr({ }, {0})")]
+        public extern static ReactElement TR(params Any<ReactElement, string>[] children);
+
+        [Template("React.DOM.tr({ }, {*children})")]
+        public extern static ReactElement TR(params ReactElement[] children);
+
+        [Template("React.DOM.tr({ }, {*children})")]
+        public extern static ReactElement TR(params string[] children);
+
+        [Template("React.DOM.tr({ }, {0}.toArray())")]
+        public extern static ReactElement TR(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.tr({ }, {0}.toArray())")]
+        public extern static ReactElement TR(IEnumerable<string> children);
+
+        [Template("React.DOM.tr({ }, {0})")]
+        public extern static ReactElement TR(ReactElement child);
+
+        [Template("React.DOM.tr({ }, {0})")]
+        public extern static ReactElement TR(string child);
+
+        [Name("track")]
 		public extern static ReactElement Track(TrackAttributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("u")]
