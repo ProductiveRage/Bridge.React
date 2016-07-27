@@ -6,7 +6,6 @@ using Bridge.Html5;
 
 namespace Bridge.React.Examples
 {
-
     public class TodoApp : Component<TodoApp.Props, TodoApp.State>
     {
         public TodoApp(string label)
@@ -26,9 +25,9 @@ namespace Bridge.React.Examples
             };
         }
 
-        private State AppendTodo(State oldState, string todoDescription)
+        private State AppendTodo(string todoDescription)
         {
-            var count = oldState.Todos.Count();
+            var count = state.Todos.Count();
             var todo = new Todo
             {
                 Description = todoDescription,
@@ -39,22 +38,22 @@ namespace Bridge.React.Examples
             return new State
             {
                 InputValue = "",
-                Todos = oldState.Todos.Append(todo)
+                Todos = state.Todos.Append(todo)
             };
         }
 
-        private State RemoveTodo(State oldState, int id)
+        private State RemoveTodo(int id)
         {
             return new State
             {
-                InputValue = oldState.InputValue,
-                Todos = oldState.Todos.Where(todo => todo.Id != id)
+                InputValue = state.InputValue,
+                Todos = state.Todos.Where(todo => todo.Id != id)
             };
         }
 
-        private State ToggleDone(State oldState, int id)
+        private State ToggleDone(int id)
         {
-            var todos = oldState.Todos.ToArray();
+            var todos = state.Todos.ToArray();
             for(int i = 0; i < todos.Length; i++)
             {
                 if (todos[i].Id == id)
@@ -65,7 +64,7 @@ namespace Bridge.React.Examples
 
             return new State
             {
-                InputValue = oldState.InputValue,
+                InputValue = state.InputValue,
                 Todos = todos
             };
         }
@@ -86,7 +85,7 @@ namespace Bridge.React.Examples
                     new ButtonAttributes
                     {
                         Disabled = string.IsNullOrWhiteSpace(state.InputValue),
-                        OnClick = e => SetState(AppendTodo(state, state.InputValue))
+                        OnClick = e => SetState(AppendTodo(state.InputValue))
                     },
                     "Add"
                 )),
@@ -100,12 +99,12 @@ namespace Bridge.React.Examples
                             DOM.Button(new ButtonAttributes
                             {
                                 ClassName = todo.Done ? "toggle-done" : "toggle-not-done",
-                                OnClick = e => SetState(ToggleDone(state, todo.Id))
+                                OnClick = e => SetState(ToggleDone(todo.Id))
                             }, todo.Done ? "Not done yet!" : "Finished!"),
                             DOM.Button(new ButtonAttributes
                             {
                                 ClassName = "remove-btn",
-                                OnClick = e => SetState(RemoveTodo(state, todo.Id))
+                                OnClick = e => SetState(RemoveTodo(todo.Id))
                             }, "Remove")
                      ))
                      .Pipe(DOM.Div)
