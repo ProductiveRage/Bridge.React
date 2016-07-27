@@ -96,14 +96,17 @@ namespace Bridge.React
 		[Name("div")]
 		public extern static ReactElement Div(Attributes properties, params Any<ReactElement, string>[] children);
 
-        [Template("React.DOM.div(null, {*children})")]
-        public extern static ReactElement Div(params Any<ReactElement, string>[] children);
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params Any<ReactElement, string>[] children);
 
-        [Template("React.DOM.div(null, {*children})")]
-        public extern static ReactElement Div(params ReactElement[] children);
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params ReactElement[] children);
 
-        [Template("React.DOM.div(null, {*children})")]
-        public extern static ReactElement Div(params string[] children);
+        //[Template("React.DOM.div({0}, {*children})")]
+        //public extern static ReactElement Div(Attributes attrs, params ReactElement[] children);
+
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params string[] children);
 
         [Template("React.DOM.div(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement Div(IEnumerable<ReactElement> children);
@@ -152,15 +155,6 @@ namespace Bridge.React
 
 		[Name("h3")]
 		public extern static ReactElement H3(Attributes properties, params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.h3(null, {*children})")]
-        public extern static ReactElement H3(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.h3(null, {*children})")]
-        public extern static ReactElement H3(params ReactElement[] children);
-
-        [Template("React.DOM.h3(null, {*children})")]
-        public extern static ReactElement H3(params string[] children);
 
         [Template("React.DOM.h3(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement H3(IEnumerable<ReactElement> children);
@@ -222,15 +216,6 @@ namespace Bridge.React
 		[Name("label")]
 		public extern static ReactElement Label(LabelAttributes properties, params Any<ReactElement, string>[] children);
 
-        [Template("React.DOM.label(null, {*children})")]
-        public extern static ReactElement Label(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.label(null, {*children})")]
-        public extern static ReactElement Label(params ReactElement[] children);
-
-        [Template("React.DOM.label(null, {*children})")]
-        public extern static ReactElement Label(params string[] children);
-
         [Template("React.DOM.label(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement Label(IEnumerable<ReactElement> children);
 
@@ -248,15 +233,6 @@ namespace Bridge.React
 
 		[Name("li")]
 		public extern static ReactElement Li(LIAttributes properties, params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.li(null, {*children})")]
-        public extern static ReactElement Li(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.li(null, {*children})")]
-        public extern static ReactElement Li(params ReactElement[] children);
-
-        [Template("React.DOM.li(null, {*children})")]
-        public extern static ReactElement Li(params string[] children);
 
         [Template("React.DOM.li(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement Li(IEnumerable<ReactElement> children);
@@ -386,15 +362,6 @@ namespace Bridge.React
 		[Name("table")]
 		public extern static ReactElement Table(Attributes properties, params Any<ReactElement, string>[] children);
 
-        [Template("React.DOM.table(null, {*children})")]
-        public extern static ReactElement Table(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.table(null, {*children})")]
-        public extern static ReactElement Table(params ReactElement[] children);
-
-        [Template("React.DOM.table(null, {*children})")]
-        public extern static ReactElement Table(params string[] children);
-
         [Template("React.DOM.table(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement Table(IEnumerable<ReactElement> children);
 
@@ -412,15 +379,6 @@ namespace Bridge.React
 
 		[Name("td")]
 		public extern static ReactElement TD(TableCellAttributes properties, params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.td(null, {*children})")]
-        public extern static ReactElement TD(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.td(null, {*children})")]
-        public extern static ReactElement TD(params ReactElement[] children);
-
-        [Template("React.DOM.td(null, {*children})")]
-        public extern static ReactElement TD(params string[] children);
 
         [Template("React.DOM.td(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement TD(IEnumerable<ReactElement> children);
@@ -458,15 +416,6 @@ namespace Bridge.React
 		[Name("tr")]
 		public extern static ReactElement TR(TableCellAttributes properties, params Any<ReactElement, string>[] children);
 
-        [Template("React.DOM.tr(null, {*children})")]
-        public extern static ReactElement TR(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.tr(null, {*children})")]
-        public extern static ReactElement TR(params ReactElement[] children);
-
-        [Template("React.DOM.tr(null, {*children})")]
-        public extern static ReactElement TR(params string[] children);
-
         [Template("React.DOM.tr(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement TR(IEnumerable<ReactElement> children);
 
@@ -487,15 +436,6 @@ namespace Bridge.React
 
 		[Name("ul")]
 		public extern static ReactElement UL(Attributes properties, params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.ul(null, {*children})")]
-        public extern static ReactElement UL(params Any<ReactElement, string>[] children);
-
-        [Template("React.DOM.ul(null, {*children})")]
-        public extern static ReactElement UL(params ReactElement[] children);
-
-        [Template("React.DOM.ul(null, {*children})")]
-        public extern static ReactElement UL(params string[] children);
 
         [Template("React.DOM.ul(null, System.Linq.Enumerable.from({0}).toArray())")]
         public extern static ReactElement UL(IEnumerable<ReactElement> children);

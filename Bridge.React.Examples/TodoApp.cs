@@ -69,11 +69,15 @@ namespace Bridge.React.Examples
             };
         }
 
+        private IEnumerable<T> ListOf<T>(params T[] items)
+        {
+            return items;
+        }
 
         public override ReactElement Render()
         {
             return DOM.Div(new Attributes { ClassName = "wrapper" },
-                DOM.Div(
+                DOM.Div(ListOf(
                     DOM.H3(props.Label),
                     DOM.Label("Description"),
                     DOM.Input(new InputAttributes
@@ -88,7 +92,7 @@ namespace Bridge.React.Examples
                         OnClick = e => SetState(AppendTodo(state.InputValue))
                     },
                     "Add"
-                )),
+                ))),
                 state.Todos
                      .Select(todo =>
                         DOM.Div(new Attributes { ClassName = "todo-container" },
