@@ -88,6 +88,7 @@ namespace Bridge.React.Examples
 				DOM.Div(
 					state.Todos
 						 .Select(todo =>
+							DOM.Div(new Attributes { Key = todo.Id, ClassName = "todo-container" },
 								DOM.H4(new Attributes { ClassName = todo.Done ? "done" : "not-done" }, todo.Description),
 								DOM.Button(
 									new ButtonAttributes
