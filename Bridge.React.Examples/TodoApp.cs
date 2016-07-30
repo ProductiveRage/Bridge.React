@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Bridge.React.Examples
@@ -86,28 +85,27 @@ namespace Bridge.React.Examples
 					"Add"
 				),
 				DOM.Div(
-					state.Todos
-						 .Select(todo =>
-							DOM.Div(new Attributes { Key = todo.Id, ClassName = "todo-container" },
-								DOM.H4(new Attributes { ClassName = todo.Done ? "done" : "not-done" }, todo.Description),
-								DOM.Button(
-									new ButtonAttributes
-									{
-										ClassName = todo.Done ? "toggle-done" : "toggle-not-done",
-										OnClick = e => SetState(ToggleDone(todo.Id))
-									},
-									todo.Done ? "Not done yet!" : "Finished!"
-								),
-								DOM.Button(
-									new ButtonAttributes
-									{
-										ClassName = "remove-btn",
-										OnClick = e => SetState(RemoveTodo(todo.Id))
-									},
-									"Remove"
-								)
-						 ))
-						 .Pipe(DOM.Div)
+					state.Todos.Select(todo =>
+						DOM.Div(new Attributes { Key = todo.Id, ClassName = "todo-container" },
+							DOM.H4(new Attributes { ClassName = todo.Done ? "done" : "not-done" }, todo.Description),
+							DOM.Button(
+								new ButtonAttributes
+								{
+									ClassName = todo.Done ? "toggle-done" : "toggle-not-done",
+									OnClick = e => SetState(ToggleDone(todo.Id))
+								},
+								todo.Done ? "Not done yet!" : "Finished!"
+							),
+							DOM.Button(
+								new ButtonAttributes
+								{
+									ClassName = "remove-btn",
+									OnClick = e => SetState(RemoveTodo(todo.Id))
+								},
+								"Remove"
+							)
+						)
+					)
 				)
 			);
 		}
@@ -136,11 +134,6 @@ namespace Bridge.React.Examples
 
 	public static class Extenstions
 	{
-		public static U Pipe<T, U>(this T value, Func<T, U> f)
-		{
-			return f(value);
-		}
-
 		public static IEnumerable<T> Append<T>(this IEnumerable<T> source, T value)
 		{
 			return source.Concat(new T[] { value });
