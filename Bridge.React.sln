@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser.Test.NonBridgeBuil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser.Test.BridgeMock", "Bridge.React.Analyser\Analyser.Test.BridgeMock\Analyser.Test.BridgeMock.csproj", "{36E740D7-AE4E-429B-9473-0FF15C209F83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge.React.Examples", "Bridge.React.Examples\Bridge.React.Examples.csproj", "{3B3F1275-47C5-4128-B089-7185DE84A717}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{36E740D7-AE4E-429B-9473-0FF15C209F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36E740D7-AE4E-429B-9473-0FF15C209F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36E740D7-AE4E-429B-9473-0FF15C209F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3F1275-47C5-4128-B089-7185DE84A717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3F1275-47C5-4128-B089-7185DE84A717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3F1275-47C5-4128-B089-7185DE84A717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3F1275-47C5-4128-B089-7185DE84A717}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

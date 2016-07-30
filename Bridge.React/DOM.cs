@@ -1,4 +1,6 @@
-﻿namespace Bridge.React
+﻿using System.Collections.Generic;
+
+namespace Bridge.React
 {
 	[Name("React.DOM")]
 	[External]
@@ -94,7 +96,31 @@
 		[Name("div")]
 		public extern static ReactElement Div(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("dl")]
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params Any<ReactElement, string>[] children);
+
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params ReactElement[] children);
+
+        //[Template("React.DOM.div({0}, {*children})")]
+        //public extern static ReactElement Div(Attributes attrs, params ReactElement[] children);
+
+        //[Template("React.DOM.div(null, {*children})")]
+        //public extern static ReactElement Div(params string[] children);
+
+        [Template("React.DOM.div(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Div(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.div(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Div(IEnumerable<string> children);
+
+        [Template("React.DOM.div(null, {0})")]
+        public extern static ReactElement Div(ReactElement child);
+
+        [Template("React.DOM.div(null, {0})")] 
+        public extern static ReactElement Div(string child);
+
+        [Name("dl")]
 		public extern static ReactElement DL(DListAttributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("dt")]
@@ -130,7 +156,19 @@
 		[Name("h3")]
 		public extern static ReactElement H3(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("h4")]
+        [Template("React.DOM.h3(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement H3(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.h3(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement H3(IEnumerable<string> children);
+
+        [Template("React.DOM.h3(null, {0})")]
+        public extern static ReactElement H3(ReactElement child);
+
+        [Template("React.DOM.h3(null, {0})")]
+        public extern static ReactElement H3(string child);
+
+        [Name("h4")]
 		public extern static ReactElement H4(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("h5")]
@@ -178,13 +216,37 @@
 		[Name("label")]
 		public extern static ReactElement Label(LabelAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("legend")]
+        [Template("React.DOM.label(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Label(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.label(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Label(IEnumerable<string> children);
+
+        [Template("React.DOM.label(null, {0})")]
+        public extern static ReactElement Label(ReactElement child);
+
+        [Template("React.DOM.label(null, {0})")]
+        public extern static ReactElement Label(string child);
+
+        [Name("legend")]
 		public extern static ReactElement Legend(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("li")]
 		public extern static ReactElement Li(LIAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("link")]
+        [Template("React.DOM.li(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Li(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.li(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Li(IEnumerable<string> children);
+
+        [Template("React.DOM.li(null, {0})")]
+        public extern static ReactElement Li(ReactElement child);
+
+        [Template("React.DOM.li(null, {0})")]
+        public extern static ReactElement Li(string child);
+
+        [Name("link")] 
 		public extern static ReactElement Link(LinkAttributes properties, params Any<ReactElement, string>[] children);
 
 #pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.Any<ReactElement, string>[])' has the wrong signature to be an entry point
@@ -300,16 +362,40 @@
 		[Name("table")]
 		public extern static ReactElement Table(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("tbody")]
+        [Template("React.DOM.table(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Table(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.table(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement Table(IEnumerable<string> children);
+
+        [Template("React.DOM.table(null, {0})")]
+        public extern static ReactElement Table(ReactElement child);
+
+        [Template("React.DOM.table(null, {0})")]
+        public extern static ReactElement Table(string child); 
+
+        [Name("tbody")]
 		public extern static ReactElement TBody(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("td")]
 		public extern static ReactElement TD(TableCellAttributes properties, params Any<ReactElement, string>[] children);
 
-		/// <summary>
-		/// A TextArea's contents should be set using the Value property, rather than children (React includes a warning if TextArea contents are set using children and so this is not allowed with these bindings)
-		/// </summary>
-		[Name("textarea")]
+        [Template("React.DOM.td(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement TD(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.td(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement TD(IEnumerable<string> children);
+
+        [Template("React.DOM.td(null, {0})")]
+        public extern static ReactElement TD(ReactElement child);
+
+        [Template("React.DOM.td(null, {0})")] 
+        public extern static ReactElement TD(string child);
+
+        /// <summary>
+        /// A TextArea's contents should be set using the Value property, rather than children (React includes a warning if TextArea contents are set using children and so this is not allowed with these bindings)
+        /// </summary>
+        [Name("textarea")]
 		public extern static ReactElement TextArea(TextAreaAttributes properties);
 
 		[Name("tfoot")]
@@ -330,7 +416,19 @@
 		[Name("tr")]
 		public extern static ReactElement TR(TableCellAttributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("track")]
+        [Template("React.DOM.tr(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement TR(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.tr(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement TR(IEnumerable<string> children);
+
+        [Template("React.DOM.tr(null, {0})")]
+        public extern static ReactElement TR(ReactElement child);
+
+        [Template("React.DOM.tr(null, {0})")]
+        public extern static ReactElement TR(string child);
+
+        [Name("track")]
 		public extern static ReactElement Track(TrackAttributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("u")]
@@ -339,7 +437,19 @@
 		[Name("ul")]
 		public extern static ReactElement UL(Attributes properties, params Any<ReactElement, string>[] children);
 
-		[Name("Var")]
+        [Template("React.DOM.ul(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement UL(IEnumerable<ReactElement> children);
+
+        [Template("React.DOM.ul(null, System.Linq.Enumerable.from({0}).toArray())")]
+        public extern static ReactElement UL(IEnumerable<string> children);
+
+        [Template("React.DOM.ul(null, {0})")]
+        public extern static ReactElement UL(ReactElement child);
+
+        [Template("React.DOM.ul(null, {0})")]
+        public extern static ReactElement UL(string child);
+
+        [Name("Var")]
 		public extern static ReactElement Var(Attributes properties, params Any<ReactElement, string>[] children);
 
 		[Name("video")]
