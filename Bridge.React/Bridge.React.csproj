@@ -46,6 +46,7 @@
     <Compile Include="Attributes\DomElementWithEventsAttributes.cs" />
     <Compile Include="Components\PureComponent.cs" />
     <Compile Include="Components\ComponentHelpers.cs" />
+    <Compile Include="ComponentListToReactElementTranslation.cs" />
     <Compile Include="EnumerableComponentExtensions.cs" />
     <Compile Include="Events\ImageEvent.cs" />
     <Compile Include="Events\MouseEvent.cs" />
