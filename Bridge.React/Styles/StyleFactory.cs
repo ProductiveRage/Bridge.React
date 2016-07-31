@@ -8,8 +8,23 @@ namespace Bridge.React
 {
     public static class Style
     {
-        [Template("Object.assign(JSON.parse(JSON.stringify({0})), JSON.parse(JSON.stringify({1})))")]
-        public extern static ReactStyle MergeWith(this ReactStyle baseStyle, ReactStyle other);
+        public static ReactStyle MergeWith(this ReactStyle source, ReactStyle other)
+        {
+            var merged = Script.Write<ReactStyle>("{ }");
+            /*@
+            if (source) {
+                for (var i in source) {
+                    merged[i] = source[i];
+                }
+            }
+            if (other) {
+                for (var i in other) {
+                    merged[i] = other[i];
+                }
+            }
+            */
+            return merged;
+        }
 
         public static ReactStyle Height(Any<string, int> height)
         {
