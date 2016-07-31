@@ -115,6 +115,8 @@
     <Compile Include="Components\StatelessComponent.cs" />
     <Compile Include="Components\Component.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Styles\ReactStyle.cs" />
+    <Compile Include="Styles\StyleFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
