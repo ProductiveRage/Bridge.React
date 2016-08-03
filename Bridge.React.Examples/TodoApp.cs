@@ -22,7 +22,7 @@ namespace Bridge.React.Examples
 			};
 		}
 
-		private State AppendTodo(string todoDescription)
+		private void AppendTodo(string todoDescription)
 		{
 			var count = state.Todos.Count();
 			var todo = new Todo
@@ -32,23 +32,23 @@ namespace Bridge.React.Examples
 				Id = _nextAvailableId++
 			};
 
-			return new State
+			SetState(new State
 			{
 				InputValue = "",
 				Todos = state.Todos.Append(todo)
-			};
+			});
 		}
 
-		private State RemoveTodo(int id)
+		private void RemoveTodo(int id)
 		{
-			return new State
+			SetState(new State
 			{
 				InputValue = state.InputValue,
 				Todos = state.Todos.Where(todo => todo.Id != id)
-			};
+			});
 		}
 
-		private State ToggleDone(int id)
+		private void ToggleDone(int id)
 		{
 			var todos = state.Todos.ToArray();
 			for(int i = 0; i < todos.Length; i++)
@@ -59,16 +59,19 @@ namespace Bridge.React.Examples
 				}
 			}
 
-			return new State
+			SetState(new State
 			{
 				InputValue = state.InputValue,
 				Todos = todos
-			};
+			});
 		}
 
 		public override ReactElement Render()
 		{
-			return DOM.Div(new Attributes { ClassName = "wrapper" },
+			return DOM.Div(new Attributes
+            {
+                Style = Style.Margin(5).Padding(5).FontSize(18)
+            },
 				DOM.H3(props.Label),
 				DOM.Label("Description"),
 				DOM.Input(new InputAttributes
@@ -80,27 +83,29 @@ namespace Bridge.React.Examples
 					new ButtonAttributes
 					{
 						Disabled = string.IsNullOrWhiteSpace(state.InputValue),
-						OnClick = e => SetState(AppendTodo(state.InputValue))
+						OnClick = e => AppendTodo(state.InputValue)
 					},
 					"Add"
 				),
 				DOM.Div(
 					state.Todos.Select(todo =>
-						DOM.Div(new Attributes { Key = todo.Id, ClassName = "todo-container" },
-							DOM.H4(new Attributes { ClassName = todo.Done ? "done" : "not-done" }, todo.Description),
+						DOM.Div(new Attributes { Key = todo.Id, Style = TodoStyles.Container },
+							DOM.H4(
+                                new Attributes { Style = todo.Done ? TodoStyles.TextDone : TodoStyles.TextNotDone },
+                                todo.Description),
 							DOM.Button(
 								new ButtonAttributes
 								{
-									ClassName = todo.Done ? "toggle-done" : "toggle-not-done",
-									OnClick = e => SetState(ToggleDone(todo.Id))
+                                    Style = todo.Done ? TodoStyles.ToggleButtonDone : TodoStyles.ToggleButtonNotDone,
+									OnClick = e => ToggleDone(todo.Id)
 								},
 								todo.Done ? "Not done yet!" : "Finished!"
 							),
 							DOM.Button(
 								new ButtonAttributes
 								{
-									ClassName = "remove-btn",
-									OnClick = e => SetState(RemoveTodo(todo.Id))
+									Style = TodoStyles.RemoveButton,
+									OnClick = e => RemoveTodo(todo.Id)
 								},
 								"Remove"
 							)
