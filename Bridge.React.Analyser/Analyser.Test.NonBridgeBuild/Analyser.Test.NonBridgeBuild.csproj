@@ -62,6 +62,9 @@
     <Compile Include="..\..\Bridge.React\Elements\ReactElement.cs">
       <Link>Elements\ReactElement.cs</Link>
     </Compile>
+    <Compile Include="..\..\Bridge.React\Styles\ReactStyle.cs">
+      <Link>Styles\ReactStyle.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
