@@ -29,7 +29,7 @@ namespace Bridge.React
 		[Template("React.DOM.a(null, {0})")]
 		public extern static ReactElement A(string child);
 		
-		[Template("React.DOM.a({0}, {1})")]
+		[Template("React.DOM.a({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement A(AnchorAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -40,7 +40,7 @@ namespace Bridge.React
 		[Template("React.DOM.a({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement A<TProps>(AnchorAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.a({0}, {1})")]
+		[Template("React.DOM.a({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement A(AnchorAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.a({0}, {1})")]
@@ -72,7 +72,7 @@ namespace Bridge.React
 		[Template("React.DOM.abbr(null, {0})")]
 		public extern static ReactElement Abbr(string child);
 		
-		[Template("React.DOM.abbr({0}, {1})")]
+		[Template("React.DOM.abbr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Abbr(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -83,7 +83,7 @@ namespace Bridge.React
 		[Template("React.DOM.abbr({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Abbr<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.abbr({0}, {1})")]
+		[Template("React.DOM.abbr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Abbr(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.abbr({0}, {1})")]
@@ -115,7 +115,7 @@ namespace Bridge.React
 		[Template("React.DOM.address(null, {0})")]
 		public extern static ReactElement Address(string child);
 		
-		[Template("React.DOM.address({0}, {1})")]
+		[Template("React.DOM.address({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Address(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -126,7 +126,7 @@ namespace Bridge.React
 		[Template("React.DOM.address({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Address<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.address({0}, {1})")]
+		[Template("React.DOM.address({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Address(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.address({0}, {1})")]
@@ -158,7 +158,7 @@ namespace Bridge.React
 		[Template("React.DOM.area(null, {0})")]
 		public extern static ReactElement Area(string child);
 		
-		[Template("React.DOM.area({0}, {1})")]
+		[Template("React.DOM.area({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Area(AreaAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -169,7 +169,7 @@ namespace Bridge.React
 		[Template("React.DOM.area({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Area<TProps>(AreaAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.area({0}, {1})")]
+		[Template("React.DOM.area({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Area(AreaAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.area({0}, {1})")]
@@ -201,7 +201,7 @@ namespace Bridge.React
 		[Template("React.DOM.article(null, {0})")]
 		public extern static ReactElement Article(string child);
 		
-		[Template("React.DOM.article({0}, {1})")]
+		[Template("React.DOM.article({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Article(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -212,7 +212,7 @@ namespace Bridge.React
 		[Template("React.DOM.article({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Article<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.article({0}, {1})")]
+		[Template("React.DOM.article({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Article(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.article({0}, {1})")]
@@ -244,7 +244,7 @@ namespace Bridge.React
 		[Template("React.DOM.aside(null, {0})")]
 		public extern static ReactElement Aside(string child);
 		
-		[Template("React.DOM.aside({0}, {1})")]
+		[Template("React.DOM.aside({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Aside(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -255,7 +255,7 @@ namespace Bridge.React
 		[Template("React.DOM.aside({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Aside<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.aside({0}, {1})")]
+		[Template("React.DOM.aside({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Aside(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.aside({0}, {1})")]
@@ -287,7 +287,7 @@ namespace Bridge.React
 		[Template("React.DOM.audio(null, {0})")]
 		public extern static ReactElement Audio(string child);
 		
-		[Template("React.DOM.audio({0}, {1})")]
+		[Template("React.DOM.audio({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Audio(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -298,7 +298,7 @@ namespace Bridge.React
 		[Template("React.DOM.audio({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Audio<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.audio({0}, {1})")]
+		[Template("React.DOM.audio({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Audio(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.audio({0}, {1})")]
@@ -330,7 +330,7 @@ namespace Bridge.React
 		[Template("React.DOM.b(null, {0})")]
 		public extern static ReactElement B(string child);
 		
-		[Template("React.DOM.b({0}, {1})")]
+		[Template("React.DOM.b({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement B(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -341,7 +341,7 @@ namespace Bridge.React
 		[Template("React.DOM.b({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement B<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.b({0}, {1})")]
+		[Template("React.DOM.b({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement B(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.b({0}, {1})")]
@@ -373,7 +373,7 @@ namespace Bridge.React
 		[Template("React.DOM.base(null, {0})")]
 		public extern static ReactElement Base(string child);
 		
-		[Template("React.DOM.base({0}, {1})")]
+		[Template("React.DOM.base({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Base(BaseAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -384,7 +384,7 @@ namespace Bridge.React
 		[Template("React.DOM.base({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Base<TProps>(BaseAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.base({0}, {1})")]
+		[Template("React.DOM.base({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Base(BaseAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.base({0}, {1})")]
@@ -416,7 +416,7 @@ namespace Bridge.React
 		[Template("React.DOM.bdi(null, {0})")]
 		public extern static ReactElement BDI(string child);
 		
-		[Template("React.DOM.bdi({0}, {1})")]
+		[Template("React.DOM.bdi({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDI(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -427,7 +427,7 @@ namespace Bridge.React
 		[Template("React.DOM.bdi({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDI<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.bdi({0}, {1})")]
+		[Template("React.DOM.bdi({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDI(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.bdi({0}, {1})")]
@@ -459,7 +459,7 @@ namespace Bridge.React
 		[Template("React.DOM.bdo(null, {0})")]
 		public extern static ReactElement BDO(string child);
 		
-		[Template("React.DOM.bdo({0}, {1})")]
+		[Template("React.DOM.bdo({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDO(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -470,7 +470,7 @@ namespace Bridge.React
 		[Template("React.DOM.bdo({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDO<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.bdo({0}, {1})")]
+		[Template("React.DOM.bdo({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDO(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.bdo({0}, {1})")]
@@ -502,7 +502,7 @@ namespace Bridge.React
 		[Template("React.DOM.big(null, {0})")]
 		public extern static ReactElement Big(string child);
 		
-		[Template("React.DOM.big({0}, {1})")]
+		[Template("React.DOM.big({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Big(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -513,7 +513,7 @@ namespace Bridge.React
 		[Template("React.DOM.big({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Big<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.big({0}, {1})")]
+		[Template("React.DOM.big({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Big(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.big({0}, {1})")]
@@ -545,7 +545,7 @@ namespace Bridge.React
 		[Template("React.DOM.blockquote(null, {0})")]
 		public extern static ReactElement BlockQuote(string child);
 		
-		[Template("React.DOM.blockquote({0}, {1})")]
+		[Template("React.DOM.blockquote({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -556,7 +556,7 @@ namespace Bridge.React
 		[Template("React.DOM.blockquote({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BlockQuote<TProps>(QuoteAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.blockquote({0}, {1})")]
+		[Template("React.DOM.blockquote({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.blockquote({0}, {1})")]
@@ -588,7 +588,7 @@ namespace Bridge.React
 		[Template("React.DOM.body(null, {0})")]
 		public extern static ReactElement Body(string child);
 		
-		[Template("React.DOM.body({0}, {1})")]
+		[Template("React.DOM.body({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Body(BodyAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -599,7 +599,7 @@ namespace Bridge.React
 		[Template("React.DOM.body({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Body<TProps>(BodyAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.body({0}, {1})")]
+		[Template("React.DOM.body({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Body(BodyAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.body({0}, {1})")]
@@ -631,7 +631,7 @@ namespace Bridge.React
 		[Template("React.DOM.br(null, {0})")]
 		public extern static ReactElement Br(string child);
 		
-		[Template("React.DOM.br({0}, {1})")]
+		[Template("React.DOM.br({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Br(BrAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -642,7 +642,7 @@ namespace Bridge.React
 		[Template("React.DOM.br({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Br<TProps>(BrAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.br({0}, {1})")]
+		[Template("React.DOM.br({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Br(BrAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.br({0}, {1})")]
@@ -674,7 +674,7 @@ namespace Bridge.React
 		[Template("React.DOM.button(null, {0})")]
 		public extern static ReactElement Button(string child);
 		
-		[Template("React.DOM.button({0}, {1})")]
+		[Template("React.DOM.button({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Button(ButtonAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -685,7 +685,7 @@ namespace Bridge.React
 		[Template("React.DOM.button({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Button<TProps>(ButtonAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.button({0}, {1})")]
+		[Template("React.DOM.button({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Button(ButtonAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.button({0}, {1})")]
@@ -717,7 +717,7 @@ namespace Bridge.React
 		[Template("React.DOM.canvas(null, {0})")]
 		public extern static ReactElement Canvas(string child);
 		
-		[Template("React.DOM.canvas({0}, {1})")]
+		[Template("React.DOM.canvas({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -728,7 +728,7 @@ namespace Bridge.React
 		[Template("React.DOM.canvas({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Canvas<TProps>(CanvasAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.canvas({0}, {1})")]
+		[Template("React.DOM.canvas({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.canvas({0}, {1})")]
@@ -760,7 +760,7 @@ namespace Bridge.React
 		[Template("React.DOM.caption(null, {0})")]
 		public extern static ReactElement Caption(string child);
 		
-		[Template("React.DOM.caption({0}, {1})")]
+		[Template("React.DOM.caption({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Caption(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -771,7 +771,7 @@ namespace Bridge.React
 		[Template("React.DOM.caption({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Caption<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.caption({0}, {1})")]
+		[Template("React.DOM.caption({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Caption(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.caption({0}, {1})")]
@@ -803,7 +803,7 @@ namespace Bridge.React
 		[Template("React.DOM.cite(null, {0})")]
 		public extern static ReactElement Cite(string child);
 		
-		[Template("React.DOM.cite({0}, {1})")]
+		[Template("React.DOM.cite({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Cite(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -814,7 +814,7 @@ namespace Bridge.React
 		[Template("React.DOM.cite({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Cite<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.cite({0}, {1})")]
+		[Template("React.DOM.cite({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Cite(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.cite({0}, {1})")]
@@ -846,7 +846,7 @@ namespace Bridge.React
 		[Template("React.DOM.code(null, {0})")]
 		public extern static ReactElement Code(string child);
 		
-		[Template("React.DOM.code({0}, {1})")]
+		[Template("React.DOM.code({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Code(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -857,7 +857,7 @@ namespace Bridge.React
 		[Template("React.DOM.code({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Code<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.code({0}, {1})")]
+		[Template("React.DOM.code({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Code(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.code({0}, {1})")]
@@ -889,7 +889,7 @@ namespace Bridge.React
 		[Template("React.DOM.col(null, {0})")]
 		public extern static ReactElement Col(string child);
 		
-		[Template("React.DOM.col({0}, {1})")]
+		[Template("React.DOM.col({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Col(TableColAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -900,7 +900,7 @@ namespace Bridge.React
 		[Template("React.DOM.col({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Col<TProps>(TableColAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.col({0}, {1})")]
+		[Template("React.DOM.col({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Col(TableColAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.col({0}, {1})")]
@@ -932,7 +932,7 @@ namespace Bridge.React
 		[Template("React.DOM.colgroup(null, {0})")]
 		public extern static ReactElement ColGroup(string child);
 		
-		[Template("React.DOM.colgroup({0}, {1})")]
+		[Template("React.DOM.colgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement ColGroup(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -943,7 +943,7 @@ namespace Bridge.React
 		[Template("React.DOM.colgroup({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement ColGroup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.colgroup({0}, {1})")]
+		[Template("React.DOM.colgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement ColGroup(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.colgroup({0}, {1})")]
@@ -975,7 +975,7 @@ namespace Bridge.React
 		[Template("React.DOM.data(null, {0})")]
 		public extern static ReactElement Data(string child);
 		
-		[Template("React.DOM.data({0}, {1})")]
+		[Template("React.DOM.data({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Data(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -986,7 +986,7 @@ namespace Bridge.React
 		[Template("React.DOM.data({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Data<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.data({0}, {1})")]
+		[Template("React.DOM.data({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Data(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.data({0}, {1})")]
@@ -1018,7 +1018,7 @@ namespace Bridge.React
 		[Template("React.DOM.datalist(null, {0})")]
 		public extern static ReactElement DataList(string child);
 		
-		[Template("React.DOM.datalist({0}, {1})")]
+		[Template("React.DOM.datalist({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DataList(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1029,7 +1029,7 @@ namespace Bridge.React
 		[Template("React.DOM.datalist({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DataList<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.datalist({0}, {1})")]
+		[Template("React.DOM.datalist({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DataList(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.datalist({0}, {1})")]
@@ -1061,7 +1061,7 @@ namespace Bridge.React
 		[Template("React.DOM.dd(null, {0})")]
 		public extern static ReactElement DD(string child);
 		
-		[Template("React.DOM.dd({0}, {1})")]
+		[Template("React.DOM.dd({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DD(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1072,7 +1072,7 @@ namespace Bridge.React
 		[Template("React.DOM.dd({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DD<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.dd({0}, {1})")]
+		[Template("React.DOM.dd({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DD(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.dd({0}, {1})")]
@@ -1104,7 +1104,7 @@ namespace Bridge.React
 		[Template("React.DOM.del(null, {0})")]
 		public extern static ReactElement Del(string child);
 		
-		[Template("React.DOM.del({0}, {1})")]
+		[Template("React.DOM.del({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Del(DelAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1115,7 +1115,7 @@ namespace Bridge.React
 		[Template("React.DOM.del({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Del<TProps>(DelAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.del({0}, {1})")]
+		[Template("React.DOM.del({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Del(DelAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.del({0}, {1})")]
@@ -1147,7 +1147,7 @@ namespace Bridge.React
 		[Template("React.DOM.details(null, {0})")]
 		public extern static ReactElement Details(string child);
 		
-		[Template("React.DOM.details({0}, {1})")]
+		[Template("React.DOM.details({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Details(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1158,7 +1158,7 @@ namespace Bridge.React
 		[Template("React.DOM.details({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Details<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.details({0}, {1})")]
+		[Template("React.DOM.details({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Details(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.details({0}, {1})")]
@@ -1190,7 +1190,7 @@ namespace Bridge.React
 		[Template("React.DOM.dfn(null, {0})")]
 		public extern static ReactElement Dfn(string child);
 		
-		[Template("React.DOM.dfn({0}, {1})")]
+		[Template("React.DOM.dfn({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dfn(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1201,7 +1201,7 @@ namespace Bridge.React
 		[Template("React.DOM.dfn({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dfn<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.dfn({0}, {1})")]
+		[Template("React.DOM.dfn({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dfn(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.dfn({0}, {1})")]
@@ -1233,7 +1233,7 @@ namespace Bridge.React
 		[Template("React.DOM.dialog(null, {0})")]
 		public extern static ReactElement Dialog(string child);
 		
-		[Template("React.DOM.dialog({0}, {1})")]
+		[Template("React.DOM.dialog({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dialog(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1244,7 +1244,7 @@ namespace Bridge.React
 		[Template("React.DOM.dialog({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dialog<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.dialog({0}, {1})")]
+		[Template("React.DOM.dialog({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dialog(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.dialog({0}, {1})")]
@@ -1276,7 +1276,7 @@ namespace Bridge.React
 		[Template("React.DOM.div(null, {0})")]
 		public extern static ReactElement Div(string child);
 		
-		[Template("React.DOM.div({0}, {1})")]
+		[Template("React.DOM.div({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Div(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1287,7 +1287,7 @@ namespace Bridge.React
 		[Template("React.DOM.div({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Div<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.div({0}, {1})")]
+		[Template("React.DOM.div({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Div(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.div({0}, {1})")]
@@ -1319,7 +1319,7 @@ namespace Bridge.React
 		[Template("React.DOM.dl(null, {0})")]
 		public extern static ReactElement DL(string child);
 		
-		[Template("React.DOM.dl({0}, {1})")]
+		[Template("React.DOM.dl({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DL(DListAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1330,7 +1330,7 @@ namespace Bridge.React
 		[Template("React.DOM.dl({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DL<TProps>(DListAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.dl({0}, {1})")]
+		[Template("React.DOM.dl({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DL(DListAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.dl({0}, {1})")]
@@ -1362,7 +1362,7 @@ namespace Bridge.React
 		[Template("React.DOM.dt(null, {0})")]
 		public extern static ReactElement DT(string child);
 		
-		[Template("React.DOM.dt({0}, {1})")]
+		[Template("React.DOM.dt({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DT(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1373,7 +1373,7 @@ namespace Bridge.React
 		[Template("React.DOM.dt({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DT<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.dt({0}, {1})")]
+		[Template("React.DOM.dt({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DT(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.dt({0}, {1})")]
@@ -1405,7 +1405,7 @@ namespace Bridge.React
 		[Template("React.DOM.em(null, {0})")]
 		public extern static ReactElement Em(string child);
 		
-		[Template("React.DOM.em({0}, {1})")]
+		[Template("React.DOM.em({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Em(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1416,7 +1416,7 @@ namespace Bridge.React
 		[Template("React.DOM.em({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Em<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.em({0}, {1})")]
+		[Template("React.DOM.em({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Em(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.em({0}, {1})")]
@@ -1448,7 +1448,7 @@ namespace Bridge.React
 		[Template("React.DOM.embed(null, {0})")]
 		public extern static ReactElement Embed(string child);
 		
-		[Template("React.DOM.embed({0}, {1})")]
+		[Template("React.DOM.embed({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Embed(EmbedAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1459,7 +1459,7 @@ namespace Bridge.React
 		[Template("React.DOM.embed({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Embed<TProps>(EmbedAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.embed({0}, {1})")]
+		[Template("React.DOM.embed({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Embed(EmbedAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.embed({0}, {1})")]
@@ -1491,7 +1491,7 @@ namespace Bridge.React
 		[Template("React.DOM.fieldset(null, {0})")]
 		public extern static ReactElement FieldSet(string child);
 		
-		[Template("React.DOM.fieldset({0}, {1})")]
+		[Template("React.DOM.fieldset({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1502,7 +1502,7 @@ namespace Bridge.React
 		[Template("React.DOM.fieldset({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FieldSet<TProps>(FieldSetAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.fieldset({0}, {1})")]
+		[Template("React.DOM.fieldset({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.fieldset({0}, {1})")]
@@ -1534,7 +1534,7 @@ namespace Bridge.React
 		[Template("React.DOM.figcaption(null, {0})")]
 		public extern static ReactElement FigCaption(string child);
 		
-		[Template("React.DOM.figcaption({0}, {1})")]
+		[Template("React.DOM.figcaption({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FigCaption(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1545,7 +1545,7 @@ namespace Bridge.React
 		[Template("React.DOM.figcaption({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FigCaption<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.figcaption({0}, {1})")]
+		[Template("React.DOM.figcaption({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FigCaption(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.figcaption({0}, {1})")]
@@ -1577,7 +1577,7 @@ namespace Bridge.React
 		[Template("React.DOM.figure(null, {0})")]
 		public extern static ReactElement Figure(string child);
 		
-		[Template("React.DOM.figure({0}, {1})")]
+		[Template("React.DOM.figure({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Figure(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1588,7 +1588,7 @@ namespace Bridge.React
 		[Template("React.DOM.figure({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Figure<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.figure({0}, {1})")]
+		[Template("React.DOM.figure({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Figure(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.figure({0}, {1})")]
@@ -1620,7 +1620,7 @@ namespace Bridge.React
 		[Template("React.DOM.footer(null, {0})")]
 		public extern static ReactElement Footer(string child);
 		
-		[Template("React.DOM.footer({0}, {1})")]
+		[Template("React.DOM.footer({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Footer(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1631,7 +1631,7 @@ namespace Bridge.React
 		[Template("React.DOM.footer({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Footer<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.footer({0}, {1})")]
+		[Template("React.DOM.footer({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Footer(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.footer({0}, {1})")]
@@ -1663,7 +1663,7 @@ namespace Bridge.React
 		[Template("React.DOM.form(null, {0})")]
 		public extern static ReactElement Form(string child);
 		
-		[Template("React.DOM.form({0}, {1})")]
+		[Template("React.DOM.form({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Form(FormAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1674,7 +1674,7 @@ namespace Bridge.React
 		[Template("React.DOM.form({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Form<TProps>(FormAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.form({0}, {1})")]
+		[Template("React.DOM.form({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Form(FormAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.form({0}, {1})")]
@@ -1706,7 +1706,7 @@ namespace Bridge.React
 		[Template("React.DOM.h1(null, {0})")]
 		public extern static ReactElement H1(string child);
 		
-		[Template("React.DOM.h1({0}, {1})")]
+		[Template("React.DOM.h1({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H1(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1717,7 +1717,7 @@ namespace Bridge.React
 		[Template("React.DOM.h1({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H1<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h1({0}, {1})")]
+		[Template("React.DOM.h1({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H1(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h1({0}, {1})")]
@@ -1749,7 +1749,7 @@ namespace Bridge.React
 		[Template("React.DOM.h2(null, {0})")]
 		public extern static ReactElement H2(string child);
 		
-		[Template("React.DOM.h2({0}, {1})")]
+		[Template("React.DOM.h2({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H2(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1760,7 +1760,7 @@ namespace Bridge.React
 		[Template("React.DOM.h2({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H2<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h2({0}, {1})")]
+		[Template("React.DOM.h2({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H2(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h2({0}, {1})")]
@@ -1792,7 +1792,7 @@ namespace Bridge.React
 		[Template("React.DOM.h3(null, {0})")]
 		public extern static ReactElement H3(string child);
 		
-		[Template("React.DOM.h3({0}, {1})")]
+		[Template("React.DOM.h3({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H3(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1803,7 +1803,7 @@ namespace Bridge.React
 		[Template("React.DOM.h3({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H3<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h3({0}, {1})")]
+		[Template("React.DOM.h3({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H3(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h3({0}, {1})")]
@@ -1835,7 +1835,7 @@ namespace Bridge.React
 		[Template("React.DOM.h4(null, {0})")]
 		public extern static ReactElement H4(string child);
 		
-		[Template("React.DOM.h4({0}, {1})")]
+		[Template("React.DOM.h4({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H4(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1846,7 +1846,7 @@ namespace Bridge.React
 		[Template("React.DOM.h4({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H4<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h4({0}, {1})")]
+		[Template("React.DOM.h4({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H4(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h4({0}, {1})")]
@@ -1878,7 +1878,7 @@ namespace Bridge.React
 		[Template("React.DOM.h5(null, {0})")]
 		public extern static ReactElement H5(string child);
 		
-		[Template("React.DOM.h5({0}, {1})")]
+		[Template("React.DOM.h5({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H5(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1889,7 +1889,7 @@ namespace Bridge.React
 		[Template("React.DOM.h5({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H5<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h5({0}, {1})")]
+		[Template("React.DOM.h5({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H5(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h5({0}, {1})")]
@@ -1921,7 +1921,7 @@ namespace Bridge.React
 		[Template("React.DOM.h6(null, {0})")]
 		public extern static ReactElement H6(string child);
 		
-		[Template("React.DOM.h6({0}, {1})")]
+		[Template("React.DOM.h6({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H6(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1932,7 +1932,7 @@ namespace Bridge.React
 		[Template("React.DOM.h6({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H6<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.h6({0}, {1})")]
+		[Template("React.DOM.h6({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H6(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.h6({0}, {1})")]
@@ -1964,7 +1964,7 @@ namespace Bridge.React
 		[Template("React.DOM.head(null, {0})")]
 		public extern static ReactElement Head(string child);
 		
-		[Template("React.DOM.head({0}, {1})")]
+		[Template("React.DOM.head({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Head(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -1975,7 +1975,7 @@ namespace Bridge.React
 		[Template("React.DOM.head({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Head<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.head({0}, {1})")]
+		[Template("React.DOM.head({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Head(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.head({0}, {1})")]
@@ -2007,7 +2007,7 @@ namespace Bridge.React
 		[Template("React.DOM.header(null, {0})")]
 		public extern static ReactElement Header(string child);
 		
-		[Template("React.DOM.header({0}, {1})")]
+		[Template("React.DOM.header({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Header(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2018,7 +2018,7 @@ namespace Bridge.React
 		[Template("React.DOM.header({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Header<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.header({0}, {1})")]
+		[Template("React.DOM.header({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Header(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.header({0}, {1})")]
@@ -2050,7 +2050,7 @@ namespace Bridge.React
 		[Template("React.DOM.hgroup(null, {0})")]
 		public extern static ReactElement HGroup(string child);
 		
-		[Template("React.DOM.hgroup({0}, {1})")]
+		[Template("React.DOM.hgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement HGroup(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2061,7 +2061,7 @@ namespace Bridge.React
 		[Template("React.DOM.hgroup({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement HGroup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.hgroup({0}, {1})")]
+		[Template("React.DOM.hgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement HGroup(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.hgroup({0}, {1})")]
@@ -2093,7 +2093,7 @@ namespace Bridge.React
 		[Template("React.DOM.hr(null, {0})")]
 		public extern static ReactElement Hr(string child);
 		
-		[Template("React.DOM.hr({0}, {1})")]
+		[Template("React.DOM.hr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Hr(HRAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2104,7 +2104,7 @@ namespace Bridge.React
 		[Template("React.DOM.hr({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Hr<TProps>(HRAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.hr({0}, {1})")]
+		[Template("React.DOM.hr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Hr(HRAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.hr({0}, {1})")]
@@ -2136,7 +2136,7 @@ namespace Bridge.React
 		[Template("React.DOM.html(null, {0})")]
 		public extern static ReactElement Html(string child);
 		
-		[Template("React.DOM.html({0}, {1})")]
+		[Template("React.DOM.html({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Html(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2147,7 +2147,7 @@ namespace Bridge.React
 		[Template("React.DOM.html({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Html<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.html({0}, {1})")]
+		[Template("React.DOM.html({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Html(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.html({0}, {1})")]
@@ -2179,7 +2179,7 @@ namespace Bridge.React
 		[Template("React.DOM.i(null, {0})")]
 		public extern static ReactElement I(string child);
 		
-		[Template("React.DOM.i({0}, {1})")]
+		[Template("React.DOM.i({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement I(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2190,7 +2190,7 @@ namespace Bridge.React
 		[Template("React.DOM.i({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement I<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.i({0}, {1})")]
+		[Template("React.DOM.i({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement I(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.i({0}, {1})")]
@@ -2222,7 +2222,7 @@ namespace Bridge.React
 		[Template("React.DOM.iframe(null, {0})")]
 		public extern static ReactElement IFrame(string child);
 		
-		[Template("React.DOM.iframe({0}, {1})")]
+		[Template("React.DOM.iframe({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2233,7 +2233,7 @@ namespace Bridge.React
 		[Template("React.DOM.iframe({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement IFrame<TProps>(IFrameAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.iframe({0}, {1})")]
+		[Template("React.DOM.iframe({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.iframe({0}, {1})")]
@@ -2265,7 +2265,7 @@ namespace Bridge.React
 		[Template("React.DOM.img(null, {0})")]
 		public extern static ReactElement Img(string child);
 		
-		[Template("React.DOM.img({0}, {1})")]
+		[Template("React.DOM.img({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Img(ImageAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2276,7 +2276,7 @@ namespace Bridge.React
 		[Template("React.DOM.img({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Img<TProps>(ImageAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.img({0}, {1})")]
+		[Template("React.DOM.img({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Img(ImageAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.img({0}, {1})")]
@@ -2308,7 +2308,7 @@ namespace Bridge.React
 		[Template("React.DOM.input(null, {0})")]
 		public extern static ReactElement Input(string child);
 		
-		[Template("React.DOM.input({0}, {1})")]
+		[Template("React.DOM.input({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Input(InputAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2319,7 +2319,7 @@ namespace Bridge.React
 		[Template("React.DOM.input({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Input<TProps>(InputAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.input({0}, {1})")]
+		[Template("React.DOM.input({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Input(InputAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.input({0}, {1})")]
@@ -2351,7 +2351,7 @@ namespace Bridge.React
 		[Template("React.DOM.ins(null, {0})")]
 		public extern static ReactElement Ins(string child);
 		
-		[Template("React.DOM.ins({0}, {1})")]
+		[Template("React.DOM.ins({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ins(InsAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2362,7 +2362,7 @@ namespace Bridge.React
 		[Template("React.DOM.ins({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ins<TProps>(InsAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.ins({0}, {1})")]
+		[Template("React.DOM.ins({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ins(InsAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.ins({0}, {1})")]
@@ -2394,7 +2394,7 @@ namespace Bridge.React
 		[Template("React.DOM.kbd(null, {0})")]
 		public extern static ReactElement Kbd(string child);
 		
-		[Template("React.DOM.kbd({0}, {1})")]
+		[Template("React.DOM.kbd({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Kbd(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2405,7 +2405,7 @@ namespace Bridge.React
 		[Template("React.DOM.kbd({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Kbd<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.kbd({0}, {1})")]
+		[Template("React.DOM.kbd({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Kbd(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.kbd({0}, {1})")]
@@ -2437,7 +2437,7 @@ namespace Bridge.React
 		[Template("React.DOM.keygen(null, {0})")]
 		public extern static ReactElement Keygen(string child);
 		
-		[Template("React.DOM.keygen({0}, {1})")]
+		[Template("React.DOM.keygen({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2448,7 +2448,7 @@ namespace Bridge.React
 		[Template("React.DOM.keygen({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Keygen<TProps>(KeygenAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.keygen({0}, {1})")]
+		[Template("React.DOM.keygen({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.keygen({0}, {1})")]
@@ -2480,7 +2480,7 @@ namespace Bridge.React
 		[Template("React.DOM.label(null, {0})")]
 		public extern static ReactElement Label(string child);
 		
-		[Template("React.DOM.label({0}, {1})")]
+		[Template("React.DOM.label({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Label(LabelAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2491,7 +2491,7 @@ namespace Bridge.React
 		[Template("React.DOM.label({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Label<TProps>(LabelAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.label({0}, {1})")]
+		[Template("React.DOM.label({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Label(LabelAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.label({0}, {1})")]
@@ -2523,7 +2523,7 @@ namespace Bridge.React
 		[Template("React.DOM.legend(null, {0})")]
 		public extern static ReactElement Legend(string child);
 		
-		[Template("React.DOM.legend({0}, {1})")]
+		[Template("React.DOM.legend({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Legend(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2534,7 +2534,7 @@ namespace Bridge.React
 		[Template("React.DOM.legend({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Legend<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.legend({0}, {1})")]
+		[Template("React.DOM.legend({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Legend(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.legend({0}, {1})")]
@@ -2566,7 +2566,7 @@ namespace Bridge.React
 		[Template("React.DOM.li(null, {0})")]
 		public extern static ReactElement Li(string child);
 		
-		[Template("React.DOM.li({0}, {1})")]
+		[Template("React.DOM.li({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Li(LIAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2577,7 +2577,7 @@ namespace Bridge.React
 		[Template("React.DOM.li({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Li<TProps>(LIAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.li({0}, {1})")]
+		[Template("React.DOM.li({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Li(LIAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.li({0}, {1})")]
@@ -2609,7 +2609,7 @@ namespace Bridge.React
 		[Template("React.DOM.link(null, {0})")]
 		public extern static ReactElement Link(string child);
 		
-		[Template("React.DOM.link({0}, {1})")]
+		[Template("React.DOM.link({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Link(LinkAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2620,7 +2620,7 @@ namespace Bridge.React
 		[Template("React.DOM.link({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Link<TProps>(LinkAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.link({0}, {1})")]
+		[Template("React.DOM.link({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Link(LinkAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.link({0}, {1})")]
@@ -2653,7 +2653,7 @@ namespace Bridge.React
 		[Template("React.DOM.main(null, {0})")]
 		public extern static ReactElement Main(string child);
 		
-		[Template("React.DOM.main({0}, {1})")]
+		[Template("React.DOM.main({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Main(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2664,7 +2664,7 @@ namespace Bridge.React
 		[Template("React.DOM.main({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Main<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.main({0}, {1})")]
+		[Template("React.DOM.main({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Main(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.main({0}, {1})")]
@@ -2697,7 +2697,7 @@ namespace Bridge.React
 		[Template("React.DOM.map(null, {0})")]
 		public extern static ReactElement Map(string child);
 		
-		[Template("React.DOM.map({0}, {1})")]
+		[Template("React.DOM.map({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Map(MapAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2708,7 +2708,7 @@ namespace Bridge.React
 		[Template("React.DOM.map({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Map<TProps>(MapAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.map({0}, {1})")]
+		[Template("React.DOM.map({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Map(MapAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.map({0}, {1})")]
@@ -2740,7 +2740,7 @@ namespace Bridge.React
 		[Template("React.DOM.mark(null, {0})")]
 		public extern static ReactElement Mark(string child);
 		
-		[Template("React.DOM.mark({0}, {1})")]
+		[Template("React.DOM.mark({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Mark(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2751,7 +2751,7 @@ namespace Bridge.React
 		[Template("React.DOM.mark({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Mark<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.mark({0}, {1})")]
+		[Template("React.DOM.mark({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Mark(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.mark({0}, {1})")]
@@ -2783,7 +2783,7 @@ namespace Bridge.React
 		[Template("React.DOM.menu(null, {0})")]
 		public extern static ReactElement Menu(string child);
 		
-		[Template("React.DOM.menu({0}, {1})")]
+		[Template("React.DOM.menu({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Menu(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2794,7 +2794,7 @@ namespace Bridge.React
 		[Template("React.DOM.menu({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Menu<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.menu({0}, {1})")]
+		[Template("React.DOM.menu({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Menu(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.menu({0}, {1})")]
@@ -2826,7 +2826,7 @@ namespace Bridge.React
 		[Template("React.DOM.menuitem(null, {0})")]
 		public extern static ReactElement MenuItem(string child);
 		
-		[Template("React.DOM.menuitem({0}, {1})")]
+		[Template("React.DOM.menuitem({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement MenuItem(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2837,7 +2837,7 @@ namespace Bridge.React
 		[Template("React.DOM.menuitem({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement MenuItem<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.menuitem({0}, {1})")]
+		[Template("React.DOM.menuitem({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement MenuItem(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.menuitem({0}, {1})")]
@@ -2869,7 +2869,7 @@ namespace Bridge.React
 		[Template("React.DOM.meta(null, {0})")]
 		public extern static ReactElement Meta(string child);
 		
-		[Template("React.DOM.meta({0}, {1})")]
+		[Template("React.DOM.meta({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meta(MetaAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2880,7 +2880,7 @@ namespace Bridge.React
 		[Template("React.DOM.meta({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meta<TProps>(MetaAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.meta({0}, {1})")]
+		[Template("React.DOM.meta({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meta(MetaAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.meta({0}, {1})")]
@@ -2912,7 +2912,7 @@ namespace Bridge.React
 		[Template("React.DOM.meter(null, {0})")]
 		public extern static ReactElement Meter(string child);
 		
-		[Template("React.DOM.meter({0}, {1})")]
+		[Template("React.DOM.meter({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meter(MeterAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2923,7 +2923,7 @@ namespace Bridge.React
 		[Template("React.DOM.meter({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meter<TProps>(MeterAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.meter({0}, {1})")]
+		[Template("React.DOM.meter({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meter(MeterAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.meter({0}, {1})")]
@@ -2955,7 +2955,7 @@ namespace Bridge.React
 		[Template("React.DOM.nav(null, {0})")]
 		public extern static ReactElement Nav(string child);
 		
-		[Template("React.DOM.nav({0}, {1})")]
+		[Template("React.DOM.nav({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Nav(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -2966,7 +2966,7 @@ namespace Bridge.React
 		[Template("React.DOM.nav({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Nav<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.nav({0}, {1})")]
+		[Template("React.DOM.nav({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Nav(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.nav({0}, {1})")]
@@ -2998,7 +2998,7 @@ namespace Bridge.React
 		[Template("React.DOM.noscript(null, {0})")]
 		public extern static ReactElement NoScript(string child);
 		
-		[Template("React.DOM.noscript({0}, {1})")]
+		[Template("React.DOM.noscript({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement NoScript(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3009,7 +3009,7 @@ namespace Bridge.React
 		[Template("React.DOM.noscript({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement NoScript<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.noscript({0}, {1})")]
+		[Template("React.DOM.noscript({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement NoScript(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.noscript({0}, {1})")]
@@ -3041,7 +3041,7 @@ namespace Bridge.React
 		[Template("React.DOM.object(null, {0})")]
 		public extern static ReactElement Object(string child);
 		
-		[Template("React.DOM.object({0}, {1})")]
+		[Template("React.DOM.object({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Object(ObjectAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3052,7 +3052,7 @@ namespace Bridge.React
 		[Template("React.DOM.object({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Object<TProps>(ObjectAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.object({0}, {1})")]
+		[Template("React.DOM.object({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Object(ObjectAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.object({0}, {1})")]
@@ -3084,7 +3084,7 @@ namespace Bridge.React
 		[Template("React.DOM.ol(null, {0})")]
 		public extern static ReactElement OL(string child);
 		
-		[Template("React.DOM.ol({0}, {1})")]
+		[Template("React.DOM.ol({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OL(OListAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3095,7 +3095,7 @@ namespace Bridge.React
 		[Template("React.DOM.ol({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OL<TProps>(OListAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.ol({0}, {1})")]
+		[Template("React.DOM.ol({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OL(OListAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.ol({0}, {1})")]
@@ -3127,7 +3127,7 @@ namespace Bridge.React
 		[Template("React.DOM.optgroup(null, {0})")]
 		public extern static ReactElement OptGroup(string child);
 		
-		[Template("React.DOM.optgroup({0}, {1})")]
+		[Template("React.DOM.optgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3138,7 +3138,7 @@ namespace Bridge.React
 		[Template("React.DOM.optgroup({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OptGroup<TProps>(OptGroupAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.optgroup({0}, {1})")]
+		[Template("React.DOM.optgroup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.optgroup({0}, {1})")]
@@ -3170,7 +3170,7 @@ namespace Bridge.React
 		[Template("React.DOM.option(null, {0})")]
 		public extern static ReactElement Option(string child);
 		
-		[Template("React.DOM.option({0}, {1})")]
+		[Template("React.DOM.option({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Option(OptionAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3181,7 +3181,7 @@ namespace Bridge.React
 		[Template("React.DOM.option({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Option<TProps>(OptionAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.option({0}, {1})")]
+		[Template("React.DOM.option({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Option(OptionAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.option({0}, {1})")]
@@ -3213,7 +3213,7 @@ namespace Bridge.React
 		[Template("React.DOM.output(null, {0})")]
 		public extern static ReactElement Output(string child);
 		
-		[Template("React.DOM.output({0}, {1})")]
+		[Template("React.DOM.output({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Output(OutputAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3224,7 +3224,7 @@ namespace Bridge.React
 		[Template("React.DOM.output({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Output<TProps>(OutputAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.output({0}, {1})")]
+		[Template("React.DOM.output({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Output(OutputAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.output({0}, {1})")]
@@ -3256,7 +3256,7 @@ namespace Bridge.React
 		[Template("React.DOM.p(null, {0})")]
 		public extern static ReactElement P(string child);
 		
-		[Template("React.DOM.p({0}, {1})")]
+		[Template("React.DOM.p({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement P(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3267,7 +3267,7 @@ namespace Bridge.React
 		[Template("React.DOM.p({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement P<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.p({0}, {1})")]
+		[Template("React.DOM.p({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement P(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.p({0}, {1})")]
@@ -3299,7 +3299,7 @@ namespace Bridge.React
 		[Template("React.DOM.param(null, {0})")]
 		public extern static ReactElement Param(string child);
 		
-		[Template("React.DOM.param({0}, {1})")]
+		[Template("React.DOM.param({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Param(ParamAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3310,7 +3310,7 @@ namespace Bridge.React
 		[Template("React.DOM.param({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Param<TProps>(ParamAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.param({0}, {1})")]
+		[Template("React.DOM.param({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Param(ParamAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.param({0}, {1})")]
@@ -3342,7 +3342,7 @@ namespace Bridge.React
 		[Template("React.DOM.picture(null, {0})")]
 		public extern static ReactElement Picture(string child);
 		
-		[Template("React.DOM.picture({0}, {1})")]
+		[Template("React.DOM.picture({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Picture(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3353,7 +3353,7 @@ namespace Bridge.React
 		[Template("React.DOM.picture({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Picture<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.picture({0}, {1})")]
+		[Template("React.DOM.picture({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Picture(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.picture({0}, {1})")]
@@ -3385,7 +3385,7 @@ namespace Bridge.React
 		[Template("React.DOM.pre(null, {0})")]
 		public extern static ReactElement Pre(string child);
 		
-		[Template("React.DOM.pre({0}, {1})")]
+		[Template("React.DOM.pre({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Pre(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3396,7 +3396,7 @@ namespace Bridge.React
 		[Template("React.DOM.pre({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Pre<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.pre({0}, {1})")]
+		[Template("React.DOM.pre({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Pre(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.pre({0}, {1})")]
@@ -3428,7 +3428,7 @@ namespace Bridge.React
 		[Template("React.DOM.progress(null, {0})")]
 		public extern static ReactElement Progress(string child);
 		
-		[Template("React.DOM.progress({0}, {1})")]
+		[Template("React.DOM.progress({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Progress(ProgressAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3439,7 +3439,7 @@ namespace Bridge.React
 		[Template("React.DOM.progress({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Progress<TProps>(ProgressAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.progress({0}, {1})")]
+		[Template("React.DOM.progress({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Progress(ProgressAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.progress({0}, {1})")]
@@ -3471,7 +3471,7 @@ namespace Bridge.React
 		[Template("React.DOM.q(null, {0})")]
 		public extern static ReactElement Q(string child);
 		
-		[Template("React.DOM.q({0}, {1})")]
+		[Template("React.DOM.q({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Q(QuoteAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3482,7 +3482,7 @@ namespace Bridge.React
 		[Template("React.DOM.q({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Q<TProps>(QuoteAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.q({0}, {1})")]
+		[Template("React.DOM.q({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Q(QuoteAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.q({0}, {1})")]
@@ -3514,7 +3514,7 @@ namespace Bridge.React
 		[Template("React.DOM.rp(null, {0})")]
 		public extern static ReactElement RP(string child);
 		
-		[Template("React.DOM.rp({0}, {1})")]
+		[Template("React.DOM.rp({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RP(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3525,7 +3525,7 @@ namespace Bridge.React
 		[Template("React.DOM.rp({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RP<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.rp({0}, {1})")]
+		[Template("React.DOM.rp({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RP(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.rp({0}, {1})")]
@@ -3557,7 +3557,7 @@ namespace Bridge.React
 		[Template("React.DOM.rt(null, {0})")]
 		public extern static ReactElement RT(string child);
 		
-		[Template("React.DOM.rt({0}, {1})")]
+		[Template("React.DOM.rt({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RT(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3568,7 +3568,7 @@ namespace Bridge.React
 		[Template("React.DOM.rt({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RT<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.rt({0}, {1})")]
+		[Template("React.DOM.rt({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RT(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.rt({0}, {1})")]
@@ -3600,7 +3600,7 @@ namespace Bridge.React
 		[Template("React.DOM.ruby(null, {0})")]
 		public extern static ReactElement Ruby(string child);
 		
-		[Template("React.DOM.ruby({0}, {1})")]
+		[Template("React.DOM.ruby({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ruby(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3611,7 +3611,7 @@ namespace Bridge.React
 		[Template("React.DOM.ruby({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ruby<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.ruby({0}, {1})")]
+		[Template("React.DOM.ruby({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ruby(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.ruby({0}, {1})")]
@@ -3643,7 +3643,7 @@ namespace Bridge.React
 		[Template("React.DOM.s(null, {0})")]
 		public extern static ReactElement S(string child);
 		
-		[Template("React.DOM.s({0}, {1})")]
+		[Template("React.DOM.s({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement S(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3654,7 +3654,7 @@ namespace Bridge.React
 		[Template("React.DOM.s({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement S<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.s({0}, {1})")]
+		[Template("React.DOM.s({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement S(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.s({0}, {1})")]
@@ -3686,7 +3686,7 @@ namespace Bridge.React
 		[Template("React.DOM.samp(null, {0})")]
 		public extern static ReactElement Samp(string child);
 		
-		[Template("React.DOM.samp({0}, {1})")]
+		[Template("React.DOM.samp({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Samp(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3697,7 +3697,7 @@ namespace Bridge.React
 		[Template("React.DOM.samp({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Samp<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.samp({0}, {1})")]
+		[Template("React.DOM.samp({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Samp(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.samp({0}, {1})")]
@@ -3729,7 +3729,7 @@ namespace Bridge.React
 		[Template("React.DOM.script(null, {0})")]
 		public extern static ReactElement Script(string child);
 		
-		[Template("React.DOM.script({0}, {1})")]
+		[Template("React.DOM.script({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Script(ScriptAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3740,7 +3740,7 @@ namespace Bridge.React
 		[Template("React.DOM.script({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Script<TProps>(ScriptAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.script({0}, {1})")]
+		[Template("React.DOM.script({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Script(ScriptAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.script({0}, {1})")]
@@ -3772,7 +3772,7 @@ namespace Bridge.React
 		[Template("React.DOM.section(null, {0})")]
 		public extern static ReactElement Section(string child);
 		
-		[Template("React.DOM.section({0}, {1})")]
+		[Template("React.DOM.section({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Section(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3783,7 +3783,7 @@ namespace Bridge.React
 		[Template("React.DOM.section({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Section<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.section({0}, {1})")]
+		[Template("React.DOM.section({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Section(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.section({0}, {1})")]
@@ -3815,7 +3815,7 @@ namespace Bridge.React
 		[Template("React.DOM.select(null, {0})")]
 		public extern static ReactElement Select(string child);
 		
-		[Template("React.DOM.select({0}, {1})")]
+		[Template("React.DOM.select({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Select(SelectAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3826,7 +3826,7 @@ namespace Bridge.React
 		[Template("React.DOM.select({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Select<TProps>(SelectAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.select({0}, {1})")]
+		[Template("React.DOM.select({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Select(SelectAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.select({0}, {1})")]
@@ -3858,7 +3858,7 @@ namespace Bridge.React
 		[Template("React.DOM.small(null, {0})")]
 		public extern static ReactElement Small(string child);
 		
-		[Template("React.DOM.small({0}, {1})")]
+		[Template("React.DOM.small({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Small(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3869,7 +3869,7 @@ namespace Bridge.React
 		[Template("React.DOM.small({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Small<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.small({0}, {1})")]
+		[Template("React.DOM.small({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Small(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.small({0}, {1})")]
@@ -3901,7 +3901,7 @@ namespace Bridge.React
 		[Template("React.DOM.source(null, {0})")]
 		public extern static ReactElement Source(string child);
 		
-		[Template("React.DOM.source({0}, {1})")]
+		[Template("React.DOM.source({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Source(SourceAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3912,7 +3912,7 @@ namespace Bridge.React
 		[Template("React.DOM.source({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Source<TProps>(SourceAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.source({0}, {1})")]
+		[Template("React.DOM.source({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Source(SourceAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.source({0}, {1})")]
@@ -3944,7 +3944,7 @@ namespace Bridge.React
 		[Template("React.DOM.span(null, {0})")]
 		public extern static ReactElement Span(string child);
 		
-		[Template("React.DOM.span({0}, {1})")]
+		[Template("React.DOM.span({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Span(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3955,7 +3955,7 @@ namespace Bridge.React
 		[Template("React.DOM.span({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Span<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.span({0}, {1})")]
+		[Template("React.DOM.span({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Span(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.span({0}, {1})")]
@@ -3987,7 +3987,7 @@ namespace Bridge.React
 		[Template("React.DOM.strong(null, {0})")]
 		public extern static ReactElement Strong(string child);
 		
-		[Template("React.DOM.strong({0}, {1})")]
+		[Template("React.DOM.strong({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Strong(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -3998,7 +3998,7 @@ namespace Bridge.React
 		[Template("React.DOM.strong({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Strong<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.strong({0}, {1})")]
+		[Template("React.DOM.strong({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Strong(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.strong({0}, {1})")]
@@ -4030,7 +4030,7 @@ namespace Bridge.React
 		[Template("React.DOM.style(null, {0})")]
 		public extern static ReactElement Style(string child);
 		
-		[Template("React.DOM.style({0}, {1})")]
+		[Template("React.DOM.style({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Style(StyleAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4041,7 +4041,7 @@ namespace Bridge.React
 		[Template("React.DOM.style({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Style<TProps>(StyleAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.style({0}, {1})")]
+		[Template("React.DOM.style({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Style(StyleAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.style({0}, {1})")]
@@ -4073,7 +4073,7 @@ namespace Bridge.React
 		[Template("React.DOM.sub(null, {0})")]
 		public extern static ReactElement Sub(string child);
 		
-		[Template("React.DOM.sub({0}, {1})")]
+		[Template("React.DOM.sub({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sub(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4084,7 +4084,7 @@ namespace Bridge.React
 		[Template("React.DOM.sub({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sub<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.sub({0}, {1})")]
+		[Template("React.DOM.sub({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sub(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.sub({0}, {1})")]
@@ -4116,7 +4116,7 @@ namespace Bridge.React
 		[Template("React.DOM.summary(null, {0})")]
 		public extern static ReactElement Summary(string child);
 		
-		[Template("React.DOM.summary({0}, {1})")]
+		[Template("React.DOM.summary({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Summary(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4127,7 +4127,7 @@ namespace Bridge.React
 		[Template("React.DOM.summary({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Summary<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.summary({0}, {1})")]
+		[Template("React.DOM.summary({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Summary(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.summary({0}, {1})")]
@@ -4159,7 +4159,7 @@ namespace Bridge.React
 		[Template("React.DOM.sup(null, {0})")]
 		public extern static ReactElement Sup(string child);
 		
-		[Template("React.DOM.sup({0}, {1})")]
+		[Template("React.DOM.sup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sup(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4170,7 +4170,7 @@ namespace Bridge.React
 		[Template("React.DOM.sup({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.sup({0}, {1})")]
+		[Template("React.DOM.sup({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sup(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.sup({0}, {1})")]
@@ -4202,7 +4202,7 @@ namespace Bridge.React
 		[Template("React.DOM.table(null, {0})")]
 		public extern static ReactElement Table(string child);
 		
-		[Template("React.DOM.table({0}, {1})")]
+		[Template("React.DOM.table({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Table(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4213,7 +4213,7 @@ namespace Bridge.React
 		[Template("React.DOM.table({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Table<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.table({0}, {1})")]
+		[Template("React.DOM.table({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Table(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.table({0}, {1})")]
@@ -4245,7 +4245,7 @@ namespace Bridge.React
 		[Template("React.DOM.tbody(null, {0})")]
 		public extern static ReactElement TBody(string child);
 		
-		[Template("React.DOM.tbody({0}, {1})")]
+		[Template("React.DOM.tbody({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TBody(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4256,7 +4256,7 @@ namespace Bridge.React
 		[Template("React.DOM.tbody({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TBody<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.tbody({0}, {1})")]
+		[Template("React.DOM.tbody({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TBody(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.tbody({0}, {1})")]
@@ -4288,7 +4288,7 @@ namespace Bridge.React
 		[Template("React.DOM.td(null, {0})")]
 		public extern static ReactElement TD(string child);
 		
-		[Template("React.DOM.td({0}, {1})")]
+		[Template("React.DOM.td({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TD(TableCellAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4299,7 +4299,7 @@ namespace Bridge.React
 		[Template("React.DOM.td({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TD<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.td({0}, {1})")]
+		[Template("React.DOM.td({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TD(TableCellAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.td({0}, {1})")]
@@ -4344,7 +4344,7 @@ namespace Bridge.React
 		[Template("React.DOM.tfoot(null, {0})")]
 		public extern static ReactElement TFoot(string child);
 		
-		[Template("React.DOM.tfoot({0}, {1})")]
+		[Template("React.DOM.tfoot({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TFoot(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4355,7 +4355,7 @@ namespace Bridge.React
 		[Template("React.DOM.tfoot({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TFoot<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.tfoot({0}, {1})")]
+		[Template("React.DOM.tfoot({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TFoot(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.tfoot({0}, {1})")]
@@ -4387,7 +4387,7 @@ namespace Bridge.React
 		[Template("React.DOM.th(null, {0})")]
 		public extern static ReactElement TH(string child);
 		
-		[Template("React.DOM.th({0}, {1})")]
+		[Template("React.DOM.th({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TH(TableCellAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4398,7 +4398,7 @@ namespace Bridge.React
 		[Template("React.DOM.th({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TH<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.th({0}, {1})")]
+		[Template("React.DOM.th({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TH(TableCellAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.th({0}, {1})")]
@@ -4430,7 +4430,7 @@ namespace Bridge.React
 		[Template("React.DOM.thead(null, {0})")]
 		public extern static ReactElement THead(string child);
 		
-		[Template("React.DOM.thead({0}, {1})")]
+		[Template("React.DOM.thead({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement THead(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4441,7 +4441,7 @@ namespace Bridge.React
 		[Template("React.DOM.thead({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement THead<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.thead({0}, {1})")]
+		[Template("React.DOM.thead({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement THead(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.thead({0}, {1})")]
@@ -4473,7 +4473,7 @@ namespace Bridge.React
 		[Template("React.DOM.time(null, {0})")]
 		public extern static ReactElement Time(string child);
 		
-		[Template("React.DOM.time({0}, {1})")]
+		[Template("React.DOM.time({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Time(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4484,7 +4484,7 @@ namespace Bridge.React
 		[Template("React.DOM.time({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Time<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.time({0}, {1})")]
+		[Template("React.DOM.time({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Time(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.time({0}, {1})")]
@@ -4516,7 +4516,7 @@ namespace Bridge.React
 		[Template("React.DOM.title(null, {0})")]
 		public extern static ReactElement Title(string child);
 		
-		[Template("React.DOM.title({0}, {1})")]
+		[Template("React.DOM.title({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Title(TitleAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4527,7 +4527,7 @@ namespace Bridge.React
 		[Template("React.DOM.title({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Title<TProps>(TitleAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.title({0}, {1})")]
+		[Template("React.DOM.title({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Title(TitleAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.title({0}, {1})")]
@@ -4559,7 +4559,7 @@ namespace Bridge.React
 		[Template("React.DOM.tr(null, {0})")]
 		public extern static ReactElement TR(string child);
 		
-		[Template("React.DOM.tr({0}, {1})")]
+		[Template("React.DOM.tr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TR(TableCellAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4570,7 +4570,7 @@ namespace Bridge.React
 		[Template("React.DOM.tr({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TR<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.tr({0}, {1})")]
+		[Template("React.DOM.tr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TR(TableCellAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.tr({0}, {1})")]
@@ -4602,7 +4602,7 @@ namespace Bridge.React
 		[Template("React.DOM.track(null, {0})")]
 		public extern static ReactElement Track(string child);
 		
-		[Template("React.DOM.track({0}, {1})")]
+		[Template("React.DOM.track({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Track(TrackAttributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4613,7 +4613,7 @@ namespace Bridge.React
 		[Template("React.DOM.track({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Track<TProps>(TrackAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.track({0}, {1})")]
+		[Template("React.DOM.track({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Track(TrackAttributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.track({0}, {1})")]
@@ -4645,7 +4645,7 @@ namespace Bridge.React
 		[Template("React.DOM.u(null, {0})")]
 		public extern static ReactElement U(string child);
 		
-		[Template("React.DOM.u({0}, {1})")]
+		[Template("React.DOM.u({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement U(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4656,7 +4656,7 @@ namespace Bridge.React
 		[Template("React.DOM.u({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement U<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.u({0}, {1})")]
+		[Template("React.DOM.u({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement U(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.u({0}, {1})")]
@@ -4688,7 +4688,7 @@ namespace Bridge.React
 		[Template("React.DOM.ul(null, {0})")]
 		public extern static ReactElement UL(string child);
 		
-		[Template("React.DOM.ul({0}, {1})")]
+		[Template("React.DOM.ul({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement UL(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4699,7 +4699,7 @@ namespace Bridge.React
 		[Template("React.DOM.ul({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement UL<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.ul({0}, {1})")]
+		[Template("React.DOM.ul({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement UL(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.ul({0}, {1})")]
@@ -4731,7 +4731,7 @@ namespace Bridge.React
 		[Template("React.DOM.Var(null, {0})")]
 		public extern static ReactElement Var(string child);
 		
-		[Template("React.DOM.Var({0}, {1})")]
+		[Template("React.DOM.Var({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Var(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4742,7 +4742,7 @@ namespace Bridge.React
 		[Template("React.DOM.Var({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Var<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.Var({0}, {1})")]
+		[Template("React.DOM.Var({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Var(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.Var({0}, {1})")]
@@ -4774,7 +4774,7 @@ namespace Bridge.React
 		[Template("React.DOM.video(null, {0})")]
 		public extern static ReactElement Video(string child);
 		
-		[Template("React.DOM.video({0}, {1})")]
+		[Template("React.DOM.video({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Video(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4785,7 +4785,7 @@ namespace Bridge.React
 		[Template("React.DOM.video({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Video<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.video({0}, {1})")]
+		[Template("React.DOM.video({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Video(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.video({0}, {1})")]
@@ -4817,7 +4817,7 @@ namespace Bridge.React
 		[Template("React.DOM.wbr(null, {0})")]
 		public extern static ReactElement WBR(string child);
 		
-		[Template("React.DOM.wbr({0}, {1})")]
+		[Template("React.DOM.wbr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement WBR(Attributes properties, IEnumerable<ReactElement> children);
 		
 		[IgnoreGeneric]
@@ -4828,7 +4828,7 @@ namespace Bridge.React
 		[Template("React.DOM.wbr({0}, Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement WBR<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 		
-		[Template("React.DOM.wbr({0}, {1})")]
+		[Template("React.DOM.wbr({0}, System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement WBR(Attributes properties, IEnumerable<string> children);
 		
 		[Template("React.DOM.wbr({0}, {1})")]
