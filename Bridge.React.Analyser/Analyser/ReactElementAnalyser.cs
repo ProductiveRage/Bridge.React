@@ -84,7 +84,7 @@ namespace Bridge.React.Analyser
 			// .. alternatively, if the type has the Bridge [IgnoreGeneric] attribute on it then we don't need to worry about the type parameters since
 			// there won't be references to them at runtime
 			var typeSymbolInfo = context.SemanticModel.GetSymbolInfo(type);
-			if ((typeSymbolInfo.Symbol != null) && typeSymbolInfo.Symbol.GetAttributes().Any(attribute => IsBridgeClass(attribute.AttributeClass, "IgnoreGeneric")))
+			if ((typeSymbolInfo.Symbol != null) && typeSymbolInfo.Symbol.GetAttributes().Any(attribute => IsBridgeClass(attribute.AttributeClass, "IgnoreGenericAttribute")))
 				yield break;
 
 			foreach (var typeParameter in genericTypeIfApplicable.TypeArgumentList.Arguments)
@@ -102,7 +102,7 @@ namespace Bridge.React.Analyser
 				throw new ArgumentException($"Null/blank {nameof(className)} specified");
 
 			return 
-				(type.ContainingAssembly.Identity.Name != "Bridge") &&
+				(type.ContainingAssembly.Identity.Name == "Bridge") &&
 				(type.Name == className);
 		}
 
