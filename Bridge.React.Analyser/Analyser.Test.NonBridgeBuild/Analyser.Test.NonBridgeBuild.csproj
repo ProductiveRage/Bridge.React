@@ -32,11 +32,110 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Bridge.React\Attributes\AnchorAttributes.cs">
+      <Link>Attributes\AnchorAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\AreaAttributes.cs">
+      <Link>Attributes\AreaAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\Attributes.cs">
+      <Link>Attributes\Attributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\BaseAttributes.cs">
+      <Link>Attributes\BaseAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\BodyAttributes.cs">
+      <Link>Attributes\BodyAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\BrAttributes.cs">
+      <Link>Attributes\BrAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ButtonAttributes.cs">
+      <Link>Attributes\ButtonAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\CanvasAttributes.cs">
+      <Link>Attributes\CanvasAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\DelAttributes.cs">
+      <Link>Attributes\DelAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\DListAttributes.cs">
+      <Link>Attributes\DListAttributes.cs</Link>
+    </Compile>
     <Compile Include="..\..\Bridge.React\Attributes\DomElementsAttributes.cs">
       <Link>Attributes\DomElementsAttributes.cs</Link>
     </Compile>
     <Compile Include="..\..\Bridge.React\Attributes\DomElementWithEventsAttributes.cs">
       <Link>Attributes\DomElementWithEventsAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\EmbedAttributes.cs">
+      <Link>Attributes\EmbedAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\FieldSetAttributes.cs">
+      <Link>Attributes\FieldSetAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\FormAttributes.cs">
+      <Link>Attributes\FormAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\HRAttributes.cs">
+      <Link>Attributes\HRAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\IFrameAttributes.cs">
+      <Link>Attributes\IFrameAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ImageAttributes.cs">
+      <Link>Attributes\ImageAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\InputAttributes.cs">
+      <Link>Attributes\InputAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\InsAttributes.cs">
+      <Link>Attributes\InsAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\KeyGenAttributes.cs">
+      <Link>Attributes\KeyGenAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\LabelAttributes.cs">
+      <Link>Attributes\LabelAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\LIAttributes.cs">
+      <Link>Attributes\LIAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\LinkAttributes.cs">
+      <Link>Attributes\LinkAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\MapAttributes.cs">
+      <Link>Attributes\MapAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\MetaAttributes.cs">
+      <Link>Attributes\MetaAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\MeterAttributes.cs">
+      <Link>Attributes\MeterAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ObjectAttributes.cs">
+      <Link>Attributes\ObjectAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\OListAttributes.cs">
+      <Link>Attributes\OListAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\OptGroupAttributes.cs">
+      <Link>Attributes\OptGroupAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\OptionAttributes.cs">
+      <Link>Attributes\OptionAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\OutputAttributes.cs">
+      <Link>Attributes\OutputAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ParamAttributes.cs">
+      <Link>Attributes\ParamAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ProgressAttributes.cs">
+      <Link>Attributes\ProgressAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\QuoteAttributes.cs">
+      <Link>Attributes\QuoteAttributes.cs</Link>
     </Compile>
     <Compile Include="..\..\Bridge.React\Attributes\RawHtml.cs">
       <Link>Attributes\RawHtml.cs</Link>
@@ -44,8 +143,35 @@
     <Compile Include="..\..\Bridge.React\Attributes\ReactDomElementAttributes.cs">
       <Link>Attributes\ReactDomElementAttributes.cs</Link>
     </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\SandboxOptions.cs">
+      <Link>Attributes\SandboxOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\ScriptAttributes.cs">
+      <Link>Attributes\ScriptAttributes.cs</Link>
+    </Compile>
     <Compile Include="..\..\Bridge.React\Attributes\SelectAttributes.cs">
       <Link>Attributes\SelectAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\SourceAttributes.cs">
+      <Link>Attributes\SourceAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\StyleAttributes.cs">
+      <Link>Attributes\StyleAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\TableCellAttributes.cs">
+      <Link>Attributes\TableCellAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\TableColAttributes.cs">
+      <Link>Attributes\TableColAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\TextAreaAttributes.cs">
+      <Link>Attributes\TextAreaAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\TitleAttributes.cs">
+      <Link>Attributes\TitleAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Attributes\TrackAttributes.cs">
+      <Link>Attributes\TrackAttributes.cs</Link>
     </Compile>
     <Compile Include="..\..\Bridge.React\Components\Component.cs">
       <Link>Components\Component.cs</Link>
@@ -58,6 +184,9 @@
     </Compile>
     <Compile Include="..\..\Bridge.React\Components\StatelessComponent.cs">
       <Link>Components\StatelessComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\DOM.cs">
+      <Link>DOM.cs</Link>
     </Compile>
     <Compile Include="..\..\Bridge.React\Elements\ReactElement.cs">
       <Link>Elements\ReactElement.cs</Link>

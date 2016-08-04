@@ -2,8 +2,8 @@
 {
 	namespace Html5
 	{
-		public class Element { }
-		public class HTMLSelectElement : Element { }
+		public class AutoComplete { }
+		public class StyleSheet { }
 
 		public enum All { }
 		public enum AlignContent { }
@@ -21,11 +21,14 @@
 		public enum BorderWidth { }
 		public enum BoxDecorationBreak { }
 		public enum BoxSizing { }
+		public enum ButtonType { }
 		public enum CaptionSide { }
 		public enum Clear { }
 		public enum ColumnFill { }
 		public enum ColumnSpan { }
 		public enum ContentEditable { }
+		public enum InputType { }
+		public enum OListType { }
 		public enum Cursor { }
 		public enum Direction { }
 		public enum Display { }
@@ -76,8 +79,50 @@
 		public enum WhiteSpace { }
 		public enum WordBreak { }
 		public enum WordWrap { }
+		public enum Wrap { }
 		public enum WritingMode { }
 
+		public class Element { }
+		public class HTMLAnchorElement : Element { }
+		public class HTMLAreaElement : Element { }
+		public class HTMLBaseElement : Element { }
+		public class HTMLBodyElement : Element { }
+		public class HTMLBRElement : Element { }
+		public class HTMLButtonElement : Element { }
+		public class HTMLCanvasElement : Element { }
+		public class HTMLDListElement : Element { }
+		public class HTMLEmbedElement : Element { }
+		public class HTMLFieldSetElement : Element { }
+		public class HTMLFormElement : Element { }
+		public class HTMLHRElement : Element { }
+		public class HTMLIFrameElement : Element { }
+		public class HTMLImageElement : Element { }
+		public class HTMLInputElement : Element { }
+		public class HTMLKeygenElement : Element { }
+		public class HTMLLabelElement : Element { }
+		public class HTMLLIElement : Element { }
+		public class HTMLLinkElement : Element { }
+		public class HTMLMapElement : Element { }
+		public class HTMLMetaElement : Element { }
+		public class HTMLMeterElement : Element { }
+		public class HTMLModElement : Element { }
+		public class HTMLObjectElement : Element { }
+		public class HTMLOListElement : Element { }
+		public class HTMLOptGroupElement : Element { }
+		public class HTMLOptionElement : Element { }
+		public class HTMLOutputElement : Element { }
+		public class HTMLParamElement : Element { }
+		public class HTMLProgressElement : Element { }
+		public class HTMLQuoteElement : Element { }
+		public class HTMLScriptElement : Element { }
+		public class HTMLSourceElement : Element { }
+		public class HTMLStyleElement : Element { }
+		public class HTMLTableColElement : Element { }
+		public class HTMLTextAreaElement : Element { }
+		public class HTMLTitleElement : Element { }
+		public class HTMLTrackElement : Element { }
+		public class HTMLSelectElement : Element { }
+		public class TableCellElement : Element { }
 
 		public class CompositionEvent<T> { }
 		public class FocusEvent<T> { }

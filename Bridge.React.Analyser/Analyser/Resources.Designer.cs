@@ -80,6 +80,24 @@ namespace Bridge.React.Analyser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When calling element factory methods that accept children through a params array (such as {0}), the children should not be specified through a single array reference since this bypasses important logic in React about unique keys being present on dynamic children - instead, use one of the alternative method signatures that accepts an IEnumerable of ReactElement or of custom Stateless or Pure Components (see https://facebook.github.io/react/docs/reconciliation.html for why unique keys for dynamic children are [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DynamicChildrenWarningBypassMessageFormat {
+            get {
+                return ResourceManager.GetString("DynamicChildrenWarningBypassMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When calling element factory methods that accept children through a params array, the children should not be specified through a single array reference since this bypasses important logic in React about unique keys being present on dynamic children.
+        /// </summary>
+        internal static string DynamicChildrenWarningBypassTitle {
+            get {
+                return ResourceManager.GetString("DynamicChildrenWarningBypassTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ReactElement may not be used as a type parameter for an object instantiation as it is an [External] type that will not be available at runtime (for creating sets of components, the ToChildComponentArray extension method may help).
         /// </summary>
         internal static string InvalidReactElementInstantiation {
