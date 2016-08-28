@@ -32,7 +32,7 @@ namespace Bridge.React
 			// component must be contained within the props (and state, where appropriate). Note: In most cases where children are specified as a params array, we don't want
 			// the "children require unique keys" warning from React (you don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here
 			// either - to achieve this, we prepare an arguments array and pass that to React.createElement in an "apply" call.
-			Array createElementArgs = new object[] { _reactComponentClass, ComponentHelpers<TProps>.WrapProps(props) };
+			Array createElementArgs = new object[] { _reactComponentClass, ComponentPropsHelpers<TProps>.WrapProps(props) };
 			if (children != null)
 				createElementArgs = createElementArgs.Concat(children);
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
@@ -59,7 +59,7 @@ namespace Bridge.React
 			// rather than merging it with whatever data is already there is - I think - the least surprising approach when considered in terms of C#; it makes more sense to
 			// replace the current data with the new reference, rather than merge - merging is not a common action in C#, though it is in JavaScript (eg. merging default
 			// "options" with any explicit settings in many JavaScript APIs).
-			var className = this.GetClassName().Split(".").Last();
+			var className = ComponentNameHelpers.GetDisplayName(this);
 			object reactComponentClass = null;
 			/*@
 			var bridgeComponentInstance = this;

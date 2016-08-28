@@ -30,7 +30,7 @@ namespace Bridge.React
 			// we render. In most cases where children are specified as a params array, we don't want the "children require unique keys" warning from React (you
 			// don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here either - to achieve this, we prepare an arguments
 			// array and pass that to React.createElement in an "apply" call. Similar techniques are used in the stateful component.
-			Array createElementArgs = new object[] { reactStatelessRenderFunction, ComponentHelpers<TProps>.WrapProps(props) };
+			Array createElementArgs = new object[] { reactStatelessRenderFunction, ComponentPropsHelpers<TProps>.WrapProps(props) };
 			if (children != null)
 				createElementArgs = createElementArgs.Concat(children);
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
@@ -44,10 +44,8 @@ namespace Bridge.React
 			// best way that I can think of is to use Object.create to prepare a new instance, taking the prototype of the component class, and then setting its
 			// props reference, then wrapping this all in a function that calls its Render function, binding to this instance. This woud mean that the constructor
 			// would not get called on the component, but that's just the same as for stateful components (from the Component class).
-			var fullClassName = this.GetClassName();
 			/*@
-			var classPrototype;
-			eval('classPrototype = ' + fullClassName + '.prototype');
+			var classPrototype = this.constructor.prototype;
 			var scopeBoundFunction = function(props) {
 				var target = Object.create(classPrototype);
 				target.props = props;
@@ -59,7 +57,7 @@ namespace Bridge.React
 			// the component name in the tree. The only way to do this is, unfortunately, with eval - but the only dynamic content is the class name (which should be
 			// safe to use since valid C# class names should be valid JavaScript function names, with no escaping required) and this work is only performed once per
 			// class, since it is stored in a static variable - so the eval calls will be made very infrequently (so performance is not a concern).
-			var className = fullClassName.Split(".").Last();
+			var className = ComponentNameHelpers.GetDisplayName(this);
 			Func<TProps, ReactElement> namedScopeBoundFunction = null;
 			/*@
 			eval("namedScopeBoundFunction = function " + className + "(props) { return scopeBoundFunction(props); };");

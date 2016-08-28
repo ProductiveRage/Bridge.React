@@ -8,7 +8,7 @@
 	/// value from the props, since this must not be tucked away one level deeper as it is a magic React property (for more information
 	/// about keyed elements, see https://facebook.github.io/react/docs/multiple-components.html#dynamic-children).
 	/// </summary>
-	internal static class ComponentHelpers<TProps>
+	internal static class ComponentPropsHelpers<TProps>
 	{
 		internal static WrappedProps WrapProps(TProps propsIfAny)
 		{

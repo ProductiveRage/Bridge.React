@@ -176,8 +176,11 @@
     <Compile Include="..\..\Bridge.React\Components\Component.cs">
       <Link>Components\Component.cs</Link>
     </Compile>
-    <Compile Include="..\..\Bridge.React\Components\ComponentHelpers.cs">
-      <Link>Components\ComponentHelpers.cs</Link>
+    <Compile Include="..\..\Bridge.React\Components\ComponentNameHelpers.cs">
+      <Link>Components\ComponentNameHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Components\ComponentPropsHelpers.cs">
+      <Link>Components\ComponentPropsHelpers.cs</Link>
     </Compile>
     <Compile Include="..\..\Bridge.React\Components\PureComponent.cs">
       <Link>Components\PureComponent.cs</Link>

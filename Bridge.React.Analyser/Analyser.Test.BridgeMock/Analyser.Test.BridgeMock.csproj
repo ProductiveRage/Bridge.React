@@ -36,6 +36,7 @@
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="System.cs" />
     <Compile Include="Bridge.Html5.cs" />
     <Compile Include="Bridge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
