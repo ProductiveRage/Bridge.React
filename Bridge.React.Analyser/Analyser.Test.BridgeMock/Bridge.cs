@@ -36,7 +36,6 @@ namespace Bridge
 
 	public static class BridgeExtensions
 	{
-		public static string GetClassName(this object source) { throw new NotImplementedException(); }
 		public static string[] Split(this string source, string separator) { return source.Split(new[] { separator }, StringSplitOptions.None); }
 		public static Array Concat(this Array source, Array toAdd) { throw new NotImplementedException(); }
 	}
