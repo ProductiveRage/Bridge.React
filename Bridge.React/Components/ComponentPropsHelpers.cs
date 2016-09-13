@@ -75,8 +75,18 @@
 					// If they're Bridge-bound functions (which is what the presence of $scope and $method properties indicates), then check whether the underlying $method
 					// and $scope references match (if they do then this means that it's the same method bound to the same "this" scope, but the actual function references
 					// are not the same since they were the results from two different calls to Bridge.fn.bind)
-					if (propValue1.$scope && propValue1.$method && propValue2.$scope && propValue2.$method && (propValue1.$scope === propValue2.$scope) && (propValue1.$method === propValue2.$method)) {
-						continue;
+					if (propValue1.$scope && propValue1.$method && propValue2.$scope && propValue2.$method && (propValue1.$scope === propValue2.$scope)) {
+						if (propValue1.$method === propValue2.$method) {
+							continue;
+						}
+						if (propValue1.$method.toString() === propValue2.$method.toString()) {
+							// If the bound method is a named function then we can use the cheap reference equality comparison above. This is the ideal case, not only because
+							// the comparison is so cheap but also because it means that the function is only declared once. Anonymous functions can't be compared by reference
+							// and they have a cost (in terms of creation and in terms of additional GC work) that makes them less desirable. However, if the underlying bound
+							// functions are anonymous functions then so long as they have the same content then they may be considered equivalent (since we've already checked
+							// the references that they're bound to are the same, above).
+							continue;
+						}
 					}
 					// Due to the way that properties are currently initialised on types in Bridge, if a property's type is a struct then the getter and setter for it will
 					// be created for each instance of the type, rather than being shared across all instances of the type (which is the case for reference type properties).
