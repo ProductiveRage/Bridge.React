@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Bridge.React
 {
@@ -10,9 +11,9 @@ namespace Bridge.React
 				throw new ArgumentNullException("source");
 
 			if (Script.Write<bool>("Bridge.isPlainObject(source)"))
-				return source.ToString();
+				return "Component";
 
-			return source.GetType().FullName;
+			return source.GetType().Name.Split('.', '[', '$').First();
 		}
 	}
 }
