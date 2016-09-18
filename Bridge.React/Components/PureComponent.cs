@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Bridge.React
@@ -22,7 +23,7 @@ namespace Bridge.React
 	/// </summary>
 	public abstract class PureComponent<TProps>
 	{
-		private static object _reactComponentClass = null;
+		private static Dictionary<Type, object> _reactComponentClasses = new Dictionary<Type, object>();
 		private readonly ReactElement _reactElement;
 		protected PureComponent(TProps props, params Any<ReactElement, string>[] children)
 		{
@@ -32,18 +33,23 @@ namespace Bridge.React
 					throw new ArgumentException("Null reference encountered in children set");
 			}
 
-			// To ensure that a single "template" (ie. React component) is created per unique class, a static "_reactComponentClass" reference is maintained. When this is
-			// null, for the first instantiation of any particular component class, it will be populated and then re-used for any further component instances.
-			var reactComponentClass = _reactComponentClass;
-			if (reactComponentClass == null)
-				_reactComponentClass = CreateReactComponentClass();
+			// To ensure that a single "template" (ie. React component) is created per unique class, a static "_reactComponentClasss" dictionary is maintained. If it has no entry
+			// for the current type then this must be the first instantiation of that type and so a component class will be created and added to the dictionary, ready for re-use
+			// by any subsequent component instances.
+			var currentType = this.GetType();
+			object reactComponentClass;
+			if (!_reactComponentClasses.TryGetValue(currentType, out reactComponentClass))
+			{
+				reactComponentClass = CreateReactComponentClass();
+				_reactComponentClasses[currentType] = reactComponentClass;
+			}
 
 			// Now that the React component class is certain to have been defined (once per unique C# component class), this instance requires a React element to be created
 			// for it. The internal React mechanism means that the component's constructor will not be executed, which is why ALL configuration options for a component must
 			// be contained within the props. Note: In most cases where children are specified as a params array, we don't want the "children require unique keys" warning
 			// from React (you don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here either - to achieve this, we prepare an
 			// arguments array and pass that to React.createElement in an "apply" call.
-			Array createElementArgs = new object[] { _reactComponentClass, ComponentPropsHelpers<TProps>.WrapProps(props) };
+			Array createElementArgs = new object[] { reactComponentClass, ComponentPropsHelpers<TProps>.WrapProps(props) };
 			if (children != null)
 				createElementArgs = createElementArgs.Concat(children);
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");

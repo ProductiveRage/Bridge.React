@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Bridge.React
 {
 	public abstract class StatelessComponent<TProps>
 	{
-		private static Func<TProps, ReactElement> _reactStatelessRenderFunction;
+		private static Dictionary<Type, Func<TProps, ReactElement>> _reactStatelessRenderFunctions = new Dictionary<Type, Func<TProps, ReactElement>>();
 		private readonly ReactElement _reactElement;
 		protected StatelessComponent(TProps props, params Any<ReactElement, string>[] children)
 		{
@@ -16,12 +17,13 @@ namespace Bridge.React
 			}
 
 			// When preparing the "_reactStatelessRenderFunction" reference, a local "reactStatelessRenderFunction" alias is used - this is just so that the JavaScript
-			// code further down (which calls React.createElement) can use this local alias and not have to know how Bridge stores static references
-			var reactStatelessRenderFunction = _reactStatelessRenderFunction;
-			if (reactStatelessRenderFunction == null)
+			// code further down (which calls React.createElement) can use this local alias and not have to know how Bridge stores static references.
+			Func<TProps, ReactElement> reactStatelessRenderFunction;
+			var currentType = this.GetType();
+			if (!_reactStatelessRenderFunctions.TryGetValue(currentType, out reactStatelessRenderFunction))
 			{
 				reactStatelessRenderFunction = CreateStatelessRenderFunction();
-				_reactStatelessRenderFunction = reactStatelessRenderFunction;
+				_reactStatelessRenderFunctions[currentType] = reactStatelessRenderFunction;
 			}
 
 			// When we pass the props reference to React.createElement, React's internals will rip it apart and reform it - which will cause problems if TProps is a
