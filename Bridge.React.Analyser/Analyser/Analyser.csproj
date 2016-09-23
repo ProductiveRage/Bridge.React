@@ -35,6 +35,7 @@
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="StaticFunctionComponentAnalyzer.cs" />
     <Compile Include="ITypeSymbolExtensions.cs" />
     <Compile Include="DynamicChildrenUniqueIdWorkaroundAnalyser.cs" />
     <Compile Include="ReactElementAnalyser.cs" />
@@ -51,6 +52,7 @@
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

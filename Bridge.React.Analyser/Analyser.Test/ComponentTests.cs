@@ -9,7 +9,7 @@ namespace Bridge.React.Analyser.Test
 	public class ComponentTests : DiagnosticVerifier
 	{
 		[TestMethod]
-		public void ClassesDerivedFromComponentMustNotHaveNonEmptyConstructors()
+		public void ClassesDerivedFromComponentMustNotHaveNonEmptyInstanceConstructors()
 		{
 			var testContent = @"
 				using Bridge.React;
@@ -56,7 +56,7 @@ namespace Bridge.React.Analyser.Test
 		}
 
 		[TestMethod]
-		public void ClassesDerivedFromStatelessComponentMustNotHaveNonEmptyConstructors()
+		public void ClassesDerivedFromStatelessComponentMustNotHaveNonEmptyInstanceConstructors()
 		{
 			var testContent = @"
 				using Bridge.React;
@@ -103,7 +103,7 @@ namespace Bridge.React.Analyser.Test
 		}
 
 		[TestMethod]
-		public void ClassesDerivedFromPureComponentMustNotHaveNonEmptyConstructors()
+		public void ClassesDerivedFromPureComponentMustNotHaveNonEmptyInstanceConstructors()
 		{
 			var testContent = @"
 				using Bridge.React;
@@ -231,6 +231,120 @@ namespace Bridge.React.Analyser.Test
 						public LabelComponent(Props props, int otherValue) : base(props)
 						{
 						}
+
+						public override ReactElement Render()
+						{
+							return DOM.Label(
+								new LabelAttributes { ClassName = props.ClassName },
+								props.Text + "" ("" + _otherValue + "")""
+							);
+						}
+
+						public class Props
+						{
+							public string ClassName;
+							public string Text;
+						}
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
+		[TestMethod]
+		public void ClassesDerivedFromComponentMayHaveNonEmptyStaticConstructors()
+		{
+			var testContent = @"
+				using Bridge.React;
+
+				namespace TestCase
+				{
+					public class LabelComponent : Component<LabelComponent.Props, object>
+					{
+						private static readonly int _otherValue;
+						static LabelComponent()
+						{
+							_otherValue = 123;
+
+						}
+
+						public LabelComponent(Props props) : base(props) { }
+
+						public override ReactElement Render()
+						{
+							return DOM.Label(
+								new LabelAttributes { ClassName = props.ClassName },
+								props.Text + "" ("" + _otherValue + "")""
+							);
+						}
+
+						public class Props
+						{
+							public string ClassName;
+							public string Text;
+						}
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
+		[TestMethod]
+		public void ClassesDerivedFromStatelessComponentMayHaveNonEmptyStaticConstructors()
+		{
+			var testContent = @"
+				using Bridge.React;
+
+				namespace TestCase
+				{
+					public class LabelComponent : StatelessComponent<LabelComponent.Props>
+					{
+						private static readonly int _otherValue;
+						static LabelComponent()
+						{
+							_otherValue = 123;
+
+						}
+
+						public LabelComponent(Props props) : base(props) { }
+
+						public override ReactElement Render()
+						{
+							return DOM.Label(
+								new LabelAttributes { ClassName = props.ClassName },
+								props.Text + "" ("" + _otherValue + "")""
+							);
+						}
+
+						public class Props
+						{
+							public string ClassName;
+							public string Text;
+						}
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
+		[TestMethod]
+		public void ClassesDerivedFromPureComponentMayHaveNonEmptyStaticConstructors()
+		{
+			var testContent = @"
+				using Bridge.React;
+
+				namespace TestCase
+				{
+					public class LabelComponent : PureComponent<LabelComponent.Props>
+					{
+						private static readonly int _otherValue;
+						static LabelComponent()
+						{
+							_otherValue = 123;
+
+						}
+
+						public LabelComponent(Props props) : base(props) { }
 
 						public override ReactElement Render()
 						{

@@ -44,7 +44,8 @@ namespace Bridge.React.Analyser
 				return;
 
 			if ((constructor.Body == null) // If the code is in an invalid state then the Body property might be null - safe to ignore
-			|| !constructor.Body.ChildNodes().Any())
+			|| !constructor.Body.ChildNodes().Any() // If the constructor is empty then that's what we want to make sure of - so exit now
+			|| constructor.Modifiers.Any(modifier => modifier.Kind() == SyntaxKind.StaticKeyword)) // Static constructors WILL be executed (by Bridge), it's only instance constructors that aren't called (by React)
 				return;
 
 			var classDeclaration = constructor.Ancestors().OfType<ClassDeclarationSyntax>().FirstOrDefault();
