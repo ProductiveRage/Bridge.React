@@ -72,11 +72,20 @@ namespace Bridge.React
 				bridgeComponentInstance[i] = bridgeComponentInstance[i];
 			}
 
-			// .. then overwrite the ShouldComponentUpdate function, since that needs special treatment
+			// .. then overwrite the supported life cycle functions (ComponentDidMount, ComponentDidUpdate, ShouldComponentUpdate), since they need special treatment
+			var componentDidMount = bridgeComponentInstance.componentDidMount;
+			bridgeComponentInstance.componentDidMount = function () {
+				componentDidMount.apply(this, [ ]);
+			};
+			var componentDidUpdate = bridgeComponentInstance.componentDidUpdate;
+			bridgeComponentInstance.componentDidUpdate = function (previousProps) {
+				componentDidUpdate.apply(this, [ previousProps ? previousProps.value : previousProps ]);
+			};
 			var shouldComponentUpdate = bridgeComponentInstance.shouldComponentUpdate;
 			bridgeComponentInstance.shouldComponentUpdate = function (nextProps, nextState) {
 				return shouldComponentUpdate.apply(this, [ nextProps ? nextProps.value : nextProps, nextState ? nextState.value : nextState ]);
 			};
+
 			reactComponentClass = React.createClass(bridgeComponentInstance);
 			*/
 			return reactComponentClass;
@@ -86,6 +95,16 @@ namespace Bridge.React
 		{
 			return !ComponentPropsHelpers<TProps>.DoPropsReferencesMatch(this.props, nextProps);
 		}
+
+		/// <summary>
+		/// This will be invoked once, immediately after the initial rendering occurs
+		/// </summary>
+		protected virtual void ComponentDidMount() { }
+
+		/// <summary>
+		/// This will be invoked immediately after the component's updates are flushed to the DOM (but not called for the initial render, ComponentDidMount is called then instead)
+		/// </summary>
+		protected virtual void ComponentDidUpdate(TProps previousProps) { }
 
 		/// <summary>
 		/// Props is not used by all components and so this may be null
