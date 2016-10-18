@@ -35,7 +35,6 @@
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="StaticFunctionComponentAnalyzer.cs" />
     <Compile Include="ITypeSymbolExtensions.cs" />
     <Compile Include="DynamicChildrenUniqueIdWorkaroundAnalyser.cs" />
     <Compile Include="ReactElementAnalyser.cs" />
