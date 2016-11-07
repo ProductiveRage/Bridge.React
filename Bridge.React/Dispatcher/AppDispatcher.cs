@@ -2,7 +2,7 @@
 
 namespace Bridge.React
 {
-	public sealed class AppDispatcher
+	public sealed class AppDispatcher : IDispatcher
 	{
 		private event Action<DispatcherMessage> _dispatcher;
 
@@ -12,7 +12,9 @@ namespace Bridge.React
 			_currentDispatching = false;
 		}
 
-
+		/// <summary>
+		/// Actions will sent to each receiver in the same order as which the receivers called Register
+		/// </summary>
 		public void Register(Action<DispatcherMessage> callback)
 		{
 			_dispatcher += callback;

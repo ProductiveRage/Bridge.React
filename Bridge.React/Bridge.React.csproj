@@ -49,6 +49,7 @@
     <Compile Include="Components\PureComponent.cs" />
     <Compile Include="Components\ComponentNameHelpers.cs" />
     <Compile Include="ComponentListToReactElementTranslation.cs" />
+    <Compile Include="Dispatcher\IDispatcher.cs" />
     <Compile Include="EnumerableComponentExtensions.cs" />
     <Compile Include="Events\ImageEvent.cs" />
     <Compile Include="Events\MouseEvent.cs" />
