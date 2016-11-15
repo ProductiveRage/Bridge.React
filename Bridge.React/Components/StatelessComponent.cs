@@ -88,17 +88,21 @@ namespace Bridge.React
 
 		public static implicit operator ReactElement(StatelessComponent<TProps> component)
 		{
+			// Since React 0.11 (see https://facebook.github.io/react/blog/2014/07/17/react-v0.11.html), it has been acceptable to return null from a Render method to
+			// indicate that nothing should be rendered. As such, it's possible that a null StatelessComponent reference will pass through this operator method and
+			// so null needs to be allowed (previously this would throw a ArgumentNullException for a null component).
 			if (component == null)
-				throw new ArgumentNullException("component");
-
+				return null;
 			return component._reactElement;
 		}
 
 		public static implicit operator Any<ReactElement, string>(StatelessComponent<TProps> component)
 		{
+			// Since React 0.11 (see https://facebook.github.io/react/blog/2014/07/17/react-v0.11.html), it has been acceptable to return null from a Render method to
+			// indicate that nothing should be rendered. As such, it's possible that a null StatelessComponent reference will pass through this operator method and
+			// so null needs to be allowed (previously this would throw a ArgumentNullException for a null component).
 			if (component == null)
-				throw new ArgumentNullException("component");
-
+				return null;
 			return component._reactElement;
 		}
 	}
