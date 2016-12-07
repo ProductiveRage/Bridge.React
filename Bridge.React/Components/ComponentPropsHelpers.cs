@@ -112,6 +112,7 @@
 			return true;
 		}
 
+		[IgnoreGeneric]
 		[ObjectLiteral]
 		internal class WrappedProps
 		{
