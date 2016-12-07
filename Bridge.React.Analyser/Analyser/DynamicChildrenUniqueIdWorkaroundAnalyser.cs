@@ -54,7 +54,7 @@ namespace Bridge.React.Analyser
 				return;
 
 			// The element factory methods are always of the form
-			//   public extern static ReactElement A(AnchorAttributes properties, params Any<ReactElement, string>[] children);
+			//   public extern static ReactElement A(AnchorAttributes properties, params Union<ReactElement, string>[] children);
 			// so the first do-no-more-work condition is if there are not precisely two arguments passed
 			var arguments = invocation.ArgumentList.Arguments;
 			if (arguments.Count != 2)
@@ -76,18 +76,18 @@ namespace Bridge.React.Analyser
 			if ((method.ContainingAssembly.Identity.Name != "Bridge.React") || (method.ContainingType.Name != "DOM"))
 				return;
 
-			// Try to confirm that the last argument of the method is "Any<ReactElement, string>[]" since that's the type that enable the warning to be bypassed
+			// Try to confirm that the last argument of the method is "Union<ReactElement, string>[]" since that's the type that enable the warning to be bypassed
 			// most easily
-			if (!IsAnyReactElementOrStringArray(method.Parameters.Last().Type))
+			if (!IsAnyOrUnionReactElementOrStringArray(method.Parameters.Last().Type))
 				return;
 
-			// Try to confirm that the value specified as the parameter value is "Any<ReactElement, string>[]" (since this argument will be a params array in the
+			// Try to confirm that the value specified as the parameter value is "Union<ReactElement, string>[]" (since this argument will be a params array in the
 			// factory methods, it's possible that the value could be a single ReactElement or a single string - which would be fine)
 			// - context.SemanticModel.GetTypeInfo will never return null since it returns a struct value
-			// - We're interested in the ConvertedType of the value, for cases where the value itself is not an "Any<ReactElement, string>[]" but one which may
+			// - We're interested in the ConvertedType of the value, for cases where the value itself is not an "Union<ReactElement, string>[]" but one which may
 			//   be cast to that type, since that's what's important here
 			var argumentValueType = context.SemanticModel.GetTypeInfo(secondArgument).ConvertedType;
-			if ((argumentValueType == null) || (argumentValueType is IErrorTypeSymbol) || !IsAnyReactElementOrStringArray(argumentValueType))
+			if ((argumentValueType == null) || (argumentValueType is IErrorTypeSymbol) || !IsAnyOrUnionReactElementOrStringArray(argumentValueType))
 				return;
 
 			context.ReportDiagnostic(Diagnostic.Create(
@@ -112,7 +112,7 @@ namespace Bridge.React.Analyser
 			return false;
 		}
 
-		private static bool IsAnyReactElementOrStringArray(ITypeSymbol type)
+		private static bool IsAnyOrUnionReactElementOrStringArray(ITypeSymbol type)
 		{
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
@@ -121,7 +121,7 @@ namespace Bridge.React.Analyser
 			if (arrayType == null)
 				return false;
 			var elementType = arrayType.ElementType as INamedTypeSymbol;
-			return (elementType != null) && (elementType.Arity == 2) && IsBridgeClass(elementType, "Any");
+			return (elementType != null) && (elementType.Arity == 2) && (IsBridgeClass(elementType, "Any") || IsBridgeClass(elementType, "Union"));
 		}
 
 		private static bool IsBridgeClass(ITypeSymbol type, string className)

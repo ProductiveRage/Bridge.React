@@ -12,13 +12,13 @@ namespace Bridge.React
 		/// calling ToArray or this helper function may be used.
 		/// </summary>
 		[Obsolete("This method is not required now that the DOM element factory methods have overloads that will take enumerable sets of elements. Also, this method prevents the React warning 'Each child in an array or iterator should have a unique \"key\" prop' from being raised, which is too important to be bypassed. As such, use of this method is not recommended and it will likely be removed in a future version of this library.")]
-		public static Any<ReactElement, string>[] ToChildComponentArray(this IEnumerable<ReactElement> elements)
+		public static Union<ReactElement, string>[] ToChildComponentArray(this IEnumerable<ReactElement> elements)
 		{
 			if (elements == null)
 				throw new ArgumentNullException("elements");
 
 			return elements
-				.Select(component => (Any<ReactElement, string>)component)
+				.Select(component => (Union<ReactElement, string>)component)
 				.ToArray();
 		}
 
@@ -28,13 +28,13 @@ namespace Bridge.React
 		/// Any&lt;ReactElement, string&gt; before ToArray is called on that set)
 		/// </summary>
 		[Obsolete("This method is not required now that the DOM element factory methods have overloads that will take enumerable sets of elements. Also, this method prevents the React warning 'Each child in an array or iterator should have a unique \"key\" prop' from being raised, which is too important to be bypassed. As such, use of this method is not recommended and it will likely be removed in a future version of this library.")]
-		public static Any<ReactElement, string>[] ToChildComponentArray<TProps>(this IEnumerable<PureComponent<TProps>> components)
+		public static Union<ReactElement, string>[] ToChildComponentArray<TProps>(this IEnumerable<PureComponent<TProps>> components)
 		{
 			if (components == null)
 				throw new ArgumentNullException("components");
 
 			return components
-				.Select(component => (Any<ReactElement, string>)component)
+				.Select(component => (Union<ReactElement, string>)component)
 				.ToArray();
 		}
 
@@ -44,13 +44,13 @@ namespace Bridge.React
 		/// Any&lt;ReactElement, string&gt; before ToArray is called on that set)
 		/// </summary>
 		[Obsolete("This method is not required now that the DOM element factory methods have overloads that will take enumerable sets of elements. Also, this method prevents the React warning 'Each child in an array or iterator should have a unique \"key\" prop' from being raised, which is too important to be bypassed. As such, use of this method is not recommended and it will likely be removed in a future version of this library.")]
-		public static Any<ReactElement, string>[] ToChildComponentArray<TProps>(this IEnumerable<StatelessComponent<TProps>> components)
+		public static Union<ReactElement, string>[] ToChildComponentArray<TProps>(this IEnumerable<StatelessComponent<TProps>> components)
 		{
 			if (components == null)
 				throw new ArgumentNullException("components");
 
 			return components
-				.Select(component => (Any<ReactElement, string>)component)
+				.Select(component => (Union<ReactElement, string>)component)
 				.ToArray();
 		}
 	}

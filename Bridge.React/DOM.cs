@@ -7,7 +7,7 @@ namespace Bridge.React
 	public static class DOM
 	{
 		[Name("a")]
-		public extern static ReactElement A(AnchorAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement A(AnchorAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.a(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement A(IEnumerable<ReactElement> children);
@@ -50,7 +50,7 @@ namespace Bridge.React
 		public extern static ReactElement A(AnchorAttributes properties, string child);
 
 		[Name("abbr")]
-		public extern static ReactElement Abbr(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Abbr(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.abbr(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Abbr(IEnumerable<ReactElement> children);
@@ -93,7 +93,7 @@ namespace Bridge.React
 		public extern static ReactElement Abbr(Attributes properties, string child);
 
 		[Name("address")]
-		public extern static ReactElement Address(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Address(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.address(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Address(IEnumerable<ReactElement> children);
@@ -136,7 +136,7 @@ namespace Bridge.React
 		public extern static ReactElement Address(Attributes properties, string child);
 
 		[Name("area")]
-		public extern static ReactElement Area(AreaAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Area(AreaAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.area(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Area(IEnumerable<ReactElement> children);
@@ -179,7 +179,7 @@ namespace Bridge.React
 		public extern static ReactElement Area(AreaAttributes properties, string child);
 
 		[Name("article")]
-		public extern static ReactElement Article(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Article(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.article(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Article(IEnumerable<ReactElement> children);
@@ -222,7 +222,7 @@ namespace Bridge.React
 		public extern static ReactElement Article(Attributes properties, string child);
 
 		[Name("aside")]
-		public extern static ReactElement Aside(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Aside(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.aside(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Aside(IEnumerable<ReactElement> children);
@@ -265,7 +265,7 @@ namespace Bridge.React
 		public extern static ReactElement Aside(Attributes properties, string child);
 
 		[Name("audio")]
-		public extern static ReactElement Audio(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Audio(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.audio(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Audio(IEnumerable<ReactElement> children);
@@ -308,7 +308,7 @@ namespace Bridge.React
 		public extern static ReactElement Audio(Attributes properties, string child);
 
 		[Name("b")]
-		public extern static ReactElement B(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement B(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.b(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement B(IEnumerable<ReactElement> children);
@@ -351,7 +351,7 @@ namespace Bridge.React
 		public extern static ReactElement B(Attributes properties, string child);
 
 		[Name("base")]
-		public extern static ReactElement Base(BaseAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Base(BaseAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.base(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Base(IEnumerable<ReactElement> children);
@@ -394,7 +394,7 @@ namespace Bridge.React
 		public extern static ReactElement Base(BaseAttributes properties, string child);
 
 		[Name("bdi")]
-		public extern static ReactElement BDI(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement BDI(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.bdi(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement BDI(IEnumerable<ReactElement> children);
@@ -437,7 +437,7 @@ namespace Bridge.React
 		public extern static ReactElement BDI(Attributes properties, string child);
 
 		[Name("bdo")]
-		public extern static ReactElement BDO(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement BDO(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.bdo(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement BDO(IEnumerable<ReactElement> children);
@@ -480,7 +480,7 @@ namespace Bridge.React
 		public extern static ReactElement BDO(Attributes properties, string child);
 
 		[Name("big")]
-		public extern static ReactElement Big(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Big(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.big(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Big(IEnumerable<ReactElement> children);
@@ -523,7 +523,7 @@ namespace Bridge.React
 		public extern static ReactElement Big(Attributes properties, string child);
 
 		[Name("blockquote")]
-		public extern static ReactElement BlockQuote(QuoteAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement BlockQuote(QuoteAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.blockquote(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement BlockQuote(IEnumerable<ReactElement> children);
@@ -566,7 +566,7 @@ namespace Bridge.React
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, string child);
 
 		[Name("body")]
-		public extern static ReactElement Body(BodyAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Body(BodyAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.body(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Body(IEnumerable<ReactElement> children);
@@ -609,7 +609,7 @@ namespace Bridge.React
 		public extern static ReactElement Body(BodyAttributes properties, string child);
 
 		[Name("br")]
-		public extern static ReactElement Br(BrAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Br(BrAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.br(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Br(IEnumerable<ReactElement> children);
@@ -652,7 +652,7 @@ namespace Bridge.React
 		public extern static ReactElement Br(BrAttributes properties, string child);
 
 		[Name("button")]
-		public extern static ReactElement Button(ButtonAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Button(ButtonAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.button(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Button(IEnumerable<ReactElement> children);
@@ -695,7 +695,7 @@ namespace Bridge.React
 		public extern static ReactElement Button(ButtonAttributes properties, string child);
 
 		[Name("canvas")]
-		public extern static ReactElement Canvas(CanvasAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Canvas(CanvasAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.canvas(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Canvas(IEnumerable<ReactElement> children);
@@ -738,7 +738,7 @@ namespace Bridge.React
 		public extern static ReactElement Canvas(CanvasAttributes properties, string child);
 
 		[Name("caption")]
-		public extern static ReactElement Caption(Attributes  properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Caption(Attributes  properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.caption(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Caption(IEnumerable<ReactElement> children);
@@ -781,7 +781,7 @@ namespace Bridge.React
 		public extern static ReactElement Caption(Attributes properties, string child);
 
 		[Name("cite")]
-		public extern static ReactElement Cite(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Cite(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.cite(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Cite(IEnumerable<ReactElement> children);
@@ -824,7 +824,7 @@ namespace Bridge.React
 		public extern static ReactElement Cite(Attributes properties, string child);
 
 		[Name("code")]
-		public extern static ReactElement Code(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Code(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.code(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Code(IEnumerable<ReactElement> children);
@@ -867,7 +867,7 @@ namespace Bridge.React
 		public extern static ReactElement Code(Attributes properties, string child);
 
 		[Name("col")]
-		public extern static ReactElement Col(TableColAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Col(TableColAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.col(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Col(IEnumerable<ReactElement> children);
@@ -910,7 +910,7 @@ namespace Bridge.React
 		public extern static ReactElement Col(TableColAttributes properties, string child);
 
 		[Name("colgroup")]
-		public extern static ReactElement ColGroup(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement ColGroup(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.colgroup(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement ColGroup(IEnumerable<ReactElement> children);
@@ -953,7 +953,7 @@ namespace Bridge.React
 		public extern static ReactElement ColGroup(Attributes properties, string child);
 
 		[Name("data")]
-		public extern static ReactElement Data(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Data(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.data(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Data(IEnumerable<ReactElement> children);
@@ -996,7 +996,7 @@ namespace Bridge.React
 		public extern static ReactElement Data(Attributes properties, string child);
 
 		[Name("datalist")]
-		public extern static ReactElement DataList(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement DataList(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.datalist(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement DataList(IEnumerable<ReactElement> children);
@@ -1039,7 +1039,7 @@ namespace Bridge.React
 		public extern static ReactElement DataList(Attributes properties, string child);
 
 		[Name("dd")]
-		public extern static ReactElement DD(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement DD(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.dd(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement DD(IEnumerable<ReactElement> children);
@@ -1082,7 +1082,7 @@ namespace Bridge.React
 		public extern static ReactElement DD(Attributes properties, string child);
 
 		[Name("del")]
-		public extern static ReactElement Del(DelAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Del(DelAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.del(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Del(IEnumerable<ReactElement> children);
@@ -1125,7 +1125,7 @@ namespace Bridge.React
 		public extern static ReactElement Del(DelAttributes properties, string child);
 
 		[Name("details")]
-		public extern static ReactElement Details(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Details(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.details(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Details(IEnumerable<ReactElement> children);
@@ -1168,7 +1168,7 @@ namespace Bridge.React
 		public extern static ReactElement Details(Attributes properties, string child);
 
 		[Name("dfn")]
-		public extern static ReactElement Dfn(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Dfn(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.dfn(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Dfn(IEnumerable<ReactElement> children);
@@ -1211,7 +1211,7 @@ namespace Bridge.React
 		public extern static ReactElement Dfn(Attributes properties, string child);
 
 		[Name("dialog")]
-		public extern static ReactElement Dialog(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Dialog(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.dialog(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Dialog(IEnumerable<ReactElement> children);
@@ -1254,7 +1254,7 @@ namespace Bridge.React
 		public extern static ReactElement Dialog(Attributes properties, string child);
 
 		[Name("div")]
-		public extern static ReactElement Div(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Div(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.div(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Div(IEnumerable<ReactElement> children);
@@ -1297,7 +1297,7 @@ namespace Bridge.React
 		public extern static ReactElement Div(Attributes properties, string child);
 
 		[Name("dl")]
-		public extern static ReactElement DL(DListAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement DL(DListAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.dl(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement DL(IEnumerable<ReactElement> children);
@@ -1340,7 +1340,7 @@ namespace Bridge.React
 		public extern static ReactElement DL(DListAttributes properties, string child);
 
 		[Name("dt")]
-		public extern static ReactElement DT(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement DT(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.dt(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement DT(IEnumerable<ReactElement> children);
@@ -1383,7 +1383,7 @@ namespace Bridge.React
 		public extern static ReactElement DT(Attributes properties, string child);
 
 		[Name("em")]
-		public extern static ReactElement Em(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Em(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.em(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Em(IEnumerable<ReactElement> children);
@@ -1426,7 +1426,7 @@ namespace Bridge.React
 		public extern static ReactElement Em(Attributes properties, string child);
 
 		[Name("embed")]
-		public extern static ReactElement Embed(EmbedAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Embed(EmbedAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.embed(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Embed(IEnumerable<ReactElement> children);
@@ -1469,7 +1469,7 @@ namespace Bridge.React
 		public extern static ReactElement Embed(EmbedAttributes properties, string child);
 
 		[Name("fieldset")]
-		public extern static ReactElement FieldSet(FieldSetAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement FieldSet(FieldSetAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.fieldset(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement FieldSet(IEnumerable<ReactElement> children);
@@ -1512,7 +1512,7 @@ namespace Bridge.React
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, string child);
 
 		[Name("figcaption")]
-		public extern static ReactElement FigCaption(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement FigCaption(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.figcaption(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement FigCaption(IEnumerable<ReactElement> children);
@@ -1555,7 +1555,7 @@ namespace Bridge.React
 		public extern static ReactElement FigCaption(Attributes properties, string child);
 
 		[Name("figure")]
-		public extern static ReactElement Figure(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Figure(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.figure(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Figure(IEnumerable<ReactElement> children);
@@ -1598,7 +1598,7 @@ namespace Bridge.React
 		public extern static ReactElement Figure(Attributes properties, string child);
 
 		[Name("footer")]
-		public extern static ReactElement Footer(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Footer(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.footer(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Footer(IEnumerable<ReactElement> children);
@@ -1641,7 +1641,7 @@ namespace Bridge.React
 		public extern static ReactElement Footer(Attributes properties, string child);
 
 		[Name("form")]
-		public extern static ReactElement Form(FormAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Form(FormAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.form(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Form(IEnumerable<ReactElement> children);
@@ -1684,7 +1684,7 @@ namespace Bridge.React
 		public extern static ReactElement Form(FormAttributes properties, string child);
 
 		[Name("h1")]
-		public extern static ReactElement H1(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H1(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h1(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H1(IEnumerable<ReactElement> children);
@@ -1727,7 +1727,7 @@ namespace Bridge.React
 		public extern static ReactElement H1(Attributes properties, string child);
 
 		[Name("h2")]
-		public extern static ReactElement H2(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H2(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h2(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H2(IEnumerable<ReactElement> children);
@@ -1770,7 +1770,7 @@ namespace Bridge.React
 		public extern static ReactElement H2(Attributes properties, string child);
 
 		[Name("h3")]
-		public extern static ReactElement H3(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H3(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h3(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H3(IEnumerable<ReactElement> children);
@@ -1813,7 +1813,7 @@ namespace Bridge.React
 		public extern static ReactElement H3(Attributes properties, string child);
 
 		[Name("h4")]
-		public extern static ReactElement H4(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H4(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h4(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H4(IEnumerable<ReactElement> children);
@@ -1856,7 +1856,7 @@ namespace Bridge.React
 		public extern static ReactElement H4(Attributes properties, string child);
 
 		[Name("h5")]
-		public extern static ReactElement H5(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H5(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h5(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H5(IEnumerable<ReactElement> children);
@@ -1899,7 +1899,7 @@ namespace Bridge.React
 		public extern static ReactElement H5(Attributes properties, string child);
 
 		[Name("h6")]
-		public extern static ReactElement H6(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement H6(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.h6(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement H6(IEnumerable<ReactElement> children);
@@ -1942,7 +1942,7 @@ namespace Bridge.React
 		public extern static ReactElement H6(Attributes properties, string child);
 
 		[Name("head")]
-		public extern static ReactElement Head(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Head(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.head(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Head(IEnumerable<ReactElement> children);
@@ -1985,7 +1985,7 @@ namespace Bridge.React
 		public extern static ReactElement Head(Attributes properties, string child);
 
 		[Name("header")]
-		public extern static ReactElement Header(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Header(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.header(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Header(IEnumerable<ReactElement> children);
@@ -2028,7 +2028,7 @@ namespace Bridge.React
 		public extern static ReactElement Header(Attributes properties, string child);
 
 		[Name("hgroup")]
-		public extern static ReactElement HGroup(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement HGroup(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.hgroup(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement HGroup(IEnumerable<ReactElement> children);
@@ -2071,7 +2071,7 @@ namespace Bridge.React
 		public extern static ReactElement HGroup(Attributes properties, string child);
 
 		[Name("hr")]
-		public extern static ReactElement Hr(HRAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Hr(HRAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.hr(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Hr(IEnumerable<ReactElement> children);
@@ -2114,7 +2114,7 @@ namespace Bridge.React
 		public extern static ReactElement Hr(HRAttributes properties, string child);
 
 		[Name("html")]
-		public extern static ReactElement Html(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Html(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.html(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Html(IEnumerable<ReactElement> children);
@@ -2157,7 +2157,7 @@ namespace Bridge.React
 		public extern static ReactElement Html(Attributes properties, string child);
 
 		[Name("i")]
-		public extern static ReactElement I(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement I(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.i(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement I(IEnumerable<ReactElement> children);
@@ -2200,7 +2200,7 @@ namespace Bridge.React
 		public extern static ReactElement I(Attributes properties, string child);
 
 		[Name("iframe")]
-		public extern static ReactElement IFrame(IFrameAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement IFrame(IFrameAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.iframe(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement IFrame(IEnumerable<ReactElement> children);
@@ -2243,7 +2243,7 @@ namespace Bridge.React
 		public extern static ReactElement IFrame(IFrameAttributes properties, string child);
 
 		[Name("img")]
-		public extern static ReactElement Img(ImageAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Img(ImageAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.img(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Img(IEnumerable<ReactElement> children);
@@ -2286,7 +2286,7 @@ namespace Bridge.React
 		public extern static ReactElement Img(ImageAttributes properties, string child);
 
 		[Name("input")]
-		public extern static ReactElement Input(InputAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Input(InputAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.input(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Input(IEnumerable<ReactElement> children);
@@ -2329,7 +2329,7 @@ namespace Bridge.React
 		public extern static ReactElement Input(InputAttributes properties, string child);
 
 		[Name("ins")]
-		public extern static ReactElement Ins(InsAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Ins(InsAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.ins(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Ins(IEnumerable<ReactElement> children);
@@ -2372,7 +2372,7 @@ namespace Bridge.React
 		public extern static ReactElement Ins(InsAttributes properties, string child);
 
 		[Name("kbd")]
-		public extern static ReactElement Kbd(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Kbd(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.kbd(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Kbd(IEnumerable<ReactElement> children);
@@ -2415,7 +2415,7 @@ namespace Bridge.React
 		public extern static ReactElement Kbd(Attributes properties, string child);
 
 		[Name("keygen")]
-		public extern static ReactElement Keygen(KeygenAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Keygen(KeygenAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.keygen(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Keygen(IEnumerable<ReactElement> children);
@@ -2458,7 +2458,7 @@ namespace Bridge.React
 		public extern static ReactElement Keygen(KeygenAttributes properties, string child);
 
 		[Name("label")]
-		public extern static ReactElement Label(LabelAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Label(LabelAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.label(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Label(IEnumerable<ReactElement> children);
@@ -2501,7 +2501,7 @@ namespace Bridge.React
 		public extern static ReactElement Label(LabelAttributes properties, string child);
 
 		[Name("legend")]
-		public extern static ReactElement Legend(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Legend(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.legend(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Legend(IEnumerable<ReactElement> children);
@@ -2544,7 +2544,7 @@ namespace Bridge.React
 		public extern static ReactElement Legend(Attributes properties, string child);
 
 		[Name("li")]
-		public extern static ReactElement Li(LIAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Li(LIAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.li(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Li(IEnumerable<ReactElement> children);
@@ -2587,7 +2587,7 @@ namespace Bridge.React
 		public extern static ReactElement Li(LIAttributes properties, string child);
 
 		[Name("link")]
-		public extern static ReactElement Link(LinkAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Link(LinkAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.link(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Link(IEnumerable<ReactElement> children);
@@ -2629,9 +2629,9 @@ namespace Bridge.React
 		[Template("React.DOM.link({0}, {1})")]
 		public extern static ReactElement Link(LinkAttributes properties, string child);
 
-		#pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.Any<ReactElement, string>[])' has the wrong signature to be an entry point
+		#pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.Union<ReactElement, string>[])' has the wrong signature to be an entry point
 		[Name("main")]
-		public extern static ReactElement Main(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Main(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.main(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Main(IEnumerable<ReactElement> children);
@@ -2675,7 +2675,7 @@ namespace Bridge.React
 		#pragma warning restore 28
 
 		[Name("map")]
-		public extern static ReactElement Map(MapAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Map(MapAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.map(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Map(IEnumerable<ReactElement> children);
@@ -2718,7 +2718,7 @@ namespace Bridge.React
 		public extern static ReactElement Map(MapAttributes properties, string child);
 
 		[Name("mark")]
-		public extern static ReactElement Mark(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Mark(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.mark(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Mark(IEnumerable<ReactElement> children);
@@ -2761,7 +2761,7 @@ namespace Bridge.React
 		public extern static ReactElement Mark(Attributes properties, string child);
 
 		[Name("menu")]
-		public extern static ReactElement Menu(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Menu(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.menu(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Menu(IEnumerable<ReactElement> children);
@@ -2804,7 +2804,7 @@ namespace Bridge.React
 		public extern static ReactElement Menu(Attributes properties, string child);
 
 		[Name("menuitem")]
-		public extern static ReactElement MenuItem(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement MenuItem(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.menuitem(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement MenuItem(IEnumerable<ReactElement> children);
@@ -2847,7 +2847,7 @@ namespace Bridge.React
 		public extern static ReactElement MenuItem(Attributes properties, string child);
 
 		[Name("meta")]
-		public extern static ReactElement Meta(MetaAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Meta(MetaAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.meta(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Meta(IEnumerable<ReactElement> children);
@@ -2890,7 +2890,7 @@ namespace Bridge.React
 		public extern static ReactElement Meta(MetaAttributes properties, string child);
 
 		[Name("meter")]
-		public extern static ReactElement Meter(MeterAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Meter(MeterAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.meter(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Meter(IEnumerable<ReactElement> children);
@@ -2933,7 +2933,7 @@ namespace Bridge.React
 		public extern static ReactElement Meter(MeterAttributes properties, string child);
 
 		[Name("nav")]
-		public extern static ReactElement Nav(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Nav(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.nav(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Nav(IEnumerable<ReactElement> children);
@@ -2976,7 +2976,7 @@ namespace Bridge.React
 		public extern static ReactElement Nav(Attributes properties, string child);
 
 		[Name("noscript")]
-		public extern static ReactElement NoScript(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement NoScript(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.noscript(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement NoScript(IEnumerable<ReactElement> children);
@@ -3019,7 +3019,7 @@ namespace Bridge.React
 		public extern static ReactElement NoScript(Attributes properties, string child);
 
 		[Name("object")]
-		public extern static ReactElement Object(ObjectAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Object(ObjectAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.object(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Object(IEnumerable<ReactElement> children);
@@ -3062,7 +3062,7 @@ namespace Bridge.React
 		public extern static ReactElement Object(ObjectAttributes properties, string child);
 
 		[Name("ol")]
-		public extern static ReactElement OL(OListAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement OL(OListAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.ol(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement OL(IEnumerable<ReactElement> children);
@@ -3105,7 +3105,7 @@ namespace Bridge.React
 		public extern static ReactElement OL(OListAttributes properties, string child);
 
 		[Name("optgroup")]
-		public extern static ReactElement OptGroup(OptGroupAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement OptGroup(OptGroupAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.optgroup(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement OptGroup(IEnumerable<ReactElement> children);
@@ -3148,7 +3148,7 @@ namespace Bridge.React
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, string child);
 
 		[Name("option")]
-		public extern static ReactElement Option(OptionAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Option(OptionAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.option(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Option(IEnumerable<ReactElement> children);
@@ -3191,7 +3191,7 @@ namespace Bridge.React
 		public extern static ReactElement Option(OptionAttributes properties, string child);
 
 		[Name("output")]
-		public extern static ReactElement Output(OutputAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Output(OutputAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.output(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Output(IEnumerable<ReactElement> children);
@@ -3234,7 +3234,7 @@ namespace Bridge.React
 		public extern static ReactElement Output(OutputAttributes properties, string child);
 
 		[Name("p")]
-		public extern static ReactElement P(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement P(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.p(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement P(IEnumerable<ReactElement> children);
@@ -3277,7 +3277,7 @@ namespace Bridge.React
 		public extern static ReactElement P(Attributes properties, string child);
 
 		[Name("param")]
-		public extern static ReactElement Param(ParamAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Param(ParamAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.param(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Param(IEnumerable<ReactElement> children);
@@ -3320,7 +3320,7 @@ namespace Bridge.React
 		public extern static ReactElement Param(ParamAttributes properties, string child);
 
 		[Name("picture")]
-		public extern static ReactElement Picture(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Picture(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.picture(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Picture(IEnumerable<ReactElement> children);
@@ -3363,7 +3363,7 @@ namespace Bridge.React
 		public extern static ReactElement Picture(Attributes properties, string child);
 
 		[Name("pre")]
-		public extern static ReactElement Pre(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Pre(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.pre(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Pre(IEnumerable<ReactElement> children);
@@ -3406,7 +3406,7 @@ namespace Bridge.React
 		public extern static ReactElement Pre(Attributes properties, string child);
 
 		[Name("progress")]
-		public extern static ReactElement Progress(ProgressAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Progress(ProgressAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.progress(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Progress(IEnumerable<ReactElement> children);
@@ -3449,7 +3449,7 @@ namespace Bridge.React
 		public extern static ReactElement Progress(ProgressAttributes properties, string child);
 
 		[Name("q")]
-		public extern static ReactElement Q(QuoteAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Q(QuoteAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.q(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Q(IEnumerable<ReactElement> children);
@@ -3492,7 +3492,7 @@ namespace Bridge.React
 		public extern static ReactElement Q(QuoteAttributes properties, string child);
 
 		[Name("rp")]
-		public extern static ReactElement RP(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement RP(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.rp(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement RP(IEnumerable<ReactElement> children);
@@ -3535,7 +3535,7 @@ namespace Bridge.React
 		public extern static ReactElement RP(Attributes properties, string child);
 
 		[Name("rt")]
-		public extern static ReactElement RT(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement RT(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.rt(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement RT(IEnumerable<ReactElement> children);
@@ -3578,7 +3578,7 @@ namespace Bridge.React
 		public extern static ReactElement RT(Attributes properties, string child);
 
 		[Name("ruby")]
-		public extern static ReactElement Ruby(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Ruby(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.ruby(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Ruby(IEnumerable<ReactElement> children);
@@ -3621,7 +3621,7 @@ namespace Bridge.React
 		public extern static ReactElement Ruby(Attributes properties, string child);
 
 		[Name("s")]
-		public extern static ReactElement S(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement S(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.s(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement S(IEnumerable<ReactElement> children);
@@ -3664,7 +3664,7 @@ namespace Bridge.React
 		public extern static ReactElement S(Attributes properties, string child);
 
 		[Name("samp")]
-		public extern static ReactElement Samp(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Samp(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.samp(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Samp(IEnumerable<ReactElement> children);
@@ -3707,7 +3707,7 @@ namespace Bridge.React
 		public extern static ReactElement Samp(Attributes properties, string child);
 
 		[Name("script")]
-		public extern static ReactElement Script(ScriptAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Script(ScriptAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.script(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Script(IEnumerable<ReactElement> children);
@@ -3750,7 +3750,7 @@ namespace Bridge.React
 		public extern static ReactElement Script(ScriptAttributes properties, string child);
 
 		[Name("section")]
-		public extern static ReactElement Section(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Section(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.section(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Section(IEnumerable<ReactElement> children);
@@ -3793,7 +3793,7 @@ namespace Bridge.React
 		public extern static ReactElement Section(Attributes properties, string child);
 
 		[Name("select")]
-		public extern static ReactElement Select(SelectAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Select(SelectAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.select(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Select(IEnumerable<ReactElement> children);
@@ -3836,7 +3836,7 @@ namespace Bridge.React
 		public extern static ReactElement Select(SelectAttributes properties, string child);
 
 		[Name("small")]
-		public extern static ReactElement Small(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Small(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.small(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Small(IEnumerable<ReactElement> children);
@@ -3879,7 +3879,7 @@ namespace Bridge.React
 		public extern static ReactElement Small(Attributes properties, string child);
 
 		[Name("source")]
-		public extern static ReactElement Source(SourceAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Source(SourceAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.source(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Source(IEnumerable<ReactElement> children);
@@ -3922,7 +3922,7 @@ namespace Bridge.React
 		public extern static ReactElement Source(SourceAttributes properties, string child);
 
 		[Name("span")]
-		public extern static ReactElement Span(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Span(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.span(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Span(IEnumerable<ReactElement> children);
@@ -3965,7 +3965,7 @@ namespace Bridge.React
 		public extern static ReactElement Span(Attributes properties, string child);
 
 		[Name("strong")]
-		public extern static ReactElement Strong(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Strong(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.strong(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Strong(IEnumerable<ReactElement> children);
@@ -4008,7 +4008,7 @@ namespace Bridge.React
 		public extern static ReactElement Strong(Attributes properties, string child);
 
 		[Name("style")]
-		public extern static ReactElement Style(StyleAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Style(StyleAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.style(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Style(IEnumerable<ReactElement> children);
@@ -4051,7 +4051,7 @@ namespace Bridge.React
 		public extern static ReactElement Style(StyleAttributes properties, string child);
 
 		[Name("sub")]
-		public extern static ReactElement Sub(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Sub(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.sub(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Sub(IEnumerable<ReactElement> children);
@@ -4094,7 +4094,7 @@ namespace Bridge.React
 		public extern static ReactElement Sub(Attributes properties, string child);
 
 		[Name("summary")]
-		public extern static ReactElement Summary(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Summary(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.summary(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Summary(IEnumerable<ReactElement> children);
@@ -4137,7 +4137,7 @@ namespace Bridge.React
 		public extern static ReactElement Summary(Attributes properties, string child);
 
 		[Name("sup")]
-		public extern static ReactElement Sup(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Sup(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.sup(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Sup(IEnumerable<ReactElement> children);
@@ -4180,7 +4180,7 @@ namespace Bridge.React
 		public extern static ReactElement Sup(Attributes properties, string child);
 
 		[Name("table")]
-		public extern static ReactElement Table(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Table(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.table(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Table(IEnumerable<ReactElement> children);
@@ -4223,7 +4223,7 @@ namespace Bridge.React
 		public extern static ReactElement Table(Attributes properties, string child);
 
 		[Name("tbody")]
-		public extern static ReactElement TBody(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement TBody(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.tbody(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement TBody(IEnumerable<ReactElement> children);
@@ -4266,7 +4266,7 @@ namespace Bridge.React
 		public extern static ReactElement TBody(Attributes properties, string child);
 
 		[Name("td")]
-		public extern static ReactElement TD(TableCellAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement TD(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.td(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement TD(IEnumerable<ReactElement> children);
@@ -4322,7 +4322,7 @@ namespace Bridge.React
 		public extern static ReactElement TextArea();
 
 		[Name("tfoot")]
-		public extern static ReactElement TFoot(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement TFoot(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.tfoot(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement TFoot(IEnumerable<ReactElement> children);
@@ -4365,7 +4365,7 @@ namespace Bridge.React
 		public extern static ReactElement TFoot(Attributes properties, string child);
 
 		[Name("th")]
-		public extern static ReactElement TH(TableCellAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement TH(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.th(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement TH(IEnumerable<ReactElement> children);
@@ -4408,7 +4408,7 @@ namespace Bridge.React
 		public extern static ReactElement TH(TableCellAttributes properties, string child);
 
 		[Name("thead")]
-		public extern static ReactElement THead(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement THead(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.thead(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement THead(IEnumerable<ReactElement> children);
@@ -4451,7 +4451,7 @@ namespace Bridge.React
 		public extern static ReactElement THead(Attributes properties, string child);
 
 		[Name("time")]
-		public extern static ReactElement Time(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Time(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.time(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Time(IEnumerable<ReactElement> children);
@@ -4494,7 +4494,7 @@ namespace Bridge.React
 		public extern static ReactElement Time(Attributes properties, string child);
 
 		[Name("title")]
-		public extern static ReactElement Title(TitleAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Title(TitleAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.title(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Title(IEnumerable<ReactElement> children);
@@ -4537,7 +4537,7 @@ namespace Bridge.React
 		public extern static ReactElement Title(TitleAttributes properties, string child);
 
 		[Name("tr")]
-		public extern static ReactElement TR(TableCellAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement TR(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.tr(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement TR(IEnumerable<ReactElement> children);
@@ -4580,7 +4580,7 @@ namespace Bridge.React
 		public extern static ReactElement TR(TableCellAttributes properties, string child);
 
 		[Name("track")]
-		public extern static ReactElement Track(TrackAttributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Track(TrackAttributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.track(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Track(IEnumerable<ReactElement> children);
@@ -4623,7 +4623,7 @@ namespace Bridge.React
 		public extern static ReactElement Track(TrackAttributes properties, string child);
 
 		[Name("u")]
-		public extern static ReactElement U(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement U(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.u(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement U(IEnumerable<ReactElement> children);
@@ -4666,7 +4666,7 @@ namespace Bridge.React
 		public extern static ReactElement U(Attributes properties, string child);
 
 		[Name("ul")]
-		public extern static ReactElement UL(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement UL(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.ul(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement UL(IEnumerable<ReactElement> children);
@@ -4709,7 +4709,7 @@ namespace Bridge.React
 		public extern static ReactElement UL(Attributes properties, string child);
 
 		[Name("Var")]
-		public extern static ReactElement Var(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Var(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.Var(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Var(IEnumerable<ReactElement> children);
@@ -4752,7 +4752,7 @@ namespace Bridge.React
 		public extern static ReactElement Var(Attributes properties, string child);
 
 		[Name("video")]
-		public extern static ReactElement Video(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement Video(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.video(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement Video(IEnumerable<ReactElement> children);
@@ -4795,7 +4795,7 @@ namespace Bridge.React
 		public extern static ReactElement Video(Attributes properties, string child);
 
 		[Name("wbr")]
-		public extern static ReactElement WBR(Attributes properties, params Any<ReactElement, string>[] children);
+		public extern static ReactElement WBR(Attributes properties, params Union<ReactElement, string>[] children);
 		
 		[Template("React.DOM.wbr(null, System.Linq.Enumerable.from({0}).toArray())")]
 		public extern static ReactElement WBR(IEnumerable<ReactElement> children);

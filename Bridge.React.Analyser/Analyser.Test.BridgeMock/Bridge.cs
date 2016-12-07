@@ -2,9 +2,9 @@
 
 namespace Bridge
 {
-	public class Any<T1, T2>
+	public class Union<T1, T2>
 	{
-		public static implicit operator Any<T1, T2>(T1 source) { throw new NotImplementedException(); }
+		public static implicit operator Union<T1, T2>(T1 source) { throw new NotImplementedException(); }
 	}
 
 	public class EnumAttribute : Attribute

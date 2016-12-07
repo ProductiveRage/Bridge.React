@@ -25,7 +25,7 @@ namespace Bridge.React
 	{
 		private static Dictionary<Type, object> _reactComponentClasses = new Dictionary<Type, object>();
 		private readonly ReactElement _reactElement;
-		protected PureComponent(TProps props, params Any<ReactElement, string>[] children)
+		protected PureComponent(TProps props, params Union<ReactElement, string>[] children)
 		{
 			if (children != null)
 			{
@@ -118,9 +118,9 @@ namespace Bridge.React
 		/// <summary>
 		/// This will never be null nor contain any null references, though it may be empty if there are no children to render
 		/// </summary>
-		protected Any<ReactElement, string>[] Children
+		protected Union<ReactElement, string>[] Children
 		{
-			get { return Script.Write<Any<ReactElement, string>[]>("this.props && this.props.children ? this.props.children : []"); }
+			get { return Script.Write<Union<ReactElement, string>[]>("this.props && this.props.children ? this.props.children : []"); }
 		}
 
 		public static implicit operator ReactElement(PureComponent<TProps> component)
@@ -133,7 +133,7 @@ namespace Bridge.React
 			return component._reactElement;
 		}
 
-		public static implicit operator Any<ReactElement, string>(PureComponent<TProps> component)
+		public static implicit operator Union<ReactElement, string>(PureComponent<TProps> component)
 		{
 			// Since React 0.11 (see https://facebook.github.io/react/blog/2014/07/17/react-v0.11.html), it has been acceptable to return null from a Render method to
 			// indicate that nothing should be rendered. As such, it's possible that a null PureComponent reference will pass through this operator method and so null

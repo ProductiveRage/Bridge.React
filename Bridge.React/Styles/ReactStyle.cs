@@ -279,7 +279,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The border-radius CSS property allows Web authors to define how rounded border corners are. The curve of each corner is defined using one or two radii, defining its shape: circle or ellipse.
 		/// </summary>
-		public Any<string, int> BorderRadius { private get; set; }
+		public Union<string, int> BorderRadius { private get; set; }
 
 		/// <summary>
 		/// The border-right CSS property is a shorthand that sets the values of border-right-color, border-right-style, and border-right-width. These properties describe the right border of elements.
@@ -369,7 +369,7 @@ namespace Bridge.React
 		/// For absolutely positioned elements, that is those with position: absolute or position: fixed, it specifies the distance between the bottom margin edge of the element and the bottom edge of its containing block.
 		/// For relatively positioned elements, that is those with position: relative, it specifies the distance the element is moved above its normal position.
 		/// </summary>
-		public Any<string, int> Bottom { private get; set; }
+		public Union<string, int> Bottom { private get; set; }
 
 		/// <summary>
 		/// Allows to specify what happens to an element when it is broken due to a page break or column break, or for inline elements, a line break.
@@ -610,7 +610,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units.
 		/// </summary>
-		public Any<string, int> FontSize { private get; set; }
+		public Union<string, int> FontSize { private get; set; }
 
 		/// <summary>
 		/// The font-size-adjust CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters.
@@ -755,7 +755,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element.
 		/// </summary>
-		public Any<string, int> Height { private get; set; }
+		public Union<string, int> Height { private get; set; }
 
 		/// <summary>
 		/// The hyphens CSS property tells the browser how to go about splitting words to improve the layout of text when line-wrapping.
@@ -795,7 +795,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The left CSS property specifies part of the position of positioned elements.
 		/// </summary>
-		public Any<string, int> Left { private get; set; }
+		public Union<string, int> Left { private get; set; }
 
 		/// <summary>
 		/// The letter-spacing CSS property specifies spacing behavior between text characters.
@@ -837,27 +837,27 @@ namespace Bridge.React
 		/// <summary>
 		/// The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: margin-top, margin-right, margin-bottom and margin-left.
 		/// </summary>
-		public Any<string, int> Margin { private get; set; }
+		public Union<string, int> Margin { private get; set; }
 
 		/// <summary>
 		/// The margin-bottom CSS property of an element sets the margin space required on the bottom of an element. A negative value is also allowed.
 		/// </summary>
-		public Any<string, int> MarginBottom { private get; set; }
+		public Union<string, int> MarginBottom { private get; set; }
 
 		/// <summary>
 		/// The margin-left CSS property of an element sets the margin space required on the left side of a box associated with an element. A negative value is also allowed.
 		/// </summary>
-		public Any<string, int> MarginLeft { private get; set; }
+		public Union<string, int> MarginLeft { private get; set; }
 
 		/// <summary>
 		/// The margin-right CSS property of an element sets the margin space required on the right side of an element. A negative value is also allowed.
 		/// </summary>
-		public Any<string, int> MarginRight { private get; set; }
+		public Union<string, int> MarginRight { private get; set; }
 
 		/// <summary>
 		/// The margin-top CSS property of an element sets the margin space required on the top of an element. A negative value is also allowed.
 		/// </summary>
-		public Any<string, int> MarginTop { private get; set; }
+		public Union<string, int> MarginTop { private get; set; }
 
 		/// <summary>
 		/// The marks CSS property adds crop and/or cross marks to the presentation of the document. Crop marks indicate where the page should be cut. Cross marks are used to align sheets.
@@ -877,22 +877,22 @@ namespace Bridge.React
 		/// <summary>
 		/// The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height.
 		/// </summary>
-		public Any<string, int> MaxHeight { private get; set; }
+		public Union<string, int> MaxHeight { private get; set; }
 
 		/// <summary>
 		/// The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width.
 		/// </summary>
-		public Any<string, int> MaxWidth { private get; set; }
+		public Union<string, int> MaxWidth { private get; set; }
 
 		/// <summary>
 		/// The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height.
 		/// </summary>
-		public Any<string, int> MinHeight { private get; set; }
+		public Union<string, int> MinHeight { private get; set; }
 
 		/// <summary>
 		/// The min-width CSS property is used to set the minimum width of a given element. It prevents the used value of the width property from becoming smaller than the value specified for min-width.
 		/// </summary>
-		public Any<string, int> MinWidth { private get; set; }
+		public Union<string, int> MinWidth { private get; set; }
 
 		/// <summary>
 		/// The mix-blend-mode CSS property describes how an element content should blend with the content of the element that is below it and the element's background.
@@ -1008,27 +1008,27 @@ namespace Bridge.React
 		/// <summary>
 		/// The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed.
 		/// </summary>
-		public Any<string, int> Padding { private get; set; }
+		public Union<string, int> Padding { private get; set; }
 
 		/// <summary>
 		/// The padding-bottom CSS property of an element sets the height of the padding area at the bottom of an element. The padding area is the space between the content of the element and it's border. Contrary to margin-bottom values, negative values of padding-bottom are invalid.
 		/// </summary>
-		public Any<string, int> PaddingBottom { private get; set; }
+		public Union<string, int> PaddingBottom { private get; set; }
 
 		/// <summary>
 		/// The padding-left CSS property of an element sets the padding space required on the left side of an element. The padding area is the space between the content of the element and it's border. A negative value is not allowed.
 		/// </summary>
-		public Any<string, int> PaddingLeft { private get; set; }
+		public Union<string, int> PaddingLeft { private get; set; }
 
 		/// <summary>
 		/// The padding-right CSS property of an element sets the padding space required on the right side of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed.
 		/// </summary>
-		public Any<string, int> PaddingRight { private get; set; }
+		public Union<string, int> PaddingRight { private get; set; }
 
 		/// <summary>
 		/// The padding-top CSS property of an element sets the padding space required on the top of an element. The padding area is the space between the content of the element and its border. Contrary to margin-top values, negative values of padding-top are invalid.
 		/// </summary>
-		public Any<string, int> PaddingTop { private get; set; }
+		public Union<string, int> PaddingTop { private get; set; }
 
 		/// <summary>
 		/// The page-break-after CSS property adjusts page breaks after the current element.
@@ -1078,7 +1078,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The right CSS property specifies part of the position of positioned elements.
 		/// </summary>
-		public Any<string, int> Right { private get; set; }
+		public Union<string, int> Right { private get; set; }
 
 		/// <summary>
 		/// The table-layout CSS property defines the algorithm to be used to layout the table cells, rows, and columns.
@@ -1175,7 +1175,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The top CSS property specifies part of the position of positioned elements. It has no effect on non-positioned elements.
 		/// </summary>
-		public Any<string, int> Top { private get; set; }
+		public Union<string, int> Top { private get; set; }
 
 		/// <summary>
 		/// Determines whether touch input may trigger default behavior supplied by the user agent, such as panning or zooming.
@@ -1261,7 +1261,7 @@ namespace Bridge.React
 		/// <summary>
 		/// The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element.
 		/// </summary>
-		public Any<string, int> Width { private get; set; }
+		public Union<string, int> Width { private get; set; }
 
 		/// <summary>
 		/// The will-change property provides a rendering hint to the user agent, stating what kinds of changes the author expects to perform on the element.

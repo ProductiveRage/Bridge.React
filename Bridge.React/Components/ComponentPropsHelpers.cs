@@ -15,7 +15,7 @@
 		{
 			// Try to extract a Key value from the props - it might be a simple "key" value or it might be a property with a "getKey" function or it
 			// might be absent altogether
-			Any<string, int> keyIfAny = null;
+			Union<string, int> keyIfAny = null;
 			if (propsIfAny != null)
 			{
 				/*@
@@ -122,7 +122,7 @@
 		[ObjectLiteral]
 		internal class WrappedPropsWithKey : WrappedProps
 		{
-			public Any<string, int> Key { get; set; }
+			public Union<string, int> Key { get; set; }
 		}
 	}
 }

@@ -78,7 +78,7 @@ namespace Bridge.React.Analyser.Test
 				{
 					public class Example
 					{
-						public ReactElement Get(Any<ReactElement, string>[] children)
+						public ReactElement Get(Union<ReactElement, string>[] children)
 						{
 							return DOM.Div(null, children);
 						}
@@ -121,9 +121,9 @@ namespace Bridge.React.Analyser.Test
 
 					public class SomethingCastableToAnyReactElementOrString
 					{
-						public static implicit operator Any<Bridge.React.ReactElement, string>[](SomethingCastableToAnyReactElementOrString value)
+						public static implicit operator Union<Bridge.React.ReactElement, string>[](SomethingCastableToAnyReactElementOrString value)
 						{
-							return null; // It's not important what this returns, only that its return type is Any<ReactElement, string>[]
+							return null; // It's not important what this returns, only that its return type is Union<ReactElement, string>[]
 						}
 					}
 				}";
@@ -158,7 +158,7 @@ namespace Bridge.React.Analyser.Test
 					{
 						public ReactElement Get()
 						{
-							return DOM.Div(null, (Any<ReactElement, string>[])null);
+							return DOM.Div(null, (Union<ReactElement, string>[])null);
 						}
 					}
 				}";
@@ -185,9 +185,9 @@ namespace Bridge.React.Analyser.Test
 
 					public class SomethingCastableToAnyReactElementOrString
 					{
-						public static implicit operator Any<ReactElement, string>[](SomethingCastableToAnyReactElementOrString value)
+						public static implicit operator Union<ReactElement, string>[](SomethingCastableToAnyReactElementOrString value)
 						{
-							return null; // It's not important what this returns, only that its return type is Any<ReactElement, string>[]
+							return null; // It's not important what this returns, only that its return type is Union<ReactElement, string>[]
 						}
 					}
 				}";
@@ -223,9 +223,9 @@ namespace Bridge.React.Analyser.Test
 							return DOM.Div(null, GetChildren());
 						}
 
-						private Any<ReactElement, string>[] GetChildren()
+						private Union<ReactElement, string>[] GetChildren()
 						{
-							return null; // It's not important what this method returns, only that its return type is Any<ReactElement, string>[]
+							return null; // It's not important what this method returns, only that its return type is Union<ReactElement, string>[]
 						}
 					}
 				}";
@@ -260,11 +260,11 @@ namespace Bridge.React.Analyser.Test
 							return DOM.Div(null, Children);
 						}
 
-						private Any<ReactElement, string>[] Children
+						private Union<ReactElement, string>[] Children
 						{
 							get
 							{
-								return null; // It's not important what this method returns, only that its return type is Any<ReactElement, string>[]
+								return null; // It's not important what this method returns, only that its return type is Union<ReactElement, string>[]
 							}
 						}
 					}

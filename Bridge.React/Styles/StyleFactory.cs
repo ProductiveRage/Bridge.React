@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bridge.React
+﻿namespace Bridge.React
 {
-    public static class Style
+	public static class Style
     {
         public static ReactStyle MergeWith(this ReactStyle source, ReactStyle other)
         {
@@ -26,45 +20,45 @@ namespace Bridge.React
             return merged;
         }
 
-        public static ReactStyle Height(Any<string, int> height)
+        public static ReactStyle Height(Union<string, int> height)
         {
             return new ReactStyle { Height = height };
         }
-        public static ReactStyle Height(this ReactStyle style, Any<string, int> height)
+        public static ReactStyle Height(this ReactStyle style, Union<string, int> height)
         {
             style.Height = height;
             return style;
         }
 
-        public static ReactStyle Width(Any<string, int> width)
+        public static ReactStyle Width(Union<string, int> width)
         {
             return new ReactStyle { Width = width };
         }
-        public static ReactStyle Width(this ReactStyle style, Any<string, int> width)
+        public static ReactStyle Width(this ReactStyle style, Union<string, int> width)
         {
             style.Width = width;
             return style;
         } 
 
 
-        public static ReactStyle FontSize(Any<string, int> fontSize)
+        public static ReactStyle FontSize(Union<string, int> fontSize)
         {
             return new ReactStyle
             {
                 FontSize = fontSize
             };
         }
-        public static ReactStyle FontSize(this ReactStyle style, Any<string, int> fontSize)
+        public static ReactStyle FontSize(this ReactStyle style, Union<string, int> fontSize)
         {
             style.FontSize = fontSize;
             return style;
         }
 
-        public static ReactStyle Margin(Any<string, int> margin)
+        public static ReactStyle Margin(Union<string, int> margin)
         {
             return new ReactStyle { Margin = margin };
         }
-        public static ReactStyle Margin(Any<string, int> top, Any<string, int> right, Any<string, int> bottom, Any<string, int> left)
+        public static ReactStyle Margin(Union<string, int> top, Union<string, int> right, Union<string, int> bottom, Union<string, int> left)
         {
             return new ReactStyle
             {
@@ -75,13 +69,13 @@ namespace Bridge.React
             };
         }
 
-        public static ReactStyle Margin(this ReactStyle style, Any<string, int> margin)
+        public static ReactStyle Margin(this ReactStyle style, Union<string, int> margin)
         {
             style.Margin = margin;
             return style;
         }
 
-        public static ReactStyle Margin(this ReactStyle style, Any<string, int> top, Any<string, int> right, Any<string, int> bottom, Any<string, int> left)
+        public static ReactStyle Margin(this ReactStyle style, Union<string, int> top, Union<string, int> right, Union<string, int> bottom, Union<string, int> left)
         {
             style.MarginTop = top;
             style.MarginLeft = left;
@@ -90,11 +84,11 @@ namespace Bridge.React
             return style;
         }
 
-        public static ReactStyle Padding(Any<string, int> padding)
+        public static ReactStyle Padding(Union<string, int> padding)
         {
             return new ReactStyle { Padding = padding };
         }
-        public static ReactStyle Padding(Any<string, int> top, Any<string, int> right, Any<string, int> bottom, Any<string, int> left)
+        public static ReactStyle Padding(Union<string, int> top, Union<string, int> right, Union<string, int> bottom, Union<string, int> left)
         {
             return new ReactStyle
             {
@@ -105,13 +99,13 @@ namespace Bridge.React
             };
         }
 
-        public static ReactStyle Padding(this ReactStyle style, Any<string, int> padding)
+        public static ReactStyle Padding(this ReactStyle style, Union<string, int> padding)
         {
             style.Padding = padding;
             return style;
         }
 
-        public static ReactStyle Padding(this ReactStyle style, Any<string, int> top, Any<string, int> right, Any<string, int> bottom, Any<string, int> left)
+        public static ReactStyle Padding(this ReactStyle style, Union<string, int> top, Union<string, int> right, Union<string, int> bottom, Union<string, int> left)
         {
             style.PaddingTop = top;
             style.PaddingLeft = left;

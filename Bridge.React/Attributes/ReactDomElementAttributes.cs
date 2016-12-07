@@ -12,7 +12,7 @@ namespace Bridge.React
 		/// but it is also permitted to use strings (actually, React allows any type but it to-strings its value, so it makes more sense to explicitly
 		/// limit the values to integers and strings).
 		/// </summary>
-		public Any<string, int> Key { private get; set; }
+		public Union<string, int> Key { private get; set; }
 
 		/// <summary>
 		/// The Ref callback allows access to the real DOM element of the React component that is being rendered - the callback will be provided a reference
