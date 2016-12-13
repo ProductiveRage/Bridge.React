@@ -2,6 +2,7 @@
 
 namespace Bridge.React
 {
+	[External]
 	[ObjectLiteral]
 	public sealed class Attributes : ReactDomElementAttributes<Element> { }
 }

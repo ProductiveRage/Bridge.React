@@ -3,6 +3,7 @@ using Bridge.Html5;
 
 namespace Bridge.React
 {
+	[External]
 	[ObjectLiteral]
 	public abstract class ReactDomElementAttributes<TCurrentTarget> : DomElementWithEventsAttributes<TCurrentTarget> where TCurrentTarget : Element
 	{
