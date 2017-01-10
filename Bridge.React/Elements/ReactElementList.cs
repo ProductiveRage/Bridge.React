@@ -22,13 +22,13 @@ namespace Bridge.React
 		[External]
 		public extern ReactElementList Add(ReactElement item);
 
-		[External]
+		[Name("addRange")] // This has to be called "addRange" since the [External] attribute prevents some of Bridge's method overload translation logic from being applied
 		public extern ReactElementList Add(IEnumerable<ReactElement> items);
 
-		[Name("getEnumerator")]
+		[External]
 		public extern IEnumerator<ReactElement> GetEnumerator();
 
-		[Name("getEnumerator")]
+		[Name("getEnumerator")] // Use [Name] to ensure this doesn't get a crazy explicit-interface-implementation method name (we don't need one, it's the same implementation)
 		extern IEnumerator IEnumerable.GetEnumerator();
 	}
 
@@ -76,6 +76,7 @@ namespace Bridge.React
 				return new UntypedReactElementList(_items.Concat(new[] { item }));
 			}
 
+			[Name("addRange")] // This has to be called "addRange" since the [External] attribute prevents some of Bridge's method overload translation logic from being applied
 			public UntypedReactElementList Add(IEnumerable<ReactElement> items)
 			{
 				if (items == null)
@@ -84,6 +85,8 @@ namespace Bridge.React
 			}
 
 			public IEnumerator<object> GetEnumerator() { return _items.GetEnumerator(); }
+
+			[Name("getEnumerator")] // Use [Name] to ensure this doesn't get a crazy explicit-interface-implementation method name (we don't need one, it's the same implementation)
 			IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
 		}
 	}
