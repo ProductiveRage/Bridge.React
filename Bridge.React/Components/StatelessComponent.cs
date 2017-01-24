@@ -19,7 +19,7 @@ namespace Bridge.React
 			// When preparing the "_reactStatelessRenderFunction" reference, a local "reactStatelessRenderFunction" alias is used - this is just so that the JavaScript
 			// code further down (which calls React.createElement) can use this local alias and not have to know how Bridge stores static references.
 			Func<TProps, ReactElement> reactStatelessRenderFunction;
-			var currentType = this.GetType();
+			var currentType = ((object)this).GetType(); // Cast to object first in case derived class uses [IgnoreGeneric] - see http://forums.bridge.net/forum/bridge-net-pro/bugs/3343
 			if (!_reactStatelessRenderFunctions.TryGetValue(currentType, out reactStatelessRenderFunction))
 			{
 				reactStatelessRenderFunction = CreateStatelessRenderFunction();

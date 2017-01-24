@@ -53,7 +53,8 @@
 			else if ((props1 == null) || (props2 == null))
 				return false;
 
-			if (props1.GetType() != props2.GetType())
+			// Cast to object before calling GetType since we're using [IgnoreGeneric] (Bridge 15.7.0 bug workaround) - see http://forums.bridge.net/forum/bridge-net-pro/bugs/3343
+			if (((object)props1).GetType() != ((object)props2).GetType())
 				return false;
 
 			/*@

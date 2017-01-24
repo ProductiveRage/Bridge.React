@@ -25,7 +25,7 @@ namespace Bridge.React
 			// To ensure that a single "template" (ie. React component) is created per unique class, a static "_reactComponentClasss" dictionary is maintained. If it has no entry
 			// for the current type then this must be the first instantiation of that type and so a component class will be created and added to the dictionary, ready for re-use
 			// by any subsequent component instances.
-			var currentType = this.GetType();
+			var currentType = ((object)this).GetType(); // Cast to object first in case derived class uses [IgnoreGeneric] - see http://forums.bridge.net/forum/bridge-net-pro/bugs/3343
 			object reactComponentClass;
 			if (!_reactComponentClasses.TryGetValue(currentType, out reactComponentClass))
 			{
