@@ -73,7 +73,7 @@ namespace Bridge.React
 
 			public UntypedReactElementList Add(ReactElement item)
 			{
-				return new UntypedReactElementList(_items.Concat(new[] { item }));
+				return new UntypedReactElementList(_items.Concat(new object[] { item }));
 			}
 
 			[Name("addRange")] // This has to be called "addRange" since the [External] attribute prevents some of Bridge's method overload translation logic from being applied
