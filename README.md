@@ -65,3 +65,13 @@ As well as the basic library calls (such as React.Render and the DOM factory met
 			}
 		}
 	}
+	
+## A warning against Bridge's "preserveMemberCase" option
+
+When Bridge translates C# into JavaScript, by default it will change pascal-named class member names (eg. "GetName"), which are commonly used in C#, into the camel-cased names (eg. "getName"), as are more commonly seen in JavaScript code. If you don't like this option then you may set an option in your bridge.json file -
+
+    preserveMemberCase: true
+	
+However, if you do so, then you will not be able to use this library (or, indeed, almost any other Bridge.NET library that isn't also built with "preserveMemberCase: true").
+
+There is a bug report about this problem open with the Bridge Team (see "[preserveMemberCase causes errors when referencing project without preserveMemberCase](http://forums.bridge.net/forum/community/help/3314-preservemembercase-causes-errors-when-referencing-project-without-preservemembercase)") but there are internal discussions how best to fix it. Until then, I strongly recommend against using preserveMemberCase!
