@@ -2,21 +2,22 @@
 
 namespace Bridge.React
 {
-    [External]
-    public sealed class TouchEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
-    {
-        private TouchEvent() { }
+	[External]
+	[ObjectLiteral]
+	public sealed class TouchEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
+	{
+		private TouchEvent() { }
 
-        public readonly bool AltKey;
-        public readonly bool CtrlKey;
-        public readonly bool MetaKey;
-        public readonly bool ShiftKey;
+		public readonly bool AltKey;
+		public readonly bool CtrlKey;
+		public readonly bool MetaKey;
+		public readonly bool ShiftKey;
 
-        public readonly Touch[] ChangedTouches;
-        public readonly Touch[] TargetTouches;
-        public readonly Touch[] Touches;
+		public readonly Touch[] ChangedTouches;
+		public readonly Touch[] TargetTouches;
+		public readonly Touch[] Touches;
 
-        [External]
-        public extern bool GetModifierState(int key);
-    }
+		[External]
+		public extern bool GetModifierState(int key);
+	}
 }

@@ -2,9 +2,10 @@
 
 namespace Bridge.React
 {
-    [External]
-    public sealed class SelectionEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
-    {
-        private SelectionEvent() { }
-    }
+	[External]
+	[ObjectLiteral]
+	public sealed class SelectionEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
+	{
+		private SelectionEvent() { }
+	}
 }

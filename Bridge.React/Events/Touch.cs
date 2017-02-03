@@ -1,6 +1,8 @@
 ﻿namespace Bridge.React
 {
-    public sealed class Touch
+	[External]
+	[ObjectLiteral]
+	public sealed class Touch
     {
         public readonly long Identifier;
         public readonly DomElementsAttributes Target;

@@ -2,9 +2,10 @@
 
 namespace Bridge.React
 {
-    [External]
-    public sealed class FormEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
-    {
-        private FormEvent() { }
-    }
+	[External]
+	[ObjectLiteral]
+	public sealed class FormEvent<TCurrentTarget> : SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
+	{
+		private FormEvent() { }
+	}
 }
