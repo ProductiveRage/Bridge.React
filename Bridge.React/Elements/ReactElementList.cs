@@ -5,89 +5,67 @@ using System.Linq;
 
 namespace Bridge.React
 {
+	// Note: I originally added this because ReactElement is [External] and couldn't be used as a generic type parameter - but this was fixed in 1.12.4 by adding a [Name]
+	// attribute to it. However, there's still some use to this class - it makes it easy to join individual elements and/or sets of elements together into one flat list
+	// (which could be done using Concat and similar LINQ functions but you would need to wrap individual elements in an array and this can confuse Bridge / the C#
+	// compiler (particularly if leaving the compiler to try to infer the array element type when different ReactElement classes exist as siblings). Using this class
+	// means that there is less type inference required (each Add argument is either a ReactElement or an IEnumerable<ReactElement>).
 	/// <summary>
-	/// Because ReactElement is an External type, it can't be used as a generic type parameter and so it's not possible to construct a List of ReactElement, for example.
-	/// Although the DOM methods all support taking an IEnumerable of ReactElement (and these sets may be constructed easily using LINQ) there are still times where it
-	/// is more convenient to construct a list of elements to pass elsewhere. This builder class allows you to do that - you can get a reference to ReactElementList.Empty
-	/// and then add items to it (either one at a time or in IEnumerable sets) and then pass the builder reference anywhere that accepts an IEnumerable of ReactElement
-	/// (for the same reason that it's difficult to define a List of ReactElement it's also difficult to create a class that is derived from IEnumerable of ReactElement
-	/// without relying upon some trickery - this code takes care of that trickery).
+	/// This is a helper class for constructing sets of ReactElement instances. It has a single Add method that has three overloads - one to take a single ReactElement,
+	/// one to take an IEnumerable of ReactElement and one to take a params array of ReactElement. Since many React library methods allow null ReactElement references,
+	/// null element references are allowed here (though null sets of elements are not).
 	/// </summary>
-	[External]
 	public sealed class ReactElementList : IEnumerable<ReactElement>
 	{
-		public extern static ReactElementList Empty { [Template("Bridge.React.ReactElementList.getEmpty()")] get; }
-		private ReactElementList() { }
+		public static ReactElementList Empty { get; } = new ReactElementList(new ReactElement[0]);
 
-		[External]
-		public extern ReactElementList Add(ReactElement item);
-
-		[Name("addRange")] // This has to be called "addRange" since the [External] attribute prevents some of Bridge's method overload translation logic from being applied
-		public extern ReactElementList Add(IEnumerable<ReactElement> items);
-
-		[External]
-		public extern IEnumerator<ReactElement> GetEnumerator();
-
-		[Name("getEnumerator")] // Use [Name] to ensure this doesn't get a crazy explicit-interface-implementation method name (we don't need one, it's the same implementation)
-		extern IEnumerator IEnumerable.GetEnumerator();
-	}
-
-	internal static class ReactElementListDefinition
-	{
-		[Init(InitPosition.Before)]
-		private static void Configure()
+		private readonly IEnumerable<ReactElement> _items;
+		private ReactElementList(IEnumerable<ReactElement> items)
 		{
-			// At this point (due to the Init attribute) the UntypedReactElementList class won't actually be defined yet so we can't grab a reference to it.
-			// Instead, we can configure a Func that will generate it - by the point at which that may be called, the class WILL be available.
-			Func<object> getEmpty = () => UntypedReactElementList.Empty;
+			if (items == null)
+				throw new ArgumentNullException(nameof(items));
 
-			// Using the multiline-comment-JavaScript-injecting method would be a good fit here but it fails to compiile with a cryptic exception 
-			//   Error: 'count' must be non - negative.
-			//    at System.String.CtorCharCount(Char c, Int32 count)
-			//    at Bridge.Translator.AbstractEmitterBlock.RemoveIndentFromString(String value, Int32 offset)
-			//    at Bridge.Translator.CommentBlock.WriteMultiLineComment(String text, Boolean newline, Boolean wrap)
-			// .. so I'll just stick with separate Script.Write calls for now
-			Script.Write("window.Bridge.React = window.Bridge.React || {};");
-			Script.Write("window.Bridge.React.ReactElementList = window.Bridge.React.ReactElementList || {};");
-			Script.Write("window.Bridge.React.ReactElementList.getEmpty = getEmpty;");
-
-			// Make the ReactElementList look like its a real class (just in case anyone tries to GetType) it. This probably a bit fragile (since it uses
-			// undocumented Bridge properties) and probably not SUPER-essential. It may need rejigging in the future.
-			Script.Write("window.Bridge.React.ReactElementList.$$name = 'ReactElementList';");
-			Script.Write("window.Bridge.React.ReactElementList.$$fullname = 'Bridge.React.ReactElementList';");
-			Script.Write("window.Bridge.React.ReactElementList.$assembly = $asm;");
+			_items = items;
 		}
 
-		[Name("ReactElementList")]
-		private sealed class UntypedReactElementList : IEnumerable<object>
+		/// <summary>
+		/// A null item reference is acceptable here
+		/// </summary>
+		public ReactElementList Add(ReactElement item)
 		{
-			public static UntypedReactElementList Empty => new UntypedReactElementList(new object[0]);
+			return new ReactElementList(_items.Concat(new ReactElement[] { item }));
+		}
 
-			private readonly IEnumerable<object> _items;
-			private UntypedReactElementList(IEnumerable<object> items)
-			{
-				if (items == null)
-					throw new ArgumentNullException(nameof(items));
-				_items = items;
-			}
+		/// <summary>
+		/// The items set may contain null references but the set itself must not be null
+		/// </summary>
+		public ReactElementList Add(IEnumerable<ReactElement> items)
+		{
+			if (items == null)
+				throw new ArgumentNullException(nameof(items));
 
-			public UntypedReactElementList Add(ReactElement item)
-			{
-				return new UntypedReactElementList(_items.Concat(new object[] { item }));
-			}
+			return new ReactElementList(_items.Concat(items));
+		}
 
-			[Name("addRange")] // This has to be called "addRange" since the [External] attribute prevents some of Bridge's method overload translation logic from being applied
-			public UntypedReactElementList Add(IEnumerable<ReactElement> items)
-			{
-				if (items == null)
-					throw new ArgumentNullException(nameof(items));
-				return new UntypedReactElementList(_items.Concat(items));
-			}
+		/// <summary>
+		/// The items params array may contain null references but the array itself must not be null
+		/// </summary>
+		public ReactElementList Add(params ReactElement[] items)
+		{
+			if (items == null)
+				throw new ArgumentNullException(nameof(items));
 
-			public IEnumerator<object> GetEnumerator() { return _items.GetEnumerator(); }
+			return new ReactElementList(_items.Concat(items));
+		}
 
-			[Name("getEnumerator")] // Use [Name] to ensure this doesn't get a crazy explicit-interface-implementation method name (we don't need one, it's the same implementation)
-			IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
+		public IEnumerator<ReactElement> GetEnumerator()
+		{
+			return _items.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
 		}
 	}
 }
