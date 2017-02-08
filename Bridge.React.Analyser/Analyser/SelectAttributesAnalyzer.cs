@@ -52,8 +52,16 @@ namespace Bridge.React.Analyser
 			if (initializer == null)
 				return;
 
+			// 2017-02-08 DWR: Got an error in a project about this analyser failing -
+			//
+			//   System.InvalidCastException: Unable to cast object of type 'Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax' to type 'Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax'.
+			//   at Bridge.React.Analyser.SelectAttributesAnalyzer.<>c.<LookForMultiplePropertyUsedWithInappropriateValueOrValuesProperty>b__7_0(AssignmentExpressionSyntax propertyInitialiser)
+			//
+			// I foolishly didn't record the source code in the state at which this was happening and now I'm struggling to reproduce (if I can work out what I
+			// did then I'll create a unit test). For now I'm just adding logic to try to avoid this from happening.
 			var propertyInitialisers = initializer.ChildNodes()
 				.OfType<AssignmentExpressionSyntax>()
+				.Where(propertyInitialiser => propertyInitialiser.Left is IdentifierNameSyntax)
 				.Select(propertyInitialiser => new
 				{
 					PropertyName = ((IdentifierNameSyntax)propertyInitialiser.Left).Identifier.ValueText,
