@@ -73,7 +73,7 @@ namespace Bridge.React.Analyser
 				return; // If the method call is not valid then there's no way to confirm or deny that the call is acceptable (or even to determine whether it's a Bridge.React.DOM method)
 
 			// If the method isn't a Bridge.React.DOM element factory method then it's not something that we should be checking
-			if ((method.ContainingAssembly.Identity.Name != "Bridge.React") || (method.ContainingType.Name != "DOM"))
+			if ((method.ContainingAssembly?.Identity.Name != "Bridge.React") || (method.ContainingType.Name != "DOM"))
 				return;
 
 			// Try to confirm that the last argument of the method is "Union<ReactElement, string>[]" since that's the type that enable the warning to be bypassed
@@ -132,7 +132,7 @@ namespace Bridge.React.Analyser
 				throw new ArgumentException($"Null/blank {nameof(className)} specified");
 
 			return 
-				(type.ContainingAssembly.Identity.Name == "Bridge") &&
+				(type.ContainingAssembly?.Identity.Name == "Bridge") &&
 				(type.Name == className);
 		}
 

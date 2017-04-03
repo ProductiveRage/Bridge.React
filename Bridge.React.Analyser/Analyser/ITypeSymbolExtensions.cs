@@ -10,7 +10,8 @@ namespace Bridge.React.Analyser
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 
-			return type.ContainingAssembly.Identity.Name == "Bridge.React";
+			// If the type is "object[]" then ContainingAssembly wil be null - if so, ignore it (we don't want to throw an NRE)
+			return type.ContainingAssembly?.Identity.Name == "Bridge.React";
 		}
 	}
 }

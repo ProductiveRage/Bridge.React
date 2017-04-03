@@ -98,7 +98,6 @@ namespace Bridge.React.Analyser.Test
 			VerifyCSharpDiagnostic(testContent);
 		}
 
-
 		[TestMethod]
 		public void InstantiationOfNestedGenericTypeThatReferencesReactElementIsFineIfTypeHasIgnoreGeneri()
 		{
@@ -120,6 +119,22 @@ namespace Bridge.React.Analyser.Test
 					public class GenericTypeThatStripsTypeParamsFromJavaScript<T>
 					{
 					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
+		/// <summary>
+		/// This illustrates the fix for https://forums.bridge.net/forum/community/help/3885-unexpected-warning-in-bridge-react (the ContainingAssembly for an object array
+		/// is null for some reason)
+		/// </summary>
+		[TestMethod]
+		public void InstanceOfGenericTypeWithTypeArgumentThatIsAnArrayShouldNotThrow()
+		{
+			var testContent = @"
+				namespace TestCase
+				{
+					internal static List<object[]> MailQueue = new List<object[]>();
 				}";
 
 			VerifyCSharpDiagnostic(testContent);

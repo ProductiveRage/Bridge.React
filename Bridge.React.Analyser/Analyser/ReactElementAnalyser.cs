@@ -102,7 +102,7 @@ namespace Bridge.React.Analyser
 				throw new ArgumentException($"Null/blank {nameof(className)} specified");
 
 			return 
-				(type.ContainingAssembly.Identity.Name == "Bridge") &&
+				(type.ContainingAssembly?.Identity.Name == "Bridge") &&
 				(type.Name == className);
 		}
 
