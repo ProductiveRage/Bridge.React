@@ -106,6 +106,8 @@ namespace Bridge.React
 		/// </summary>
 		protected virtual void ComponentDidUpdate(TProps previousProps) { }
 
+		protected virtual void ComponentWillUnmount() { }
+
 		/// <summary>
 		/// Props is not used by all components and so this may be null
 		/// </summary>
