@@ -125,6 +125,7 @@
 		public class TableCellElement : HTMLElement { }
 
 		public class CompositionEvent<T> { }
+		public class DragEvent<T> { }
 		public class FocusEvent<T> { }
 		public class FormEvent<T> { }
 		public class KeyboardEvent<T> { }
