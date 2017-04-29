@@ -2,6 +2,7 @@
 
 namespace Bridge.React
 {
+	[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use IDispatcherAction directly instead of the DispatcherMessage wrapper class.")]
 	public static class DispatcherMessageExtensions
 	{
 		/// <summary>
