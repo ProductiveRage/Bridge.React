@@ -82,47 +82,47 @@
 		public enum Wrap { }
 		public enum WritingMode { }
 
-		public class Element { }
-		public class HTMLAnchorElement : Element { }
-		public class HTMLAreaElement : Element { }
-		public class HTMLBaseElement : Element { }
-		public class HTMLBodyElement : Element { }
-		public class HTMLBRElement : Element { }
-		public class HTMLButtonElement : Element { }
-		public class HTMLCanvasElement : Element { }
-		public class HTMLDListElement : Element { }
-		public class HTMLEmbedElement : Element { }
-		public class HTMLFieldSetElement : Element { }
-		public class HTMLFormElement : Element { }
-		public class HTMLHRElement : Element { }
-		public class HTMLIFrameElement : Element { }
-		public class HTMLImageElement : Element { }
-		public class HTMLInputElement : Element { }
-		public class HTMLKeygenElement : Element { }
-		public class HTMLLabelElement : Element { }
-		public class HTMLLIElement : Element { }
-		public class HTMLLinkElement : Element { }
-		public class HTMLMapElement : Element { }
-		public class HTMLMetaElement : Element { }
-		public class HTMLMeterElement : Element { }
-		public class HTMLModElement : Element { }
-		public class HTMLObjectElement : Element { }
-		public class HTMLOListElement : Element { }
-		public class HTMLOptGroupElement : Element { }
-		public class HTMLOptionElement : Element { }
-		public class HTMLOutputElement : Element { }
-		public class HTMLParamElement : Element { }
-		public class HTMLProgressElement : Element { }
-		public class HTMLQuoteElement : Element { }
-		public class HTMLScriptElement : Element { }
-		public class HTMLSourceElement : Element { }
-		public class HTMLStyleElement : Element { }
-		public class HTMLTableColElement : Element { }
-		public class HTMLTextAreaElement : Element { }
-		public class HTMLTitleElement : Element { }
-		public class HTMLTrackElement : Element { }
-		public class HTMLSelectElement : Element { }
-		public class TableCellElement : Element { }
+		public class HTMLElement { }
+		public class HTMLAnchorElement : HTMLElement { }
+		public class HTMLAreaElement : HTMLElement { }
+		public class HTMLBaseElement : HTMLElement { }
+		public class HTMLBodyElement : HTMLElement { }
+		public class HTMLBRElement : HTMLElement { }
+		public class HTMLButtonElement : HTMLElement { }
+		public class HTMLCanvasElement : HTMLElement { }
+		public class HTMLDListElement : HTMLElement { }
+		public class HTMLEmbedElement : HTMLElement { }
+		public class HTMLFieldSetElement : HTMLElement { }
+		public class HTMLFormElement : HTMLElement { }
+		public class HTMLHRElement : HTMLElement { }
+		public class HTMLIFrameElement : HTMLElement { }
+		public class HTMLImageElement : HTMLElement { }
+		public class HTMLInputElement : HTMLElement { }
+		public class HTMLKeygenElement : HTMLElement { }
+		public class HTMLLabelElement : HTMLElement { }
+		public class HTMLLIElement : HTMLElement { }
+		public class HTMLLinkElement : HTMLElement { }
+		public class HTMLMapElement : HTMLElement { }
+		public class HTMLMetaElement : HTMLElement { }
+		public class HTMLMeterElement : HTMLElement { }
+		public class HTMLModElement : HTMLElement { }
+		public class HTMLObjectElement : HTMLElement { }
+		public class HTMLOListElement : HTMLElement { }
+		public class HTMLOptGroupElement : HTMLElement { }
+		public class HTMLOptionElement : HTMLElement { }
+		public class HTMLOutputElement : HTMLElement { }
+		public class HTMLParamElement : HTMLElement { }
+		public class HTMLProgressElement : HTMLElement { }
+		public class HTMLQuoteElement : HTMLElement { }
+		public class HTMLScriptElement : HTMLElement { }
+		public class HTMLSourceElement : HTMLElement { }
+		public class HTMLStyleElement : HTMLElement { }
+		public class HTMLTableColElement : HTMLElement { }
+		public class HTMLTextAreaElement : HTMLElement { }
+		public class HTMLTitleElement : HTMLElement { }
+		public class HTMLTrackElement : HTMLElement { }
+		public class HTMLSelectElement : HTMLElement { }
+		public class TableCellElement : HTMLElement { }
 
 		public class CompositionEvent<T> { }
 		public class FocusEvent<T> { }

@@ -6,7 +6,7 @@ namespace Bridge.React
 	// Based on information from https://facebook.github.io/react/docs/events.html
 	[External]
 	[ObjectLiteral]
-	public abstract class DomElementWithEventsAttributes<TCurrentTarget> : DomElementsAttributes where TCurrentTarget : Element
+	public abstract class DomElementWithEventsAttributes<TCurrentTarget> : DomElementsAttributes where TCurrentTarget : HTMLElement
 	{
 		public Action<WheelEvent<TCurrentTarget>> OnCopy { private get; set; }
 		public Action<WheelEvent<TCurrentTarget>> OnCut { private get; set; }
@@ -30,13 +30,13 @@ namespace Bridge.React
 		public Action<MouseEvent<TCurrentTarget>> OnClick { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnContextMenu { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnDoubleClick { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDrag { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragEnd { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragEnter { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragExit { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragLeave { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragOver { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDragStart { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDrag { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragEnd { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragEnter { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragExit { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragLeave { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragOver { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragStart { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnDrop { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnMouseDown { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnMouseEnter { private get; set; }

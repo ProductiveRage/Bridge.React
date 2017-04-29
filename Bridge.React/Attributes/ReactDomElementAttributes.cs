@@ -5,7 +5,7 @@ namespace Bridge.React
 {
 	[External]
 	[ObjectLiteral]
-	public abstract class ReactDomElementAttributes<TCurrentTarget> : DomElementWithEventsAttributes<TCurrentTarget> where TCurrentTarget : Element
+	public abstract class ReactDomElementAttributes<TCurrentTarget> : DomElementWithEventsAttributes<TCurrentTarget> where TCurrentTarget : HTMLElement
 	{
 		/// <summary>
 		/// It's important for React elements to have the ability for a key to be explicitly specified for them so that when dynamic children are generated,
