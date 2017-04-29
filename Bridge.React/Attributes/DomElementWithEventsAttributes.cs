@@ -37,7 +37,7 @@ namespace Bridge.React
 		public Action<DragEvent<TCurrentTarget>> OnDragLeave { private get; set; }
 		public Action<DragEvent<TCurrentTarget>> OnDragOver { private get; set; }
 		public Action<DragEvent<TCurrentTarget>> OnDragStart { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDrop { private get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDrop { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnMouseDown { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnMouseEnter { private get; set; }
 		public Action<MouseEvent<TCurrentTarget>> OnMouseLeave { private get; set; }
