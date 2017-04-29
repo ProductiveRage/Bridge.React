@@ -6,7 +6,9 @@ namespace Bridge.React
 	{
 		// TODO: Change this to an Action<IDispatcherAction> event handler later on when removing the DispatcherMessage support altogether.
 		// It can't be changed now because consumers may be relying on the extra information given in the DispatcherMessage class.
+#pragma warning disable CS0618 // Type or member is obsolete
 		private event Action<DispatcherMessage> _dispatcher;
+#pragma warning restore CS0618 // Type or member is obsolete
 
 		private bool _currentDispatching;
 		public AppDispatcher()
@@ -26,7 +28,9 @@ namespace Bridge.React
 			// The obsolete MessageSourceOptions handling needs to stay in the meantime, so just dispatch this as any arbitrary source.
 			// Eventually this method should absorb the Dispatch(DispatcherMessage message) method's behaviour but dispatch the action
 			// directly down to the event handler without wrapping it in a DispatcherMessage.
+#pragma warning disable CS0618 // Type or member is obsolete
 			Dispatch(new DispatcherMessage(MessageSourceOptions.View, action));
+#pragma warning restore CS0618 // Type or member is obsolete
 		}
 
 		/// <summary>
@@ -73,7 +77,9 @@ namespace Bridge.React
 			Dispatch(new DispatcherMessage(MessageSourceOptions.Server, action));
 		}
 
+#pragma warning disable CS0618 // Type or member is obsolete
 		private void Dispatch(DispatcherMessage message)
+#pragma warning restore CS0618 // Type or member is obsolete
 		{
 			if (message == null)
 				throw new ArgumentNullException("message");
