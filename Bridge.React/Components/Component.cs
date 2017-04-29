@@ -122,7 +122,11 @@ namespace Bridge.React
 		/// </summary>
 		protected Union<ReactElement, string>[] Children
 		{
-			get { return Script.Write<Union<ReactElement, string>[]>("this.props && this.props.children ? this.props.children : []"); }
+			get
+			{
+				// See notes in PureComponent's Children property for details about what's going on here
+				return Script.Write<Union<ReactElement, string>[]>("this.props && this.props.children ? (Array.isArray(this.props.children) ? this.props.children : [this.props.children]) : []");
+			}
 		}
 
 		public static implicit operator ReactElement(Component<TProps, TState> component)

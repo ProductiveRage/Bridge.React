@@ -115,7 +115,14 @@ namespace Bridge.React
 		/// </summary>
 		protected Union<ReactElement, string>[] Children
 		{
-			get { return Script.Write<Union<ReactElement, string>[]>("this.props && this.props.children ? this.props.children : []"); }
+			get
+			{
+				// props and props.children are optional and so may not be defined - return an empty array in either case (so that the caller doesn't have to worry about
+				// will-this-Children-reference-be-null-or-not). Also, React sets props.children to  object if there is only a single child and to an array if there are
+				// multiple - this means that we need to check for the single-child case and wrap it in an array otherwise we'll be returning a non-array object from this
+				// method when the property type is an array (this addresses github.com/ProductiveRage/Bridge.React/issues/20).
+				return Script.Write<Union<ReactElement, string>[]>("this.props && this.props.children ? (Array.isArray(this.props.children) ? this.props.children : [this.props.children]) : []");
+			}
 		}
 
 		public static implicit operator ReactElement(PureComponent<TProps> component)
