@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Bridge.React
@@ -16,12 +15,6 @@ namespace Bridge.React
 		private readonly ReactElement _reactElement;
 		protected Component(TProps props, params Union<ReactElement, string>[] children)
 		{
-			if (children != null)
-			{
-				if (children.Any(element => element == null))
-					throw new ArgumentException("Null reference encountered in children set");
-			}
-
 			// To ensure that a single "template" (ie. React component) is created per unique class, a static "_reactComponentClasss" dictionary is maintained. If it has no entry
 			// for the current type then this must be the first instantiation of that type and so a component class will be created and added to the dictionary, ready for re-use
 			// by any subsequent component instances.
