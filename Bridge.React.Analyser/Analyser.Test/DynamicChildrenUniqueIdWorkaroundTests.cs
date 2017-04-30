@@ -284,6 +284,41 @@ namespace Bridge.React.Analyser.Test
 			VerifyCSharpDiagnostic(testContent, expected);
 		}
 
+		/// <summary>
+		/// The custom component base classes expose a "Children" property of type Union<ReactElement, string>[] - we don't want to warn every time that is used
+		/// since there wouldn't be a warning-less way for custom components to render children!
+		/// </summary>
+		[TestMethod]
+		public void AccessingChildrenPropertyOnCustomComponentsShouldNotWarn()
+		{
+			var testContent = @"
+				using Bridge;
+				using Bridge.React;
+
+				namespace TestCase
+				{
+					public class Example
+					{
+						public ReactElement Get()
+						{
+							return new Wrapper(DOM.Div(""Item1""), DOM.Div(""Item2""));
+						}
+					}
+
+					public sealed class Wrapper : PureComponent<object>
+					{
+						public Wrapper(params Union<ReactElement, string>[] children) : base(null, children) { }
+
+						public override ReactElement Render()
+						{
+							return DOM.Div(null, Children);
+						}
+					}
+				}";
+
+			VerifyCSharpDiagnostic(testContent);
+		}
+
 		protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
 		{
 			return new DynamicChildrenUniqueIdWorkaroundAnalyser();

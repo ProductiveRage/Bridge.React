@@ -44,6 +44,7 @@
     <Compile Include="Attributes\RawHtml.cs" />
     <Compile Include="Attributes\ReactDomElementAttributes.cs" />
     <Compile Include="Attributes\DomElementWithEventsAttributes.cs" />
+    <Compile Include="Components\ReactComponentClassCreator.cs" />
     <Compile Include="Components\StaticComponent.cs" />
     <Compile Include="Components\ComponentPropsHelpers.cs" />
     <Compile Include="Components\PureComponent.cs" />

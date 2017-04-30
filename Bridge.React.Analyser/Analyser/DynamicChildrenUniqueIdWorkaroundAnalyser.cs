@@ -77,8 +77,9 @@ namespace Bridge.React.Analyser
 				return;
 
 			// Try to confirm that the last argument of the method is "Union<ReactElement, string>[]" since that's the type that enable the warning to be bypassed
-			// most easily
-			if (!IsAnyOrUnionReactElementOrStringArray(method.Parameters.Last().Type))
+			// most easily (note: being lazy here and only checking that it's a Union<,> or Any<,> since the only type of Union array that the DOM factory methods
+			// take is Union<ReactElement, string>[])
+			if (!IsTwoItemAnyOrUnionArray(method.Parameters.Last().Type))
 				return;
 
 			// Try to confirm that the value specified as the parameter value is "Union<ReactElement, string>[]" (since this argument will be a params array in the
@@ -87,7 +88,15 @@ namespace Bridge.React.Analyser
 			// - We're interested in the ConvertedType of the value, for cases where the value itself is not an "Union<ReactElement, string>[]" but one which may
 			//   be cast to that type, since that's what's important here
 			var argumentValueType = context.SemanticModel.GetTypeInfo(secondArgument).ConvertedType;
-			if ((argumentValueType == null) || (argumentValueType is IErrorTypeSymbol) || !IsAnyOrUnionReactElementOrStringArray(argumentValueType))
+			if ((argumentValueType == null) || (argumentValueType is IErrorTypeSymbol) || !IsTwoItemAnyOrUnionArray(argumentValueType))
+				return;
+
+			// The custom component base classes expose a "Children" property of type Union<ReactElement, string>[] - we don't want to warn every time that is used
+			// since there wouldn't be a warning-less way for custom components to render children! TODO [2017-04-28]: This does probably suggest that similar
+			// analysis is required for custom components - ensuring that it's not too easy for dynamic children to be passed in such a way that React's
+			// dev build do-dynamic-children-have-unique-ids validation is bypassed.
+			var secondArgumentValueAsPropertyAcccess = context.SemanticModel.GetSymbolInfo(secondArgument).Symbol as IPropertySymbol;
+			if ((secondArgumentValueAsPropertyAcccess?.Name == "Children") && (secondArgumentValueAsPropertyAcccess?.ContainingAssembly?.Name == "Bridge.React"))
 				return;
 
 			context.ReportDiagnostic(Diagnostic.Create(
@@ -112,7 +121,7 @@ namespace Bridge.React.Analyser
 			return false;
 		}
 
-		private static bool IsAnyOrUnionReactElementOrStringArray(ITypeSymbol type)
+		private static bool IsTwoItemAnyOrUnionArray(ITypeSymbol type)
 		{
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));

@@ -2286,47 +2286,7 @@ namespace Bridge.React
 		public extern static ReactElement Img(ImageAttributes properties, string child);
 
 		[Name("input")]
-		public extern static ReactElement Input(InputAttributes properties, params Union<ReactElement, string>[] children);
-		
-		[Template("React.DOM.input(null, System.Linq.Enumerable.from({0}).toArray())")]
-		public extern static ReactElement Input(IEnumerable<ReactElement> children);
-		
-		[IgnoreGeneric]
-		[Template("React.DOM.input(null, Bridge.React.toReactElementArray({0}))")]
-		public extern static ReactElement Input<TProps>(IEnumerable<PureComponent<TProps>> children);
-		
-		[IgnoreGeneric]
-		[Template("React.DOM.input(null, Bridge.React.toReactElementArray({0}))")]
-		public extern static ReactElement Input<TProps>(IEnumerable<StatelessComponent<TProps>> children);
-		
-		[Template("React.DOM.input(null, System.Linq.Enumerable.from({0}).toArray())")]
-		public extern static ReactElement Input(IEnumerable<string> children);
-		
-		[Template("React.DOM.input(null, {0})")]
-		public extern static ReactElement Input(ReactElement child);
-		
-		[Template("React.DOM.input(null, {0})")]
-		public extern static ReactElement Input(string child);
-		
-		[Template("React.DOM.input({0}, System.Linq.Enumerable.from({1}).toArray())")]
-		public extern static ReactElement Input(InputAttributes properties, IEnumerable<ReactElement> children);
-		
-		[IgnoreGeneric]
-		[Template("React.DOM.input({0}, Bridge.React.toReactElementArray({1}))")]
-		public extern static ReactElement Input<TProps>(InputAttributes properties, IEnumerable<PureComponent<TProps>> children);
-		
-		[IgnoreGeneric]
-		[Template("React.DOM.input({0}, Bridge.React.toReactElementArray({1}))")]
-		public extern static ReactElement Input<TProps>(InputAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
-		
-		[Template("React.DOM.input({0}, System.Linq.Enumerable.from({1}).toArray())")]
-		public extern static ReactElement Input(InputAttributes properties, IEnumerable<string> children);
-		
-		[Template("React.DOM.input({0}, {1})")]
-		public extern static ReactElement Input(InputAttributes properties, ReactElement child);
-		
-		[Template("React.DOM.input({0}, {1})")]
-		public extern static ReactElement Input(InputAttributes properties, string child);
+		public extern static ReactElement Input(InputAttributes properties);
 
 		[Name("ins")]
 		public extern static ReactElement Ins(InsAttributes properties, params Union<ReactElement, string>[] children);
