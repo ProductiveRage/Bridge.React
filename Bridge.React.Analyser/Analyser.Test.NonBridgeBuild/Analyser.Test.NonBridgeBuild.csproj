@@ -185,6 +185,9 @@
     <Compile Include="..\..\Bridge.React\Components\PureComponent.cs">
       <Link>Components\PureComponent.cs</Link>
     </Compile>
+    <Compile Include="..\..\Bridge.React\Components\ReactComponentClassCreator.cs">
+      <Link>Components\ReactComponentClassCreator.cs</Link>
+    </Compile>
     <Compile Include="..\..\Bridge.React\Components\StatelessComponent.cs">
       <Link>Components\StatelessComponent.cs</Link>
     </Compile>
