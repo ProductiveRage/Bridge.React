@@ -1,83 +1,33 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using ProductiveRage.Immutable;
 
 namespace Bridge.React.Examples
 {
-	public class TodoApp : Component<TodoApp.Props, TodoApp.State>
+	public sealed class TodoApp : Component<TodoApp.Props, TodoApp.State>
 	{
 		private int _nextAvailableId = 0;
-		public TodoApp(string label) : base(new Props { Label = label }) { }
+		public TodoApp(string label) : base(new Props(label)) { }
 
 		protected override State GetInitialState()
 		{
-			return new State
-			{
-				InputValue = "",
-				Todos = new Todo[]
-				{
-					new Todo { Id = _nextAvailableId++, Description = "Learn C#", Done = true },
-					new Todo { Id = _nextAvailableId++, Description = "Learn React", Done = false },
-					new Todo { Id = _nextAvailableId++, Description = "Build an awesome app with C# and React", Done = false }
-				}
-			};
-		}
-
-		private void AppendTodo(string todoDescription)
-		{
-			var count = state.Todos.Count();
-			var todo = new Todo
-			{
-				Description = todoDescription,
-				Done = false,
-				Id = _nextAvailableId++
-			};
-
-			SetState(new State
-			{
-				InputValue = "",
-				Todos = state.Todos.Append(todo)
-			});
-		}
-
-		private void RemoveTodo(int id)
-		{
-			SetState(new State
-			{
-				InputValue = state.InputValue,
-				Todos = state.Todos.Where(todo => todo.Id != id)
-			});
-		}
-
-		private void ToggleDone(int id)
-		{
-			var todos = state.Todos.ToArray();
-			for(int i = 0; i < todos.Length; i++)
-			{
-				if (todos[i].Id == id)
-				{
-					todos[i].Done = !todos[i].Done;
-				}
-			}
-
-			SetState(new State
-			{
-				InputValue = state.InputValue,
-				Todos = todos
-			});
+			return new State(
+				inputValue: "",
+				todos: NonNullList.Of(
+					new TaskDetails(_nextAvailableId++, "Learn C#", done: true),
+					new TaskDetails(_nextAvailableId++, "Learn React", done: false),
+					new TaskDetails(_nextAvailableId++, "Build an awesome app with C# and React", done: false)
+				)
+			);
 		}
 
 		public override ReactElement Render()
 		{
-			return DOM.Div(new Attributes
-            {
-                Style = Style.Margin(5).Padding(5).FontSize(18)
-            },
+			return DOM.Div(new Attributes { Style = Style.Margin(5).Padding(5).FontSize(18) },
 				DOM.H3(props.Label),
 				DOM.Label("Description"),
 				DOM.Input(new InputAttributes
 				{
 					Value = state.InputValue,
-					OnChange = e => SetState(new State { InputValue = e.CurrentTarget.Value, Todos = state.Todos })
+					OnChange = e => SetState(state.With(_ => _.InputValue, e.CurrentTarget.Value))
 				}),
 				DOM.Button(
 					new ButtonAttributes
@@ -88,60 +38,47 @@ namespace Bridge.React.Examples
 					"Add"
 				),
 				DOM.Div(
-					state.Todos.Select(todo =>
-						DOM.Div(new Attributes { Key = todo.Id, Style = TodoStyles.Container },
-							DOM.H4(
-                                new Attributes { Style = todo.Done ? TodoStyles.TextDone : TodoStyles.TextNotDone },
-                                todo.Description),
-							DOM.Button(
-								new ButtonAttributes
-								{
-                                    Style = todo.Done ? TodoStyles.ToggleButtonDone : TodoStyles.ToggleButtonNotDone,
-									OnClick = e => ToggleDone(todo.Id)
-								},
-								todo.Done ? "Not done yet!" : "Finished!"
-							),
-							DOM.Button(
-								new ButtonAttributes
-								{
-									Style = TodoStyles.RemoveButton,
-									OnClick = e => RemoveTodo(todo.Id)
-								},
-								"Remove"
-							)
-						)
-					)
+					state.Todos.Select((todo, index) => new TaskCard(
+						task: todo,
+						onChange: updatedTask => SetState(state.With(_ => _.Todos, index, updatedTask)),
+						onRemove: () => SetState(state.With(_ => _.Todos, value => value.RemoveAt(index)))
+					))
 				)
 			);
 		}
 
-		[ObjectLiteral]
-		public class Props
+		private void AppendTodo(string todoDescription)
 		{
-			public string Label;
+			SetState(state.With(
+				_ => _.Todos,
+				value => value.Add(
+					new TaskDetails(
+						description: todoDescription,
+						done: false,
+						id: _nextAvailableId++
+					)
+				)
+			));
 		}
 
-		[ObjectLiteral]
-		public class State
+		public sealed class Props : IAmImmutable
 		{
-			public string InputValue;
-			public IEnumerable<Todo> Todos;
+			public Props(string label)
+			{
+				this.CtorSet(_ => _.Label, label);
+			}
+			public string Label { get; }
 		}
 
-		[ObjectLiteral]
-		public class Todo
+		public sealed class State : IAmImmutable
 		{
-			public int Id { get; set; }
-			public string Description { get; set; }
-			public bool Done { get; set; }
-		}
-	}
-
-	public static class Extenstions
-	{
-		public static IEnumerable<T> Append<T>(this IEnumerable<T> source, T value)
-		{
-			return source.Concat(new T[] { value });
+			public State(string inputValue, NonNullList<TaskDetails> todos)
+			{
+				this.CtorSet(_ => _.InputValue, inputValue);
+				this.CtorSet(_ => _.Todos, todos);
+			}
+			public string InputValue { get; }
+			public NonNullList<TaskDetails> Todos { get; }
 		}
 	}
 }
