@@ -37,9 +37,4 @@ Host/Script/Generated/
 .vs/
 
 BuildNuGetPackage/
-/Bridge.React.Examples/Bridge/output/bridge.react.examples.js
-/Bridge.React.Examples/Bridge/output/bridge.react.examples.min.js
-/Bridge.React.Examples/Bridge/output/bridge.react.min.js
-/Bridge.React.Examples/Bridge/output/bridge.react.js
-/Bridge.React.Examples/Bridge/output/bridge.min.js
-/Bridge.React.Examples/Bridge/output/bridge.js
+/Bridge.React.Examples/Bridge/output/*
