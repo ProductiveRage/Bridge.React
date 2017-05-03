@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using Bridge;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -19,3 +20,6 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("f0d9d869-ef75-4f34-8f52-b18e7a6088c6")]
+
+// For compatibility with how Bridge used to build by default (before 16.0.0)
+[assembly: Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]

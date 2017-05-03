@@ -4,10 +4,12 @@ namespace Bridge.React
 {
 	internal static class ReactComponentClassCreator
 	{
-		public static object CreateClass(object template)
+		public static object CreateClass(object template, Type baseComponent)
 		{
 			if (template == null)
 				throw new ArgumentNullException(nameof(template));
+			if (baseComponent == null)
+				throw new ArgumentNullException(nameof(baseComponent));
 
 			var displayName = ComponentNameHelpers.GetDisplayName(template);
 			object reactComponentClass = null;
@@ -28,18 +30,25 @@ namespace Bridge.React
 			}
 
 			// Attach the members
-			for (var name in template) {
-				if (name === 'constructor') {
-					continue;
+			// - Get all class prototypes until hit the component base class (there's no need to go down to System.Object)
+			// - Apply the members in reverse order (in case any members are named on a derived class and a base class, the derived class should "win" - this won't break calling
+			//   methods on the base due to the way that Bridge generates that code)
+			var protoStack = [];
+			var o = template.__proto__;
+			while (o) {
+				protoStack.push(o);
+				if ((o.$$fullname || "") === baseComponent.$$fullname) {
+					break;
 				}
-				var value = template[name];
-				var descriptor = {
-					value: value,
-					enumerable: false,
-					configurable: true,
-					writable: true
+				o = o.__proto__;
+			}
+			for (var i = protoStack.length - 1; i >= 0; i--) {
+				o = protoStack[i];
+				var descriptors = Object.getOwnPropertyDescriptors(o);
+				for (var name in descriptors) {
+					var descriptor = descriptors[name];
+					Object.defineProperty(reactComponentClass.prototype, name, descriptor);
 				}
-				Object.defineProperty(reactComponentClass.prototype, name, descriptor);
 			}
 			*/
 			return reactComponentClass;

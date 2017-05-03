@@ -23,7 +23,7 @@ namespace Bridge.React
 			object reactComponentClass;
 			if (!_reactComponentClasses.TryGetValue(currentType, out reactComponentClass))
 			{
-				reactComponentClass = ReactComponentClassCreator.CreateClass(this);
+				reactComponentClass = ReactComponentClassCreator.CreateClass(this, baseComponent: typeof(Component<TProps, TState>));
 				_reactComponentClasses[currentType] = reactComponentClass;
 			}
 
@@ -41,6 +41,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Props is not used by all components and so this may be null
 		/// </summary>
+		[Name("unwrappedProps")] // Can't be called "props" any more since Bridge 16 declares properties using defineProperty instead of using a custom getter/setter convention
 		protected TProps props
 		{
 			// If props is non-null then it needs to be "unwrapped" when the C# code requests it
@@ -50,6 +51,7 @@ namespace Bridge.React
 		/// <summary>
 		/// State is not used by all components and so this may be null
 		/// </summary>
+		[Name("unwrappedState")] // Can't be called "state" any more since Bridge 16 declares properties using defineProperty instead of using a custom getter/setter convention
 		protected TState state
 		{
 			// If state is non-null then it needs to be "unwrapped" when the C# code requests it
