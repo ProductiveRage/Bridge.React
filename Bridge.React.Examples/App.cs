@@ -2,7 +2,7 @@
 
 namespace Bridge.React.Examples
 {
-	public class App
+	public sealed class App
 	{
 		public static void Main()
 		{
