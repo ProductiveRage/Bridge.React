@@ -56,7 +56,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Actions will sent to each receiver in the same order as which the receivers called Register.
 		/// </summary>
-		[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use the Register(Action<IDispatcherAction>) method instead of Register(Action<DispatcherMessage>).")]
+		[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use the Receive(Action<IDispatcherAction>) method instead of Register(Action<DispatcherMessage>).")]
 		public void Register(Action<DispatcherMessage> callback)
 		{
 			_dispatcher += callback;
