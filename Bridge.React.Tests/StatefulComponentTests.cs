@@ -1,4 +1,5 @@
-﻿using static Bridge.QUnit.QUnit;
+﻿using ProductiveRage.SealedClassVerification;
+using static Bridge.QUnit.QUnit;
 
 namespace Bridge.React.Tests
 {
@@ -21,9 +22,38 @@ namespace Bridge.React.Tests
 					}
 				);
 			});
+
+			Test("GetInitialState is called on base component from derived component (that doesn't override it) before first Render", assert =>
+			{
+				var done = assert.Async();
+				TestComponentMounter.Render(
+					new DerivedFromComponentThatRendersTextFromItsState(),
+					container =>
+					{
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
+						container.Remove();
+						done();
+					}
+				);
+			});
+
+			Test("GetInitialState may be called on base component from derived component that overrides it before first Render", assert =>
+			{
+				var done = assert.Async();
+				TestComponentMounter.Render(
+					new DerivedFromComponentThatRendersTextFromItsBaseStateWithAnAnnotation(),
+					container =>
+					{
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text!");
+						container.Remove();
+						done();
+					}
+				);
+			});
 		}
 
-		private sealed class ComponentThatRendersTextFromItsState : Component<object, ComponentThatRendersTextFromItsState.State>
+		[DesignedForInheritance]
+		private class ComponentThatRendersTextFromItsState : Component<object, ComponentThatRendersTextFromItsState.State>
 		{
 			public ComponentThatRendersTextFromItsState() : base(null) { }
 			protected override State GetInitialState()
@@ -37,6 +67,22 @@ namespace Bridge.React.Tests
 			public sealed class State
 			{
 				public string Text { get; set; }
+			}
+		}
+
+		private sealed class DerivedFromComponentThatRendersTextFromItsState : ComponentThatRendersTextFromItsState
+		{
+			public DerivedFromComponentThatRendersTextFromItsState() : base() { }
+		}
+
+		private sealed class DerivedFromComponentThatRendersTextFromItsBaseStateWithAnAnnotation : ComponentThatRendersTextFromItsState
+		{
+			public DerivedFromComponentThatRendersTextFromItsBaseStateWithAnAnnotation() : base() { }
+			protected override State GetInitialState()
+			{
+				var state = base.GetInitialState();
+				state.Text += "!";
+				return state;
 			}
 		}
 	}
