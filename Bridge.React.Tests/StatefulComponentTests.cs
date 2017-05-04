@@ -15,7 +15,7 @@ namespace Bridge.React.Tests
 					new ComponentThatRendersTextFromItsState(),
 					container =>
 					{
-						assert.Ok("TEST");
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
 						container.Remove();
 						done();
 					}

@@ -28628,7 +28628,7 @@ Bridge.assembly("Bridge.React.Tests", function ($asm, globals) {
         f1: function (assert) {
             var done = assert.async();
             Bridge.React.Tests.TestComponentMounter.Render(Bridge.React.Component$2(System.Object,Bridge.React.Tests.StatefulComponentTests.ComponentThatRendersTextFromItsState.State).op_Implicit(new Bridge.React.Tests.StatefulComponentTests.ComponentThatRendersTextFromItsState()), function (container) {
-                assert.ok("TEST");
+                assert.strictEqual(container.textContent.trim(), "Initial Text");
                 container.remove();
                 done();
             });
