@@ -38,3 +38,4 @@ Host/Script/Generated/
 
 BuildNuGetPackage/
 /Bridge.React.Examples/Bridge/output/*
+/Bridge.React.Tests/Bridge/output/*
