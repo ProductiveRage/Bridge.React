@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StatelessComponentTests.cs" />
     <Compile Include="TestComponentMounter.cs" />
     <Compile Include="StatefulComponentTests.cs" />
     <Compile Include="Tests.cs" />

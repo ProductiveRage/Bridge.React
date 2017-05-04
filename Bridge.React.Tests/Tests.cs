@@ -8,6 +8,7 @@ namespace Bridge.React.Tests
 		public static void Go()
 		{
 			StatefulComponentTests.RunTests();
+			StatelessComponentTests.RunTests();
 		}
 	}
 }
