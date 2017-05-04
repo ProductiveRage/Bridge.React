@@ -43,11 +43,11 @@
     <Compile Include="TodoStyles.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Bridge\bridge.json" />
+    <None Include="bridge.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bridge\www\demo.html" />
+    <Content Include="demo.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bridge.React\Bridge.React.csproj">
@@ -55,9 +55,7 @@
       <Name>Bridge.React</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Bridge\output\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Bridge, Version=16.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bridge.Core.16.0.0-beta\lib\net40\Bridge.dll</HintPath>
