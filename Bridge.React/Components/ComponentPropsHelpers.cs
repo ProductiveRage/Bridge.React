@@ -58,7 +58,11 @@
 				return false;
 
 			/*@
+			var isBridgeType = props1.$$name && props1.$$fullname;
 			for (var propName in props1) {
+				if (isBridgeType && (propName.substr(0, 1) === "$")) {
+					continue;
+				}
 				var propValue1 = props1[propName];
 				var propValue2 = props2[propName];
 				if ((propValue1 === propValue2) 
