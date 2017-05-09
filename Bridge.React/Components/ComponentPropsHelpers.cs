@@ -57,8 +57,11 @@
 			if (((object)props1).GetType() != ((object)props2).GetType())
 				return false;
 
+			// Bridge adds various private members that we don't want to consider so we want to try to guess whether we're a Bridge class and then ignore them. Basic classes
+			// have $$name and $$fullname properties, which seem pretty specific. However, [ObjectLiteral] types may have $literal or $getType properties, which identify them
+			// as "special" object literals. Other [ObjectLiteral] types may have no additional properties - which is good because we can skip any additional magic.
 			/*@
-			var isBridgeType = props1.$$name && props1.$$fullname;
+			var isBridgeType = (props1.$$name && props1.$$fullname) || (typeof(props1.$getType) === "function") || (typeof(props1.$literal) === "boolean");
 			for (var propName in props1) {
 				if (isBridgeType && (propName.substr(0, 1) === "$")) {
 					continue;
