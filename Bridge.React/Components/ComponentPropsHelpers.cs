@@ -89,19 +89,6 @@
 							continue;
 						}
 					}
-					// Due to the way that properties are currently initialised on types in Bridge, if a property's type is a struct then the getter and setter for it will
-					// be created for each instance of the type, rather than being shared across all instances of the type (which is the case for reference type properties).
-					// This means that when it comes to a "getName" property, for example, the "getName" function will not be the same value for two instances of the same
-					// class, which is a problem for this function since it will mean that two props references that contain the same data are not identified as such as
-					// the getter / setter functions are distinct across instances. A proper fix for this has been requested at:
-					//   http://forums.bridge.net/forum/general/feature-requests/1737
-					// A temporary workaround is for the getter and setter functions to be identified as such, and then ignored by this process. That would not be particularly
-					// easy to do in general, but it IS something that's relatively easy to add to the ProductiveRage.Immutable library (every time that CtorSet is called, the
-					// getter and setter methods for the property will have a $scaffolding value set to true). This can be unpicked if the Bridge translation process changes
-					// but it means that types that have struct properties that are declared using the IAmImmutable helpers will work before that time.
-					if ((propValue1.$scaffolding === true) && (propValue2.$scaffolding === true)) {
-						continue;
-					}
 				}
 				else if ((typeof(propValue1.equals) === "function") && (propValue1.equals(propValue2) === true)) {
 					// If propValue1 has an "equals" implementation then give that a go
