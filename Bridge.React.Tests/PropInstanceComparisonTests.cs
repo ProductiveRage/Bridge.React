@@ -80,9 +80,18 @@ namespace Bridge.React.Tests
 			});
 			*/
 
+			Test("Two instance of a single-property class where property has custom Equals implementation (where both values are considered equivalent)", assert =>
+			{
+				assert.StrictEqual(
+					ComponentPropsHelpers<SingleCaseInsensitiveStringPropertyClass>.DoPropsReferencesMatch(
+						new SingleCaseInsensitiveStringPropertyClass(new CaseInsensitiveString("abc")),
+						new SingleCaseInsensitiveStringPropertyClass(new CaseInsensitiveString("ABC"))
+					),
+					true
+				);
+			});
+
 			// TODO: Check with nulls
-			
-			// TODO: Check custom Equals implementations
 
 			// TODO: Add false-result comparisons
 		}
@@ -194,6 +203,33 @@ namespace Bridge.React.Tests
 				Name = name;
 			}
 			public string Name { get; }
+		}
+
+		private sealed class SingleCaseInsensitiveStringPropertyClass
+		{
+			public SingleCaseInsensitiveStringPropertyClass(CaseInsensitiveString name)
+			{
+				Name = name;
+			}
+			public CaseInsensitiveString Name { get; }
+		}
+
+		private sealed class CaseInsensitiveString
+		{
+			public CaseInsensitiveString(string value)
+			{
+				Value = value;
+			}
+			public string Value { get; }
+			public override bool Equals(object o)
+			{
+				var other = o as CaseInsensitiveString;
+				return (other != null) && (other.Value ?? "").Equals(Value ?? "", StringComparison.OrdinalIgnoreCase);
+			}
+			public override int GetHashCode()
+			{
+				return (Value ?? "").ToUpper().GetHashCode();
+			}
 		}
 
 		private sealed class SingleFunctionPropertyClass
