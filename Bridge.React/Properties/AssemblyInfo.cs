@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Bridge;
 
@@ -23,3 +24,5 @@ using Bridge;
 
 // For compatibility with how Bridge used to build by default (before 16.0.0)
 [assembly: Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
+
+[assembly: InternalsVisibleTo("Bridge.React.Tests")]
