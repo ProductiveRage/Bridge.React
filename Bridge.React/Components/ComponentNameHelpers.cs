@@ -13,7 +13,7 @@ namespace Bridge.React
 			if (Script.Write<bool>("Bridge.isPlainObject(source)"))
 				return "Component";
 
-			return source.GetType().Name.Split('.', '[', '$').First();
+			return source.GetType().Name.Split('.', '[', '$', '`').First();
 		}
 	}
 }
