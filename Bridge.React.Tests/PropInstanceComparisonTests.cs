@@ -22,7 +22,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of single-string-property class where string values match", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleStringPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleStringPropertyClass("abc"),
 						new SingleStringPropertyClass("abc")
 					),
@@ -33,7 +33,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of single-function-property class where functions are equivalent anonymous static lambdas that Bridge lifts to named methods", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleFunctionPropertyClass(value => Console.WriteLine(value)),
 						new SingleFunctionPropertyClass(value => Console.WriteLine(value))
 					),
@@ -44,7 +44,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of single-function-property class where functions are equivalent bound functions", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleFunctionPropertyClass(InstanceMethod),
 						new SingleFunctionPropertyClass(InstanceMethod)
 					),
@@ -57,7 +57,7 @@ namespace Bridge.React.Tests
 			{
 				var bindToTarget = new SingleFunctionPropertyClass(value => Console.WriteLine(value));
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleFunctionPropertyClass(bindToTarget.OnChange),
 						new SingleFunctionPropertyClass(bindToTarget.OnChange)
 					),
@@ -67,23 +67,23 @@ namespace Bridge.React.Tests
 
 			/* TODO: Not sure if can support this - could look at the functions' ToString values but they could be bound to different targets using JS .bind and that information
 			   is not accessible and so the comparison may not be reliable
+			*/
 			Test("Two instances of single-function-property class where functions are equivalent anonymous static lambdas that Bridge can't lift to named methods", assert =>
 			{
 				var outerValue = "abc"; // Having the lambdas access this value prevents them from being lifted into their own methods
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value)),
 						new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value))
 					),
 					true
 				);
 			});
-			*/
 
 			Test("Two instance of a single-property class where property has custom Equals implementation (where both values are considered equivalent)", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<SingleCaseInsensitiveStringPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new SingleCaseInsensitiveStringPropertyClass(new CaseInsensitiveString("abc")),
 						new SingleCaseInsensitiveStringPropertyClass(new CaseInsensitiveString("ABC"))
 					),
@@ -101,7 +101,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of [ObjectLiteral] single-string-property class where string values match", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ObjectLiteralSingleStringPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ObjectLiteralSingleStringPropertyClass { Name = "abc" },
 						new ObjectLiteralSingleStringPropertyClass { Name = "abc" }
 					),
@@ -112,7 +112,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of [ObjectLiteral] single-function-property class where functions are equivalent anonymous static lambdas that Bridge lifts to named methods", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = value => Console.WriteLine(value) },
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = value => Console.WriteLine(value) }
 					),
@@ -123,7 +123,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of [ObjectLiteral] single-function-property class where functions are equivalent bound functions", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = InstanceMethod },
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = InstanceMethod }
 					),
@@ -136,7 +136,7 @@ namespace Bridge.React.Tests
 			{
 				var bindToTarget = new SingleFunctionPropertyClass(value => Console.WriteLine(value));
 				assert.StrictEqual(
-					ComponentPropsHelpers<ObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = bindToTarget.OnChange },
 						new ObjectLiteralSingleFunctionPropertyClass { OnChange = bindToTarget.OnChange }
 					),
@@ -150,7 +150,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of constructor-supporting [ObjectLiteral] single-string-property class where string values match", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ConstructorObjectLiteralSingleStringPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ConstructorObjectLiteralSingleStringPropertyClass("abc"),
 						new ConstructorObjectLiteralSingleStringPropertyClass("abc")
 					),
@@ -161,7 +161,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of constructor-supporting [ObjectLiteral] single-function-property class where functions are equivalent anonymous static lambdas that Bridge lifts to named methods", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ConstructorObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(value => Console.WriteLine(value)),
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(value => Console.WriteLine(value))
 					),
@@ -172,7 +172,7 @@ namespace Bridge.React.Tests
 			Test("Two instances of constructor-supporting [ObjectLiteral] single-function-property class where functions are equivalent bound functions", assert =>
 			{
 				assert.StrictEqual(
-					ComponentPropsHelpers<ConstructorObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(InstanceMethod),
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(InstanceMethod)
 					),
@@ -185,7 +185,7 @@ namespace Bridge.React.Tests
 			{
 				var bindToTarget = new SingleFunctionPropertyClass(value => Console.WriteLine(value));
 				assert.StrictEqual(
-					ComponentPropsHelpers<ConstructorObjectLiteralSingleFunctionPropertyClass>.DoPropsReferencesMatch(
+					ComponentPropsHelpers.DoPropsReferencesMatch(
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(bindToTarget.OnChange),
 						new ConstructorObjectLiteralSingleFunctionPropertyClass(bindToTarget.OnChange)
 					),

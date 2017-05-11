@@ -32,7 +32,7 @@ namespace Bridge.React
 			// component must be contained within the props (and state, where appropriate). Note: In most cases where children are specified as a params array, we don't want
 			// the "children require unique keys" warning from React (you don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here
 			// either - to achieve this, we prepare an arguments array and pass that to React.createElement in an "apply" call.
-			Array createElementArgs = new object[] { reactComponentClass, ComponentPropsHelpers<TProps>.WrapProps(props) };
+			Array createElementArgs = new object[] { reactComponentClass, ComponentPropsHelpers.WrapProps(props) };
 			if (children != null)
 				createElementArgs = createElementArgs.Concat(children);
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
@@ -45,7 +45,7 @@ namespace Bridge.React
 		protected TProps props
 		{
 			// If props is non-null then it needs to be "unwrapped" when the C# code requests it
-			get { return Script.Write<TProps>("this.props ? this.props.value : null"); }
+			get { return ComponentPropsHelpers.UnWrapPropsIfDefined(Script.Write<WrappedValue<TProps>>("this.props")); }
 		}
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace Bridge.React
 		protected TState state
 		{
 			// If state is non-null then it needs to be "unwrapped" when the C# code requests it
-			get { return Script.Write<TState>("this.state ? this.state.value : null"); }
+			get { return ComponentPropsHelpers.UnWrapPropsIfDefined(Script.Write<WrappedValue<TState>>("this.state")); }
 		}
 
 		/// <summary>

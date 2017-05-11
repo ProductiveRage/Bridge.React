@@ -8,10 +8,10 @@
 	/// value from the props, since this must not be tucked away one level deeper as it is a magic React property (for more information
 	/// about keyed elements, see https://facebook.github.io/react/docs/multiple-components.html#dynamic-children).
 	/// </summary>
-	[IgnoreGeneric]
-	internal static class ComponentPropsHelpers<TProps>
+	internal static class ComponentPropsHelpers
 	{
-		internal static WrappedProps WrapProps(TProps propsIfAny)
+		[IgnoreGeneric]
+		public static WrappedValue<TProps> WrapProps<TProps>(TProps propsIfAny)
 		{
 			// Try to extract a Key value from the props - it might be a simple "key" value or it might be a property with a "getKey" function or it
 			// might be absent altogether
@@ -42,11 +42,18 @@
 			// to have seen this issue in 0.14 if it was that. The workaround is to return a type of "wrapped props" that doesn't even have a Key property
 			// on it if there is no key value to use.
 			if (Script.Write<bool>("(typeof(keyIfAny) !== 'undefined')"))
-				return new WrappedPropsWithKey { Value = propsIfAny, Key = keyIfAny };
-			return new WrappedProps { Value = propsIfAny };
+				return new WrappedValueWithKey<TProps> { Value = propsIfAny, Key = keyIfAny };
+			return new WrappedValue<TProps> { Value = propsIfAny };
 		}
 
-		internal static bool DoPropsReferencesMatch(TProps props1, TProps props2)
+		[IgnoreGeneric]
+		public static T UnWrapPropsIfDefined<T>(WrappedValue<T> wrappedPropsIfAny)
+		{
+			return Script.Write<T>("{0} ? {0}.value : null", wrappedPropsIfAny);
+		}
+
+		[IgnoreGeneric]
+		public static bool DoPropsReferencesMatch<TProps>(TProps props1, TProps props2)
 		{
 			if ((props1 == null) && (props2 == null))
 				return true;
@@ -96,6 +103,11 @@
 							continue;
 						}
 					}
+					else if (isBridgeType && (propValue1.toString() === propValue2.toString())) { // TODO: Explain isBridgeType check
+						// TODO: This makes me very nervious - if the functions were created by passing another function through .bind or .apply then they could have different
+						// targets and it will not be sufficient to just check their string values
+						return true;
+					}
 				}
 				else if ((typeof(propValue1.equals) === "function") && (propValue1.equals(propValue2) === true)) {
 					// If propValue1 has an "equals" implementation then give that a go
@@ -105,18 +117,6 @@
 			}
 			*/
 			return true;
-		}
-
-		[ObjectLiteral]
-		internal class WrappedProps
-		{
-			public TProps Value { get; set; }
-		}
-
-		[ObjectLiteral]
-		internal class WrappedPropsWithKey : WrappedProps
-		{
-			public Union<string, int> Key { get; set; }
 		}
 	}
 }

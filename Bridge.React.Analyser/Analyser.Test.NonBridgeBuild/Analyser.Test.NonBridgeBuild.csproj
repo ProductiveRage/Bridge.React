@@ -191,6 +191,12 @@
     <Compile Include="..\..\Bridge.React\Components\StatelessComponent.cs">
       <Link>Components\StatelessComponent.cs</Link>
     </Compile>
+    <Compile Include="..\..\Bridge.React\Components\WrappedValue.cs">
+      <Link>Components\WrappedValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Bridge.React\Components\WrappedValueWithKey.cs">
+      <Link>Components\WrappedValueWithKey.cs</Link>
+    </Compile>
     <Compile Include="..\..\Bridge.React\DOM.cs">
       <Link>DOM.cs</Link>
     </Compile>

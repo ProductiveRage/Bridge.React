@@ -36,7 +36,7 @@ namespace Bridge.React
 				renderer.$$componentClass = componentClass;
 			}
 			*/
-			var wrappedProps = ComponentPropsHelpers<TProps>.WrapProps(props);
+			var wrappedProps = ComponentPropsHelpers.WrapProps(props);
 			return Script.Write<ReactElement>("React.createElement(componentClass, wrappedProps)");
 		}
 
@@ -49,7 +49,7 @@ namespace Bridge.React
 			var namedScopeBoundFunction;
 			eval("namedScopeBoundFunction = function " + renderer.name + "(props) { return renderer(props ? props.value : props); };");
 			*/
-			var wrappedProps = ComponentPropsHelpers<TProps>.WrapProps(props);
+			var wrappedProps = ComponentPropsHelpers.WrapProps(props);
 			return Script.Write<ReactElement>("React.createElement(namedScopeBoundFunction, wrappedProps)");
 		}
 
@@ -60,7 +60,7 @@ namespace Bridge.React
 		[IgnoreGeneric]
 		internal static bool DoPropsReferencesMatch<TProps>(TProps props1, TProps props2)
 		{
-			return ComponentPropsHelpers<TProps>.DoPropsReferencesMatch(props1, props2);
+			return ComponentPropsHelpers.DoPropsReferencesMatch(props1, props2);
 		}
 	}
 }

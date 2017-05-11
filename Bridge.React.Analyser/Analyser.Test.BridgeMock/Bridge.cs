@@ -17,21 +17,23 @@ namespace Bridge
 	{
 		public NameAttribute(string name) { }
 	}
-	public class ObjectLiteralAttribute : Attribute { }
+	public class ObjectLiteralAttribute : Attribute
+	{
+		public ObjectLiteralAttribute() { }
+		public ObjectLiteralAttribute(ObjectCreateMode createMode) { }
+	}
 	public class TemplateAttribute : Attribute
 	{
 		public TemplateAttribute(string name) { }
 	}
 
-	public enum Emit
-	{
-		StringNameLowerCase
-	}
+	public enum Emit { StringNameLowerCase }
+	public enum ObjectCreateMode { Plain }
 
 	public static class Script
 	{
-		public static void Write(string script) { throw new NotImplementedException(); }
-		public static T Write<T>(string script) { throw new NotImplementedException(); }
+		public static void Write(string script, params object[] args) { throw new NotImplementedException(); }
+		public static T Write<T>(string script, params object[] args) { throw new NotImplementedException(); }
 	}
 
 	public static class BridgeExtensions
