@@ -95,8 +95,6 @@ namespace Bridge.React
 
 		protected virtual void ComponentWillMount() { }
 
-		protected virtual void ComponentDidMount() { }
-
 		/// <summary>
 		/// Props is not used by all components and so it is valid for the nextProps reference passed up here to be null
 		/// </summary>
@@ -115,14 +113,16 @@ namespace Bridge.React
 		/// </summary>
 		protected virtual void ComponentWillUpdate(TProps nextProps, TState nextState) { }
 
+		public abstract ReactElement Render();
+
+		protected virtual void ComponentDidMount() { }
+
 		/// <summary>
 		/// Props and State are not used by all components and so it is valid for either or both of the nextProps and nextState references passed up here to be null
 		/// </summary>
 		protected virtual void ComponentDidUpdate(TProps previousProps, TState previousState) { }
 
 		protected virtual void ComponentWillUnmount() { }
-
-		public abstract ReactElement Render();
 
 		// Note: This is not a direct call to setState - it wraps the provided value up so that React does not meddle with it (this is why the function has the Name attribute,
 		// to ensure that the JavaScript function does NOT result in it being applied to the component "template" as a function named setState)

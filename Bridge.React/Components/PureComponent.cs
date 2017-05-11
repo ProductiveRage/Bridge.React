@@ -39,11 +39,6 @@ namespace Bridge.React
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
 		}
 
-		private bool ShouldComponentUpdate(TProps nextProps)
-		{
-			return !ComponentPropsHelpers.DoPropsReferencesMatch(this.props, nextProps);
-		}
-
 		protected virtual void ComponentWillMount() { }
 
 		/// <summary>
@@ -51,15 +46,20 @@ namespace Bridge.React
 		/// </summary>
 		protected virtual void ComponentWillReceiveProps(TProps nextProps) { }
 
-		/// <summary>
-		/// This will be invoked once, immediately after the initial rendering occurs
-		/// </summary>
-		protected virtual void ComponentDidMount() { }
+
+		private bool ShouldComponentUpdate(TProps nextProps)
+		{
+			return !ComponentPropsHelpers.DoPropsReferencesMatch(this.props, nextProps);
+		}
 
 		/// <summary>
 		/// Props are not used by all components and so it is valid for the nextProps reference passed up here to be null
 		/// </summary>
 		protected virtual void ComponentWillUpdate(TProps nextProps) { }
+
+		public abstract ReactElement Render();
+
+		protected virtual void ComponentDidMount() { }
 
 		/// <summary>
 		/// This will be invoked immediately after the component's updates are flushed to the DOM (but not called for the initial render, ComponentDidMount is called then instead)
@@ -108,7 +108,5 @@ namespace Bridge.React
 				return null;
 			return component._reactElement;
 		}
-
-		public abstract ReactElement Render();
 	}
 }
