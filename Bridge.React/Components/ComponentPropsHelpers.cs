@@ -68,7 +68,7 @@
 			// have $$name and $$fullname properties, which seem pretty specific. However, [ObjectLiteral] types may have $literal or $getType properties, which identify them
 			// as "special" object literals. Other [ObjectLiteral] types may have no additional properties - which is good because we can skip any additional magic.
 			/*@
-			var isBridgeType = (props1.$$name && props1.$$fullname) || (typeof(props1.$getType) === "function") || (typeof(props1.$literal) === "boolean");
+			var isBridgeType = (!!props1.$$name && !!props1.$$fullname) || (typeof(props1.$getType) === "function") || (typeof(props1.$literal) === "boolean");
 			for (var propName in props1) {
 				if (isBridgeType && (propName.substr(0, 1) === "$")) {
 					continue;
