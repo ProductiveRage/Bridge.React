@@ -15,8 +15,8 @@ namespace Bridge.React.Tests
 					new MyLabel("abc"),
 					container =>
 					{
-						assert.StrictEqual(container.TextContent.Trim(), "abc");
 						container.Remove();
+						assert.StrictEqual(container.TextContent.Trim(), "abc");
 						done();
 					}
 				);

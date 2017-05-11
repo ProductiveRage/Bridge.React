@@ -16,8 +16,8 @@ namespace Bridge.React.Tests
 					new ComponentThatRendersTextFromItsState(),
 					container =>
 					{
-						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
 						container.Remove();
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
 						done();
 					}
 				);
@@ -30,8 +30,8 @@ namespace Bridge.React.Tests
 					new DerivedFromComponentThatRendersTextFromItsState(),
 					container =>
 					{
-						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
 						container.Remove();
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text");
 						done();
 					}
 				);
@@ -44,8 +44,8 @@ namespace Bridge.React.Tests
 					new DerivedFromComponentThatRendersTextFromItsBaseStateWithAnAnnotation(),
 					container =>
 					{
-						assert.StrictEqual(container.TextContent.Trim(), "Initial Text!");
 						container.Remove();
+						assert.StrictEqual(container.TextContent.Trim(), "Initial Text!");
 						done();
 					}
 				);
