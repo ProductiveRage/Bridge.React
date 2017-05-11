@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using static Bridge.QUnit.QUnit;
 
 namespace Bridge.React.Tests
@@ -18,22 +19,20 @@ namespace Bridge.React.Tests
 				var done = assert.Async();
 				var numberOfContainerRenders = 0;
 				var numberOfPureComponentRenders = 0;
-				Action<Action> forceReRender = null;
+				Func<Task> forceReRender = null;
 				TestComponentMounter.Render(
 					component: new Container(
 						onContainerRender: () => numberOfContainerRenders++,
 						onPureComponentRender: () => numberOfPureComponentRenders++,
 						reRenderProvider: force => forceReRender = force
 					),
-					ready: container =>
+					ready: async container =>
 					{
-						forceReRender(() =>
-						{
-							assert.StrictEqual(numberOfContainerRenders, 2);
-							assert.StrictEqual(numberOfPureComponentRenders, 1);
-							container.Remove();
-							done();
-						});
+						await forceReRender();
+						assert.StrictEqual(numberOfContainerRenders, 2);
+						assert.StrictEqual(numberOfPureComponentRenders, 1);
+						container.Remove();
+						done();
 					}
 				);
 			});
@@ -41,13 +40,13 @@ namespace Bridge.React.Tests
 
 		private sealed class Container : Component<Container.Props, object>
 		{
-			public Container(Action onContainerRender, Action onPureComponentRender, Action<Action<Action>> reRenderProvider)
+			public Container(Action onContainerRender, Action onPureComponentRender, Action<Func<Task>> reRenderProvider)
 				: base(new Props { OnContainerRender = onContainerRender, OnPureComponentRender = onPureComponentRender, ReRenderProvider = reRenderProvider }) { }
 
 			protected override void ComponentDidMount()
 			{
 				props.ReRenderProvider(
-					callback => SetState(null, callback)
+					() => SetStateAsync(null)
 				);
 			}
 
@@ -61,7 +60,7 @@ namespace Bridge.React.Tests
 			{
 				public Action OnContainerRender { get; set; }
 				public Action OnPureComponentRender { get; set; }
-				public Action<Action<Action>> ReRenderProvider { get; set; }
+				public Action<Func<Task>> ReRenderProvider { get; set; }
 			}
 		}
 
