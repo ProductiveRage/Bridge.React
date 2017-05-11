@@ -1,4 +1,11 @@
 ﻿{
   "output": "Bridge/output",
-  "combineScripts": true
+  "combineScripts": true,
+
+  "resources": [
+    {
+      "name": "bridge.console.js",
+      "extract": false
+    }
+  ]
 }
