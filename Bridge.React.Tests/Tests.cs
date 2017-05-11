@@ -9,6 +9,7 @@ namespace Bridge.React.Tests
 		{
 			StatefulComponentTests.RunTests();
 			StatelessComponentTests.RunTests();
+			PureComponentTests.RunTests();
 			PropInstanceComparisonTests.Instance.RunTests();
 		}
 	}

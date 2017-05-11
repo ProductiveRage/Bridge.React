@@ -47,10 +47,9 @@ namespace Bridge.React
 		[Name("componentWillReceivePropsWrapped")] // This will be called by the method that unwraps the props reference
 		protected virtual void ComponentWillReceiveProps(TProps nextProps) { }
 
-
-		private bool ShouldComponentUpdate(TProps nextProps)
+		private bool ShouldComponentUpdate(WrappedValue<TProps> nextPropsIfAny)
 		{
-			return !ComponentPropsHelpers.DoPropsReferencesMatch(this.props, nextProps);
+			return !ComponentPropsHelpers.DoPropsReferencesMatch(this.props, ComponentPropsHelpers.UnWrapValueIfDefined(nextPropsIfAny));
 		}
 
 		/// <summary>

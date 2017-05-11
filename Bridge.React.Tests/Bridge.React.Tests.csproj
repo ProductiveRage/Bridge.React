@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PropInstanceComparisonTests.cs" />
+    <Compile Include="PureComponentTests.cs" />
     <Compile Include="StatelessComponentTests.cs" />
     <Compile Include="TestComponentMounter.cs" />
     <Compile Include="StatefulComponentTests.cs" />
