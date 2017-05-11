@@ -65,19 +65,31 @@ namespace Bridge.React.Tests
 				);
 			});
 
-			/* TODO: Not sure if can support this - could look at the functions' ToString values but they could be bound to different targets using JS .bind and that information
-			   is not accessible and so the comparison may not be reliable
-			*/
-			Test("Two instances of single-function-property class where functions are equivalent anonymous static lambdas that Bridge can't lift to named methods", assert =>
+			// These C# lamdbas are clearly equivalent but it's not possible for the JavaScript code to know this for sure because it can only see the function content
+			// of them and can't tell for sure that they haven't been bound to different instances using JavaScript's bind facility. If the solution is 100% Bridge then
+			// this shouldn't be the same case because Bridge will bind functions (using its own mechanism) when it has to. However, if the solution ISN'T entirely from
+			// Bridge-compiled C# code then there could be other code creating bound functions and then it would not be reliable to compare the two functions by their
+			// content. Currently, there is a switch for this behaviour that is set to false and within an internal class and so it can't be set to true by consumers
+			// of Bridge.React (apart from this project, which has access to internal-accessibility members). 
+			Test("Two instances of single-function-property class where functions are equivalent anonymous static lambdas that Bridge can't lift to named methods (EXPERIMENTAL)", assert =>
 			{
 				var outerValue = "abc"; // Having the lambdas access this value prevents them from being lifted into their own methods
-				assert.StrictEqual(
-					ComponentPropsHelpers.DoPropsReferencesMatch(
-						new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value)),
-						new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value))
-					),
-					true
-				);
+				var optimiseFunctionComparisonsBasedOnSolutionBeingPureBridge = ComponentPropsHelpers.OptimiseFunctionComparisonsBasedOnSolutionBeingPureBridge;
+				try
+				{
+					ComponentPropsHelpers.OptimiseFunctionComparisonsBasedOnSolutionBeingPureBridge = true;
+					assert.StrictEqual(
+						ComponentPropsHelpers.DoPropsReferencesMatch(
+							new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value)),
+							new SingleFunctionPropertyClass(value => Console.WriteLine(outerValue + ":" + value))
+						),
+						true
+					);
+				}
+				finally
+				{
+					ComponentPropsHelpers.OptimiseFunctionComparisonsBasedOnSolutionBeingPureBridge = optimiseFunctionComparisonsBasedOnSolutionBeingPureBridge;
+				}
 			});
 
 			Test("Two instance of a single-property class where property has custom Equals implementation (where both values are considered equivalent)", assert =>

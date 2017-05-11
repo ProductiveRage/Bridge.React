@@ -52,6 +52,14 @@
 			return Script.Write<T>("{0} ? {0}.value : null", wrappedValueIfAny);
 		}
 
+		/// <summary>
+		/// Enabling this option allows for an optimisation in DoPropsReferencesMatch for comparing static anonymous functions that will work for projects that are entirely built
+		/// upon compiled-from-Bridge.NET C# but that may incorrectly find functions to be equivalent when they shouldn't (if the functions have been bound to different targets
+		/// using JS .bind). As such, this defaults to false and is exposed here only to allow unit tests to try the code out (this class is internal and so not for access by
+		/// consumers of the Bridge.React package).
+		/// </summary>
+		public static bool OptimiseFunctionComparisonsBasedOnSolutionBeingPureBridge = false;
+
 		[IgnoreGeneric]
 		public static bool DoPropsReferencesMatch<TProps>(TProps props1, TProps props2)
 		{
@@ -67,6 +75,7 @@
 			// Bridge adds various private members that we don't want to consider so we want to try to guess whether we're a Bridge class and then ignore them. Basic classes
 			// have $$name and $$fullname properties, which seem pretty specific. However, [ObjectLiteral] types may have $literal or $getType properties, which identify them
 			// as "special" object literals. Other [ObjectLiteral] types may have no additional properties - which is good because we can skip any additional magic.
+			var optimiseFunctionComparisonsBasedOnSolutionBeingPureBridge = OptimiseFunctionComparisonsBasedOnSolutionBeingPureBridge;
 			/*@
 			var isBridgeType = (!!props1.$$name && !!props1.$$fullname) || (typeof(props1.$getType) === "function") || (typeof(props1.$literal) === "boolean");
 			for (var propName in props1) {
@@ -103,9 +112,14 @@
 							continue;
 						}
 					}
-					else if (isBridgeType && (propValue1.toString() === propValue2.toString())) { // TODO: Explain isBridgeType check
-						// TODO: This makes me very nervious - if the functions were created by passing another function through .bind or .apply then they could have different
-						// targets and it will not be sufficient to just check their string values
+					else if (optimiseFunctionComparisonsBasedOnSolutionBeingPureBridge && isBridgeType && (propValue1.toString() === propValue2.toString())) {
+						// This proposition makes me very nervious - if the functions were created by passing another function through .bind or .apply then they could have
+						// different targets and it will not be sufficient to just check their string values. If the code in question is 100% compiled-via-Bridge then this
+						// shouldn't happen (because Bridge uses its own binding logic) so one option is to try to guess whether the props type is a Bridge class and then
+						// only consider this route if so, on the basis that Bridge code written to integrate with vanilla JavaScript is more likely to use plain objects.
+						// However, this is still a leap of faith and it's entirely possible that Bridge-written library code intended for JavaScript would expose object
+						// initialisation methods to make the JavaScript cleaner than including direct Bridge-class constructor calls. For now, I'll leave this in but
+						// behind a turned-off flag until I convince myself that it's safe (or should be removed entirely).
 						return true;
 					}
 				}
