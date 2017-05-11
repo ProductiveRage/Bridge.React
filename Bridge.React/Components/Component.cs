@@ -98,6 +98,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Props is not used by all components and so it is valid for the nextProps reference passed up here to be null
 		/// </summary>
+		[Name("componentWillReceivePropsWrapped")] // This will be called by the method that unwraps the props reference
 		protected virtual void ComponentWillReceiveProps(TProps nextProps) { }
 
 		/// <summary>
@@ -106,11 +107,13 @@ namespace Bridge.React
 		/// as a reference equality test. Props and State are not used by all components and so it is valid for either or both of the nextProps and nextState references passed
 		/// up here to be null.
 		/// </summary>
+		[Name("shouldComponentUpdateWrapped")] // This will be called by the method that unwraps the props and state references
 		protected virtual bool ShouldComponentUpdate(TProps nextProps, TState nextState) { return true; }
 
 		/// <summary>
 		/// Props and State are not used by all components and so it is valid for either or both of the nextProps and nextState references passed up here to be null
 		/// </summary>
+		[Name("componentWillUpdateWrapped")] // This will be called by the method that unwraps the props and state references
 		protected virtual void ComponentWillUpdate(TProps nextProps, TState nextState) { }
 
 		public abstract ReactElement Render();
@@ -120,6 +123,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Props and State are not used by all components and so it is valid for either or both of the nextProps and nextState references passed up here to be null
 		/// </summary>
+		[Name("componentDidUpdateWrapped")] // This will be called by the method that unwraps the props and state references
 		protected virtual void ComponentDidUpdate(TProps previousProps, TState previousState) { }
 
 		protected virtual void ComponentWillUnmount() { }
@@ -155,6 +159,25 @@ namespace Bridge.React
 			var tcs = new TaskCompletionSource<object>();
 			SetState(state, () => tcs.SetResult(null));
 			return tcs.Task;
+		}
+
+		// These are the life cycle methods that React calls - they have to unwrap the props and state references (if provided) in order to pass them on to the methods above
+		// (the life cycle methods that derived classes may make use of)
+		private void ComponentWillReceiveProps(WrappedValue<TProps> nextPropsIfAny)
+		{
+			ComponentWillReceiveProps(ComponentPropsHelpers.UnWrapValueIfDefined(nextPropsIfAny));
+		}
+		private bool ShouldComponentUpdate(WrappedValue<TProps> nextPropsIfAny, WrappedValue<TState> nextStateIfAny)
+		{
+			return ShouldComponentUpdate(ComponentPropsHelpers.UnWrapValueIfDefined(nextPropsIfAny), ComponentPropsHelpers.UnWrapValueIfDefined(nextStateIfAny));
+		}
+		private void ComponentWillUpdate(WrappedValue<TProps> nextProps, WrappedValue<TState> nextState)
+		{
+			ComponentWillUpdate(ComponentPropsHelpers.UnWrapValueIfDefined(nextProps), ComponentPropsHelpers.UnWrapValueIfDefined(nextState));
+		}
+		private void ComponentDidUpdate(WrappedValue<TProps> previousProps, WrappedValue<TState> previousState)
+		{
+			ComponentDidUpdate(ComponentPropsHelpers.UnWrapValueIfDefined(previousProps), ComponentPropsHelpers.UnWrapValueIfDefined(previousState));
 		}
 	}
 }

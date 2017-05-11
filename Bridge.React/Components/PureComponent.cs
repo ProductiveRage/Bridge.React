@@ -44,6 +44,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Props is not used by all components and so it is valid for the nextProps reference passed up here to be null
 		/// </summary>
+		[Name("componentWillReceivePropsWrapped")] // This will be called by the method that unwraps the props reference
 		protected virtual void ComponentWillReceiveProps(TProps nextProps) { }
 
 
@@ -55,6 +56,7 @@ namespace Bridge.React
 		/// <summary>
 		/// Props are not used by all components and so it is valid for the nextProps reference passed up here to be null
 		/// </summary>
+		[Name("componentWillUpdateWrapped")] // This will be called by the method that unwraps the props reference
 		protected virtual void ComponentWillUpdate(TProps nextProps) { }
 
 		public abstract ReactElement Render();
@@ -64,6 +66,7 @@ namespace Bridge.React
 		/// <summary>
 		/// This will be invoked immediately after the component's updates are flushed to the DOM (but not called for the initial render, ComponentDidMount is called then instead)
 		/// </summary>
+		[Name("componentDidUpdateWrapped")] // This will be called by the method that unwraps the props reference
 		protected virtual void ComponentDidUpdate(TProps previousProps) { }
 
 		protected virtual void ComponentWillUnmount() { }
@@ -107,6 +110,21 @@ namespace Bridge.React
 			if (component == null)
 				return null;
 			return component._reactElement;
+		}
+
+		// These are the life cycle methods that React calls - they have to unwrap the props and state references (if provided) in order to pass them on to the methods above
+		// (the life cycle methods that derived classes may make use of)
+		private void ComponentWillReceiveProps(WrappedValue<TProps> nextPropsIfAny)
+		{
+			ComponentWillReceiveProps(ComponentPropsHelpers.UnWrapValueIfDefined(nextPropsIfAny));
+		}
+		private void ComponentWillUpdate(WrappedValue<TProps> nextProps)
+		{
+			ComponentWillUpdate(ComponentPropsHelpers.UnWrapValueIfDefined(nextProps));
+		}
+		private void ComponentDidUpdate(WrappedValue<TProps> previousProps)
+		{
+			ComponentDidUpdate(ComponentPropsHelpers.UnWrapValueIfDefined(previousProps));
 		}
 	}
 }
