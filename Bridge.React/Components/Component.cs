@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static Bridge.React.ComponentPropsHelpers;
 
 namespace Bridge.React
 {
@@ -42,21 +43,13 @@ namespace Bridge.React
 		/// Props is not used by all components and so this may be null
 		/// </summary>
 		[Name("unwrappedProps")] // Can't be called "props" any more since Bridge 16 declares properties using defineProperty instead of using a custom getter/setter convention
-		protected TProps props
-		{
-			// If props is non-null then it needs to be "unwrapped" when the C# code requests it
-			get { return ComponentPropsHelpers.UnWrapPropsIfDefined(Script.Write<WrappedValue<TProps>>("this.props")); }
-		}
+		protected TProps props { get { return UnWrapValueIfDefined(Script.Write<WrappedValue<TProps>>("this.props")); } }
 
 		/// <summary>
 		/// State is not used by all components and so this may be null
 		/// </summary>
 		[Name("unwrappedState")] // Can't be called "state" any more since Bridge 16 declares properties using defineProperty instead of using a custom getter/setter convention
-		protected TState state
-		{
-			// If state is non-null then it needs to be "unwrapped" when the C# code requests it
-			get { return ComponentPropsHelpers.UnWrapPropsIfDefined(Script.Write<WrappedValue<TState>>("this.state")); }
-		}
+		protected TState state { get { return UnWrapValueIfDefined(Script.Write<WrappedValue<TState>>("this.state")); } }
 
 		/// <summary>
 		/// This will never be null nor contain any null references, though it may be empty if there are no children to render

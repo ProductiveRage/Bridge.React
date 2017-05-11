@@ -47,9 +47,9 @@
 		}
 
 		[IgnoreGeneric]
-		public static T UnWrapPropsIfDefined<T>(WrappedValue<T> wrappedPropsIfAny)
+		public static T UnWrapValueIfDefined<T>(WrappedValue<T> wrappedValueIfAny)
 		{
-			return Script.Write<T>("{0} ? {0}.value : null", wrappedPropsIfAny);
+			return Script.Write<T>("{0} ? {0}.value : null", wrappedValueIfAny);
 		}
 
 		[IgnoreGeneric]
