@@ -18,9 +18,16 @@
 			Union<string, int> keyIfAny = null;
 			if (propsIfAny != null)
 			{
+				// Pre-16, Bridge used to default to camel-casing property names and so a "Key" property would be named "key" and it would have a getter method
+				// specified for it (it was possible to override these behaviours using PreserveMemberCase and [Name], [Template] or [FieldProperty] attributes)
+				// but 16 has changed things such that the name casing is not changed (by default - this may also be altered using the "conventions" options)
+				// and so we can't presume that a "Key" property will result in a JavaScript "key" property (or a "getKey" method).
 				/*@
 					if (propsIfAny.key || (propsIfAny.key === 0)) { // Ensure that a zero key is not considered "no-key-defined"
 						keyIfAny = propsIfAny.key;
+					}
+					else if (propsIfAny.Key || (propsIfAny.Key === 0)) { // Ensure that a zero key is not considered "no-key-defined"
+						keyIfAny = propsIfAny.Key;
 					}
 					else if (propsIfAny.getKey && (typeof(propsIfAny.getKey) == "function")) {
 						var keyIfAnyFromPropertyGetter = propsIfAny.getKey();
