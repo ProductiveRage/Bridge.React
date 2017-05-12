@@ -14,6 +14,14 @@ namespace Bridge.React
 			var displayName = ComponentNameHelpers.GetDisplayName(template);
 			object reactComponentClass = null;
 			/*@
+			function getOwnPropertyDescriptors(obj) { // IE11 doesn't support Object.getOwnPropertyDescriptors so use this
+				var result = { };
+				for (var key of Reflect.ownKeys(obj)) {
+					result[key] = Object.getOwnPropertyDescriptor(obj, key);
+				}
+				return result;
+			}
+			
 			// Use the displayName to name the component class function (React DevTools will use this)
 			eval("reactComponentClass = function " + displayName + "(props) { Bridge.React.ReactComponentClassCreator.initialiseComponentState(this, props); }");
 
@@ -44,7 +52,7 @@ namespace Bridge.React
 			}
 			for (var i = protoStack.length - 1; i >= 0; i--) {
 				o = protoStack[i];
-				var descriptors = Object.getOwnPropertyDescriptors(o);
+				var descriptors = getOwnPropertyDescriptors(o);
 				for (var name in descriptors) {
 					var descriptor = descriptors[name];
 					Object.defineProperty(reactComponentClass.prototype, name, descriptor);
