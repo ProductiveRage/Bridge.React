@@ -117,6 +117,7 @@
     <Compile Include="Dispatcher\DispatcherMessage.cs" />
     <Compile Include="Dispatcher\MessageSourceOptions.cs" />
     <Compile Include="Dispatcher\IDispatcherAction.cs" />
+    <Compile Include="PropsWithKey.cs" />
     <Compile Include="React.cs" />
     <Compile Include="Elements\ReactElement.cs" />
     <Compile Include="DOM.cs" />

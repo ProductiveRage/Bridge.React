@@ -5,13 +5,11 @@ namespace Bridge.React.Examples
 {
 	public sealed class TaskCard : PureComponent<TaskCard.Props>
 	{
-		public TaskCard(TaskDetails task, Action<TaskDetails> onChange, Action onRemove)
-			: base(new Props(task, onChange, onRemove)) { }
-
+		public TaskCard(TaskDetails task, Action<TaskDetails> onChange, Action onRemove) : base(new Props(task, onChange, onRemove)) { }
 
 		public override ReactElement Render()
 		{
-			return DOM.Div(new Attributes { Key = props.Task.Id, Style = TodoStyles.Container },
+			return DOM.Div(new Attributes { Style = TodoStyles.Container },
 				DOM.H4(
 					new Attributes { Style = props.Task.Done ? TodoStyles.TextDone : TodoStyles.TextNotDone },
 					props.Task.Description
@@ -35,9 +33,9 @@ namespace Bridge.React.Examples
 			);
 		}
 
-		public sealed class Props : IAmImmutable
+		public sealed class Props : PropsWithKey, IAmImmutable
 		{
-			public Props(TaskDetails task, Action<TaskDetails> onChange, Action onRemove)
+			public Props(TaskDetails task, Action<TaskDetails> onChange, Action onRemove) : base(task.Id)
 			{
 				this.CtorSet(_ => _.Task, task);
 				this.CtorSet(_ => _.OnChange, onChange);
