@@ -6,7 +6,7 @@ namespace Bridge.React
 	[External]
 	public static class DOM
 	{
-		[Template("React.createElement('a', {properties}, {*children})")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement A(AnchorAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('a', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -29,27 +29,27 @@ namespace Bridge.React
 		[Template("React.createElement('a', null, {0})")]
 		public extern static ReactElement A(string child);
 
-		[Template("React.createElement('a', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement A(AnchorAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('a', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement A<TProps>(AnchorAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('a', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement A<TProps>(AnchorAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('a', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement A(AnchorAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('a', {0}, {1})")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement A(AnchorAttributes properties, ReactElement child);
 
-		[Template("React.createElement('a', {0}, {1})")]
+		[Template("React.createElement('a', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement A(AnchorAttributes properties, string child);
 
-		[Template("React.createElement('abbr', {properties}, {*children})")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Abbr(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('abbr', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -72,27 +72,27 @@ namespace Bridge.React
 		[Template("React.createElement('abbr', null, {0})")]
 		public extern static ReactElement Abbr(string child);
 
-		[Template("React.createElement('abbr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Abbr(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('abbr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Abbr<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('abbr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Abbr<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('abbr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Abbr(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('abbr', {0}, {1})")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Abbr(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('abbr', {0}, {1})")]
+		[Template("React.createElement('abbr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Abbr(Attributes properties, string child);
 
-		[Template("React.createElement('address', {properties}, {*children})")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Address(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('address', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -115,27 +115,27 @@ namespace Bridge.React
 		[Template("React.createElement('address', null, {0})")]
 		public extern static ReactElement Address(string child);
 
-		[Template("React.createElement('address', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Address(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('address', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Address<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('address', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Address<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('address', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Address(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('address', {0}, {1})")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Address(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('address', {0}, {1})")]
+		[Template("React.createElement('address', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Address(Attributes properties, string child);
 
-		[Template("React.createElement('area', {properties}, {*children})")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Area(AreaAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('area', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -158,27 +158,27 @@ namespace Bridge.React
 		[Template("React.createElement('area', null, {0})")]
 		public extern static ReactElement Area(string child);
 
-		[Template("React.createElement('area', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Area(AreaAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('area', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Area<TProps>(AreaAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('area', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Area<TProps>(AreaAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('area', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Area(AreaAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('area', {0}, {1})")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Area(AreaAttributes properties, ReactElement child);
 
-		[Template("React.createElement('area', {0}, {1})")]
+		[Template("React.createElement('area', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Area(AreaAttributes properties, string child);
 
-		[Template("React.createElement('article', {properties}, {*children})")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Article(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('article', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -201,27 +201,27 @@ namespace Bridge.React
 		[Template("React.createElement('article', null, {0})")]
 		public extern static ReactElement Article(string child);
 
-		[Template("React.createElement('article', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Article(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('article', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Article<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('article', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Article<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('article', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Article(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('article', {0}, {1})")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Article(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('article', {0}, {1})")]
+		[Template("React.createElement('article', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Article(Attributes properties, string child);
 
-		[Template("React.createElement('aside', {properties}, {*children})")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Aside(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('aside', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -244,27 +244,27 @@ namespace Bridge.React
 		[Template("React.createElement('aside', null, {0})")]
 		public extern static ReactElement Aside(string child);
 
-		[Template("React.createElement('aside', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Aside(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('aside', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Aside<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('aside', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Aside<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('aside', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Aside(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('aside', {0}, {1})")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Aside(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('aside', {0}, {1})")]
+		[Template("React.createElement('aside', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Aside(Attributes properties, string child);
 
-		[Template("React.createElement('audio', {properties}, {*children})")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Audio(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('audio', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -287,27 +287,27 @@ namespace Bridge.React
 		[Template("React.createElement('audio', null, {0})")]
 		public extern static ReactElement Audio(string child);
 
-		[Template("React.createElement('audio', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Audio(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('audio', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Audio<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('audio', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Audio<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('audio', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Audio(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('audio', {0}, {1})")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Audio(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('audio', {0}, {1})")]
+		[Template("React.createElement('audio', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Audio(Attributes properties, string child);
 
-		[Template("React.createElement('b', {properties}, {*children})")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement B(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('b', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -330,27 +330,27 @@ namespace Bridge.React
 		[Template("React.createElement('b', null, {0})")]
 		public extern static ReactElement B(string child);
 
-		[Template("React.createElement('b', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement B(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('b', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement B<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('b', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement B<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('b', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement B(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('b', {0}, {1})")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement B(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('b', {0}, {1})")]
+		[Template("React.createElement('b', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement B(Attributes properties, string child);
 
-		[Template("React.createElement('base', {properties}, {*children})")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Base(BaseAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('base', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -373,27 +373,27 @@ namespace Bridge.React
 		[Template("React.createElement('base', null, {0})")]
 		public extern static ReactElement Base(string child);
 
-		[Template("React.createElement('base', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Base(BaseAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('base', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Base<TProps>(BaseAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('base', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Base<TProps>(BaseAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('base', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Base(BaseAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('base', {0}, {1})")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Base(BaseAttributes properties, ReactElement child);
 
-		[Template("React.createElement('base', {0}, {1})")]
+		[Template("React.createElement('base', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Base(BaseAttributes properties, string child);
 
-		[Template("React.createElement('bdi', {properties}, {*children})")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement BDI(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('bdi', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -416,27 +416,27 @@ namespace Bridge.React
 		[Template("React.createElement('bdi', null, {0})")]
 		public extern static ReactElement BDI(string child);
 
-		[Template("React.createElement('bdi', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDI(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('bdi', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDI<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('bdi', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDI<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('bdi', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDI(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('bdi', {0}, {1})")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BDI(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('bdi', {0}, {1})")]
+		[Template("React.createElement('bdi', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BDI(Attributes properties, string child);
 
-		[Template("React.createElement('bdo', {properties}, {*children})")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement BDO(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('bdo', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -459,27 +459,27 @@ namespace Bridge.React
 		[Template("React.createElement('bdo', null, {0})")]
 		public extern static ReactElement BDO(string child);
 
-		[Template("React.createElement('bdo', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDO(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('bdo', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDO<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('bdo', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BDO<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('bdo', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BDO(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('bdo', {0}, {1})")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BDO(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('bdo', {0}, {1})")]
+		[Template("React.createElement('bdo', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BDO(Attributes properties, string child);
 
-		[Template("React.createElement('big', {properties}, {*children})")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Big(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('big', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -502,27 +502,27 @@ namespace Bridge.React
 		[Template("React.createElement('big', null, {0})")]
 		public extern static ReactElement Big(string child);
 
-		[Template("React.createElement('big', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Big(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('big', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Big<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('big', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Big<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('big', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Big(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('big', {0}, {1})")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Big(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('big', {0}, {1})")]
+		[Template("React.createElement('big', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Big(Attributes properties, string child);
 
-		[Template("React.createElement('blockquote', {properties}, {*children})")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('blockquote', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -545,27 +545,27 @@ namespace Bridge.React
 		[Template("React.createElement('blockquote', null, {0})")]
 		public extern static ReactElement BlockQuote(string child);
 
-		[Template("React.createElement('blockquote', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('blockquote', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BlockQuote<TProps>(QuoteAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('blockquote', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement BlockQuote<TProps>(QuoteAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('blockquote', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('blockquote', {0}, {1})")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, ReactElement child);
 
-		[Template("React.createElement('blockquote', {0}, {1})")]
+		[Template("React.createElement('blockquote', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement BlockQuote(QuoteAttributes properties, string child);
 
-		[Template("React.createElement('body', {properties}, {*children})")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Body(BodyAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('body', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -588,27 +588,27 @@ namespace Bridge.React
 		[Template("React.createElement('body', null, {0})")]
 		public extern static ReactElement Body(string child);
 
-		[Template("React.createElement('body', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Body(BodyAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('body', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Body<TProps>(BodyAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('body', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Body<TProps>(BodyAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('body', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Body(BodyAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('body', {0}, {1})")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Body(BodyAttributes properties, ReactElement child);
 
-		[Template("React.createElement('body', {0}, {1})")]
+		[Template("React.createElement('body', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Body(BodyAttributes properties, string child);
 
-		[Template("React.createElement('br', {properties}, {*children})")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Br(BrAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('br', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -631,27 +631,27 @@ namespace Bridge.React
 		[Template("React.createElement('br', null, {0})")]
 		public extern static ReactElement Br(string child);
 
-		[Template("React.createElement('br', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Br(BrAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('br', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Br<TProps>(BrAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('br', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Br<TProps>(BrAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('br', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Br(BrAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('br', {0}, {1})")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Br(BrAttributes properties, ReactElement child);
 
-		[Template("React.createElement('br', {0}, {1})")]
+		[Template("React.createElement('br', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Br(BrAttributes properties, string child);
 
-		[Template("React.createElement('button', {properties}, {*children})")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Button(ButtonAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('button', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -674,27 +674,27 @@ namespace Bridge.React
 		[Template("React.createElement('button', null, {0})")]
 		public extern static ReactElement Button(string child);
 
-		[Template("React.createElement('button', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Button(ButtonAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('button', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Button<TProps>(ButtonAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('button', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Button<TProps>(ButtonAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('button', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Button(ButtonAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('button', {0}, {1})")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Button(ButtonAttributes properties, ReactElement child);
 
-		[Template("React.createElement('button', {0}, {1})")]
+		[Template("React.createElement('button', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Button(ButtonAttributes properties, string child);
 
-		[Template("React.createElement('canvas', {properties}, {*children})")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('canvas', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -717,27 +717,27 @@ namespace Bridge.React
 		[Template("React.createElement('canvas', null, {0})")]
 		public extern static ReactElement Canvas(string child);
 
-		[Template("React.createElement('canvas', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('canvas', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Canvas<TProps>(CanvasAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('canvas', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Canvas<TProps>(CanvasAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('canvas', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('canvas', {0}, {1})")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, ReactElement child);
 
-		[Template("React.createElement('canvas', {0}, {1})")]
+		[Template("React.createElement('canvas', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Canvas(CanvasAttributes properties, string child);
 
-		[Template("React.createElement('caption', {properties}, {*children})")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Caption(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('caption', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -760,27 +760,27 @@ namespace Bridge.React
 		[Template("React.createElement('caption', null, {0})")]
 		public extern static ReactElement Caption(string child);
 
-		[Template("React.createElement('caption', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Caption(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('caption', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Caption<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('caption', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Caption<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('caption', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Caption(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('caption', {0}, {1})")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Caption(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('caption', {0}, {1})")]
+		[Template("React.createElement('caption', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Caption(Attributes properties, string child);
 
-		[Template("React.createElement('cite', {properties}, {*children})")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Cite(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('cite', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -803,27 +803,27 @@ namespace Bridge.React
 		[Template("React.createElement('cite', null, {0})")]
 		public extern static ReactElement Cite(string child);
 
-		[Template("React.createElement('cite', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Cite(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('cite', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Cite<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('cite', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Cite<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('cite', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Cite(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('cite', {0}, {1})")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Cite(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('cite', {0}, {1})")]
+		[Template("React.createElement('cite', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Cite(Attributes properties, string child);
 
-		[Template("React.createElement('code', {properties}, {*children})")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Code(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('code', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -846,27 +846,27 @@ namespace Bridge.React
 		[Template("React.createElement('code', null, {0})")]
 		public extern static ReactElement Code(string child);
 
-		[Template("React.createElement('code', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Code(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('code', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Code<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('code', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Code<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('code', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Code(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('code', {0}, {1})")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Code(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('code', {0}, {1})")]
+		[Template("React.createElement('code', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Code(Attributes properties, string child);
 
-		[Template("React.createElement('col', {properties}, {*children})")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Col(TableColAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('col', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -889,27 +889,27 @@ namespace Bridge.React
 		[Template("React.createElement('col', null, {0})")]
 		public extern static ReactElement Col(string child);
 
-		[Template("React.createElement('col', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Col(TableColAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('col', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Col<TProps>(TableColAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('col', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Col<TProps>(TableColAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('col', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Col(TableColAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('col', {0}, {1})")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Col(TableColAttributes properties, ReactElement child);
 
-		[Template("React.createElement('col', {0}, {1})")]
+		[Template("React.createElement('col', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Col(TableColAttributes properties, string child);
 
-		[Template("React.createElement('colgroup', {properties}, {*children})")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement ColGroup(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('colgroup', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -932,27 +932,27 @@ namespace Bridge.React
 		[Template("React.createElement('colgroup', null, {0})")]
 		public extern static ReactElement ColGroup(string child);
 
-		[Template("React.createElement('colgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement ColGroup(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('colgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement ColGroup<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('colgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement ColGroup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('colgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement ColGroup(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('colgroup', {0}, {1})")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement ColGroup(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('colgroup', {0}, {1})")]
+		[Template("React.createElement('colgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement ColGroup(Attributes properties, string child);
 
-		[Template("React.createElement('data', {properties}, {*children})")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Data(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('data', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -975,27 +975,27 @@ namespace Bridge.React
 		[Template("React.createElement('data', null, {0})")]
 		public extern static ReactElement Data(string child);
 
-		[Template("React.createElement('data', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Data(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('data', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Data<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('data', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Data<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('data', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Data(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('data', {0}, {1})")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Data(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('data', {0}, {1})")]
+		[Template("React.createElement('data', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Data(Attributes properties, string child);
 
-		[Template("React.createElement('datalist', {properties}, {*children})")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement DataList(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('datalist', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1018,27 +1018,27 @@ namespace Bridge.React
 		[Template("React.createElement('datalist', null, {0})")]
 		public extern static ReactElement DataList(string child);
 
-		[Template("React.createElement('datalist', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DataList(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('datalist', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DataList<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('datalist', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DataList<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('datalist', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DataList(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('datalist', {0}, {1})")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DataList(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('datalist', {0}, {1})")]
+		[Template("React.createElement('datalist', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DataList(Attributes properties, string child);
 
-		[Template("React.createElement('dd', {properties}, {*children})")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement DD(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('dd', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1061,27 +1061,27 @@ namespace Bridge.React
 		[Template("React.createElement('dd', null, {0})")]
 		public extern static ReactElement DD(string child);
 
-		[Template("React.createElement('dd', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DD(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dd', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DD<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dd', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DD<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('dd', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DD(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('dd', {0}, {1})")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DD(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('dd', {0}, {1})")]
+		[Template("React.createElement('dd', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DD(Attributes properties, string child);
 
-		[Template("React.createElement('del', {properties}, {*children})")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Del(DelAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('del', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1104,27 +1104,27 @@ namespace Bridge.React
 		[Template("React.createElement('del', null, {0})")]
 		public extern static ReactElement Del(string child);
 
-		[Template("React.createElement('del', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Del(DelAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('del', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Del<TProps>(DelAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('del', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Del<TProps>(DelAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('del', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Del(DelAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('del', {0}, {1})")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Del(DelAttributes properties, ReactElement child);
 
-		[Template("React.createElement('del', {0}, {1})")]
+		[Template("React.createElement('del', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Del(DelAttributes properties, string child);
 
-		[Template("React.createElement('details', {properties}, {*children})")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Details(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('details', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1147,27 +1147,27 @@ namespace Bridge.React
 		[Template("React.createElement('details', null, {0})")]
 		public extern static ReactElement Details(string child);
 
-		[Template("React.createElement('details', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Details(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('details', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Details<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('details', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Details<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('details', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Details(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('details', {0}, {1})")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Details(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('details', {0}, {1})")]
+		[Template("React.createElement('details', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Details(Attributes properties, string child);
 
-		[Template("React.createElement('dfn', {properties}, {*children})")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Dfn(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('dfn', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1190,27 +1190,27 @@ namespace Bridge.React
 		[Template("React.createElement('dfn', null, {0})")]
 		public extern static ReactElement Dfn(string child);
 
-		[Template("React.createElement('dfn', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dfn(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dfn', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dfn<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dfn', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dfn<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('dfn', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dfn(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('dfn', {0}, {1})")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Dfn(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('dfn', {0}, {1})")]
+		[Template("React.createElement('dfn', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Dfn(Attributes properties, string child);
 
-		[Template("React.createElement('dialog', {properties}, {*children})")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Dialog(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('dialog', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1233,27 +1233,27 @@ namespace Bridge.React
 		[Template("React.createElement('dialog', null, {0})")]
 		public extern static ReactElement Dialog(string child);
 
-		[Template("React.createElement('dialog', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dialog(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dialog', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dialog<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dialog', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Dialog<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('dialog', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Dialog(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('dialog', {0}, {1})")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Dialog(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('dialog', {0}, {1})")]
+		[Template("React.createElement('dialog', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Dialog(Attributes properties, string child);
 
-		[Template("React.createElement('div', {properties}, {*children})")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Div(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('div', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1276,27 +1276,27 @@ namespace Bridge.React
 		[Template("React.createElement('div', null, {0})")]
 		public extern static ReactElement Div(string child);
 
-		[Template("React.createElement('div', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Div(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('div', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Div<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('div', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Div<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('div', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Div(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('div', {0}, {1})")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Div(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('div', {0}, {1})")]
+		[Template("React.createElement('div', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Div(Attributes properties, string child);
 
-		[Template("React.createElement('dl', {properties}, {*children})")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement DL(DListAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('dl', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1319,27 +1319,27 @@ namespace Bridge.React
 		[Template("React.createElement('dl', null, {0})")]
 		public extern static ReactElement DL(string child);
 
-		[Template("React.createElement('dl', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DL(DListAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dl', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DL<TProps>(DListAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dl', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DL<TProps>(DListAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('dl', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DL(DListAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('dl', {0}, {1})")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DL(DListAttributes properties, ReactElement child);
 
-		[Template("React.createElement('dl', {0}, {1})")]
+		[Template("React.createElement('dl', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DL(DListAttributes properties, string child);
 
-		[Template("React.createElement('dt', {properties}, {*children})")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement DT(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('dt', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1362,27 +1362,27 @@ namespace Bridge.React
 		[Template("React.createElement('dt', null, {0})")]
 		public extern static ReactElement DT(string child);
 
-		[Template("React.createElement('dt', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DT(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dt', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DT<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('dt', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement DT<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('dt', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement DT(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('dt', {0}, {1})")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DT(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('dt', {0}, {1})")]
+		[Template("React.createElement('dt', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement DT(Attributes properties, string child);
 
-		[Template("React.createElement('em', {properties}, {*children})")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Em(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('em', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1405,27 +1405,27 @@ namespace Bridge.React
 		[Template("React.createElement('em', null, {0})")]
 		public extern static ReactElement Em(string child);
 
-		[Template("React.createElement('em', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Em(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('em', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Em<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('em', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Em<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('em', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Em(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('em', {0}, {1})")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Em(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('em', {0}, {1})")]
+		[Template("React.createElement('em', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Em(Attributes properties, string child);
 
-		[Template("React.createElement('embed', {properties}, {*children})")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Embed(EmbedAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('embed', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1448,27 +1448,27 @@ namespace Bridge.React
 		[Template("React.createElement('embed', null, {0})")]
 		public extern static ReactElement Embed(string child);
 
-		[Template("React.createElement('embed', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Embed(EmbedAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('embed', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Embed<TProps>(EmbedAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('embed', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Embed<TProps>(EmbedAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('embed', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Embed(EmbedAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('embed', {0}, {1})")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Embed(EmbedAttributes properties, ReactElement child);
 
-		[Template("React.createElement('embed', {0}, {1})")]
+		[Template("React.createElement('embed', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Embed(EmbedAttributes properties, string child);
 
-		[Template("React.createElement('fieldset', {properties}, {*children})")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('fieldset', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1491,27 +1491,27 @@ namespace Bridge.React
 		[Template("React.createElement('fieldset', null, {0})")]
 		public extern static ReactElement FieldSet(string child);
 
-		[Template("React.createElement('fieldset', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('fieldset', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FieldSet<TProps>(FieldSetAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('fieldset', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FieldSet<TProps>(FieldSetAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('fieldset', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('fieldset', {0}, {1})")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, ReactElement child);
 
-		[Template("React.createElement('fieldset', {0}, {1})")]
+		[Template("React.createElement('fieldset', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement FieldSet(FieldSetAttributes properties, string child);
 
-		[Template("React.createElement('figcaption', {properties}, {*children})")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement FigCaption(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('figcaption', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1534,27 +1534,27 @@ namespace Bridge.React
 		[Template("React.createElement('figcaption', null, {0})")]
 		public extern static ReactElement FigCaption(string child);
 
-		[Template("React.createElement('figcaption', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FigCaption(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('figcaption', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FigCaption<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('figcaption', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement FigCaption<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('figcaption', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement FigCaption(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('figcaption', {0}, {1})")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement FigCaption(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('figcaption', {0}, {1})")]
+		[Template("React.createElement('figcaption', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement FigCaption(Attributes properties, string child);
 
-		[Template("React.createElement('figure', {properties}, {*children})")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Figure(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('figure', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1577,27 +1577,27 @@ namespace Bridge.React
 		[Template("React.createElement('figure', null, {0})")]
 		public extern static ReactElement Figure(string child);
 
-		[Template("React.createElement('figure', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Figure(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('figure', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Figure<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('figure', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Figure<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('figure', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Figure(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('figure', {0}, {1})")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Figure(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('figure', {0}, {1})")]
+		[Template("React.createElement('figure', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Figure(Attributes properties, string child);
 
-		[Template("React.createElement('footer', {properties}, {*children})")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Footer(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('footer', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1620,27 +1620,27 @@ namespace Bridge.React
 		[Template("React.createElement('footer', null, {0})")]
 		public extern static ReactElement Footer(string child);
 
-		[Template("React.createElement('footer', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Footer(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('footer', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Footer<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('footer', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Footer<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('footer', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Footer(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('footer', {0}, {1})")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Footer(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('footer', {0}, {1})")]
+		[Template("React.createElement('footer', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Footer(Attributes properties, string child);
 
-		[Template("React.createElement('form', {properties}, {*children})")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Form(FormAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('form', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1663,27 +1663,27 @@ namespace Bridge.React
 		[Template("React.createElement('form', null, {0})")]
 		public extern static ReactElement Form(string child);
 
-		[Template("React.createElement('form', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Form(FormAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('form', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Form<TProps>(FormAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('form', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Form<TProps>(FormAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('form', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Form(FormAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('form', {0}, {1})")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Form(FormAttributes properties, ReactElement child);
 
-		[Template("React.createElement('form', {0}, {1})")]
+		[Template("React.createElement('form', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Form(FormAttributes properties, string child);
 
-		[Template("React.createElement('h1', {properties}, {*children})")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H1(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h1', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1706,27 +1706,27 @@ namespace Bridge.React
 		[Template("React.createElement('h1', null, {0})")]
 		public extern static ReactElement H1(string child);
 
-		[Template("React.createElement('h1', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H1(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h1', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H1<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h1', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H1<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h1', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H1(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h1', {0}, {1})")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H1(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h1', {0}, {1})")]
+		[Template("React.createElement('h1', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H1(Attributes properties, string child);
 
-		[Template("React.createElement('h2', {properties}, {*children})")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H2(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h2', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1749,27 +1749,27 @@ namespace Bridge.React
 		[Template("React.createElement('h2', null, {0})")]
 		public extern static ReactElement H2(string child);
 
-		[Template("React.createElement('h2', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H2(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h2', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H2<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h2', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H2<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h2', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H2(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h2', {0}, {1})")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H2(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h2', {0}, {1})")]
+		[Template("React.createElement('h2', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H2(Attributes properties, string child);
 
-		[Template("React.createElement('h3', {properties}, {*children})")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H3(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h3', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1792,27 +1792,27 @@ namespace Bridge.React
 		[Template("React.createElement('h3', null, {0})")]
 		public extern static ReactElement H3(string child);
 
-		[Template("React.createElement('h3', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H3(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h3', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H3<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h3', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H3<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h3', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H3(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h3', {0}, {1})")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H3(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h3', {0}, {1})")]
+		[Template("React.createElement('h3', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H3(Attributes properties, string child);
 
-		[Template("React.createElement('h4', {properties}, {*children})")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H4(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h4', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1835,27 +1835,27 @@ namespace Bridge.React
 		[Template("React.createElement('h4', null, {0})")]
 		public extern static ReactElement H4(string child);
 
-		[Template("React.createElement('h4', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H4(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h4', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H4<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h4', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H4<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h4', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H4(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h4', {0}, {1})")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H4(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h4', {0}, {1})")]
+		[Template("React.createElement('h4', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H4(Attributes properties, string child);
 
-		[Template("React.createElement('h5', {properties}, {*children})")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H5(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h5', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1878,27 +1878,27 @@ namespace Bridge.React
 		[Template("React.createElement('h5', null, {0})")]
 		public extern static ReactElement H5(string child);
 
-		[Template("React.createElement('h5', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H5(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h5', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H5<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h5', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H5<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h5', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H5(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h5', {0}, {1})")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H5(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h5', {0}, {1})")]
+		[Template("React.createElement('h5', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H5(Attributes properties, string child);
 
-		[Template("React.createElement('h6', {properties}, {*children})")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement H6(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('h6', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1921,27 +1921,27 @@ namespace Bridge.React
 		[Template("React.createElement('h6', null, {0})")]
 		public extern static ReactElement H6(string child);
 
-		[Template("React.createElement('h6', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H6(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h6', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H6<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('h6', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement H6<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('h6', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement H6(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('h6', {0}, {1})")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H6(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('h6', {0}, {1})")]
+		[Template("React.createElement('h6', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement H6(Attributes properties, string child);
 
-		[Template("React.createElement('head', {properties}, {*children})")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Head(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('head', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -1964,27 +1964,27 @@ namespace Bridge.React
 		[Template("React.createElement('head', null, {0})")]
 		public extern static ReactElement Head(string child);
 
-		[Template("React.createElement('head', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Head(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('head', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Head<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('head', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Head<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('head', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Head(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('head', {0}, {1})")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Head(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('head', {0}, {1})")]
+		[Template("React.createElement('head', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Head(Attributes properties, string child);
 
-		[Template("React.createElement('header', {properties}, {*children})")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Header(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('header', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2007,27 +2007,27 @@ namespace Bridge.React
 		[Template("React.createElement('header', null, {0})")]
 		public extern static ReactElement Header(string child);
 
-		[Template("React.createElement('header', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Header(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('header', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Header<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('header', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Header<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('header', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Header(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('header', {0}, {1})")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Header(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('header', {0}, {1})")]
+		[Template("React.createElement('header', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Header(Attributes properties, string child);
 
-		[Template("React.createElement('hgroup', {properties}, {*children})")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement HGroup(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('hgroup', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2050,27 +2050,27 @@ namespace Bridge.React
 		[Template("React.createElement('hgroup', null, {0})")]
 		public extern static ReactElement HGroup(string child);
 
-		[Template("React.createElement('hgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement HGroup(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('hgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement HGroup<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('hgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement HGroup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('hgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement HGroup(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('hgroup', {0}, {1})")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement HGroup(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('hgroup', {0}, {1})")]
+		[Template("React.createElement('hgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement HGroup(Attributes properties, string child);
 
-		[Template("React.createElement('hr', {properties}, {*children})")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Hr(HRAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('hr', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2093,27 +2093,27 @@ namespace Bridge.React
 		[Template("React.createElement('hr', null, {0})")]
 		public extern static ReactElement Hr(string child);
 
-		[Template("React.createElement('hr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Hr(HRAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('hr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Hr<TProps>(HRAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('hr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Hr<TProps>(HRAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('hr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Hr(HRAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('hr', {0}, {1})")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Hr(HRAttributes properties, ReactElement child);
 
-		[Template("React.createElement('hr', {0}, {1})")]
+		[Template("React.createElement('hr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Hr(HRAttributes properties, string child);
 
-		[Template("React.createElement('html', {properties}, {*children})")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Html(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('html', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2136,27 +2136,27 @@ namespace Bridge.React
 		[Template("React.createElement('html', null, {0})")]
 		public extern static ReactElement Html(string child);
 
-		[Template("React.createElement('html', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Html(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('html', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Html<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('html', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Html<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('html', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Html(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('html', {0}, {1})")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Html(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('html', {0}, {1})")]
+		[Template("React.createElement('html', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Html(Attributes properties, string child);
 
-		[Template("React.createElement('i', {properties}, {*children})")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement I(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('i', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2179,27 +2179,27 @@ namespace Bridge.React
 		[Template("React.createElement('i', null, {0})")]
 		public extern static ReactElement I(string child);
 
-		[Template("React.createElement('i', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement I(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('i', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement I<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('i', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement I<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('i', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement I(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('i', {0}, {1})")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement I(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('i', {0}, {1})")]
+		[Template("React.createElement('i', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement I(Attributes properties, string child);
 
-		[Template("React.createElement('iframe', {properties}, {*children})")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('iframe', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2222,27 +2222,27 @@ namespace Bridge.React
 		[Template("React.createElement('iframe', null, {0})")]
 		public extern static ReactElement IFrame(string child);
 
-		[Template("React.createElement('iframe', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('iframe', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement IFrame<TProps>(IFrameAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('iframe', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement IFrame<TProps>(IFrameAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('iframe', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('iframe', {0}, {1})")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, ReactElement child);
 
-		[Template("React.createElement('iframe', {0}, {1})")]
+		[Template("React.createElement('iframe', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement IFrame(IFrameAttributes properties, string child);
 
-		[Template("React.createElement('img', {properties}, {*children})")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Img(ImageAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('img', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2265,30 +2265,30 @@ namespace Bridge.React
 		[Template("React.createElement('img', null, {0})")]
 		public extern static ReactElement Img(string child);
 
-		[Template("React.createElement('img', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Img(ImageAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('img', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Img<TProps>(ImageAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('img', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Img<TProps>(ImageAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('img', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Img(ImageAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('img', {0}, {1})")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Img(ImageAttributes properties, ReactElement child);
 
-		[Template("React.createElement('img', {0}, {1})")]
+		[Template("React.createElement('img', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Img(ImageAttributes properties, string child);
 
-		[Template("React.createElement('input', {properties})")]
+		[Template("React.createElement('input', Bridge.React.fixAttr({properties}))")]
 		public extern static ReactElement Input(InputAttributes properties);
 
-		[Template("React.createElement('ins', {properties}, {*children})")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Ins(InsAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('ins', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2311,27 +2311,27 @@ namespace Bridge.React
 		[Template("React.createElement('ins', null, {0})")]
 		public extern static ReactElement Ins(string child);
 
-		[Template("React.createElement('ins', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ins(InsAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ins', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ins<TProps>(InsAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ins', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ins<TProps>(InsAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('ins', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ins(InsAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('ins', {0}, {1})")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Ins(InsAttributes properties, ReactElement child);
 
-		[Template("React.createElement('ins', {0}, {1})")]
+		[Template("React.createElement('ins', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Ins(InsAttributes properties, string child);
 
-		[Template("React.createElement('kbd', {properties}, {*children})")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Kbd(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('kbd', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2354,27 +2354,27 @@ namespace Bridge.React
 		[Template("React.createElement('kbd', null, {0})")]
 		public extern static ReactElement Kbd(string child);
 
-		[Template("React.createElement('kbd', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Kbd(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('kbd', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Kbd<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('kbd', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Kbd<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('kbd', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Kbd(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('kbd', {0}, {1})")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Kbd(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('kbd', {0}, {1})")]
+		[Template("React.createElement('kbd', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Kbd(Attributes properties, string child);
 
-		[Template("React.createElement('keygen', {properties}, {*children})")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('keygen', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2397,27 +2397,27 @@ namespace Bridge.React
 		[Template("React.createElement('keygen', null, {0})")]
 		public extern static ReactElement Keygen(string child);
 
-		[Template("React.createElement('keygen', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('keygen', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Keygen<TProps>(KeygenAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('keygen', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Keygen<TProps>(KeygenAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('keygen', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('keygen', {0}, {1})")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, ReactElement child);
 
-		[Template("React.createElement('keygen', {0}, {1})")]
+		[Template("React.createElement('keygen', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Keygen(KeygenAttributes properties, string child);
 
-		[Template("React.createElement('label', {properties}, {*children})")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Label(LabelAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('label', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2440,27 +2440,27 @@ namespace Bridge.React
 		[Template("React.createElement('label', null, {0})")]
 		public extern static ReactElement Label(string child);
 
-		[Template("React.createElement('label', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Label(LabelAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('label', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Label<TProps>(LabelAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('label', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Label<TProps>(LabelAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('label', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Label(LabelAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('label', {0}, {1})")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Label(LabelAttributes properties, ReactElement child);
 
-		[Template("React.createElement('label', {0}, {1})")]
+		[Template("React.createElement('label', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Label(LabelAttributes properties, string child);
 
-		[Template("React.createElement('legend', {properties}, {*children})")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Legend(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('legend', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2483,27 +2483,27 @@ namespace Bridge.React
 		[Template("React.createElement('legend', null, {0})")]
 		public extern static ReactElement Legend(string child);
 
-		[Template("React.createElement('legend', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Legend(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('legend', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Legend<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('legend', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Legend<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('legend', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Legend(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('legend', {0}, {1})")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Legend(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('legend', {0}, {1})")]
+		[Template("React.createElement('legend', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Legend(Attributes properties, string child);
 
-		[Template("React.createElement('li', {properties}, {*children})")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Li(LIAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('li', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2526,27 +2526,27 @@ namespace Bridge.React
 		[Template("React.createElement('li', null, {0})")]
 		public extern static ReactElement Li(string child);
 
-		[Template("React.createElement('li', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Li(LIAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('li', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Li<TProps>(LIAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('li', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Li<TProps>(LIAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('li', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Li(LIAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('li', {0}, {1})")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Li(LIAttributes properties, ReactElement child);
 
-		[Template("React.createElement('li', {0}, {1})")]
+		[Template("React.createElement('li', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Li(LIAttributes properties, string child);
 
-		[Template("React.createElement('link', {properties}, {*children})")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Link(LinkAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('link', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2569,28 +2569,28 @@ namespace Bridge.React
 		[Template("React.createElement('link', null, {0})")]
 		public extern static ReactElement Link(string child);
 
-		[Template("React.createElement('link', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Link(LinkAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('link', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Link<TProps>(LinkAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('link', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Link<TProps>(LinkAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('link', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Link(LinkAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('link', {0}, {1})")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Link(LinkAttributes properties, ReactElement child);
 
-		[Template("React.createElement('link', {0}, {1})")]
+		[Template("React.createElement('link', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Link(LinkAttributes properties, string child);
 
 #pragma warning disable 28 // Disable warning CS0028: 'Bridge.React.DOM.Main(Bridge.React.Attributes, params Bridge.React.Union<ReactElement, string>[])' has the wrong signature to be an entry point
-		[Template("React.createElement('main', {properties}, {*children})")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Main(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('main', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2613,28 +2613,28 @@ namespace Bridge.React
 		[Template("React.createElement('main', null, {0})")]
 		public extern static ReactElement Main(string child);
 
-		[Template("React.createElement('main', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Main(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('main', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Main<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('main', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Main<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('main', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Main(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('main', {0}, {1})")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Main(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('main', {0}, {1})")]
+		[Template("React.createElement('main', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Main(Attributes properties, string child);
 #pragma warning restore 28
 
-		[Template("React.createElement('map', {properties}, {*children})")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Map(MapAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('map', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2657,27 +2657,27 @@ namespace Bridge.React
 		[Template("React.createElement('map', null, {0})")]
 		public extern static ReactElement Map(string child);
 
-		[Template("React.createElement('map', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Map(MapAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('map', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Map<TProps>(MapAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('map', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Map<TProps>(MapAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('map', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Map(MapAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('map', {0}, {1})")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Map(MapAttributes properties, ReactElement child);
 
-		[Template("React.createElement('map', {0}, {1})")]
+		[Template("React.createElement('map', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Map(MapAttributes properties, string child);
 
-		[Template("React.createElement('mark', {properties}, {*children})")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Mark(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('mark', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2700,27 +2700,27 @@ namespace Bridge.React
 		[Template("React.createElement('mark', null, {0})")]
 		public extern static ReactElement Mark(string child);
 
-		[Template("React.createElement('mark', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Mark(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('mark', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Mark<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('mark', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Mark<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('mark', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Mark(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('mark', {0}, {1})")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Mark(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('mark', {0}, {1})")]
+		[Template("React.createElement('mark', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Mark(Attributes properties, string child);
 
-		[Template("React.createElement('menu', {properties}, {*children})")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Menu(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('menu', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2743,27 +2743,27 @@ namespace Bridge.React
 		[Template("React.createElement('menu', null, {0})")]
 		public extern static ReactElement Menu(string child);
 
-		[Template("React.createElement('menu', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Menu(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('menu', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Menu<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('menu', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Menu<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('menu', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Menu(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('menu', {0}, {1})")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Menu(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('menu', {0}, {1})")]
+		[Template("React.createElement('menu', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Menu(Attributes properties, string child);
 
-		[Template("React.createElement('menuitem', {properties}, {*children})")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement MenuItem(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('menuitem', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2786,27 +2786,27 @@ namespace Bridge.React
 		[Template("React.createElement('menuitem', null, {0})")]
 		public extern static ReactElement MenuItem(string child);
 
-		[Template("React.createElement('menuitem', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement MenuItem(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('menuitem', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement MenuItem<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('menuitem', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement MenuItem<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('menuitem', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement MenuItem(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('menuitem', {0}, {1})")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement MenuItem(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('menuitem', {0}, {1})")]
+		[Template("React.createElement('menuitem', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement MenuItem(Attributes properties, string child);
 
-		[Template("React.createElement('meta', {properties}, {*children})")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Meta(MetaAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('meta', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2829,27 +2829,27 @@ namespace Bridge.React
 		[Template("React.createElement('meta', null, {0})")]
 		public extern static ReactElement Meta(string child);
 
-		[Template("React.createElement('meta', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meta(MetaAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('meta', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meta<TProps>(MetaAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('meta', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meta<TProps>(MetaAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('meta', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meta(MetaAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('meta', {0}, {1})")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Meta(MetaAttributes properties, ReactElement child);
 
-		[Template("React.createElement('meta', {0}, {1})")]
+		[Template("React.createElement('meta', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Meta(MetaAttributes properties, string child);
 
-		[Template("React.createElement('meter', {properties}, {*children})")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Meter(MeterAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('meter', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2872,27 +2872,27 @@ namespace Bridge.React
 		[Template("React.createElement('meter', null, {0})")]
 		public extern static ReactElement Meter(string child);
 
-		[Template("React.createElement('meter', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meter(MeterAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('meter', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meter<TProps>(MeterAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('meter', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Meter<TProps>(MeterAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('meter', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Meter(MeterAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('meter', {0}, {1})")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Meter(MeterAttributes properties, ReactElement child);
 
-		[Template("React.createElement('meter', {0}, {1})")]
+		[Template("React.createElement('meter', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Meter(MeterAttributes properties, string child);
 
-		[Template("React.createElement('nav', {properties}, {*children})")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Nav(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('nav', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2915,27 +2915,27 @@ namespace Bridge.React
 		[Template("React.createElement('nav', null, {0})")]
 		public extern static ReactElement Nav(string child);
 
-		[Template("React.createElement('nav', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Nav(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('nav', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Nav<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('nav', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Nav<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('nav', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Nav(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('nav', {0}, {1})")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Nav(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('nav', {0}, {1})")]
+		[Template("React.createElement('nav', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Nav(Attributes properties, string child);
 
-		[Template("React.createElement('noscript', {properties}, {*children})")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement NoScript(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('noscript', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -2958,27 +2958,27 @@ namespace Bridge.React
 		[Template("React.createElement('noscript', null, {0})")]
 		public extern static ReactElement NoScript(string child);
 
-		[Template("React.createElement('noscript', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement NoScript(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('noscript', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement NoScript<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('noscript', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement NoScript<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('noscript', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement NoScript(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('noscript', {0}, {1})")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement NoScript(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('noscript', {0}, {1})")]
+		[Template("React.createElement('noscript', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement NoScript(Attributes properties, string child);
 
-		[Template("React.createElement('object', {properties}, {*children})")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Object(ObjectAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('object', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3001,27 +3001,27 @@ namespace Bridge.React
 		[Template("React.createElement('object', null, {0})")]
 		public extern static ReactElement Object(string child);
 
-		[Template("React.createElement('object', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Object(ObjectAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('object', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Object<TProps>(ObjectAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('object', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Object<TProps>(ObjectAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('object', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Object(ObjectAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('object', {0}, {1})")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Object(ObjectAttributes properties, ReactElement child);
 
-		[Template("React.createElement('object', {0}, {1})")]
+		[Template("React.createElement('object', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Object(ObjectAttributes properties, string child);
 
-		[Template("React.createElement('ol', {properties}, {*children})")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement OL(OListAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('ol', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3044,27 +3044,27 @@ namespace Bridge.React
 		[Template("React.createElement('ol', null, {0})")]
 		public extern static ReactElement OL(string child);
 
-		[Template("React.createElement('ol', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OL(OListAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ol', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OL<TProps>(OListAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ol', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OL<TProps>(OListAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('ol', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OL(OListAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('ol', {0}, {1})")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement OL(OListAttributes properties, ReactElement child);
 
-		[Template("React.createElement('ol', {0}, {1})")]
+		[Template("React.createElement('ol', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement OL(OListAttributes properties, string child);
 
-		[Template("React.createElement('optgroup', {properties}, {*children})")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('optgroup', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3087,27 +3087,27 @@ namespace Bridge.React
 		[Template("React.createElement('optgroup', null, {0})")]
 		public extern static ReactElement OptGroup(string child);
 
-		[Template("React.createElement('optgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('optgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OptGroup<TProps>(OptGroupAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('optgroup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement OptGroup<TProps>(OptGroupAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('optgroup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('optgroup', {0}, {1})")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, ReactElement child);
 
-		[Template("React.createElement('optgroup', {0}, {1})")]
+		[Template("React.createElement('optgroup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement OptGroup(OptGroupAttributes properties, string child);
 
-		[Template("React.createElement('option', {properties}, {*children})")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Option(OptionAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('option', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3130,27 +3130,27 @@ namespace Bridge.React
 		[Template("React.createElement('option', null, {0})")]
 		public extern static ReactElement Option(string child);
 
-		[Template("React.createElement('option', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Option(OptionAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('option', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Option<TProps>(OptionAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('option', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Option<TProps>(OptionAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('option', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Option(OptionAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('option', {0}, {1})")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Option(OptionAttributes properties, ReactElement child);
 
-		[Template("React.createElement('option', {0}, {1})")]
+		[Template("React.createElement('option', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Option(OptionAttributes properties, string child);
 
-		[Template("React.createElement('output', {properties}, {*children})")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Output(OutputAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('output', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3173,27 +3173,27 @@ namespace Bridge.React
 		[Template("React.createElement('output', null, {0})")]
 		public extern static ReactElement Output(string child);
 
-		[Template("React.createElement('output', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Output(OutputAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('output', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Output<TProps>(OutputAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('output', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Output<TProps>(OutputAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('output', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Output(OutputAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('output', {0}, {1})")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Output(OutputAttributes properties, ReactElement child);
 
-		[Template("React.createElement('output', {0}, {1})")]
+		[Template("React.createElement('output', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Output(OutputAttributes properties, string child);
 
-		[Template("React.createElement('p', {properties}, {*children})")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement P(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('p', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3216,27 +3216,27 @@ namespace Bridge.React
 		[Template("React.createElement('p', null, {0})")]
 		public extern static ReactElement P(string child);
 
-		[Template("React.createElement('p', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement P(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('p', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement P<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('p', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement P<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('p', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement P(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('p', {0}, {1})")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement P(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('p', {0}, {1})")]
+		[Template("React.createElement('p', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement P(Attributes properties, string child);
 
-		[Template("React.createElement('param', {properties}, {*children})")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Param(ParamAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('param', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3259,27 +3259,27 @@ namespace Bridge.React
 		[Template("React.createElement('param', null, {0})")]
 		public extern static ReactElement Param(string child);
 
-		[Template("React.createElement('param', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Param(ParamAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('param', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Param<TProps>(ParamAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('param', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Param<TProps>(ParamAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('param', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Param(ParamAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('param', {0}, {1})")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Param(ParamAttributes properties, ReactElement child);
 
-		[Template("React.createElement('param', {0}, {1})")]
+		[Template("React.createElement('param', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Param(ParamAttributes properties, string child);
 
-		[Template("React.createElement('picture', {properties}, {*children})")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Picture(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('picture', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3302,27 +3302,27 @@ namespace Bridge.React
 		[Template("React.createElement('picture', null, {0})")]
 		public extern static ReactElement Picture(string child);
 
-		[Template("React.createElement('picture', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Picture(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('picture', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Picture<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('picture', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Picture<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('picture', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Picture(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('picture', {0}, {1})")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Picture(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('picture', {0}, {1})")]
+		[Template("React.createElement('picture', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Picture(Attributes properties, string child);
 
-		[Template("React.createElement('pre', {properties}, {*children})")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Pre(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('pre', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3345,27 +3345,27 @@ namespace Bridge.React
 		[Template("React.createElement('pre', null, {0})")]
 		public extern static ReactElement Pre(string child);
 
-		[Template("React.createElement('pre', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Pre(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('pre', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Pre<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('pre', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Pre<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('pre', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Pre(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('pre', {0}, {1})")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Pre(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('pre', {0}, {1})")]
+		[Template("React.createElement('pre', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Pre(Attributes properties, string child);
 
-		[Template("React.createElement('progress', {properties}, {*children})")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Progress(ProgressAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('progress', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3388,27 +3388,27 @@ namespace Bridge.React
 		[Template("React.createElement('progress', null, {0})")]
 		public extern static ReactElement Progress(string child);
 
-		[Template("React.createElement('progress', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Progress(ProgressAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('progress', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Progress<TProps>(ProgressAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('progress', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Progress<TProps>(ProgressAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('progress', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Progress(ProgressAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('progress', {0}, {1})")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Progress(ProgressAttributes properties, ReactElement child);
 
-		[Template("React.createElement('progress', {0}, {1})")]
+		[Template("React.createElement('progress', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Progress(ProgressAttributes properties, string child);
 
-		[Template("React.createElement('q', {properties}, {*children})")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Q(QuoteAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('q', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3431,27 +3431,27 @@ namespace Bridge.React
 		[Template("React.createElement('q', null, {0})")]
 		public extern static ReactElement Q(string child);
 
-		[Template("React.createElement('q', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Q(QuoteAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('q', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Q<TProps>(QuoteAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('q', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Q<TProps>(QuoteAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('q', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Q(QuoteAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('q', {0}, {1})")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Q(QuoteAttributes properties, ReactElement child);
 
-		[Template("React.createElement('q', {0}, {1})")]
+		[Template("React.createElement('q', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Q(QuoteAttributes properties, string child);
 
-		[Template("React.createElement('rp', {properties}, {*children})")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement RP(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('rp', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3474,27 +3474,27 @@ namespace Bridge.React
 		[Template("React.createElement('rp', null, {0})")]
 		public extern static ReactElement RP(string child);
 
-		[Template("React.createElement('rp', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RP(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('rp', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RP<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('rp', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RP<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('rp', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RP(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('rp', {0}, {1})")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement RP(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('rp', {0}, {1})")]
+		[Template("React.createElement('rp', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement RP(Attributes properties, string child);
 
-		[Template("React.createElement('rt', {properties}, {*children})")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement RT(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('rt', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3517,27 +3517,27 @@ namespace Bridge.React
 		[Template("React.createElement('rt', null, {0})")]
 		public extern static ReactElement RT(string child);
 
-		[Template("React.createElement('rt', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RT(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('rt', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RT<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('rt', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement RT<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('rt', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement RT(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('rt', {0}, {1})")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement RT(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('rt', {0}, {1})")]
+		[Template("React.createElement('rt', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement RT(Attributes properties, string child);
 
-		[Template("React.createElement('ruby', {properties}, {*children})")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Ruby(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('ruby', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3560,27 +3560,27 @@ namespace Bridge.React
 		[Template("React.createElement('ruby', null, {0})")]
 		public extern static ReactElement Ruby(string child);
 
-		[Template("React.createElement('ruby', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ruby(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ruby', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ruby<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ruby', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Ruby<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('ruby', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Ruby(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('ruby', {0}, {1})")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Ruby(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('ruby', {0}, {1})")]
+		[Template("React.createElement('ruby', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Ruby(Attributes properties, string child);
 
-		[Template("React.createElement('s', {properties}, {*children})")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement S(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('s', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3603,27 +3603,27 @@ namespace Bridge.React
 		[Template("React.createElement('s', null, {0})")]
 		public extern static ReactElement S(string child);
 
-		[Template("React.createElement('s', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement S(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('s', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement S<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('s', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement S<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('s', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement S(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('s', {0}, {1})")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement S(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('s', {0}, {1})")]
+		[Template("React.createElement('s', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement S(Attributes properties, string child);
 
-		[Template("React.createElement('samp', {properties}, {*children})")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Samp(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('samp', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3646,27 +3646,27 @@ namespace Bridge.React
 		[Template("React.createElement('samp', null, {0})")]
 		public extern static ReactElement Samp(string child);
 
-		[Template("React.createElement('samp', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Samp(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('samp', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Samp<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('samp', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Samp<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('samp', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Samp(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('samp', {0}, {1})")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Samp(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('samp', {0}, {1})")]
+		[Template("React.createElement('samp', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Samp(Attributes properties, string child);
 
-		[Template("React.createElement('script', {properties}, {*children})")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Script(ScriptAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('script', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3689,27 +3689,27 @@ namespace Bridge.React
 		[Template("React.createElement('script', null, {0})")]
 		public extern static ReactElement Script(string child);
 
-		[Template("React.createElement('script', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Script(ScriptAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('script', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Script<TProps>(ScriptAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('script', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Script<TProps>(ScriptAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('script', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Script(ScriptAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('script', {0}, {1})")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Script(ScriptAttributes properties, ReactElement child);
 
-		[Template("React.createElement('script', {0}, {1})")]
+		[Template("React.createElement('script', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Script(ScriptAttributes properties, string child);
 
-		[Template("React.createElement('section', {properties}, {*children})")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Section(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('section', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3732,27 +3732,27 @@ namespace Bridge.React
 		[Template("React.createElement('section', null, {0})")]
 		public extern static ReactElement Section(string child);
 
-		[Template("React.createElement('section', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Section(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('section', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Section<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('section', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Section<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('section', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Section(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('section', {0}, {1})")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Section(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('section', {0}, {1})")]
+		[Template("React.createElement('section', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Section(Attributes properties, string child);
 
-		[Template("React.createElement('select', {properties}, {*children})")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Select(SelectAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('select', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3775,27 +3775,27 @@ namespace Bridge.React
 		[Template("React.createElement('select', null, {0})")]
 		public extern static ReactElement Select(string child);
 
-		[Template("React.createElement('select', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Select(SelectAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('select', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Select<TProps>(SelectAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('select', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Select<TProps>(SelectAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('select', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Select(SelectAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('select', {0}, {1})")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Select(SelectAttributes properties, ReactElement child);
 
-		[Template("React.createElement('select', {0}, {1})")]
+		[Template("React.createElement('select', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Select(SelectAttributes properties, string child);
 
-		[Template("React.createElement('small', {properties}, {*children})")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Small(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('small', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3818,27 +3818,27 @@ namespace Bridge.React
 		[Template("React.createElement('small', null, {0})")]
 		public extern static ReactElement Small(string child);
 
-		[Template("React.createElement('small', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Small(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('small', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Small<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('small', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Small<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('small', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Small(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('small', {0}, {1})")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Small(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('small', {0}, {1})")]
+		[Template("React.createElement('small', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Small(Attributes properties, string child);
 
-		[Template("React.createElement('source', {properties}, {*children})")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Source(SourceAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('source', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3861,27 +3861,27 @@ namespace Bridge.React
 		[Template("React.createElement('source', null, {0})")]
 		public extern static ReactElement Source(string child);
 
-		[Template("React.createElement('source', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Source(SourceAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('source', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Source<TProps>(SourceAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('source', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Source<TProps>(SourceAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('source', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Source(SourceAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('source', {0}, {1})")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Source(SourceAttributes properties, ReactElement child);
 
-		[Template("React.createElement('source', {0}, {1})")]
+		[Template("React.createElement('source', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Source(SourceAttributes properties, string child);
 
-		[Template("React.createElement('span', {properties}, {*children})")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Span(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('span', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3904,27 +3904,27 @@ namespace Bridge.React
 		[Template("React.createElement('span', null, {0})")]
 		public extern static ReactElement Span(string child);
 
-		[Template("React.createElement('span', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Span(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('span', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Span<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('span', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Span<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('span', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Span(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('span', {0}, {1})")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Span(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('span', {0}, {1})")]
+		[Template("React.createElement('span', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Span(Attributes properties, string child);
 
-		[Template("React.createElement('strong', {properties}, {*children})")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Strong(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('strong', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3947,27 +3947,27 @@ namespace Bridge.React
 		[Template("React.createElement('strong', null, {0})")]
 		public extern static ReactElement Strong(string child);
 
-		[Template("React.createElement('strong', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Strong(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('strong', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Strong<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('strong', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Strong<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('strong', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Strong(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('strong', {0}, {1})")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Strong(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('strong', {0}, {1})")]
+		[Template("React.createElement('strong', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Strong(Attributes properties, string child);
 
-		[Template("React.createElement('style', {properties}, {*children})")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Style(StyleAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('style', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -3990,27 +3990,27 @@ namespace Bridge.React
 		[Template("React.createElement('style', null, {0})")]
 		public extern static ReactElement Style(string child);
 
-		[Template("React.createElement('style', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Style(StyleAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('style', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Style<TProps>(StyleAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('style', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Style<TProps>(StyleAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('style', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Style(StyleAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('style', {0}, {1})")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Style(StyleAttributes properties, ReactElement child);
 
-		[Template("React.createElement('style', {0}, {1})")]
+		[Template("React.createElement('style', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Style(StyleAttributes properties, string child);
 
-		[Template("React.createElement('sub', {properties}, {*children})")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Sub(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('sub', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4033,27 +4033,27 @@ namespace Bridge.React
 		[Template("React.createElement('sub', null, {0})")]
 		public extern static ReactElement Sub(string child);
 
-		[Template("React.createElement('sub', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sub(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('sub', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sub<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('sub', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sub<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('sub', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sub(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('sub', {0}, {1})")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Sub(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('sub', {0}, {1})")]
+		[Template("React.createElement('sub', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Sub(Attributes properties, string child);
 
-		[Template("React.createElement('summary', {properties}, {*children})")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Summary(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('summary', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4076,27 +4076,27 @@ namespace Bridge.React
 		[Template("React.createElement('summary', null, {0})")]
 		public extern static ReactElement Summary(string child);
 
-		[Template("React.createElement('summary', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Summary(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('summary', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Summary<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('summary', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Summary<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('summary', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Summary(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('summary', {0}, {1})")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Summary(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('summary', {0}, {1})")]
+		[Template("React.createElement('summary', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Summary(Attributes properties, string child);
 
-		[Template("React.createElement('sup', {properties}, {*children})")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Sup(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('sup', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4119,27 +4119,27 @@ namespace Bridge.React
 		[Template("React.createElement('sup', null, {0})")]
 		public extern static ReactElement Sup(string child);
 
-		[Template("React.createElement('sup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sup(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('sup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sup<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('sup', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Sup<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('sup', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Sup(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('sup', {0}, {1})")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Sup(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('sup', {0}, {1})")]
+		[Template("React.createElement('sup', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Sup(Attributes properties, string child);
 
-		[Template("React.createElement('table', {properties}, {*children})")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Table(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('table', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4162,27 +4162,27 @@ namespace Bridge.React
 		[Template("React.createElement('table', null, {0})")]
 		public extern static ReactElement Table(string child);
 
-		[Template("React.createElement('table', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Table(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('table', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Table<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('table', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Table<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('table', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Table(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('table', {0}, {1})")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Table(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('table', {0}, {1})")]
+		[Template("React.createElement('table', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Table(Attributes properties, string child);
 
-		[Template("React.createElement('tbody', {properties}, {*children})")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement TBody(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('tbody', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4205,27 +4205,27 @@ namespace Bridge.React
 		[Template("React.createElement('tbody', null, {0})")]
 		public extern static ReactElement TBody(string child);
 
-		[Template("React.createElement('tbody', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TBody(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tbody', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TBody<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tbody', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TBody<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('tbody', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TBody(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('tbody', {0}, {1})")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TBody(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('tbody', {0}, {1})")]
+		[Template("React.createElement('tbody', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TBody(Attributes properties, string child);
 
-		[Template("React.createElement('td', {properties}, {*children})")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement TD(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('td', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4248,30 +4248,30 @@ namespace Bridge.React
 		[Template("React.createElement('td', null, {0})")]
 		public extern static ReactElement TD(string child);
 
-		[Template("React.createElement('td', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TD(TableCellAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('td', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TD<TProps>(TableCellAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('td', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TD<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('td', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TD(TableCellAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('td', {0}, {1})")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TD(TableCellAttributes properties, ReactElement child);
 
-		[Template("React.createElement('td', {0}, {1})")]
+		[Template("React.createElement('td', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TD(TableCellAttributes properties, string child);
 
 		/// <summary>
 		/// A TextArea's contents should be set using the Value property, rather than children (React includes a warning if TextArea contents are set using children and so this is not allowed with these bindings)
 		/// </summary>
-		[Template("React.createElement('textarea', {properties})")]
+		[Template("React.createElement('textarea', Bridge.React.fixAttr({properties}))")]
 		public extern static ReactElement TextArea(TextAreaAttributes properties);
 
 		/// <summary>
@@ -4281,7 +4281,7 @@ namespace Bridge.React
 		[Template("React.createElement('textarea', null)")]
 		public extern static ReactElement TextArea();
 
-		[Template("React.createElement('tfoot', {properties}, {*children})")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement TFoot(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('tfoot', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4304,27 +4304,27 @@ namespace Bridge.React
 		[Template("React.createElement('tfoot', null, {0})")]
 		public extern static ReactElement TFoot(string child);
 
-		[Template("React.createElement('tfoot', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TFoot(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tfoot', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TFoot<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tfoot', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TFoot<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('tfoot', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TFoot(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('tfoot', {0}, {1})")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TFoot(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('tfoot', {0}, {1})")]
+		[Template("React.createElement('tfoot', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TFoot(Attributes properties, string child);
 
-		[Template("React.createElement('th', {properties}, {*children})")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement TH(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('th', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4347,27 +4347,27 @@ namespace Bridge.React
 		[Template("React.createElement('th', null, {0})")]
 		public extern static ReactElement TH(string child);
 
-		[Template("React.createElement('th', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TH(TableCellAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('th', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TH<TProps>(TableCellAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('th', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TH<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('th', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TH(TableCellAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('th', {0}, {1})")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TH(TableCellAttributes properties, ReactElement child);
 
-		[Template("React.createElement('th', {0}, {1})")]
+		[Template("React.createElement('th', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TH(TableCellAttributes properties, string child);
 
-		[Template("React.createElement('thead', {properties}, {*children})")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement THead(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('thead', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4390,27 +4390,27 @@ namespace Bridge.React
 		[Template("React.createElement('thead', null, {0})")]
 		public extern static ReactElement THead(string child);
 
-		[Template("React.createElement('thead', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement THead(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('thead', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement THead<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('thead', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement THead<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('thead', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement THead(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('thead', {0}, {1})")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement THead(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('thead', {0}, {1})")]
+		[Template("React.createElement('thead', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement THead(Attributes properties, string child);
 
-		[Template("React.createElement('time', {properties}, {*children})")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Time(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('time', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4433,27 +4433,27 @@ namespace Bridge.React
 		[Template("React.createElement('time', null, {0})")]
 		public extern static ReactElement Time(string child);
 
-		[Template("React.createElement('time', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Time(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('time', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Time<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('time', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Time<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('time', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Time(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('time', {0}, {1})")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Time(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('time', {0}, {1})")]
+		[Template("React.createElement('time', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Time(Attributes properties, string child);
 
-		[Template("React.createElement('title', {properties}, {*children})")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Title(TitleAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('title', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4476,27 +4476,27 @@ namespace Bridge.React
 		[Template("React.createElement('title', null, {0})")]
 		public extern static ReactElement Title(string child);
 
-		[Template("React.createElement('title', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Title(TitleAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('title', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Title<TProps>(TitleAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('title', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Title<TProps>(TitleAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('title', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Title(TitleAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('title', {0}, {1})")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Title(TitleAttributes properties, ReactElement child);
 
-		[Template("React.createElement('title', {0}, {1})")]
+		[Template("React.createElement('title', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Title(TitleAttributes properties, string child);
 
-		[Template("React.createElement('tr', {properties}, {*children})")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement TR(TableCellAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('tr', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4519,27 +4519,27 @@ namespace Bridge.React
 		[Template("React.createElement('tr', null, {0})")]
 		public extern static ReactElement TR(string child);
 
-		[Template("React.createElement('tr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TR(TableCellAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TR<TProps>(TableCellAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('tr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement TR<TProps>(TableCellAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('tr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement TR(TableCellAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('tr', {0}, {1})")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TR(TableCellAttributes properties, ReactElement child);
 
-		[Template("React.createElement('tr', {0}, {1})")]
+		[Template("React.createElement('tr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement TR(TableCellAttributes properties, string child);
 
-		[Template("React.createElement('track', {properties}, {*children})")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Track(TrackAttributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('track', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4562,27 +4562,27 @@ namespace Bridge.React
 		[Template("React.createElement('track', null, {0})")]
 		public extern static ReactElement Track(string child);
 
-		[Template("React.createElement('track', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Track(TrackAttributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('track', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Track<TProps>(TrackAttributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('track', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Track<TProps>(TrackAttributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('track', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Track(TrackAttributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('track', {0}, {1})")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Track(TrackAttributes properties, ReactElement child);
 
-		[Template("React.createElement('track', {0}, {1})")]
+		[Template("React.createElement('track', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Track(TrackAttributes properties, string child);
 
-		[Template("React.createElement('u', {properties}, {*children})")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement U(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('u', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4605,27 +4605,27 @@ namespace Bridge.React
 		[Template("React.createElement('u', null, {0})")]
 		public extern static ReactElement U(string child);
 
-		[Template("React.createElement('u', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement U(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('u', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement U<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('u', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement U<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('u', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement U(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('u', {0}, {1})")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement U(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('u', {0}, {1})")]
+		[Template("React.createElement('u', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement U(Attributes properties, string child);
 
-		[Template("React.createElement('ul', {properties}, {*children})")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement UL(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('ul', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4648,27 +4648,27 @@ namespace Bridge.React
 		[Template("React.createElement('ul', null, {0})")]
 		public extern static ReactElement UL(string child);
 
-		[Template("React.createElement('ul', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement UL(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ul', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement UL<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('ul', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement UL<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('ul', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement UL(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('ul', {0}, {1})")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement UL(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('ul', {0}, {1})")]
+		[Template("React.createElement('ul', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement UL(Attributes properties, string child);
 
-		[Template("React.createElement('Var', {properties}, {*children})")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Var(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('Var', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4691,27 +4691,27 @@ namespace Bridge.React
 		[Template("React.createElement('Var', null, {0})")]
 		public extern static ReactElement Var(string child);
 
-		[Template("React.createElement('Var', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Var(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('Var', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Var<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('Var', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Var<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('Var', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Var(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('Var', {0}, {1})")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Var(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('Var', {0}, {1})")]
+		[Template("React.createElement('Var', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Var(Attributes properties, string child);
 
-		[Template("React.createElement('video', {properties}, {*children})")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement Video(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('video', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4734,27 +4734,27 @@ namespace Bridge.React
 		[Template("React.createElement('video', null, {0})")]
 		public extern static ReactElement Video(string child);
 
-		[Template("React.createElement('video', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Video(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('video', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Video<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('video', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement Video<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('video', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement Video(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('video', {0}, {1})")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Video(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('video', {0}, {1})")]
+		[Template("React.createElement('video', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement Video(Attributes properties, string child);
 
-		[Template("React.createElement('wbr', {properties}, {*children})")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({properties}), {*children})")]
 		public extern static ReactElement WBR(Attributes properties, params Union<ReactElement, string>[] children);
 
 		[Template("React.createElement('wbr', null, System.Linq.Enumerable.from({0}).toArray())")]
@@ -4777,24 +4777,24 @@ namespace Bridge.React
 		[Template("React.createElement('wbr', null, {0})")]
 		public extern static ReactElement WBR(string child);
 
-		[Template("React.createElement('wbr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement WBR(Attributes properties, IEnumerable<ReactElement> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('wbr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement WBR<TProps>(Attributes properties, IEnumerable<PureComponent<TProps>> children);
 
 		[IgnoreGeneric]
-		[Template("React.createElement('wbr', {0}, Bridge.React.toReactElementArray({1}))")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), Bridge.React.toReactElementArray({1}))")]
 		public extern static ReactElement WBR<TProps>(Attributes properties, IEnumerable<StatelessComponent<TProps>> children);
 
-		[Template("React.createElement('wbr', {0}, System.Linq.Enumerable.from({1}).toArray())")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), System.Linq.Enumerable.from({1}).toArray())")]
 		public extern static ReactElement WBR(Attributes properties, IEnumerable<string> children);
 
-		[Template("React.createElement('wbr', {0}, {1})")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement WBR(Attributes properties, ReactElement child);
 
-		[Template("React.createElement('wbr', {0}, {1})")]
+		[Template("React.createElement('wbr', Bridge.React.fixAttr({0}), {1})")]
 		public extern static ReactElement WBR(Attributes properties, string child);
 	}
 }

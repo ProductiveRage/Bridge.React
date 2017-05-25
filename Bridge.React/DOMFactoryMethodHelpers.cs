@@ -5,8 +5,27 @@ using System.Linq;
 namespace Bridge.React
 {
 	[Name("Bridge.React")] // Reducing the length of this class name so that the "Bridge.React.toReactElementArray" reference in the React.DOM element factory overload templates are shorter
-	internal static class ComponentListToReactElementTranslation
+	internal static class DOMFactoryMethodHelpers
 	{
+		[Name("fixAttr")]
+		public static DomElementsAttributes RewriteDataAttributes(DomElementsAttributes attributes)
+		{
+			/*@
+			if (!attributes.hasOwnProperty("data"))
+				return attributes;
+			
+			var data = attributes["data"];
+			delete attributes["data"];
+			for (var name in data) {
+				if (!data.hasOwnProperty(name)) {
+					continue;
+				}
+				attributes["data-" + name.replace('_', '-')] = data[name];
+			}
+			*/
+			return attributes;
+		}
+
 		/// <summary>
 		/// This should only be used by the React.DOM factory method overloads - as such, I haven't created separate strongly-typed method signatures for StatelessComponent and PureComponent,
 		/// I've rolled them together by having a single signature that takes an object set. This means that this method could feasibly be called with an object of references without the

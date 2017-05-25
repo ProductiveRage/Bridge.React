@@ -6,7 +6,7 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class ObjectAttributes : ReactDomElementAttributes<HTMLObjectElement>
 	{
-		public string Data { private get; set; }
+		public new string Data { private get; set; }
 		public int Height { private get; set; }
 		public string Name { private get; set; }
 		public string Type { private get; set; }
