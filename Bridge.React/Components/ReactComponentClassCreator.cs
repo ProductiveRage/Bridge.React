@@ -16,7 +16,9 @@ namespace Bridge.React
 			/*@
 			function getOwnPropertyDescriptors(obj) { // IE11 doesn't support Object.getOwnPropertyDescriptors so use this
 				var result = { };
-				for (var key of Reflect.ownKeys(obj)) {
+				var arrPropertyNames = Object.getOwnPropertyNames(obj); // IE11 doesn't support "var key of Reflect.ownKeys(obj)" but this approach should suffice for Bridge classes
+				for (var i = 0; i < arrPropertyNames.length; i++) {
+					var key = arrPropertyNames[i];
 					result[key] = Object.getOwnPropertyDescriptor(obj, key);
 				}
 				return result;
