@@ -11,6 +11,7 @@ namespace Bridge.React.Tests
 			StatelessComponentTests.RunTests();
 			PureComponentTests.RunTests();
 			PropInstanceComparisonTests.Instance.RunTests();
+			DataAttributeTests.RunTests();
 		}
 	}
 }

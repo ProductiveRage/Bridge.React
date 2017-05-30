@@ -11,7 +11,7 @@ namespace Bridge.React
 		public static DomElementsAttributes RewriteDataAttributes(DomElementsAttributes attributes)
 		{
 			/*@
-			if (!attributes.hasOwnProperty("data"))
+			if (!attributes || !attributes.hasOwnProperty("data"))
 				return attributes;
 			
 			var data = attributes["data"];
