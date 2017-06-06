@@ -73,8 +73,10 @@ namespace Bridge.React
 		private static void InitialiseComponentState(object instance, object props)
 		{
 			// The props reference is passed to the constructor but won't yet have been applied to the instance - we'll need to do that in case the props need to be accessed
-			// from the GetInitialState method (it shouldn't matter that we're doing this early, React will do it itself shortly)
+			// from the GetInitialState method (it shouldn't matter that we're doing this early, React will do it itself shortly). Bridge classes require an $init property when
+			// the class has properties and/or fields, so we need to create one (any property that doesn't have a value in $init will have the default value for the property type).
 			/*@
+				instance.$init = {};
 				var getInitialState = instance.constructorStateInitialiser;
 				if ((typeof(getInitialState) !== "function") || (getInitialState.length !== 0)) {
 					return;

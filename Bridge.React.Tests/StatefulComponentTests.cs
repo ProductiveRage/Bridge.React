@@ -50,6 +50,20 @@ namespace Bridge.React.Tests
 					}
 				);
 			});
+
+			Test("Components support properties and fields", assert =>
+			{
+				var done = assert.Async();
+				TestComponentMounter.Render(
+					new ComponentThatRendersTextFromFieldsAndProperties(),
+					container =>
+					{
+						container.Remove();
+						assert.StrictEqual(container.TextContent.Trim(), "Test1-Test2");
+						done();
+					}
+				);
+			});
 		}
 
 		[DesignedForInheritance]
@@ -83,6 +97,23 @@ namespace Bridge.React.Tests
 				var state = base.GetInitialState();
 				state.Text += "!";
 				return state;
+			}
+		}
+
+		private sealed class ComponentThatRendersTextFromFieldsAndProperties : Component<object, object>
+		{
+			private string _nameField;
+			public ComponentThatRendersTextFromFieldsAndProperties() : base(null) { }
+			protected override object GetInitialState()
+			{
+				_nameField = "Test1";
+				NameProperty = "Test2";
+				return null;
+			}
+			public string NameProperty { get; set; }
+			public override ReactElement Render()
+			{
+				return DOM.Div(_nameField + "-" + NameProperty);
 			}
 		}
 	}
