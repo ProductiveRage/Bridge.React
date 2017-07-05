@@ -14,8 +14,8 @@
     <copyright>Copyright 2017 ProductiveRage</copyright>
     <tags>C# bridge bridge.net react react-js</tags>
     <dependencies>
-      <dependency id="Bridge.Min" version="16.0.0-beta" />
-      <dependency id="Bridge.Html5" version="16.0.0-beta" />
+      <dependency id="Bridge.Min" version="16.0.0-beta4" />
+      <dependency id="Bridge.Html5" version="16.0.0-beta4" />
     </dependencies>
   </metadata>
   <files>
