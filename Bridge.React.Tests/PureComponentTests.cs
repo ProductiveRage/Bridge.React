@@ -46,7 +46,7 @@ namespace Bridge.React.Tests
 			protected override void ComponentDidMount()
 			{
 				props.ReRenderProvider(
-					() => SetStateAsync(null)
+					() => SetStateAsync((object)null) // There are two SetStateAsync overloads that take a single reference, we want the TState one and not the Func<TState, TProps, TState> one
 				);
 			}
 
