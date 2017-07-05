@@ -145,9 +145,9 @@ namespace Bridge.React
 		/// successfully mutated. See http://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
 		/// </summary>
 		[Name("setWrappedStateCallback")]
-		protected void SetState(TState state, Action action)
+		protected void SetState(TState state, Action callback)
 		{
-			Script.Write("this.setState({ value: state }, action)");
+			Script.Write("this.setState({ value: state }, callback)");
 		}
 		
 		/// <summary>
@@ -158,6 +158,54 @@ namespace Bridge.React
 		{
 			var tcs = new TaskCompletionSource<object>();
 			SetState(state, () => tcs.SetResult(null));
+			return tcs.Task;
+		}
+
+		/// <summary>
+		/// This replaces the entire state for the component instance. The updater function will be called with the previous state including any changes
+		/// already queued up by previous calls to SetState, and the current up-to-date props.
+		/// </summary>
+		[Name("setWrappedStateUsingUpdater")]
+		protected void SetState(Func<TState, TProps, TState> updater)
+		{
+			Func<WrappedValue<TState>, WrappedValue<TProps>, WrappedValue<TState>> wrappedUpdater = (prevState, props) =>
+			{
+				var unwrappedPrevState = ComponentPropsHelpers.UnWrapValueIfDefined(prevState);
+				var unwrappedProps = ComponentPropsHelpers.UnWrapValueIfDefined(props);
+
+				return new WrappedValue<TState> { Value = updater(unwrappedPrevState, unwrappedProps) };
+			};
+			Script.Write("this.setState(wrappedUpdater)");
+		}
+
+		/// <summary>
+		/// This replaces the entire state for the component instance, and executes the callback delegate when the state has been successfully mutated.
+		/// The updater function will be called with the previous state including any changes already queued up by previous calls to SetState, and the
+		/// current up-to-date props.
+		/// </summary>
+		[Name("setWrappedStateCallbackUsingUpdater")]
+		protected void SetState(Func<TState, TProps, TState> updater, Action callback)
+		{
+			Func<WrappedValue<TState>, WrappedValue<TProps>, WrappedValue<TState>> wrappedUpdater = (prevState, props) =>
+			{
+				var unwrappedPrevState = ComponentPropsHelpers.UnWrapValueIfDefined(prevState);
+				var unwrappedProps = ComponentPropsHelpers.UnWrapValueIfDefined(props);
+
+				return new WrappedValue<TState> { Value = updater(unwrappedPrevState, unwrappedProps) };
+			};
+			Script.Write("this.setState(wrappedUpdater, callback)");
+		}
+
+		/// <summary>
+		/// This replaces the entire state for the component instance, and returns a Task that will complete when the state has been successfully mutated.
+		/// The updater function will be called with the previous state including any changes already queued up by previous calls to SetState, and the
+		/// current up-to-date props.
+		/// </summary>
+		[Name("setWrappedStateAsyncUsingUpdater")]
+		protected Task SetStateAsync(Func<TState, TProps, TState> updater)
+		{
+			var tcs = new TaskCompletionSource<object>();
+			SetState(updater, () => tcs.SetResult(null));
 			return tcs.Task;
 		}
 
