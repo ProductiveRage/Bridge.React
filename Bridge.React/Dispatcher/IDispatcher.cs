@@ -20,7 +20,16 @@ namespace Bridge.React
 		/// <remarks>
 		/// Actions will be sent to each receiver in the same order as which the receivers called Register.
 		/// </remarks>
-		void Receive(Action<IDispatcherAction> callback);
+		DispatchToken Receive(Action<IDispatcherAction> callback);
+
+		/// <summary>
+		/// Unregisters the callback associated with the given token.
+		/// </summary>
+		/// <param name="token">The dispatch token to unregister; may not be null.</param>
+		/// <remarks>
+		/// This method cannot be called while a dispatch is in progress.
+		/// </remarks>
+		void Unregister(DispatchToken token);
 
 		[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use the Dispatch method instead of HandleViewAction or HandleServerAction.")]
 		void HandleServerAction(IDispatcherAction action);
@@ -29,6 +38,6 @@ namespace Bridge.React
 		void HandleViewAction(IDispatcherAction action);
 
 		[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use the Receive(Action<IDispatcherAction>) method instead of Register(Action<DispatcherMessage>).")]
-		void Register(Action<DispatcherMessage> callback);
+		DispatchToken Register(Action<DispatcherMessage> callback);
 	}
 }
