@@ -22,7 +22,10 @@ namespace Bridge.React
 
 		[External]
 		public extern bool GetModifierState(int key);
+	}
 
+	public static class KeyboardEvent
+	{
 		/// <summary>
 		/// A collection of named <see cref="KeyboardEvent{TCurrentTarget}.Key"/> attribute values.
 		/// These are all based on the W3C UI Events Specification, with the key values listed in https://www.w3.org/TR/uievents-key/.
