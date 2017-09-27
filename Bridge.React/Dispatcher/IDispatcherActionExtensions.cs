@@ -16,12 +16,23 @@ namespace Bridge.React
 
 		/// <summary>
 		/// This will execute the specified callback with a non-null reference if the current IDispatcherAction matches type T and
-		/// if that instance of T meets the specified conditions. It will never call the work action with a null reference and it will never
+		/// if that instance of T meets the specified conditions. It will never call the work action with a null reference and it will never 
 		/// return a null reference. It will throw an exception for a null IDispatcherAction, null condition or null work reference.
 		/// </summary>
 		public static IMatchDispatcherActions If<T>(this IDispatcherAction action, Func<T, bool> condition, Action<T> work) where T : class, IDispatcherAction
 		{
 			return new DispatcherActionMatcher(action).Else(condition, work);
+		}
+
+		/// <summary>
+		/// This method signature combines the condition and the work into a single delegate - if it returns ActionMatchOptions.Handled then the
+		/// action will be considered matched and no subsequent Else methods will be considered but if it returns ActionMatchOptions.Ignored then
+		/// it will be considered unmatched. The callback will not be called if the current action does not match type T and it will never be called
+		/// with a null reference. It will throw an exception for a null IDispatcherAction, null condition or null work reference.
+		/// </summary>
+		public static IMatchDispatcherActions If<T>(this IDispatcherAction action, Func<T, ActionMatchOptions> work) where T : class, IDispatcherAction
+		{
+			return new DispatcherActionMatcher(action).Else(work);
 		}
 
 		public interface IMatchDispatcherActions
@@ -39,6 +50,14 @@ namespace Bridge.React
 			/// return a null reference. It will throw an exception for a null IDispatcherAction, null condition or null work reference.
 			/// </summary>
 			IMatchDispatcherActions Else<T>(Func<T, bool> condition, Action<T> work) where T : class, IDispatcherAction;
+
+			/// <summary>
+			/// This method signature combines the condition and the work into a single delegate - if it returns ActionMatchOptions.Handled then the
+			/// action will be considered matched and no subsequent Else methods will be considered but if it returns ActionMatchOptions.Ignored then
+			/// it will be considered unmatched. The callback will not be called if the current action does not match type T and it will never be called
+			/// with a null reference. It will throw an exception for a null IDispatcherAction, null condition or null work reference.
+			/// </summary>
+			IMatchDispatcherActions Else<T>(Func<T, ActionMatchOptions> work) where T : class, IDispatcherAction;
 
 			/// <summary>
 			/// If any IDispatcherAction has been matched then the specified callback will be executed, if not then it will not be.
@@ -68,6 +87,21 @@ namespace Bridge.React
 					throw new ArgumentNullException(nameof(condition));
 
 				return ElseWithOptionalCondition(condition, work);
+			}
+
+			public IMatchDispatcherActions Else<T>(Func<T, ActionMatchOptions> work) where T : class, IDispatcherAction
+			{
+				if (work == null)
+					throw new ArgumentNullException(nameof(work));
+
+				var actionOfDesiredType = _action as T;
+				if (actionOfDesiredType == null)
+					return this;
+
+				if (work(actionOfDesiredType) == ActionMatchOptions.Ignored)
+					return this;
+
+				return MatchFoundSoMatchNoMoreDispatcherActionMatcher.Instance;
 			}
 
 			private IMatchDispatcherActions ElseWithOptionalCondition<T>(Func<T, bool> optionalCondition, Action<T> work) where T : class, IDispatcherAction
@@ -110,6 +144,13 @@ namespace Bridge.React
 			{
 				if (condition == null)
 					throw new ArgumentNullException(nameof(condition));
+				if (work == null)
+					throw new ArgumentNullException(nameof(work));
+				return this;
+			}
+
+			public IMatchDispatcherActions Else<T>(Func<T, ActionMatchOptions> work) where T : class, IDispatcherAction
+			{
 				if (work == null)
 					throw new ArgumentNullException(nameof(work));
 				return this;
