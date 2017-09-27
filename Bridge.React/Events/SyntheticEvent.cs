@@ -4,7 +4,7 @@ namespace Bridge.React
 {
 	[External]
 	[ObjectLiteral]
-	public abstract class SyntheticEvent<TCurrentTarget> where TCurrentTarget : Element
+	public abstract class SyntheticEvent<TCurrentTarget> where TCurrentTarget : EventTarget
 	{
 		protected SyntheticEvent() { }
 
@@ -15,7 +15,7 @@ namespace Bridge.React
 		public readonly int EventPhase;
 		public readonly bool IsTrusted;
 		public readonly dynamic NativeEvent;
-		public readonly DomElementsAttributes Target;
+		public readonly EventTarget Target;
 		public readonly int TimeStamp;
 		public readonly string Type;
 

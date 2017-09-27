@@ -8,7 +8,7 @@ namespace Bridge.React
 	{
 		public string Accept { private get; set; }
 		public string Alt { private get; set; }
-		public AutoComplete AutoComplete { private get; set; }
+		public Union<string, AutoComplete> AutoComplete { private get; set; }
 		public bool AutoFocus { private get; set; }
 		public bool AutoSave { private get; set; }
 		public bool Checked { private get; set; }

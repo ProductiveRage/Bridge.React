@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Bridge.React
 {
@@ -39,5 +40,23 @@ namespace Bridge.React
 
 		[Obsolete("Support for Actions attributed to different sources (i.e. View vs. Server actions) will be removed from the IDispatcher interface. Use the Receive(Action<IDispatcherAction>) method instead of Register(Action<DispatcherMessage>).")]
 		DispatchToken Register(Action<DispatcherMessage> callback);
+
+		/// <summary>
+		/// Waits for the callbacks associated with the given tokens to be called first during a dispatch operation.
+		/// </summary>
+		/// <param name="tokens">The tokens to wait on; may not be null.</param>
+		/// <remarks>
+		/// This method can only be called while a dispatch is in progress.
+		/// </remarks>
+		void WaitFor(IEnumerable<DispatchToken> tokens);
+
+		/// <summary>
+		/// Waits for the callbacks associated with the given tokens to be called first during a dispatch operation.
+		/// </summary>
+		/// <param name="tokens">The tokens to wait on; may not be null.</param>
+		/// <remarks>
+		/// This method can only be called while a dispatch is in progress.
+		/// </remarks>
+		void WaitFor(params DispatchToken[] tokens);
 	}
 }
