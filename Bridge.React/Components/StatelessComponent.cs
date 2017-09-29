@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Bridge.React
 {
@@ -10,12 +9,6 @@ namespace Bridge.React
 		private readonly ReactElement _reactElement;
 		protected StatelessComponent(TProps props, params Union<ReactElement, string>[] children)
 		{
-			if (children != null)
-			{
-				if (children.Any(element => element == null))
-					throw new ArgumentException("Null reference encountered in children set");
-			}
-
 			// When preparing the "_reactStatelessRenderFunction" reference, a local "reactStatelessRenderFunction" alias is used - this is just so that the JavaScript
 			// code further down (which calls React.createElement) can use this local alias and not have to know how Bridge stores static references.
 			Func<TProps, ReactElement> reactStatelessRenderFunction;
