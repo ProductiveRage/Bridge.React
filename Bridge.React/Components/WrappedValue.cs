@@ -1,8 +1,8 @@
 ﻿namespace Bridge.React
 {
 	[ObjectLiteral(ObjectCreateMode.Plain)]
-	internal class WrappedValue<T>
+	internal class WrappedValue<TValue>
 	{
-		public T Value { get; set; }
+		public TValue Value { get; set; }
 	}
 }

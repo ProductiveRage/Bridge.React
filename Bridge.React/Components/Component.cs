@@ -32,7 +32,7 @@ namespace Bridge.React
 			// component must be contained within the props (and state, where appropriate). Note: In most cases where children are specified as a params array, we don't want
 			// the "children require unique keys" warning from React (you don't get it if you call DOM.Div(null, "Item1", "Item2"), so we don't want it in most cases here
 			// either - to achieve this, we prepare an arguments array and pass that to React.createElement in an "apply" call.
-			Array createElementArgs = new object[] { reactComponentClass, ComponentPropsHelpers.WrapProps(props) };
+			Array createElementArgs = new object[] { reactComponentClass, ComponentPropsHelpers.WrapProps<Component<TProps, TState>, TProps>(props) };
 			if (children != null)
 				createElementArgs = createElementArgs.Concat(children);
 			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
