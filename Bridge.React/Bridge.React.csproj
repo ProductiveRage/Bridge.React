@@ -44,9 +44,6 @@
     <Compile Include="Attributes\RawHtml.cs" />
     <Compile Include="Attributes\ReactDomElementAttributes.cs" />
     <Compile Include="Attributes\DomElementWithEventsAttributes.cs" />
-    <Compile Include="Components\WrappedValueWithKeyAndRef.cs" />
-    <Compile Include="Components\WrappedValueWithRef.cs" />
-    <Compile Include="Components\WrappedValueWithKey.cs" />
     <Compile Include="Components\WrappedValue.cs" />
     <Compile Include="Components\ReactComponentClassCreator.cs" />
     <Compile Include="Components\StaticComponent.cs" />

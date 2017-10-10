@@ -13,12 +13,12 @@ namespace Bridge.React
 	internal static class ComponentPropsHelpers
 	{
 		[IgnoreGeneric]
-		public static WrappedValue<TProps> WrapProps<TComponent, TProps>(TProps propsIfAny)
+		public static WrappedValue<TProps> WrapProps<TProps>(TProps propsIfAny)
 		{
 			// Try to extract a Key value from the props - it might be a simple "key" value or it might be a property with a "getKey" function or it
 			// might be absent altogether
 			Union<string, int> keyIfAny = null;
-			Action<TComponent> refIfAny = null;
+			Action<object> refIfAny = null;
 			if (propsIfAny != null)
 			{
 				// Pre-16, Bridge used to default to camel-casing property names and so a "Key" property would be named "key" and it would have a getter method
@@ -45,15 +45,15 @@ namespace Bridge.React
 						keyIfAny = undefined;
 					}
 
-					if (propsIfAny.ref && (typeof(propsIfAny.ref) == ""function"")) {
+					if (typeof(propsIfAny.ref) === ""function"") {
 						refIfAny = propsIfAny.ref;
 					}
-					else if (propsIfAny.Ref && (typeof(propsIfAny.Ref) == ""function"")) {
+					else if (typeof(propsIfAny.Ref) === ""function"") {
 						refIfAny = propsIfAny.Ref;
 					}
-					else if (propsIfAny.getRef && (typeof(propsIfAny.getRef) == ""function"")) {
+					else if (typeof(propsIfAny.getRef) === ""function"") {
 						var refIfAnyFromPropertyGetter = propsIfAny.getRef();
-						if (refIfAnyFromPropertyGetter && (typeof(refIfAnyFromPropertyGetter) == ""function"")) {
+						if (typeof(refIfAnyFromPropertyGetter) === ""function"") {
 							refIfAny = refIfAnyFromPropertyGetter;
 						}
 						else {
@@ -70,14 +70,12 @@ namespace Bridge.React
 			// when really we want a null Key to mean NO KEY. Possibly related to https://github.com/facebook/react/issues/2386, but I would have expected
 			// to have seen this issue in 0.14 if it was that. The workaround is to return a type of "wrapped props" that doesn't even have a Key property
 			// on it if there is no key value to use.
-			if (Script.Write<bool>("(typeof(keyIfAny) !== 'undefined' && typeof(refIfAny) !== 'undefined')"))
-				return new WrappedValueWithKeyAndRef<TProps, TComponent> { Value = propsIfAny, Key = keyIfAny, Ref = refIfAny };
-			else if (Script.Write<bool>("(typeof(keyIfAny) !== 'undefined')"))
-				return new WrappedValueWithKey<TProps> { Value = propsIfAny, Key = keyIfAny };
-			else if (Script.Write<bool>("(typeof(refIfAny) !== 'undefined')"))
-				return new WrappedValueWithRef<TProps, TComponent> { Value = propsIfAny, Ref = refIfAny };
-			else
-				return new WrappedValue<TProps> { Value = propsIfAny };
+			var wrappedProps = new WrappedValue<TProps> { Value = propsIfAny };
+			if (Script.Write<bool>("(typeof({0}) !== 'undefined')", keyIfAny))
+				Script.Write("{0}.key = {1}", wrappedProps, keyIfAny);
+			if (Script.Write<bool>("(typeof({0}) !== 'undefined')", refIfAny))
+				Script.Write("{0}.ref = {1}", wrappedProps, refIfAny);
+			return wrappedProps;
 		}
 
 		[IgnoreGeneric]

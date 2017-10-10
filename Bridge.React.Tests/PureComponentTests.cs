@@ -36,6 +36,24 @@ namespace Bridge.React.Tests
 					}
 				);
 			});
+
+			Test("PureComponent Ref callback provides reference to mounted component", assert =>
+			{
+				const string name = "Test123";
+				var done = assert.Async();
+				TestComponentMounter.Render(
+					component: new ExamplePureComponentWithRefLogic(
+						name: name,
+						@ref: mountedComponent =>
+						{
+							// Ensure that we can access methods on the mountedComponent reference
+							assert.Equal(mountedComponent.GetName(), name);
+							done();
+						}
+					),
+					ready: container => { }
+				);
+			});
 		}
 
 		private sealed class Container : Component<Container.Props, object>
@@ -77,6 +95,30 @@ namespace Bridge.React.Tests
 			{
 				public string Name { get; set; }
 				public Action OnPureComponentRender { get; set; }
+			}
+		}
+
+		private sealed class ExamplePureComponentWithRefLogic : PureComponent<ExamplePureComponentWithRefLogic.Props>
+		{
+			public ExamplePureComponentWithRefLogic(string name, Action<ExamplePureComponentWithRefLogic> @ref) : base(new Props { Name = name, Ref = @ref }) { }
+
+			public override ReactElement Render()
+			{
+				return DOM.Div(props.Name);
+			}
+
+			/// <summary>
+			/// This method is intended to be called by whoever rendered this component, it will only be accessible via the "Ref" callback (the testing of which is what this component is for)
+			/// </summary>
+			public string GetName()
+			{
+				return props.Name;
+			}
+
+			public sealed class Props
+			{
+				public string Name { get; set; }
+				public Action<ExamplePureComponentWithRefLogic> Ref { get; set; }
 			}
 		}
 	}
