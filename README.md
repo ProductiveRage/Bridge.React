@@ -1,8 +1,6 @@
 # Bridge.React
 Bindings for [Bridge.NET](http://bridge.net/) for React - write React applications in C#!
 
-(If you want to see these bindings in use in a sample application, this repo includes a "ToDo list" example in the Bridge.React.Examples folder).
-
 As well as the basic library calls (such as React.Render and the DOM factory methods like div, span, etc..) there are two base classes to make creating custom components simple in C#; "Component" and "StatelessComponent". Below is a very simple example that illustrates all of this -
 
 	using System;
@@ -65,6 +63,8 @@ As well as the basic library calls (such as React.Render and the DOM factory met
 			}
 		}
 	}
+
+I find that these bindings work very well with my [ProductiveRage.Immutable](https://github.com/ProductiveRage/Bridge.Immutable) library because that makes it easier to model immutable types, which all component Props and State types would ideally be (React expects props and state references to remain consistent and for completely new references to be provided when a component must be given new Props or State - being able to describe this with the type system can be very beneficial). The code above does not use that library but if you would like to see a sample application that uses the Bridge.React bindings *and* ProductiveRage.Immutable then you may find a "Todo list" project in the Bridge.React.Examples folder of this repo.
 
 ## Using third party / non-Bridge.NET components
 
