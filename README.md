@@ -1,7 +1,7 @@
 # Bridge.React
 Bindings for [Bridge.NET](http://bridge.net/) for React - write React applications in C#!
 
-As well as the basic library calls (such as React.Render and the DOM factory methods like div, span, etc..) there are two base classes to make creating custom components simple in C#; "Component" and "StatelessComponent". Below is a very simple example that illustrates all of this -
+As well as the basic library calls (such as React.Render and the DOM factory methods like div, span, etc..) there are three base classes to make creating custom components simple in C#; **Component**, **StatelessComponent** and **PureComponent**. Below is a very simple example that illustrates all of this -
 
 	using System;
 	using Bridge.Html5;
@@ -64,7 +64,13 @@ As well as the basic library calls (such as React.Render and the DOM factory met
 		}
 	}
 
-I find that these bindings work very well with my [ProductiveRage.Immutable](https://github.com/ProductiveRage/Bridge.Immutable) library because that makes it easier to model immutable types, which all component Props and State types would ideally be (React expects props and state references to remain consistent and for completely new references to be provided when a component must be given new Props or State - being able to describe this with the type system can be very beneficial). The code above does not use that library but if you would like to see a sample application that uses the Bridge.React bindings *and* ProductiveRage.Immutable then you may find a "Todo list" project in the Bridge.React.Examples folder of this repo.
+The **Component** base class is intended to allow you to write stateful "Container" components (to use the terminology from the article [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)) while **StatelessComponent** and **PureComponent** are for writing components that have only Props and no State.
+
+Ideally, components would rely *only* upon information in their Props reference - in which case they are considered "pure" because they rely solely upon their Props input and ambient references. If a component displayed the current time by using directly accessing DateTime.Now, for example, then that would not be "pure" because its rendering would require information outside of its Props reference. Almost all "Presentation" components should be pure and so should be derived from the **PureComponent** base class.
+
+The **PureComponent** has a builtin "ShouldComponentUpdate" implementation that will return false if the old Props and the new Props contain values that appear to be equivalent, which often means that React has less "reconciliation" work to do and so is a nice optimisation to get for free (the **PureComponent** is similar to React's own **PureComponent** implementation but it is written to better understand Bridge.NET - for example, it supports equality checks using an "Equals" method instead of requiring reference equality and it understands that two bound functions that point at the same function and the same bind-target are equivalent).
+
+I find that these bindings work very well with my [ProductiveRage.Immutable](https://github.com/ProductiveRage/Bridge.Immutable) library because that makes it easier to model immutable types, which all component Props and State types would ideally be (React expects Props and State references to remain consistent and for completely new references to be provided when a component must be given new Props or State - being able to describe this with the type system can be very beneficial). The code further up does not use that library but if you would like to see a sample application that uses the Bridge.React bindings *and* ProductiveRage.Immutable then you may find a "Todo list" project in the Bridge.React.Examples folder of this repo.
 
 ## Using third party / non-Bridge.NET components
 
