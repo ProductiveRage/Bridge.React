@@ -72,6 +72,10 @@ The **PureComponent** has a builtin "ShouldComponentUpdate" implementation that 
 
 I find that these bindings work very well with my [ProductiveRage.Immutable](https://github.com/ProductiveRage/Bridge.Immutable) library because that makes it easier to model immutable types, which all component Props and State types would ideally be (React expects Props and State references to remain consistent and for completely new references to be provided when a component must be given new Props or State - being able to describe this with the type system can be very beneficial). The code further up does not use that library but if you would like to see a sample application that uses the Bridge.React bindings *and* ProductiveRage.Immutable then you may find a "Todo list" project in the Bridge.React.Examples folder of this repo.
 
+### Loading the React JavaScript library
+
+This library / NuGet package only provides *bindings* to the React library, it is presumed that the library itself will be present at runtime (which can be as simple as including the appropriate script tag into the HTML of the application page). However, if you want to pull in the React library through a NuGet package (benefits include not having to include the script tag into your HTML manually and being able to track the React library version in the same way as you track other third party NuGet dependencies) then check out the [Bridge.ReactLoader](https://github.com/ProductiveRage/Bridge.ReactLoader).
+
 ## Using third party / non-Bridge.NET components
 
 Bridge supports multiple ways to interact with other JavaScript code, such as emitting raw JavaScript using "Script.Write" and by creating binding classes for the JavaScript types that you wish to work with.
