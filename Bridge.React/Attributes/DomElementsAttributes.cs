@@ -11,6 +11,7 @@ namespace Bridge.React
 		public string AccessKey { private get; set; }
 		public ContentEditable ContentEditable { private get; set; }
 		public TextDirection Dir { private get; set; }
+		public bool Draggable { private get; set; }
 		public string Lang { private get; set; }
 		public int TabIndex { private get; set; }
 		public string Title { private get; set; }
