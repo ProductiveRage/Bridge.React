@@ -58,6 +58,28 @@ namespace Bridge.React
 			return new ReactElementList(_items.Concat(items));
 		}
 
+		/// <summary>
+		/// The items set may contain null references but the set itself must not be null
+		/// </summary>
+		public ReactElementList Add<TProps>(IEnumerable<PureComponent<TProps>> items)
+		{
+			if (items == null)
+				throw new ArgumentNullException(nameof(items));
+
+			return new ReactElementList(_items.Concat(items.Select(item => (ReactElement)item)));
+		}
+
+		/// <summary>
+		/// The items set may contain null references but the set itself must not be null
+		/// </summary>
+		public ReactElementList Add<TProps>(IEnumerable<StatelessComponent<TProps>> items)
+		{
+			if (items == null)
+				throw new ArgumentNullException(nameof(items));
+
+			return new ReactElementList(_items.Concat(items.Select(item => (ReactElement)item)));
+		}
+
 		public IEnumerator<ReactElement> GetEnumerator()
 		{
 			return _items.GetEnumerator();
