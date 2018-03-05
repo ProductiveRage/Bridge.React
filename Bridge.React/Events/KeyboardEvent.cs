@@ -1,4 +1,5 @@
-﻿using Bridge.Html5;
+﻿using System;
+using Bridge.Html5;
 
 namespace Bridge.React
 {
@@ -9,15 +10,18 @@ namespace Bridge.React
 		private KeyboardEvent() { }
 
 		public readonly bool AltKey;
+		[Obsolete("KeyboardEvent.CharCode is obsolete. Please use KeyboardEvent.Key instead. (https://www.w3.org/TR/uievents/#legacy-key-attributes)")]
 		public readonly int CharCode;
 		public readonly bool CtrlKey;
 		public readonly string Key;
+		[Obsolete("KeyboardEvent.KeyCode is obsolete. Please use KeyboardEvent.Key instead. (https://www.w3.org/TR/uievents/#legacy-key-attributes)")]
 		public readonly int KeyCode;
 		public readonly string Locale;
 		public readonly int Location;
 		public readonly bool MetaKey;
 		public readonly bool Repeat;
 		public readonly bool ShiftKey;
+		[Obsolete("KeyboardEvent.Which is obsolete. Please use KeyboardEvent.Key instead. (https://www.w3.org/TR/uievents/#legacy-key-attributes)")]
 		public readonly int Which;
 
 		[External]
