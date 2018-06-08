@@ -1,6 +1,7 @@
 ﻿{
   "output": "Bridge/output",
   "combineScripts": true,
+  "cleanOutputFolderBeforeBuildPattern": "*.*",
 
   "resources": [
     {
