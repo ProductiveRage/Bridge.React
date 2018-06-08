@@ -43,6 +43,12 @@
     <Reference Include="Bridge.QUnit, Version=1.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bridge.QUnit.1.14.0\lib\net40\Bridge.QUnit.dll</HintPath>
     </Reference>
+    <Reference Include="Bridge.ReactLoader.Debug, Version=16.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.ReactLoader.16.4.1\lib\net40\Bridge.ReactLoader.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Bridge.ReactLoader.Release, Version=16.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.ReactLoader.16.4.1\lib\net40\Bridge.ReactLoader.Release.dll</HintPath>
+    </Reference>
     <Reference Include="ProductiveRage.SealedClassVerification, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ProductiveRage.SealedClassVerification.Bridge.1.7.0\lib\net40\ProductiveRage.SealedClassVerification.dll</HintPath>
       <Private>True</Private>
@@ -53,6 +59,7 @@
     <Compile Include="PropInstanceComparisonTests.cs" />
     <Compile Include="DataAttributeTests.cs" />
     <Compile Include="PureComponentTests.cs" />
+    <Compile Include="ReactLoader.cs" />
     <Compile Include="StatelessComponentTests.cs" />
     <Compile Include="TestComponentMounter.cs" />
     <Compile Include="StatefulComponentTests.cs" />

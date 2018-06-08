@@ -9,13 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bridge.React.Examples</RootNamespace>
     <AssemblyName>Bridge.React.Examples</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <NoStdLib>true</NoStdLib>
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
     <AdditionalExplicitAssemblyReferences />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="ReactLoader.cs" />
     <Compile Include="TaskDetails.cs" />
     <Compile Include="TaskCard.cs" />
     <Compile Include="TodoApp.cs" />
@@ -61,6 +63,12 @@
     </Reference>
     <Reference Include="Bridge.Html5, Version=17.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bridge.Html5.17.1.0\lib\net40\Bridge.Html5.dll</HintPath>
+    </Reference>
+    <Reference Include="Bridge.ReactLoader.Debug, Version=16.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.ReactLoader.16.4.1\lib\net40\Bridge.ReactLoader.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Bridge.ReactLoader.Release, Version=16.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.ReactLoader.16.4.1\lib\net40\Bridge.ReactLoader.Release.dll</HintPath>
     </Reference>
     <Reference Include="ProductiveRage.Immutable, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ProductiveRage.Immutable.3.0.0\lib\net40\ProductiveRage.Immutable.dll</HintPath>
