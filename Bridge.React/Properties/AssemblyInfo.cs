@@ -23,6 +23,6 @@ using Bridge;
 [assembly: Guid("f0d9d869-ef75-4f34-8f52-b18e7a6088c6")]
 
 // For compatibility with how Bridge used to build by default (before 16.0.0)
-[assembly: Convention(Target = ConventionTarget.Member, Notation = Notation.LowerCamelCase)]
+[assembly: Convention(Target = ConventionTarget.Member, Notation = Notation.CamelCase)]
 
 [assembly: InternalsVisibleTo("Bridge.React.Tests")]
