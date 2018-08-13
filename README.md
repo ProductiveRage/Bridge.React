@@ -11,7 +11,6 @@ As well as the basic library calls (such as React.Render and the DOM factory met
 	{
 		public class Start
 		{
-			[Ready]
 			public static void Main()
 			{
 				React.Render(
