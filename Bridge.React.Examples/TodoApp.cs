@@ -27,7 +27,13 @@ namespace Bridge.React.Examples
 				DOM.Input(new InputAttributes
 				{
 					Value = state.InputValue,
-					OnChange = e => SetState(state.With(_ => _.InputValue, e.CurrentTarget.Value))
+					OnChange = e => SetState(state.With(_ => _.InputValue, e.CurrentTarget.Value)),
+                    Data = new {
+                        my_custom_value = "custom",
+                    },
+                    Aria = new {
+                        hidden = "true",
+                    },
 				}),
 				DOM.Button(
 					new ButtonAttributes

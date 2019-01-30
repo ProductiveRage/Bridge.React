@@ -11,16 +11,28 @@ namespace Bridge.React
 		public static DomElementsAttributes RewriteDataAttributes(DomElementsAttributes attributes)
 		{
 			/*@
-			if (!attributes || !attributes.hasOwnProperty("data"))
+			if (!attributes || !attributes.hasOwnProperty("data") || !attributes.hasOwnProperty("aria"))
 				return attributes;
-			
+
 			var data = attributes["data"];
+			var aria = attributes["aria"];
 			delete attributes["data"];
-			for (var name in data) {
-				if (!data.hasOwnProperty(name)) {
-					continue;
+			delete attributes["aria"];
+			if (data !== undefined) {
+				for (var name in data) {
+					if (!data.hasOwnProperty(name)) {
+						continue;
+					}
+					attributes["data-" + name.replace(/_/g, '-')] = data[name];
 				}
-				attributes["data-" + name.replace('_', '-')] = data[name];
+			}
+			if (aria !== undefined) {
+				for (var name in aria) {
+					if (!aria.hasOwnProperty(name)) {
+						continue;
+					}
+					attributes["aria-" + name.replace(/_/g, '-')] = aria[name];
+				}
 			}
 			*/
 			return attributes;

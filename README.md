@@ -75,6 +75,38 @@ I find that these bindings work very well with my [ProductiveRage.Immutable](htt
 
 This library / NuGet package only provides *bindings* to the React library, it is presumed that the library itself will be present at runtime (which can be as simple as including the appropriate script tag into the HTML of the application page). However, if you want to pull in the React library through a NuGet package (benefits include not having to include the script tag into your HTML manually and being able to track the React library version in the same way as you track other third party NuGet dependencies) then check out the [Bridge.ReactLoader](https://github.com/ProductiveRage/Bridge.ReactLoader).
 
+## Support for data-* and aria-* HTML element DOM attributes
+
+React natively supports passing any data-* and aria-* attributes directly into the DOM elements as mentioned here:
+
+https://reactjs.org/docs/dom-elements.html
+
+However there is no easy way to define those as a part of the type safe attributes classes when using Bridge to compile C# to Javascript. To support this there is dynamic "Data" and "Aria" properties that allows you to set any values that you want. Any property name within the Data or Aria object will be extracted into individual "data-*" and "aria-*" properties when passed to React - eg.
+
+    new Attributes { 
+        ClassName = "toggler", 
+        Data = new { 
+            toggle_me = "yes-please" 
+        },
+        Aria = new { 
+            hidden = "true" 
+        }
+    }
+
+will become
+
+    { 
+        "className": "toggler", 
+        "data-toggle-me": "yes-please",
+        "aria-hidden": "true" 
+    }
+
+Since C# does not allow hyphens in property names but these are quite common in data attribute names, any underscores in the "Data" or "Aria" reference property names will be replaced with hyphens (hopefully there aren't any / many "data-*" attribute names in use that want underscores!).
+
+You can include as many or as few properties in the "Data" and "Aria" objects as you want to. Ensure that you don't repeat the "Data" or "Aria" part of the names, though - note that in the above example, the "Data" property is called "toggle_me" and not "data_toggle_me".
+
+At runtime this is supported via the Bridge.React.fixAttr() function, so if you are writing you own bindings keep that in mind as shown in the example below.
+
 ## Using third party / non-Bridge.NET components
 
 Bridge supports multiple ways to interact with other JavaScript code, such as emitting raw JavaScript using "Script.Write" and by creating binding classes for the JavaScript types that you wish to work with.
@@ -130,7 +162,7 @@ Alternatively, you may wish to expose the component more like a traditional clas
 	[External]
 	public sealed class Photo
 	{
-		[Template("React.createElement(Photo, {props})")]
+		[Template("React.createElement(Photo, Bridge.React.fixAttr({props}))")]
 		public Photo(Props props) { }
 
 		public static implicit operator ReactElement(Photo source)
@@ -155,5 +187,7 @@ This would allow you to write Bridge.NET code like this:
 		}),
 	  	Document.GetElementById('main')
 	);
+
+Note the use oif Bridge.React.fixAttr() to process the properties before it is passed to the underlying class. Make sure you use this if you wish to be able to pass down expanded data- and aria- properties to the underlying component.
 
 You may prefer one approach or the other - possibly depending upon whether you prefer to think in functions or classes and possibly depending upon the complexity of the component.
