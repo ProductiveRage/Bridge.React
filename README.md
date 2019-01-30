@@ -188,6 +188,6 @@ This would allow you to write Bridge.NET code like this:
 	  	Document.GetElementById('main')
 	);
 
-Note the use oif Bridge.React.fixAttr() to process the properties before it is passed to the underlying class. Make sure you use this if you wish to be able to pass down expanded data- and aria- properties to the underlying component.
+Note the use of Bridge.React.fixAttr() to process the properties before it is passed to the underlying class. Make sure you use this if you wish to be able to pass down expanded data- and aria- properties to the underlying component.
 
 You may prefer one approach or the other - possibly depending upon whether you prefer to think in functions or classes and possibly depending upon the complexity of the component.
