@@ -170,6 +170,11 @@ Alternatively, you may wish to expose the component more like a traditional clas
 			return Script.Write<ReactElement>("source");
 		}
 
+		public static implicit operator Union<ReactElement, string>(Photo source)
+		{
+			return Script.Write<ReactElement>("source");
+		}
+
 		[ObjectLiteral]
 		public sealed class Props
 		{
