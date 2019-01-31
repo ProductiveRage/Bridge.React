@@ -12,6 +12,7 @@ namespace Bridge.React.Tests
 			PureComponentTests.RunTests();
 			PropInstanceComparisonTests.Instance.RunTests();
 			DataAttributeTests.RunTests();
+            AriaAttributeTests.RunTests();
 			AppDispatcherTests.RunTests();
 		}
 	}

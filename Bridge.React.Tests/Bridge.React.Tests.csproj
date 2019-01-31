@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDispatcherTests.cs" />
+    <Compile Include="AriaAttributeTests.cs" />
     <Compile Include="PropInstanceComparisonTests.cs" />
     <Compile Include="DataAttributeTests.cs" />
     <Compile Include="PureComponentTests.cs" />
