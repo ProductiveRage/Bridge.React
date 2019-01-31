@@ -6,8 +6,8 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class OutputAttributes : ReactDomElementAttributes<HTMLOutputElement>
 	{
-		public string DefaultValue { private get; set; }
-		public string Name { private get; set; }
-		public string Type { private get; set; }
+		public string DefaultValue { get; set; }
+		public string Name { get; set; }
+		public string Type { get; set; }
 	}
 }

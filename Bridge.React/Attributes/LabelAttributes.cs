@@ -6,6 +6,6 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class LabelAttributes : ReactDomElementAttributes<HTMLLabelElement>
 	{
-		public string HtmlFor { private get; set; }
+		public string HtmlFor { get; set; }
 	}
 }

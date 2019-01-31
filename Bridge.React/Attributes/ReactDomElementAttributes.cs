@@ -13,15 +13,15 @@ namespace Bridge.React
 		/// but it is also permitted to use strings (actually, React allows any type but it to-strings its value, so it makes more sense to explicitly
 		/// limit the values to integers and strings).
 		/// </summary>
-		public Union<string, int> Key { private get; set; }
+		public Union<string, int> Key { get; set; }
 
 		/// <summary>
 		/// The Ref callback allows access to the real DOM element of the React component that is being rendered - the callback will be provided a reference
 		/// to the DOM element as the component is mounted (this is not something that is required very often, but may be useful for integrating with third
 		/// party libraries - for more information, see https://facebook.github.io/react/docs/more-about-refs.html)
 		/// </summary>
-		public Action<TCurrentTarget> Ref { private get; set; }
+		public Action<TCurrentTarget> Ref { get; set; }
 
-		public ReactStyle Style { private get; set; }
+		public ReactStyle Style { get; set; }
 	}
 }

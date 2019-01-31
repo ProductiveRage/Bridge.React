@@ -7,14 +7,14 @@ namespace Bridge.React
 	public sealed class ButtonAttributes : ReactDomElementAttributes<HTMLButtonElement>
 	{
 		[Name("autofocus")]
-		public bool AutoFocus { private get; set; }
-		public bool Disabled { private get; set; }
-		public string FormAction { private get; set; }
-		public string FormEncType { private get; set; }
-		public string FormMethod { private get; set; }
-		public bool FormNoValidate { private get; set; }
-		public string FormTarget { private get; set; }
-		public string Name { private get; set; }
-		public ButtonType Type { private get; set; }
+		public bool AutoFocus { get; set; }
+		public bool Disabled { get; set; }
+		public string FormAction { get; set; }
+		public string FormEncType { get; set; }
+		public string FormMethod { get; set; }
+		public bool FormNoValidate { get; set; }
+		public string FormTarget { get; set; }
+		public string Name { get; set; }
+		public ButtonType Type { get; set; }
 	}
 }

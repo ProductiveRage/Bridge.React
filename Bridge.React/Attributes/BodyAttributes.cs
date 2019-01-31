@@ -6,11 +6,11 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class BodyAttributes : ReactDomElementAttributes<HTMLBodyElement>
 	{
-		public string ALink { private get; set; }
-		public string Background { private get; set; }
-		public string BgColor { private get; set; }
-		public string Link { private get; set; }
-		public string Text { private get; set; }
-		public string VLink { private get; set; }
+		public string ALink { get; set; }
+		public string Background { get; set; }
+		public string BgColor { get; set; }
+		public string Link { get; set; }
+		public string Text { get; set; }
+		public string VLink { get; set; }
 	}
 }

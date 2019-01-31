@@ -6,9 +6,9 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class StyleAttributes : ReactDomElementAttributes<HTMLStyleElement>
 	{
-		public string Media { private get; set; }
-		public string Type { private get; set; }
-		public bool Disabled { private get; set; }
-		public StyleSheet Sheet { private get; set; }
+		public string Media { get; set; }
+		public string Type { get; set; }
+		public bool Disabled { get; set; }
+		public StyleSheet Sheet { get; set; }
 	}
 }

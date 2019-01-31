@@ -6,6 +6,6 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class TitleAttributes : ReactDomElementAttributes<HTMLTitleElement>
 	{
-		public string Text { private get; set; }
+		public string Text { get; set; }
 	}
 }

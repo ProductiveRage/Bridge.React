@@ -6,12 +6,12 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class LinkAttributes : ReactDomElementAttributes<HTMLLinkElement>
 	{
-		public bool Disabled { private get; set; }
-		public string Href { private get; set; }
+		public bool Disabled { get; set; }
+		public string Href { get; set; }
 		[Name("hreflang")]
-		public string HrefLang { private get; set; }
-		public string Media { private get; set; }
-		public string Rel { private get; set; }
-		public string Type { private get; set; }
+		public string HrefLang { get; set; }
+		public string Media { get; set; }
+		public string Rel { get; set; }
+		public string Type { get; set; }
 	}
 }

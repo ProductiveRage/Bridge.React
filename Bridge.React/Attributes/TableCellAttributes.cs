@@ -6,9 +6,9 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class TableCellAttributes : ReactDomElementAttributes<TableCellElement>
 	{
-		public int ColSpan { private get; set; }
-		public int RowSpan { private get; set; }
-		public int CellIndex { private get; set; }
-		public string valign { private get; set; }
+		public int ColSpan { get; set; }
+		public int RowSpan { get; set; }
+		public int CellIndex { get; set; }
+		public string valign { get; set; }
 	}
 }

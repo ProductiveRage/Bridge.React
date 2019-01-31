@@ -6,7 +6,7 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class LIAttributes : ReactDomElementAttributes<HTMLLIElement>
 	{
-		public string Type { private get; set; }
-		public int Value { private get; set; }
+		public string Type { get; set; }
+		public int Value { get; set; }
 	}
 }

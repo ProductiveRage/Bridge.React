@@ -6,7 +6,7 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class OptGroupAttributes : ReactDomElementAttributes<HTMLOptGroupElement>
 	{
-		public bool Disabled { private get; set; }
-		public string Label { private get; set; }
+		public bool Disabled { get; set; }
+		public string Label { get; set; }
 	}
 }

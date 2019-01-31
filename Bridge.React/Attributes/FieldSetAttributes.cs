@@ -6,8 +6,8 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class FieldSetAttributes : ReactDomElementAttributes<HTMLFieldSetElement>
 	{
-		public bool Disabled { private get; set; }
-		public string Name { private get; set; }
-		public bool WillValidate { private get; set; }
+		public bool Disabled { get; set; }
+		public string Name { get; set; }
+		public bool WillValidate { get; set; }
 	}
 }
