@@ -1,6 +1,4 @@
-﻿using Bridge.Html5;
-
-namespace Bridge.React.Tests
+﻿namespace Bridge.React.Tests
 {
 	public static class Tests
 	{
@@ -12,7 +10,7 @@ namespace Bridge.React.Tests
 			PureComponentTests.RunTests();
 			PropInstanceComparisonTests.Instance.RunTests();
 			DataAttributeTests.RunTests();
-            AriaAttributeTests.RunTests();
+			AriaAttributeTests.RunTests();
 			AppDispatcherTests.RunTests();
 		}
 	}
