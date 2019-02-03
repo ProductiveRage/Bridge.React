@@ -49,19 +49,6 @@ namespace Bridge.React.Tests
 				);
 			});
 
-            Test("DOM.Div with ClassName and empty data value", assert =>
-            {
-                var done = assert.Async();
-                TestComponentMounter.Render(
-                    DOM.Div(new Attributes { ClassName = "test", Data = new { } }, "Hello"),
-                    container => {
-                        assert.Ok(true); // Only making sure that a null attributes references doesn't break thing (so no need to check markup)
-                        done();
-                        container.Remove();
-                    }
-                );
-            });
-
 			Test("DOM.Div with ClassName and aria 'toggle' value", assert =>
 			{
 				var done = assert.Async();
