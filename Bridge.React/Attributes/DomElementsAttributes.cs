@@ -24,6 +24,12 @@ namespace Bridge.React
 		/// </summary>
 		public dynamic Data { private get; set; }
 
+        /// <summary>
+        /// Any properties on this reference will be taken to form "aria-*" attributes (eg. if the Aria reference has a "hidden" property set to "true" then the attributes
+        /// passed to React will include a "aria-hidden" value with the value "true"). The properties on the Aria reference should not include the "aria-" prefix.
+        /// </summary>
+        public dynamic Aria { private get; set; }
+
 		/// <summary>
 		/// Warning: If this is used then the element may have no other child specified
 		/// </summary>
