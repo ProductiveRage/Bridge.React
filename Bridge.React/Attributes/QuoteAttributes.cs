@@ -6,6 +6,6 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class QuoteAttributes : ReactDomElementAttributes<HTMLQuoteElement>
 	{
-		public string Cite { private get; set; }
+		public string Cite { get; set; }
 	}
 }

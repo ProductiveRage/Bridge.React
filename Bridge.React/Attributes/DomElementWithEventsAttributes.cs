@@ -8,78 +8,78 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public abstract class DomElementWithEventsAttributes<TCurrentTarget> : DomElementsAttributes where TCurrentTarget : HTMLElement
 	{
-		public Action<WheelEvent<TCurrentTarget>> OnCopy { private get; set; }
-		public Action<WheelEvent<TCurrentTarget>> OnCut { private get; set; }
-		public Action<WheelEvent<TCurrentTarget>> OnPaste { private get; set; }
+		public Action<WheelEvent<TCurrentTarget>> OnCopy { get; set; }
+		public Action<WheelEvent<TCurrentTarget>> OnCut { get; set; }
+		public Action<WheelEvent<TCurrentTarget>> OnPaste { get; set; }
 
-		public Action<CompositionEvent<TCurrentTarget>> OnCompositionEnd { private get; set; }
-		public Action<CompositionEvent<TCurrentTarget>> OnCompositionStart { private get; set; }
-		public Action<CompositionEvent<TCurrentTarget>> OnCompositionUpdate { private get; set; }
+		public Action<CompositionEvent<TCurrentTarget>> OnCompositionEnd { get; set; }
+		public Action<CompositionEvent<TCurrentTarget>> OnCompositionStart { get; set; }
+		public Action<CompositionEvent<TCurrentTarget>> OnCompositionUpdate { get; set; }
 
-		public Action<KeyboardEvent<TCurrentTarget>> OnKeyDown { private get; set; }
-		public Action<KeyboardEvent<TCurrentTarget>> OnKeyPress { private get; set; }
-		public Action<KeyboardEvent<TCurrentTarget>> OnKeyUp { private get; set; }
+		public Action<KeyboardEvent<TCurrentTarget>> OnKeyDown { get; set; }
+		public Action<KeyboardEvent<TCurrentTarget>> OnKeyPress { get; set; }
+		public Action<KeyboardEvent<TCurrentTarget>> OnKeyUp { get; set; }
 
-		public Action<FocusEvent<TCurrentTarget>> OnFocus { private get; set; }
-		public Action<FocusEvent<TCurrentTarget>> OnBlur { private get; set; }
+		public Action<FocusEvent<TCurrentTarget>> OnFocus { get; set; }
+		public Action<FocusEvent<TCurrentTarget>> OnBlur { get; set; }
 
-		public Action<FormEvent<TCurrentTarget>> OnChange { private get; set; }
-		public Action<FormEvent<TCurrentTarget>> OnInput { private get; set; }
-		public Action<FormEvent<TCurrentTarget>> OnSubmit { private get; set; }
+		public Action<FormEvent<TCurrentTarget>> OnChange { get; set; }
+		public Action<FormEvent<TCurrentTarget>> OnInput { get; set; }
+		public Action<FormEvent<TCurrentTarget>> OnSubmit { get; set; }
 
-		public Action<MouseEvent<TCurrentTarget>> OnClick { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnContextMenu { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnDoubleClick { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDrag { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragEnd { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragEnter { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragExit { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragLeave { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragOver { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDragStart { private get; set; }
-		public Action<DragEvent<TCurrentTarget>> OnDrop { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseDown { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseEnter { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseLeave { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseMove { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseOut { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseOver { private get; set; }
-		public Action<MouseEvent<TCurrentTarget>> OnMouseUp { private get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnClick { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnContextMenu { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnDoubleClick { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDrag { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragEnd { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragEnter { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragExit { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragLeave { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragOver { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDragStart { get; set; }
+		public Action<DragEvent<TCurrentTarget>> OnDrop { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseDown { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseEnter { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseLeave { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseMove { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseOut { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseOver { get; set; }
+		public Action<MouseEvent<TCurrentTarget>> OnMouseUp { get; set; }
 
-		public Action<SelectionEvent<TCurrentTarget>> OnSelect { private get; set; }
+		public Action<SelectionEvent<TCurrentTarget>> OnSelect { get; set; }
 
-		public Action<TouchEvent<TCurrentTarget>> OnTouchCancel { private get; set; }
-		public Action<TouchEvent<TCurrentTarget>> OnTouchEnd { private get; set; }
-		public Action<TouchEvent<TCurrentTarget>> OnTouchMove { private get; set; }
-		public Action<TouchEvent<TCurrentTarget>> OnTouchStart { private get; set; }
+		public Action<TouchEvent<TCurrentTarget>> OnTouchCancel { get; set; }
+		public Action<TouchEvent<TCurrentTarget>> OnTouchEnd { get; set; }
+		public Action<TouchEvent<TCurrentTarget>> OnTouchMove { get; set; }
+		public Action<TouchEvent<TCurrentTarget>> OnTouchStart { get; set; }
 
-		public Action<UIEvent<TCurrentTarget>> OnScroll { private get; set; }
+		public Action<UIEvent<TCurrentTarget>> OnScroll { get; set; }
 
-		public Action<WheelEvent<TCurrentTarget>> OnWheel { private get; set; }
+		public Action<WheelEvent<TCurrentTarget>> OnWheel { get; set; }
 
-		public Action<MediaEvent<TCurrentTarget>> OnAbort { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnCanPlay { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnCanPlayThrough { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnDurationChange { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnEmptied { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnEncrypted { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnEnded { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnError { private get; set; } // This is listed as both a media event AND an image event, but they're basically the same so just left it as a media event
-		public Action<ImageEvent<TCurrentTarget>> OnLoad { private get; set; } // This is listed as a image event but since OnError was made a media event, it's easiest to do the same for this too
-		public Action<MediaEvent<TCurrentTarget>> OnLoadedData { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnLoadedMetadata { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnLoadStart { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnPause { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnPlay { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnPlaying { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnProgress { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnRateChange { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnSeeked { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnSeeking { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnStalled { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnSuspend { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnTimeUpdate { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnVolumeChange { private get; set; }
-		public Action<MediaEvent<TCurrentTarget>> OnWaiting { private get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnAbort { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnCanPlay { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnCanPlayThrough { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnDurationChange { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnEmptied { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnEncrypted { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnEnded { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnError { get; set; } // This is listed as both a media event AND an image event, but they're basically the same so just left it as a media event
+		public Action<ImageEvent<TCurrentTarget>> OnLoad { get; set; } // This is listed as a image event but since OnError was made a media event, it's easiest to do the same for this too
+		public Action<MediaEvent<TCurrentTarget>> OnLoadedData { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnLoadedMetadata { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnLoadStart { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnPause { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnPlay { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnPlaying { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnProgress { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnRateChange { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnSeeked { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnSeeking { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnStalled { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnSuspend { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnTimeUpdate { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnVolumeChange { get; set; }
+		public Action<MediaEvent<TCurrentTarget>> OnWaiting { get; set; }
 	}
 }

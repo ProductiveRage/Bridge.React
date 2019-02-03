@@ -6,8 +6,8 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class SourceAttributes : ReactDomElementAttributes<HTMLSourceElement>
 	{
-		public string Media { private get; set; }
-		public string Src { private get; set; }
-		public string Type { private get; set; }
+		public string Media { get; set; }
+		public string Src { get; set; }
+		public string Type { get; set; }
 	}
 }

@@ -6,11 +6,11 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class TrackAttributes : ReactDomElementAttributes<HTMLTrackElement>
 	{
-		public string Kind { private get; set; }
-		public string Src { private get; set; }
+		public string Kind { get; set; }
+		public string Src { get; set; }
 		[Name("srclang")]
-		public string SrcLang { private get; set; }
-		public string Label { private get; set; }
-		public bool Default { private get; set; }
+		public string SrcLang { get; set; }
+		public string Label { get; set; }
+		public bool Default { get; set; }
 	}
 }

@@ -7,19 +7,19 @@ namespace Bridge.React
 	public sealed class IFrameAttributes : ReactDomElementAttributes<HTMLIFrameElement>
 	{
 		[Name("allowfullscreen")]
-		public bool AllowFullScreen { private get; set; }
+		public bool AllowFullScreen { get; set; }
 		[Name("frameborder")]
-		public string FrameBorder { private get; set; }
-		public int Height { private get; set; }
-		public string LongDesc { private get; set; }
-		public int MarginHeight { private get; set; }
-		public int MarginWidth { private get; set; }
-		public string Name { private get; set; }
-		public SandboxOptions Sandbox { private get; set; }
-		public string Scrolling { private get; set; }
-		public bool Seamless { private get; set; }
-		public string Src { private get; set; }
-		public string SrcDoc { private get; set; }
-		public int Width { private get; set; }
+		public string FrameBorder { get; set; }
+		public int Height { get; set; }
+		public string LongDesc { get; set; }
+		public int MarginHeight { get; set; }
+		public int MarginWidth { get; set; }
+		public string Name { get; set; }
+		public SandboxOptions Sandbox { get; set; }
+		public string Scrolling { get; set; }
+		public bool Seamless { get; set; }
+		public string Src { get; set; }
+		public string SrcDoc { get; set; }
+		public int Width { get; set; }
 	}
 }

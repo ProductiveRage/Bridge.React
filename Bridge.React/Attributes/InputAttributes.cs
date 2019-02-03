@@ -6,40 +6,40 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class InputAttributes : ReactDomElementAttributes<HTMLInputElement>
 	{
-		public string Accept { private get; set; }
-		public string Alt { private get; set; }
-		public Union<string, AutoComplete> AutoComplete { private get; set; }
-		public bool AutoFocus { private get; set; }
-		public bool AutoSave { private get; set; }
-		public bool Checked { private get; set; }
-		public bool DefaultChecked { private get; set; }
-		public string DefaultValue { private get; set; }
-		public bool Disabled { private get; set; }
-		public string FormAction { private get; set; }
-		public string FormEncType { private get; set; }
-		public string FormMethod { private get; set; }
-		public bool FormNoValidate { private get; set; }
-		public string FormTarget { private get; set; }
-		public int Height { private get; set; }
+		public string Accept { get; set; }
+		public string Alt { get; set; }
+		public Union<string, AutoComplete> AutoComplete { get; set; }
+		public bool AutoFocus { get; set; }
+		public bool AutoSave { get; set; }
+		public bool Checked { get; set; }
+		public bool DefaultChecked { get; set; }
+		public string DefaultValue { get; set; }
+		public bool Disabled { get; set; }
+		public string FormAction { get; set; }
+		public string FormEncType { get; set; }
+		public string FormMethod { get; set; }
+		public bool FormNoValidate { get; set; }
+		public string FormTarget { get; set; }
+		public int Height { get; set; }
 		// Note: "Indeterminate" is not support by React (see https://github.com/facebook/react/issues/1798)
-		public string Max { private get; set; }
-		public int MaxLength { private get; set; }
-		public string Min { private get; set; }
-		public bool Multiple { private get; set; }
-		public string Name { private get; set; }
-		public string Pattern { private get; set; }
-		public string Placeholder { private get; set; }
-		public bool ReadOnly { private get; set; }
-		public bool Required { private get; set; }
-		public string SelectionDirection { private get; set; }
-		public int SelectionEnd { private get; set; }
-		public int SelectionStart { private get; set; }
-		public int Size { private get; set; }
-		public string Src { private get; set; }
-		public string Step { private get; set; }
-		public InputType Type { private get; set; }
-		public string UseMap { private get; set; }
-		public string Value { private get; set; }
-		public int Width { private get; set; }
+		public string Max { get; set; }
+		public int MaxLength { get; set; }
+		public string Min { get; set; }
+		public bool Multiple { get; set; }
+		public string Name { get; set; }
+		public string Pattern { get; set; }
+		public string Placeholder { get; set; }
+		public bool ReadOnly { get; set; }
+		public bool Required { get; set; }
+		public string SelectionDirection { get; set; }
+		public int SelectionEnd { get; set; }
+		public int SelectionStart { get; set; }
+		public int Size { get; set; }
+		public string Src { get; set; }
+		public string Step { get; set; }
+		public InputType Type { get; set; }
+		public string UseMap { get; set; }
+		public string Value { get; set; }
+		public int Width { get; set; }
 	}
 }

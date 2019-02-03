@@ -6,7 +6,7 @@ namespace Bridge.React
 	[ObjectLiteral]
 	public sealed class BaseAttributes : ReactDomElementAttributes<HTMLBaseElement>
 	{
-		public string Href { private get; set; }
-		public string Target { private get; set; }
+		public string Href { get; set; }
+		public string Target { get; set; }
 	}
 }
