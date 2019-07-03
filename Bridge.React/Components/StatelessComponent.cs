@@ -27,8 +27,8 @@ namespace Bridge.React
 			// array and pass that to React.createElement in an "apply" call. Similar techniques are used in the stateful component.
 			Array createElementArgs = new object[] { reactStatelessRenderFunction, ComponentPropsHelpers.WrapProps(props) };
 			if (children != null)
-				createElementArgs = createElementArgs.Concat(children);
-			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, createElementArgs)");
+				createElementArgs = Script.Write<Array>("{0}.concat({1})", createElementArgs, children); // Since upgrading from Bridge 1.7.6 to 1.7.9, I'm getting an error that Concat doesn't exist so I'll just do this
+			_reactElement = Script.Write<ReactElement>("React.createElement.apply(null, {0})", createElementArgs);
 		}
 
 		private Func<TProps, ReactElement> CreateStatelessRenderFunction()
